@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kreix, guía de usuario</title>
+<meta name="description" content="Kreix es una aplicación de finanzas personales que no te pide las claves de tu banco, funciona sin conexión y guarda todo cifrado en tu ordenador. Esta es su guía.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Kreix nunca te pide las claves de tu banco">
+<meta property="og:description" content="Finanzas personales para Windows: sin conexión y con tus datos guardados cifrados en tu ordenador.">
+<meta name="theme-color" content="#101418">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+<link rel="preload" href="assets/fonts/MontserratExtraBold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/DMSans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script>
+  /* El tema se decide antes de pintar para que no parpadee: lo guardado, o el del sistema. */
+  (function () {
+    var theme = "dark";
+    try { theme = localStorage.getItem("kreix-theme") || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"); } catch (e) {}
+    document.documentElement.setAttribute("data-theme", theme);
+    try {
+      var chosen = localStorage.getItem("kreix-lang");
+      var browser = (navigator.language || "").slice(0, 2);
+      if (!chosen && location.protocol !== "file:" && document.documentElement.lang === "es" && (browser === "ca" || browser === "en")) location.replace(browser + "/" + location.hash);
+    } catch (e) {}
+  })();
+</script>
+<noscript><style>.panel[hidden] { display: grid; } .panel { margin-bottom: 48px; } .tabs { display: none; }</style></noscript>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="#inicio" aria-label="Kreix, inicio"><img src="assets/kreix-icono-oscuro.svg" alt="" width="36" height="36">Kreix</a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#funciona">Primeros pasos</a>
+      <a href="#guia">La guía</a>
+      <a href="#seguridad">Seguridad</a>
+      <a href="#preguntas">Preguntas</a>
+    </nav>
+    <!--lang--><nav class="lang" aria-label="Idioma"><a href="./" lang="es" hreflang="es" title="Castellano" aria-label="Castellano" aria-current="true"><svg viewBox="0 0 24 24" aria-hidden="true"><clipPath id="flag-es"><circle cx="12" cy="12" r="12"/></clipPath><g clip-path="url(#flag-es)"><rect width="24" height="24" fill="#C60B1E"/><rect y="6" width="24" height="12" fill="#FFC400"/></g></svg></a><a href="ca/" lang="ca" hreflang="ca" title="Català" aria-label="Català"><svg viewBox="0 0 24 24" aria-hidden="true"><clipPath id="flag-ca"><circle cx="12" cy="12" r="12"/></clipPath><g clip-path="url(#flag-ca)"><rect width="24" height="24" fill="#FCDD09"/><rect y="2.667" width="24" height="2.667" fill="#DA121A"/><rect y="8.000" width="24" height="2.667" fill="#DA121A"/><rect y="13.333" width="24" height="2.667" fill="#DA121A"/><rect y="18.667" width="24" height="2.667" fill="#DA121A"/></g></svg></a><a href="en/" lang="en" hreflang="en" title="English" aria-label="English"><svg viewBox="0 0 24 24" aria-hidden="true"><clipPath id="flag-en"><circle cx="12" cy="12" r="12"/></clipPath><g clip-path="url(#flag-en)"><rect width="24" height="24" fill="#012169"/><path d="M0 0L24 24M24 0L0 24" stroke="#fff" stroke-width="4.8"/><path d="M0 0L24 24M24 0L0 24" stroke="#C8102E" stroke-width="1.6"/><path d="M12 0V24M0 12H24" stroke="#fff" stroke-width="7"/><path d="M12 0V24M0 12H24" stroke="#C8102E" stroke-width="4"/></g></svg></a></nav><!--/lang-->
+    <span class="btn btn-small" aria-disabled="true">Descarga: próximamente</span>
+    <button class="theme" type="button" id="theme" aria-label="Cambiar entre tema claro y oscuro" title="Cambiar tema">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    </button>
+  </div>
+  <nav class="pills" aria-label="Secciones">
+    <a href="#funciona">Primeros pasos</a>
+    <a href="#guia">La guía</a>
+    <a href="#seguridad">Seguridad</a>
+    <a href="#preguntas">Preguntas</a>
+  </nav>
+</header>
+
+<main id="contenido">
+
+  <!-- ===== Portada ===== -->
+  <div class="hero wrap" id="inicio">
+    <div class="hero-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <span class="stripes" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    <h1>Kreix nunca te&nbsp;pide las claves de&nbsp;tu&nbsp;banco.</h1>
+    <p class="lede">Una aplicación de finanzas personales para Windows. <strong>Funciona sin conexión</strong> y guarda todo <strong>cifrado en tu ordenador</strong>.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#funciona">Empezar la guía</a>
+      <a class="btn btn-ghost" href="#seguridad">Cómo se protegen tus datos</a>
+    </div>
+    <p class="soon">La descarga llegará pronto a esta misma página.</p>
+
+    <div class="promises">
+      <div class="promise">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="17" cy="24" r="8"/><path d="M25 24h18M37 24v6M31 24v4"/><path d="M6 42 42 6" stroke="var(--red)"/></svg>
+        <p class="promise-title">Sin tus claves del banco</p>
+        <p>Tú descargas el extracto desde tu banco y lo sueltas en Kreix. Kreix no entra nunca en tu banca.</p>
+      </div>
+      <div class="promise">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 19a26 26 0 0 1 36 0M12 26a17 17 0 0 1 24 0M18.5 33a8 8 0 0 1 11 0"/><circle cx="24" cy="39" r="1.5" fill="currentColor"/><path d="M6 42 42 6" stroke="var(--red)"/></svg>
+        <p class="promise-title">100&nbsp;% sin conexión</p>
+        <p>No se conecta a internet. Sin cuenta, sin nube y sin anuncios. Tus datos no viajan a ningún sitio.</p>
+      </div>
+      <div class="promise">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="21" width="30" height="21" rx="5"/><path d="M15 21v-6a9 9 0 0 1 18 0v6"/><circle cx="24" cy="31" r="2.5" fill="currentColor"/></svg>
+        <p class="promise-title">Tus datos, siempre cifrados</p>
+        <p>Lo que guarda Kreix va cifrado con tu contraseña maestra. Sin ella, nadie puede leerlo. Exportar también puede cifrarse.</p>
+      </div>
+    </div>
+
+    <figure class="frame">
+      <img class="only-dark" src="assets/shots/inicio-dark.webp" width="1280" height="860" alt="Pantalla de Inicio de Kreix: patrimonio neto, rendimiento, tasa de ahorro y previsión a fin de mes.">
+      <img class="only-light" src="assets/shots/inicio-light.webp" width="1280" height="860" alt="Pantalla de Inicio de Kreix en tema claro." loading="lazy">
+    </figure>
+  </div>
+
+  <!-- ===== Primeros pasos ===== -->
+  <section id="funciona">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="rule"></div>
+        <h2>Empieza en tres pasos</h2>
+        <p>No hace falta conectar nada. Solo un archivo que ya puedes descargar de tu banco.</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <h3>Descarga el extracto</h3>
+          <p>Desde la web o la app de tu banco, en CSV o Excel. Es el mismo archivo que bajarías para guardarlo.</p>
+        </li>
+        <li>
+          <h3>Suéltalo en Kreix</h3>
+          <p>Arrástralo a Importar. Kreix te enseña lo que ha leído y no guarda nada hasta que pulses Importar. Si repites un extracto, no duplica movimientos.</p>
+        </li>
+        <li>
+          <h3>Mira tu dinero</h3>
+          <p>Inicio resume tu patrimonio, tu ahorro del mes y lo que está por venir. Cuentas e Inversiones lo detallan.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== Guia pantalla a pantalla ===== -->
+  <section id="guia">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="rule"></div>
+        <h2>La guía, pantalla a pantalla</h2>
+        <p>Cada pestaña de la barra lateral, en pocas palabras. Los datos de las capturas son inventados.</p>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Pantallas de Kreix">
+        <button class="tab" role="tab" id="t-inicio" aria-controls="p-inicio" aria-selected="true" type="button">Inicio</button>
+        <button class="tab" role="tab" id="t-cuentas" aria-controls="p-cuentas" aria-selected="false" tabindex="-1" type="button">Cuentas</button>
+        <button class="tab" role="tab" id="t-inversiones" aria-controls="p-inversiones" aria-selected="false" tabindex="-1" type="button">Inversiones</button>
+        <button class="tab" role="tab" id="t-importar" aria-controls="p-importar" aria-selected="false" tabindex="-1" type="button">Importar</button>
+        <button class="tab" role="tab" id="t-ajustes" aria-controls="p-ajustes" aria-selected="false" tabindex="-1" type="button">Ajustes</button>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p-inicio" aria-labelledby="t-inicio" tabindex="0">
+        <div>
+          <h3>Todo lo importante de un vistazo</h3>
+          <ul>
+            <li>Tu patrimonio neto, la rentabilidad y la tasa de ahorro del mes.</li>
+            <li>Una previsión de cuánto dinero tendrás a fin de mes, con tus pagos fijos.</li>
+            <li>Próximos pagos, presupuestos y los movimientos que aún no tienen categoría.</li>
+          </ul>
+        </div>
+        <figure class="frame">
+          <picture class="only-dark"><source media="(max-width: 640px)" srcset="assets/shots/m-inicio-dark.webp" width="575" height="500"><img src="assets/shots/inicio-dark.webp" width="1280" height="860" alt="Inicio de Kreix en tema oscuro." loading="lazy"></picture>
+          <picture class="only-light"><source media="(max-width: 640px)" srcset="assets/shots/m-inicio-light.webp" width="575" height="500"><img src="assets/shots/inicio-light.webp" width="1280" height="860" alt="Inicio de Kreix en tema claro." loading="lazy"></picture>
+        </figure>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p-cuentas" aria-labelledby="t-cuentas" tabindex="0" hidden>
+        <div>
+          <h3>Tus gastos, claros</h3>
+          <ul>
+            <li>Gastos por categoría y evolución del saldo, de un mes o de todo el historial.</li>
+            <li>Cambia la categoría de un movimiento con clic derecho, o crea tus propias reglas.</li>
+            <li>Presupuestos por categoría y pagos recurrentes detectados.</li>
+          </ul>
+        </div>
+        <figure class="frame">
+          <picture class="only-dark"><source media="(max-width: 640px)" srcset="assets/shots/m-cuentas-dark.webp" width="470" height="332"><img src="assets/shots/cuentas-dark.webp" width="1280" height="860" alt="Cuentas en tema oscuro: saldo, ingresos, gastos y gráficos." loading="lazy"></picture>
+          <picture class="only-light"><source media="(max-width: 640px)" srcset="assets/shots/m-cuentas-light.webp" width="470" height="332"><img src="assets/shots/cuentas-light.webp" width="1280" height="860" alt="Cuentas en tema claro." loading="lazy"></picture>
+        </figure>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p-inversiones" aria-labelledby="t-inversiones" tabindex="0" hidden>
+        <div>
+          <h3>Tu cartera de fondos</h3>
+          <ul>
+            <li>Valor de la cartera, lo aportado, la plusvalía y la rentabilidad.</li>
+            <li>Distribución por fondo y evolución frente a lo que has aportado.</li>
+            <li>Se alimenta de las operaciones y la cartera que exportas de MyInvestor.</li>
+          </ul>
+        </div>
+        <figure class="frame">
+          <picture class="only-dark"><source media="(max-width: 640px)" srcset="assets/shots/m-inversiones-dark.webp" width="372" height="340"><img src="assets/shots/inversiones-dark.webp" width="1280" height="860" alt="Inversiones en tema oscuro: valor de la cartera y distribución por fondo." loading="lazy"></picture>
+          <picture class="only-light"><source media="(max-width: 640px)" srcset="assets/shots/m-inversiones-light.webp" width="372" height="340"><img src="assets/shots/inversiones-light.webp" width="1280" height="860" alt="Inversiones en tema claro." loading="lazy"></picture>
+        </figure>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p-importar" aria-labelledby="t-importar" tabindex="0" hidden>
+        <div>
+          <h3>Soltar y revisar</h3>
+          <ul>
+            <li>Arrastra los CSV o Excel de tu banco a la zona de importación.</li>
+            <li>Ves qué se ha leído antes de guardar, y casi todo se puede deshacer.</li>
+            <li>Si Kreix no reconoce el archivo, te pregunta qué columna es cada cosa y lo recuerda.</li>
+          </ul>
+        </div>
+        <figure class="frame">
+          <picture class="only-dark"><source media="(max-width: 640px)" srcset="assets/shots/m-importar-dark.webp" width="940" height="252"><img src="assets/shots/importar-dark.webp" width="1280" height="860" alt="Importar en tema oscuro: zona para soltar extractos y resultado de la importación." loading="lazy"></picture>
+          <picture class="only-light"><source media="(max-width: 640px)" srcset="assets/shots/m-importar-light.webp" width="940" height="252"><img src="assets/shots/importar-light.webp" width="1280" height="860" alt="Importar en tema claro." loading="lazy"></picture>
+        </figure>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p-ajustes" aria-labelledby="t-ajustes" tabindex="0" hidden>
+        <div>
+          <h3>A tu manera</h3>
+          <ul>
+            <li>Castellano, catalán o inglés, con cambio al instante.</li>
+            <li>Tema claro u oscuro, tamaño del texto y cielo animado en Inicio.</li>
+            <li>Contraseña, bloqueo automático y copias de seguridad cifradas.</li>
+          </ul>
+        </div>
+        <figure class="frame">
+          <picture class="only-dark"><source media="(max-width: 640px)" srcset="assets/shots/m-ajustes-dark.webp" width="530" height="140"><img src="assets/shots/ajustes-dark.webp" width="1280" height="860" alt="Ajustes en tema oscuro: nombre, idioma y lo que te interesa." loading="lazy"></picture>
+          <picture class="only-light"><source media="(max-width: 640px)" srcset="assets/shots/m-ajustes-light.webp" width="530" height="140"><img src="assets/shots/ajustes-light.webp" width="1280" height="860" alt="Ajustes en tema claro." loading="lazy"></picture>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Lo que mas te va a gustar ===== -->
+  <section id="detalles">
+    <div class="wrap">
+      <div class="privacy-demo">
+        <div>
+          <div class="rule"></div>
+          <h3>Un ojo para cuando miran por encima del hombro</h3>
+          <p>Con un clic, o con Ctrl+H, Kreix difumina todas las cantidades: en cifras, tablas y gráficos. Se nota que hay un número, pero no cuál. Pruébalo.</p>
+        </div>
+        <div class="demo-card">
+          <small>Patrimonio neto (datos de ejemplo)</small>
+          <div class="figure" id="figure" data-hidden="false">8.586,64&nbsp;€</div>
+          <span class="sr-only" id="figure-sr" hidden>Cantidad oculta</span>
+          <div class="row">
+            <span class="chip">+66,64&nbsp;€ frente al mes pasado</span>
+            <button class="eye" type="button" id="eye" aria-pressed="false" data-hide="Ocultar cantidades" data-show="Mostrar cantidades">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+              <span id="eye-text">Ocultar cantidades</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="more">
+        <div><h3>Categorías que se aprenden</h3><p>Kreix clasifica tus gastos solo, y tus reglas mandan sobre las suyas.</p></div>
+        <div><h3>Pagos recurrentes</h3><p>Detecta suscripciones y recibos, y te dice cuándo toca el siguiente. Quitas los que ya no pagas.</p></div>
+        <div><h3>Todo se puede deshacer</h3><p>Cada cambio importante muestra un aviso con el botón Deshacer.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Seguridad ===== -->
+  <div class="security" id="seguridad">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="rule"></div>
+        <h2>Tus datos no salen de tu ordenador</h2>
+        <p>No hay que fiarse de una promesa: Kreix está hecho para que no tenga nada que enviar ni a dónde enviarlo.</p>
+      </div>
+      <div class="security-grid">
+        <svg class="diagram diagram-wide" viewBox="0 0 640 400" role="img" aria-labelledby="dg-t dg-d">
+          <title id="dg-t">Cómo viajan tus datos</title>
+          <desc id="dg-d">Tú descargas el extracto de tu banco y lo llevas a Kreix, en tu ordenador, donde se guarda cifrado. No hay ninguna conexión entre Kreix e internet.</desc>
+          <rect class="box" x="8" y="70" width="138" height="90" rx="22"/>
+          <text x="77" y="123" text-anchor="middle" font-size="24" font-weight="700">Tu banco</text>
+          <path class="line" d="M146 115h104"/><path class="line" d="M238 103l12 12-12 12"/>
+          <text x="198" y="90" text-anchor="middle" font-size="16" class="soft">extracto</text>
+          <text x="198" y="146" text-anchor="middle" font-size="16" class="soft">que bajas tú</text>
+          <rect class="you" x="262" y="10" width="368" height="270" rx="30"/>
+          <text x="288" y="52" font-size="23" font-weight="700">Tu ordenador</text>
+          <rect class="box" x="288" y="74" width="316" height="72" rx="18"/>
+          <text x="310" y="119" font-size="25" font-weight="700">Kreix</text>
+          <text x="404" y="118" font-size="18" class="soft">calcula y te lo enseña</text>
+          <rect class="box" x="288" y="166" width="316" height="86" rx="18"/>
+          <g transform="translate(306 190)"><rect class="lock" x="0" y="14" width="30" height="24" rx="6"/><path class="lock" d="M6 14V9a9 9 0 0 1 18 0v5"/></g>
+          <text x="354" y="204" font-size="22" font-weight="700">Archivo cifrado</text>
+          <text x="354" y="232" font-size="17" class="soft">solo se abre con tu contraseña</text>
+          <path class="line" d="M446 280v40" stroke-dasharray="6 7"/>
+          <path class="cut" d="M428 292l36 18M464 292l-36 18"/>
+          <text x="484" y="308" font-size="20" font-weight="700" style="fill:var(--red)">Sin conexión</text>
+          <rect class="box" x="336" y="332" width="220" height="58" rx="29" stroke-dasharray="6 6"/>
+          <text x="446" y="369" text-anchor="middle" font-size="22" font-weight="700">Internet</text>
+        </svg>
+        <svg class="diagram diagram-tall" viewBox="0 0 360 530" role="img" aria-labelledby="dg2-t dg2-d">
+          <title id="dg2-t">Cómo viajan tus datos</title>
+          <desc id="dg2-d">Tú descargas el extracto de tu banco y lo llevas a Kreix, en tu ordenador, donde se guarda cifrado. No hay ninguna conexión entre Kreix e internet.</desc>
+          <rect class="box" x="20" y="8" width="320" height="68" rx="20"/>
+          <text x="180" y="51" text-anchor="middle" font-size="23" font-weight="700">Tu banco</text>
+          <path class="line" d="M180 76v52"/><path class="line" d="M168 116l12 12 12-12"/>
+          <text x="198" y="98" font-size="16" class="soft">extracto que</text>
+          <text x="198" y="118" font-size="16" class="soft">bajas tú</text>
+          <rect class="you" x="20" y="136" width="320" height="258" rx="28"/>
+          <text x="40" y="174" font-size="21" font-weight="700">Tu ordenador</text>
+          <rect class="box" x="40" y="192" width="280" height="64" rx="16"/>
+          <text x="58" y="232" font-size="23" font-weight="700">Kreix</text>
+          <text x="140" y="231" font-size="17" class="soft">calcula y te lo enseña</text>
+          <rect class="box" x="40" y="272" width="280" height="98" rx="16"/>
+          <g transform="translate(56 296)"><rect class="lock" x="0" y="14" width="30" height="24" rx="6"/><path class="lock" d="M6 14V9a9 9 0 0 1 18 0v5"/></g>
+          <text x="104" y="312" font-size="21" font-weight="700">Archivo cifrado</text>
+          <text x="104" y="338" font-size="16" class="soft">solo se abre con</text>
+          <text x="104" y="358" font-size="16" class="soft">tu contraseña</text>
+          <path class="line" d="M180 394v44" stroke-dasharray="6 7"/>
+          <path class="cut" d="M162 406l36 18M198 406l-36 18"/>
+          <text x="214" y="422" font-size="19" font-weight="700" style="fill:var(--red)">Sin conexión</text>
+          <rect class="box" x="70" y="448" width="220" height="56" rx="28" stroke-dasharray="6 6"/>
+          <text x="180" y="484" text-anchor="middle" font-size="21" font-weight="700">Internet</text>
+        </svg>
+
+        <ul class="how">
+          <li>
+            <h3>Sin red</h3>
+            <p>Kreix no incluye funciones de conexión a internet: ni para actualizarse, ni para enviar datos, ni para medir cómo lo usas.</p>
+          </li>
+          <li>
+            <h3>Cifrado de verdad</h3>
+            <p>Los datos se cifran con AES y una clave que sale de tu contraseña (PBKDF2-SHA256 con 600.000 vueltas). Si alguien toca el archivo, deja de abrirse.</p>
+          </li>
+          <li>
+            <h3>Nada en claro en el disco</h3>
+            <p>Al abrir Kreix, tus datos se descifran solo en memoria. No se escriben archivos temporales sin cifrar.</p>
+          </li>
+          <li>
+            <h3>La contraseña es solo tuya</h3>
+            <p>Nadie más la tiene. Por eso, si la olvidas, tampoco se puede recuperar nada: tendrías que empezar de cero.</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="verify">
+        <h3>Compruébalo tú</h3>
+        <ol>
+          <li>Desconecta el wifi o el cable de red.</li>
+          <li>Abre Kreix y úsalo con normalidad: importa, mira tus gráficos, cambia categorías. Todo funciona igual, porque nunca ha necesitado conexión.</li>
+        </ol>
+        <p>Para más garantías, crea en el Firewall de Windows una regla de salida que bloquee Kreix y comprueba que sigue funcionando.</p>
+      </div>
+
+      <div class="honest">
+        <h3>Lo que conviene saber</h3>
+        <p>El archivo que crea Exportar (.kreix) puede cifrarse con tu contraseña, pero no es obligatorio. Si no lo cifras, guárdalo en un sitio seguro. Y apunta tu contraseña maestra en un lugar seguro: si la pierdes, no hay forma de recuperar tus datos.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Bancos ===== -->
+  <section id="bancos">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="rule"></div>
+        <h2>Funciona con tu banco</h2>
+        <p>Kreix lee CSV y Excel (.xlsx y el antiguo .xls). Reconoce estos formatos por sus columnas habituales.</p>
+      </div>
+      <ul class="banks">
+        <li>Imagin</li>
+        <li>MyInvestor</li>
+        <li>CaixaBank</li>
+        <li>Santander</li>
+        <li>Revolut</li>
+        <li>Trade Republic</li>
+        <li class="other">Cualquier otro</li>
+      </ul>
+      <p class="note">Si Kreix no reconoce un archivo, te enseña sus primeras filas y te pregunta qué columna es la fecha, el concepto y el importe. Lo recuerda para la próxima vez. Los formatos de CaixaBank, Santander, Revolut y Trade Republic están incluidos pero todavía en pruebas.</p>
+    </div>
+  </section>
+
+  <!-- ===== Preguntas ===== -->
+  <section id="preguntas">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="rule"></div>
+        <h2>Preguntas frecuentes</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>¿Kreix necesita mis claves o acceso a mi banco?</summary>
+          <p>No, nunca. Kreix no se conecta a tu banco. Trabaja con los extractos que descargas tú.</p>
+        </details>
+        <details>
+          <summary>¿Se conecta a internet?</summary>
+          <p>No. Funciona exactamente igual sin conexión, y no incluye nada para enviar información fuera de tu ordenador.</p>
+        </details>
+        <details>
+          <summary>¿Dónde se guardan mis datos?</summary>
+          <p>En un archivo cifrado dentro de tu carpeta de datos de aplicación (en Windows, %APPDATA%\Kreix). Solo se descifran en memoria mientras Kreix está abierto.</p>
+        </details>
+        <details>
+          <summary>¿Qué pasa si olvido la contraseña?</summary>
+          <p>No se puede recuperar: no existe ninguna llave de repuesto, y por eso nadie más puede leer tus datos. Podrás empezar de cero con una contraseña nueva. Guarda copias de seguridad y apunta la contraseña en un sitio seguro.</p>
+        </details>
+        <details>
+          <summary>¿Qué pasa si importo dos veces el mismo extracto?</summary>
+          <p>Nada: Kreix reconoce los movimientos que ya tiene y no los duplica.</p>
+        </details>
+        <details>
+          <summary>¿Puedo llevarme mis datos a otro ordenador?</summary>
+          <p>Sí. Exportar crea un archivo .kreix que sueltas en Importar en el otro equipo. Puedes cifrarlo con tu contraseña. Importarlo reemplaza los datos que hubiera allí.</p>
+        </details>
+        <details>
+          <summary>¿Puedo deshacer un cambio?</summary>
+          <p>Casi todos los cambios importantes muestran un aviso con el botón Deshacer: importar, cambiar categorías, crear reglas, presupuestos y borrados.</p>
+        </details>
+        <details>
+          <summary>¿En qué idiomas está?</summary>
+          <p>Castellano, catalán e inglés. Se elige la primera vez que lo abres y se cambia cuando quieras en Ajustes.</p>
+        </details>
+        <details>
+          <summary>¿Funciona en Mac o en el móvil?</summary>
+          <p>Por ahora, solo en Windows. Una versión para el móvil está en estudio.</p>
+        </details>
+        <details>
+          <summary>¿Cuándo se podrá descargar?</summary>
+          <p>Pronto. Esta página será el sitio de descarga y seguirá siendo la guía.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Cierre ===== -->
+  <section class="closing" aria-labelledby="cierre">
+    <div class="wrap closing-box">
+      <div class="closing-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <h2 id="cierre">Kreix para Windows. Próximamente.</h2>
+      <p>Esta página será el sitio de descarga y seguirá siendo la guía. Sin cuenta, sin registro y sin conexión.</p>
+      <span class="btn btn-primary" aria-disabled="true">Descarga para Windows: próximamente</span>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#inicio"><img src="assets/kreix-icono-oscuro.svg" alt="" width="30" height="30">Kreix</a>
+    <p>Kreix 0.5.0, un proyecto personal. Los datos de las capturas son inventados.</p>
+    <a class="up" href="#inicio">Volver arriba</a>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
