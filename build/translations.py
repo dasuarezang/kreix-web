@@ -44,7 +44,7 @@ T = {
     "No se conecta a internet. Sin cuenta, sin nube y sin anuncios. Tus datos no viajan a ningún sitio.": (
         "No es connecta a internet. Sense compte, sense núvol i sense anuncis. Les teves dades no viatgen enlloc.",
         "It never connects to the internet, and there is no account, no cloud and no ads. Your data goes nowhere."),
-    "Tus datos, siempre cifrados": ("Les teves dades, sempre xifrades", "Your data, always encrypted"),
+    "Tus datos, cifrados": ("Les teves dades, xifrades", "Your data, encrypted"),
     "Lo que guarda Kreix va cifrado con tu contraseña maestra. Sin ella, nadie puede leerlo. Exportar también puede cifrarse.": (
         "Tot el que guarda Kreix va xifrat amb la teva contrasenya mestra. Sense ella, ningú ho pot llegir. L'exportació també es pot xifrar.",
         "Everything Kreix stores is encrypted with your master password. Without it, nobody can read it. Exports can be encrypted too."),
@@ -149,7 +149,7 @@ T = {
     "Detecta suscripciones y recibos, y te dice cuándo toca el siguiente. Quitas los que ya no pagas.": (
         "Detecta subscripcions i rebuts, i et diu quan toca el següent. Treus els que ja no pagues.",
         "It detects subscriptions and bills, and tells you when the next one is due. You remove the ones you no longer pay."),
-    "Todo se puede deshacer": ("Tot es pot desfer", "Everything can be undone"),
+    "Casi todo se puede deshacer": ("Gairebé tot es pot desfer", "Almost everything can be undone"),
     "Cada cambio importante muestra un aviso con el botón Deshacer.": (
         "Cada canvi important mostra un avís amb el botó Desfer.", "Every important change shows a notice with an Undo button."),
     # --- seguridad
