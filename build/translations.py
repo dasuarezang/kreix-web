@@ -18,7 +18,6 @@ T = {
     "Saltar al contenido": ("Salta al contingut", "Skip to content"),
     'aria-label="Kreix, inicio"': ('aria-label="Kreix, inici"', 'aria-label="Kreix, home"'),
     'aria-label="Principal"': ('aria-label="Principal"', 'aria-label="Main"'),
-    'aria-label="Secciones"': ('aria-label="Seccions"', 'aria-label="Sections"'),
     'aria-label="Idioma"': ('aria-label="Idioma"', 'aria-label="Language"'),
     ">Primeros pasos</a>": (">Primers passos</a>", ">Getting started</a>"),
     ">La guía</a>": (">La guia</a>", ">The guide</a>"),
@@ -261,4 +260,5 @@ T = {
     "Kreix 0.5.0, un proyecto personal. Los datos de las capturas son inventados.": (
         "Kreix 0.5.0, un projecte personal. Les dades de les captures són inventades.", "Kreix 0.5.0, a personal project. The data in the screenshots is made up."),
     "Volver arriba": ("Torna amunt", "Back to top"),
+    "<span>Menú</span>": ("<span>Menú</span>", "<span>Menu</span>"),
 }

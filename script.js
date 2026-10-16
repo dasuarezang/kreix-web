@@ -2,6 +2,30 @@
 (function () {
   "use strict";
 
+  /* Menú del móvil: un panel bajo la cabecera; se cierra con Esc, al elegir una sección, al tocar fuera o al ensanchar la ventana */
+  var toggle = document.getElementById("menu-toggle");
+  var menu = document.getElementById("menu");
+  function setMenu(open) {
+    menu.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+  toggle.addEventListener("click", function () { setMenu(!menu.classList.contains("open")); });
+  Array.prototype.forEach.call(menu.querySelectorAll(".nav a"), function (a) { a.addEventListener("click", function () { setMenu(false); }); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && menu.classList.contains("open")) { setMenu(false); toggle.focus(); }
+  });
+  document.addEventListener("click", function (e) {
+    if (menu.classList.contains("open") && !menu.contains(e.target) && !toggle.contains(e.target)) setMenu(false);
+  });
+  matchMedia("(min-width: 1021px)").addEventListener("change", function (e) { if (e.matches) setMenu(false); });
+
+  /* Botón de volver arriba: solo aparece cuando ya se ha bajado un buen trozo */
+  var toTop = document.querySelector(".to-top");
+  var waiting = false;
+  function showToTop() { waiting = false; toTop.classList.toggle("show", window.scrollY > 900); }
+  window.addEventListener("scroll", function () { if (!waiting) { waiting = true; requestAnimationFrame(showToTop); } }, { passive: true });
+  showToTop();
+
   /* El idioma que se elige con el selector se recuerda (la primera visita sigue el idioma del navegador) */
   Array.prototype.forEach.call(document.querySelectorAll(".lang a"), function (a) {
     a.addEventListener("click", function () { try { localStorage.setItem("kreix-lang", a.getAttribute("lang")); } catch (e) { /* sin almacenamiento */ } });
@@ -57,7 +81,7 @@
   });
 
   /* La sección que se está leyendo, marcada en el menú (y en la barra de secciones del móvil) */
-  var links = Array.prototype.slice.call(document.querySelectorAll('.nav a, .pills a'));
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
   var sections = links.map(function (a) { return document.querySelector(a.getAttribute("href")); }).filter(Boolean);
   if ("IntersectionObserver" in window && sections.length) {
     var seen = new IntersectionObserver(function (entries) {
@@ -66,7 +90,6 @@
         links.forEach(function (a) {
           var here = a.getAttribute("href") === "#" + entry.target.id;
           if (here) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
-          if (here && a.closest(".pills")) a.scrollIntoView({ block: "nearest", inline: "center" });
         });
       });
     }, { rootMargin: "-40% 0px -55% 0px" });
