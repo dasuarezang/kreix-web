@@ -185,6 +185,13 @@ section { padding: clamp(72px, 10vw, 132px) 0 0; }
 .section-head h2 { font-size: clamp(30px, 4.4vw, 48px); }
 .section-head p { margin-top: 16px; color: var(--soft); }
 
+/* por que Kreix: cuatro afirmaciones, cada una con su prueba */
+.why { border-top: 1px solid var(--border); }
+.why-item { display: grid; grid-template-columns: 56px minmax(0, 5fr) minmax(0, 7fr); gap: 8px 36px; padding: 38px 0; border-bottom: 1px solid var(--border); align-items: start; }
+.why-item svg { width: 48px; height: 48px; color: var(--accent); }
+.why-item h3 { font-size: clamp(25px, 3vw, 36px); }
+.why-item p { color: var(--soft); font-size: 18px; max-width: 36em; padding-top: 6px; }
+
 /* pasos: aqui si hay una secuencia */
 .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; counter-reset: paso; list-style: none; margin: 0; padding: 0; }
 .steps li { counter-increment: paso; padding-right: 36px; }
@@ -315,6 +322,9 @@ footer p { max-width: 36em; }
   .tools .btn-small { order: 3; flex: 1 0 100%; width: 100%; }
 }
 @media (max-width: 900px) {
+  .why-item { grid-template-columns: 44px minmax(0, 1fr); gap: 10px 20px; padding: 30px 0; }
+  .why-item svg { width: 40px; height: 40px; }
+  .why-item p { grid-column: 2; padding-top: 0; }
   .hero { padding-top: 140px; }
   .hero .stripes { display: none; }
   .hero-mark { height: 72px; top: 52px; left: calc(var(--gutter) + 10px); right: auto; gap: 10px; }
