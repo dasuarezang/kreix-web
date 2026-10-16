@@ -35,15 +35,15 @@ T = {
         "A personal finance app for Windows. <strong>It works offline</strong> and keeps everything <strong>encrypted on your computer</strong>."),
     "Empezar la guía": ("Comença la guia", "Start the guide"),
     "Cómo se protegen tus datos": ("Com es protegeixen les teves dades", "How your data is protected"),
-    "La descarga llegará pronto a esta misma página.": ("La descàrrega arribarà aviat a aquesta mateixa pàgina.", "The download will arrive soon on this same page."),
+    "La descarga llegará pronto a esta misma página.": ("La descàrrega arribarà aviat a aquesta mateixa pàgina.", "The download is coming soon to this same page."),
     "Sin tus claves del banco": ("Sense les claus del teu banc", "No bank login details"),
     "Tú descargas el extracto desde tu banco y lo sueltas en Kreix. Kreix no entra nunca en tu banca.": (
         "Tu descarregues l'extracte des del teu banc i el deixes anar a Kreix. Kreix no entra mai a la teva banca en línia.",
         "You download the statement from your bank and drop it into Kreix. Kreix never logs in to your bank."),
-    "100&nbsp;% sin conexión": ("100&nbsp;% sense connexió", "100&nbsp;% offline"),
+    "100&nbsp;% sin conexión": ("100&nbsp;% sense connexió", "100% offline"),
     "No se conecta a internet. Sin cuenta, sin nube y sin anuncios. Tus datos no viajan a ningún sitio.": (
         "No es connecta a internet. Sense compte, sense núvol i sense anuncis. Les teves dades no viatgen enlloc.",
-        "It never connects to the internet. No account, no cloud, no ads. Your data goes nowhere."),
+        "It never connects to the internet, and there is no account, no cloud and no ads. Your data goes nowhere."),
     "Tus datos, siempre cifrados": ("Les teves dades, sempre xifrades", "Your data, always encrypted"),
     "Lo que guarda Kreix va cifrado con tu contraseña maestra. Sin ella, nadie puede leerlo. Exportar también puede cifrarse.": (
         "Tot el que guarda Kreix va xifrat amb la teva contrasenya mestra. Sense ella, ningú ho pot llegir. L'exportació també es pot xifrar.",
@@ -63,7 +63,7 @@ T = {
     "Suéltalo en Kreix": ("Deixa'l anar a Kreix", "Drop it into Kreix"),
     "Arrástralo a Importar. Kreix te enseña lo que ha leído y no guarda nada hasta que pulses Importar. Si repites un extracto, no duplica movimientos.": (
         "Arrossega'l a Importar. Kreix et mostra el que ha llegit i no guarda res fins que premis Importar. Si repeteixes un extracte, no duplica moviments.",
-        "Drag it onto Import. Kreix shows you what it read and saves nothing until you press Import. If you repeat a statement, it does not duplicate transactions."),
+        "Drag it onto Import. Kreix shows you what it read and saves nothing until you press Import. If you import the same statement again, Kreix does not duplicate transactions."),
     "Mira tu dinero": ("Mira els teus diners", "See your money"),
     "Inicio resume tu patrimonio, tu ahorro del mes y lo que está por venir. Cuentas e Inversiones lo detallan.": (
         "Inici resumeix el teu patrimoni, el teu estalvi del mes i el que ha de venir. Comptes i Inversions ho detallen.",
@@ -72,7 +72,7 @@ T = {
     "La guía, pantalla a pantalla": ("La guia, pantalla a pantalla", "The guide, screen by screen"),
     "Cada pestaña de la barra lateral, en pocas palabras. Los datos de las capturas son inventados.": (
         "Cada pestanya de la barra lateral, en poques paraules. Les dades de les captures són inventades.",
-        "Each tab of the sidebar, in a few words. The data in the screenshots is made up."),
+        "Each tab in the sidebar, in a few words. The data in the screenshots is made up."),
     'aria-label="Pantallas de Kreix"': ('aria-label="Pantalles de Kreix"', 'aria-label="Kreix screens"'),
     ">Inicio</button>": (">Inici</button>", ">Home</button>"),
     ">Cuentas</button>": (">Comptes</button>", ">Accounts</button>"),
@@ -90,7 +90,7 @@ T = {
         "Upcoming payments, budgets and the transactions that have no category yet."),
     "Inicio de Kreix en tema oscuro.": ("Inici de Kreix en tema fosc.", "Kreix Home in the dark theme."),
     "Inicio de Kreix en tema claro.": ("Inici de Kreix en tema clar.", "Kreix Home in the light theme."),
-    "Tus gastos, claros": ("Les teves despeses, clares", "Your spending, clear"),
+    "Tus gastos, claros": ("Les teves despeses, clares", "Your spending, made clear"),
     "Gastos por categoría y evolución del saldo, de un mes o de todo el historial.": (
         "Despeses per categoria i evolució del saldo, d'un mes o de tot l'historial.", "Spending by category and balance over time, for one month or the whole history."),
     "Cambia la categoría de un movimiento con clic derecho, o crea tus propias reglas.": (
@@ -107,7 +107,7 @@ T = {
     "Distribución por fondo y evolución frente a lo que has aportado.": (
         "Distribució per fons i evolució respecte al que has aportat.", "Breakdown by fund and growth compared with what you have contributed."),
     "Se alimenta de las operaciones y la cartera que exportas de MyInvestor.": (
-        "S'alimenta de les operacions i la cartera que exportes de MyInvestor.", "It is fed by the operations and the portfolio you export from MyInvestor."),
+        "S'alimenta de les operacions i la cartera que exportes de MyInvestor.", "It is built from the orders and the portfolio you export from MyInvestor."),
     "Inversiones en tema oscuro: valor de la cartera y distribución por fondo.": (
         "Inversions en tema fosc: valor de la cartera i distribució per fons.", "Investments in the dark theme: portfolio value and breakdown by fund."),
     "Inversiones en tema claro.": ("Inversions en tema clar.", "Investments in the light theme."),
@@ -135,16 +135,16 @@ T = {
     "Un ojo para cuando miran por encima del hombro": ("Un ull per a quan et miren per sobre l'espatlla", "An eye for when someone looks over your shoulder"),
     "Con un clic, o con Ctrl+H, Kreix difumina todas las cantidades: en cifras, tablas y gráficos. Se nota que hay un número, pero no cuál. Pruébalo.": (
         "Amb un clic, o amb Ctrl+H, Kreix difumina totes les quantitats: en xifres, taules i gràfics. Es nota que hi ha un número, però no quin. Prova-ho.",
-        "With one click, or Ctrl+H, Kreix blurs every amount: in figures, tables and charts. You can tell there is a number, but not which one. Try it."),
+        "With one click, or Ctrl+H, Kreix blurs every amount, in figures, tables and charts. You can tell there is a number, but not which one. Try it."),
     "Patrimonio neto (datos de ejemplo)": ("Patrimoni net (dades d'exemple)", "Net worth (sample data)"),
     "8.586,64&nbsp;€": ("8.586,64&nbsp;€", "€8,586.64"),
     "Cantidad oculta": ("Quantitat oculta", "Amount hidden"),
     "+66,64&nbsp;€ frente al mes pasado": ("+66,64&nbsp;€ respecte al mes passat", "+€66.64 vs last month"),
     'data-hide="Ocultar cantidades" data-show="Mostrar cantidades"': ('data-hide="Amagar les quantitats" data-show="Mostrar les quantitats"', 'data-hide="Hide amounts" data-show="Show amounts"'),
     ">Ocultar cantidades<": (">Amagar les quantitats<", ">Hide amounts<"),
-    "Categorías que se aprenden": ("Categories que s'aprenen", "Categories that learn"),
-    "Kreix clasifica tus gastos solo, y tus reglas mandan sobre las suyas.": (
-        "Kreix classifica les teves despeses sol, i les teves regles manen sobre les seves.", "Kreix sorts your spending by itself, and your rules take priority over its own."),
+    "Categorías automáticas": ("Categories automàtiques", "Automatic categories"),
+    "Kreix clasifica tus gastos por sí mismo, y tus reglas mandan sobre las suyas.": (
+        "Kreix classifica les teves despeses tot sol, i les teves regles manen sobre les seves.", "Kreix sorts your spending by itself, and your rules take priority over its own."),
     "<h3>Pagos recurrentes</h3>": ("<h3>Pagaments recurrents</h3>", "<h3>Recurring payments</h3>"),
     "Detecta suscripciones y recibos, y te dice cuándo toca el siguiente. Quitas los que ya no pagas.": (
         "Detecta subscripcions i rebuts, i et diu quan toca el següent. Treus els que ja no pagues.",
@@ -161,38 +161,39 @@ T = {
     "Tú descargas el extracto de tu banco y lo llevas a Kreix, en tu ordenador, donde se guarda cifrado. No hay ninguna conexión entre Kreix e internet.": (
         "Tu descarregues l'extracte del teu banc i el portes a Kreix, al teu ordinador, on es guarda xifrat. No hi ha cap connexió entre Kreix i internet.",
         "You download the statement from your bank and bring it to Kreix, on your computer, where it is stored encrypted. There is no connection between Kreix and the internet."),
-    ">Tu banco</text>": (">El teu banc</text>", ">Your bank</text>"),
+    'font-size="24" font-weight="700">Tu banco</text>': ('font-size="21" font-weight="700">El teu banc</text>', 'font-size="24" font-weight="700">Your bank</text>'),
+    'font-size="23" font-weight="700">Tu banco</text>': ('font-size="23" font-weight="700">El teu banc</text>', 'font-size="23" font-weight="700">Your bank</text>'),
     ">extracto</text>": (">extracte</text>", ">statement</text>"),
     'font-size="16" class="soft">que bajas tú</text>': ('font-size="15" class="soft">que baixes tu</text>', 'font-size="15" class="soft">you download</text>'),
     ">extracto que</text>": (">extracte que</text>", ">statement</text>"),
     ">bajas tú</text>": (">baixes tu</text>", ">you download</text>"),
     ">Tu ordenador</text>": (">El teu ordinador</text>", ">Your computer</text>"),
     'font-size="18" class="soft">calcula y te lo enseña</text>': ('font-size="17" class="soft">calcula i t' + chr(39) + 'ho ensenya</text>', 'font-size="16" class="soft">calculates and shows it</text>'),
-    'font-size="17" class="soft">calcula y te lo enseña</text>': ('font-size="17" class="soft">calcula i t' + chr(39) + 'ho ensenya</text>', 'font-size="17" class="soft">calculates and shows it</text>'),
+    'font-size="17" class="soft">calcula y te lo enseña</text>': ('font-size="17" class="soft">calcula i t' + chr(39) + 'ho ensenya</text>', 'font-size="15" class="soft">calculates and shows it</text>'),
     ">Archivo cifrado</text>": (">Arxiu xifrat</text>", ">Encrypted file</text>"),
-    'font-size="17" class="soft">solo se abre con tu contraseña</text>': (
+    'font-size="16" class="soft">solo se abre con tu contraseña</text>': (
         'font-size="15" class="soft">només s\'obre amb la contrasenya</text>', 'font-size="15" class="soft">only opens with your password</text>'),
     ">solo se abre con</text>": (">només s'obre amb</text>", ">only opens with</text>"),
     ">tu contraseña</text>": (">la teva contrasenya</text>", ">your password</text>"),
-    ">Sin conexión</text>": (">Sense connexió</text>", ">Offline</text>"),
+    ">Sin conexión</text>": (">Sense xarxa</text>", ">Offline</text>"),
     "<h3>Sin red</h3>": ("<h3>Sense xarxa</h3>", "<h3>No network</h3>"),
     "Kreix no incluye funciones de conexión a internet: ni para actualizarse, ni para enviar datos, ni para medir cómo lo usas.": (
         "Kreix no inclou funcions de connexió a internet: ni per actualitzar-se, ni per enviar dades, ni per mesurar com l'uses.",
-        "Kreix has no internet features at all: not to update itself, not to send data, not to measure how you use it."),
+        "Kreix has no features that use the internet: it does not update itself, send data or track how you use it."),
     "Cifrado de verdad": ("Xifratge de debò", "Real encryption"),
-    "Los datos se cifran con AES y una clave que sale de tu contraseña (PBKDF2-SHA256 con 600.000 vueltas). Si alguien toca el archivo, deja de abrirse.": (
-        "Les dades es xifren amb AES i una clau que surt de la teva contrasenya (PBKDF2-SHA256 amb 600.000 iteracions). Si algú toca l'arxiu, deixa d'obrir-se.",
-        "Your data is encrypted with AES and a key derived from your password (PBKDF2-SHA256 with 600,000 iterations). If anyone tampers with the file, it stops opening."),
+    "Los datos se cifran con AES y una clave que sale de tu contraseña (PBKDF2-SHA256 con 600.000 iteraciones). Si alguien lo manipula, deja de abrirse.": (
+        "Les dades es xifren amb AES i una clau que surt de la teva contrasenya (PBKDF2-SHA256 amb 600.000 iteracions). Si algú manipula l'arxiu, deixa d'obrir-se.",
+        "Your data is encrypted with AES and a key derived from your password (PBKDF2-SHA256 with 600,000 iterations). If anyone tampers with the file, it will no longer open."),
     "Nada en claro en el disco": ("Res en clar al disc", "Nothing unencrypted on disk"),
     "Al abrir Kreix, tus datos se descifran solo en memoria. No se escriben archivos temporales sin cifrar.": (
         "En obrir Kreix, les teves dades es desxifren només a la memòria. No s'escriuen arxius temporals sense xifrar.",
         "When you open Kreix, your data is decrypted only in memory. No unencrypted temporary files are written."),
-    "La contraseña es solo tuya": ("La contrasenya és només teva", "The password is only yours"),
+    "La contraseña es solo tuya": ("La contrasenya és només teva", "Only you hold the password"),
     "Nadie más la tiene. Por eso, si la olvidas, tampoco se puede recuperar nada: tendrías que empezar de cero.": (
         "Ningú més la té. Per això, si l'oblides, tampoc es pot recuperar res: hauries de començar de zero.",
         "Nobody else has it. That is why, if you forget it, nothing can be recovered: you would have to start from scratch."),
     "Compruébalo tú": ("Comprova-ho tu", "Check it yourself"),
-    "Desconecta el wifi o el cable de red.": ("Desconnecta el wifi o el cable de xarxa.", "Disconnect wifi or the network cable."),
+    "Desconecta el wifi o el cable de red.": ("Desconnecta el wifi o el cable de xarxa.", "Disconnect Wi-Fi or the network cable."),
     "Abre Kreix y úsalo con normalidad: importa, mira tus gráficos, cambia categorías. Todo funciona igual, porque nunca ha necesitado conexión.": (
         "Obre Kreix i fes-lo servir amb normalitat: importa, mira els teus gràfics, canvia categories. Tot funciona igual, perquè mai no ha necessitat connexió.",
         "Open Kreix and use it as usual: import, look at your charts, change categories. Everything works the same, because it never needed a connection."),
@@ -208,9 +209,9 @@ T = {
     "Kreix lee CSV y Excel (.xlsx y el antiguo .xls). Reconoce estos formatos por sus columnas habituales.": (
         "Kreix llegeix CSV i Excel (.xlsx i l'antic .xls). Reconeix aquests formats per les seves columnes habituals.",
         "Kreix reads CSV and Excel (.xlsx and the older .xls). It recognises these formats by their usual columns."),
-    ">Cualquier otro<": (">Qualsevol altre<", ">Any other<"),
-    "Si Kreix no reconoce un archivo, te enseña sus primeras filas y te pregunta qué columna es la fecha, el concepto y el importe. Lo recuerda para la próxima vez. Los formatos de CaixaBank, Santander, Revolut y Trade Republic están incluidos pero todavía en pruebas.": (
-        "Si Kreix no reconeix un arxiu, et mostra les primeres files i et pregunta quina columna és la data, el concepte i l'import. Ho recorda per a la propera vegada. Els formats de CaixaBank, Santander, Revolut i Trade Republic hi són inclosos, però encara en proves.",
+    ">Cualquier otro<": (">Qualsevol altre<", ">Any other bank<"),
+    "Si Kreix no reconoce un archivo, te enseña sus primeras filas y te pregunta qué columna es la fecha, el concepto y el importe. Lo recuerda para la próxima vez. Los formatos de CaixaBank, Santander, Revolut y Trade Republic están incluidos, pero todavía en pruebas.": (
+        "Si Kreix no reconeix un arxiu, et mostra les primeres files i et pregunta quina columna és la data, el concepte i l'import. Ho recorda per a la propera vegada. Els formats de CaixaBank, Santander, Revolut i Trade Republic estan inclosos, però encara en proves.",
         "If Kreix does not recognise a file, it shows you the first rows and asks which column is the date, the description and the amount. It remembers for next time. The CaixaBank, Santander, Revolut and Trade Republic formats are included but still being tested."),
     # --- preguntas
     "Preguntas frecuentes": ("Preguntes freqüents", "Frequently asked questions"),
@@ -235,27 +236,27 @@ T = {
         "Res: Kreix reconeix els moviments que ja té i no els duplica.", "Nothing: Kreix recognises the transactions it already has and does not duplicate them."),
     "¿Puedo llevarme mis datos a otro ordenador?": ("Puc endur-me les meves dades a un altre ordinador?", "Can I take my data to another computer?"),
     "Sí. Exportar crea un archivo .kreix que sueltas en Importar en el otro equipo. Puedes cifrarlo con tu contraseña. Importarlo reemplaza los datos que hubiera allí.": (
-        "Sí. Exportar crea un arxiu .kreix que deixes anar a Importar a l'altre equip. El pots xifrar amb la teva contrasenya. Importar-lo reemplaça les dades que hi hagués.",
+        "Sí. Exportar crea un arxiu .kreix que deixes anar a Importar a l'altre equip. El pots xifrar amb la teva contrasenya. Importar-lo substitueix les dades que hi hagués.",
         "Yes. Export creates a .kreix file that you drop into Import on the other computer. You can encrypt it with your password. Importing it replaces any data that was there."),
     "¿Puedo deshacer un cambio?": ("Puc desfer un canvi?", "Can I undo a change?"),
     "Casi todos los cambios importantes muestran un aviso con el botón Deshacer: importar, cambiar categorías, crear reglas, presupuestos y borrados.": (
         "Gairebé tots els canvis importants mostren un avís amb el botó Desfer: importar, canviar categories, crear regles, pressupostos i esborrats.",
         "Almost every important change shows a notice with an Undo button: imports, category changes, new rules, budgets and deletions."),
-    "¿En qué idiomas está?": ("En quins idiomes està?", "Which languages is it in?"),
+    "¿En qué idiomas está?": ("En quins idiomes està?", "Which languages is it available in?"),
     "Castellano, catalán e inglés. Se elige la primera vez que lo abres y se cambia cuando quieras en Ajustes.": (
         "Castellà, català i anglès. S'escull la primera vegada que l'obres i es canvia quan vulguis a Configuració.",
-        "Spanish, Catalan and English. You choose the first time you open it and can change it any time in Settings."),
+        "Spanish, Catalan and English. You choose when you first open it and can change it at any time in Settings."),
     "¿Funciona en Mac o en el móvil?": ("Funciona en Mac o al mòbil?", "Does it work on Mac or on a phone?"),
     "Por ahora, solo en Windows. Una versión para el móvil está en estudio.": (
         "Per ara, només a Windows. Una versió per al mòbil està en estudi.", "For now, only on Windows. A phone version is being considered."),
     "¿Cuándo se podrá descargar?": ("Quan es podrà descarregar?", "When will it be available to download?"),
     "Pronto. Esta página será el sitio de descarga y seguirá siendo la guía.": (
-        "Aviat. Aquesta pàgina serà el lloc de descàrrega i continuarà sent la guia.", "Soon. This page will be the download site and will remain the guide."),
+        "Aviat. Aquesta pàgina serà el lloc de descàrrega i continuarà sent la guia.", "Soon. This page will be the download site and will stay the guide."),
     # --- cierre y pie
     "Kreix para Windows. Próximamente.": ("Kreix per a Windows. Aviat.", "Kreix for Windows. Coming soon."),
     "Esta página será el sitio de descarga y seguirá siendo la guía. Sin cuenta, sin registro y sin conexión.": (
         "Aquesta pàgina serà el lloc de descàrrega i continuarà sent la guia. Sense compte, sense registre i sense connexió.",
-        "This page will be the download site and will remain the guide. No account, no sign-up and no connection."),
+        "This page will be the download site and will stay the guide. No account, no sign-up and no connection."),
     "Descarga para Windows: próximamente": ("Descàrrega per a Windows: aviat", "Download for Windows: coming soon"),
     "Kreix 0.5.0, un proyecto personal. Los datos de las capturas son inventados.": (
         "Kreix 0.5.0, un projecte personal. Les dades de les captures són inventades.", "Kreix 0.5.0, a personal project. The data in the screenshots is made up."),

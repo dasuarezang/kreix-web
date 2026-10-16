@@ -74,6 +74,7 @@ body::before {                       /* el degradado de la marca: rojo en oscuro
   pointer-events: none;
   z-index: -1;
 }
+main { overflow-x: clip; }                 /* la marca de la portada sangra hasta el borde sin crear scroll horizontal */
 img { max-width: 100%; display: block; }
 a { color: inherit; }
 h1, h2, h3 { font-family: var(--display); font-weight: 800; line-height: 1.12; margin: 0; letter-spacing: -0.015em; text-wrap: balance; }
@@ -115,14 +116,14 @@ p { margin: 0; }
 /* ---- botones ---- */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-  min-height: 52px; padding: 0 28px; border-radius: 999px; border: 1px solid transparent;
-  font: 700 17px/1 var(--body); text-decoration: none; cursor: pointer; transition: background .15s, border-color .15s, transform .15s;
+  min-height: 52px; padding: 14px 28px; border-radius: 999px; border: 1px solid transparent; text-align: center;
+  font: 700 17px/1.25 var(--body); text-decoration: none; cursor: pointer; transition: background .15s, border-color .15s, transform .15s;
 }
 .btn-primary { background: var(--accent); color: var(--on-accent); }
 .btn-primary:hover { background: var(--accent-hover); }
 .btn-ghost { background: transparent; color: var(--text); border-color: var(--edge); }
 .btn-ghost:hover { background: var(--surface-alt); }
-.btn[aria-disabled="true"] { opacity: .62; cursor: default; pointer-events: none; }
+.btn[aria-disabled="true"] { background: transparent; color: var(--text); border: 1px dashed var(--edge); cursor: default; pointer-events: none; }   /* un aviso, no un boton */
 .btn-small { min-height: 42px; padding: 0 18px; font-size: 15px; background: transparent; color: var(--text); border-color: var(--edge); }
 .pills { display: none; }
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
