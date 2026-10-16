@@ -74,10 +74,10 @@ body::before {                       /* el degradado de la marca: rojo en oscuro
   pointer-events: none;
   z-index: -1;
 }
-main { overflow-x: clip; }                 /* la marca de la portada sangra hasta el borde sin crear scroll horizontal */
+main { overflow-x: hidden; overflow-x: clip; }   /* (hidden para Safari antiguo, que no conoce clip) */                 /* la marca de la portada sangra hasta el borde sin crear scroll horizontal */
 img { max-width: 100%; display: block; }
 a { color: inherit; }
-h1, h2, h3 { font-family: var(--display); font-weight: 800; line-height: 1.12; margin: 0; letter-spacing: -0.015em; text-wrap: balance; }
+h1, h2, h3 { overflow-wrap: break-word; font-family: var(--display); font-weight: 800; line-height: 1.12; margin: 0; letter-spacing: -0.015em; text-wrap: balance; }
 p { margin: 0; }
 .wrap { width: min(100% - 2 * var(--gutter), var(--wrap)); margin-inline: auto; }
 .skip { position: absolute; left: -999px; top: 8px; background: var(--accent); color: var(--on-accent); padding: 10px 16px; border-radius: 12px; z-index: 50; }
@@ -311,6 +311,7 @@ footer p { max-width: 36em; }
   html { scroll-padding-top: 84px; }
   .menu-toggle { display: inline-flex; }
   .menu { display: none; position: absolute; left: 0; right: 0; top: 100%; flex-direction: column; align-items: stretch; gap: 24px; padding: 8px var(--gutter) 28px; background: var(--bg); border-bottom: 1px solid var(--border); box-shadow: 0 24px 40px rgba(0, 0, 0, .25); animation: menu-in .18s ease-out; }
+  .menu { max-height: calc(100vh - 72px); max-height: calc(100dvh - 72px); overflow-y: auto; overscroll-behavior: contain; }
   .menu.open { display: flex; }
   .nav { flex-direction: column; gap: 0; margin: 0; }
   .nav a { font: 800 24px/1.2 var(--display); letter-spacing: -.01em; color: var(--text); padding: 16px 0; border-radius: 0; border-bottom: 1px solid var(--border); }
@@ -320,6 +321,14 @@ footer p { max-width: 36em; }
   .tools .lang { order: 1; }
   .tools .theme { order: 2; margin-left: auto; }
   .tools .btn-small { order: 3; flex: 1 0 100%; width: 100%; }
+}
+@media (max-width: 1020px) and (max-height: 520px) {        /* movil en horizontal: el menu es mas compacto */
+  .nav a { padding: 10px 0; font-size: 20px; }
+  .menu { gap: 14px; padding-bottom: 20px; }
+}
+@media (pointer: coarse) {        /* con el dedo, las banderas tienen 44 px de zona tactil aunque se dibujen de 30 */
+  .lang a { position: relative; }
+  .lang a::after { content: ""; position: absolute; inset: -7px; }
 }
 @media (max-width: 900px) {
   .why-item { grid-template-columns: 44px minmax(0, 1fr); gap: 10px 20px; padding: 30px 0; }
@@ -345,6 +354,13 @@ footer p { max-width: 36em; }
   .tabs::-webkit-scrollbar { display: none; }
   .tab { flex: none; padding: 0 18px; }
   .verify { padding: 22px; }
+}
+@media (max-width: 340px) {        /* pantallas muy estrechas (iPhone SE antiguo, Galaxy Fold plegado) */
+  .hero h1 { font-size: 32px; }
+  .section-head h2, .closing-box h2, .why-item h3 { font-size: 26px; }
+  .brand { font-size: 20px; }
+  .btn { padding: 12px 18px; font-size: 16px; }
+  .menu-toggle { padding: 0 14px 0 12px; }
 }
 @media (max-width: 520px) {
   body { font-size: 17px; }
