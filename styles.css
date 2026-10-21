@@ -209,6 +209,7 @@ picture { display: block; }
 
 .frame { margin: clamp(48px, 7vw, 80px) 0 0; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; background: var(--surface); }
 .frame img { width: 100%; height: auto; }
+.frame a { cursor: zoom-in; }
 
 /* ---- secciones ---- */
 section { padding: clamp(72px, 10vw, 132px) 0 0; }
