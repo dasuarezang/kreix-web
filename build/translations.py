@@ -440,12 +440,12 @@ T = {
     'Descarga el instalador y ábrelo. No pide permisos de administrador y crea un acceso directo en Inicio y en el escritorio. Como el instalador aún no está firmado, Windows puede avisarte la primera vez: pulsa «Más información» y «Ejecutar de todas formas».': (
         "Descarrega l'instal·lador i obre'l. No demana permisos d'administrador i crea una drecera a Inici i a l'escriptori. Com que l'instal·lador encara no està signat, Windows pot avisar-te la primera vegada: prem «Més informació» i «Executa de totes maneres».",
         'Download the installer and open it. It does not ask for administrator rights and it adds a shortcut to Start and to the desktop. Because the installer is not signed yet, Windows may warn you the first time: click “More info” and then “Run anyway”.'),
-    'Tu dinero, tu ordenador, tus reglas.': (
-        'Els teus diners, el teu ordinador, les teves regles.',
-        'Your money, your computer, your rules.'),
-    '© 2026 Daniel Suárez Angosto. Todos los derechos reservados.': (
-        '© 2026 Daniel Suárez Angosto. Tots els drets reservats.',
-        '© 2026 Daniel Suárez Angosto. All rights reserved.'),
+    '100&nbsp;% Offline<br>100&nbsp;% Cifrado<br>100&nbsp;% Privado': (
+        '100&nbsp;% Offline<br>100&nbsp;% Xifrat<br>100&nbsp;% Privat',
+        '100% Offline<br>100% Encrypted<br>100% Private'),
+    '</a>. Todos los derechos reservados.</span>': (
+        '</a>. Tots els drets reservats.</span>',
+        '</a>. All rights reserved.</span>'),
     'Kreix 0.5.0 es software propietario de código disponible: puedes usarlo, pero no copiarlo, redistribuirlo ni venderlo. Los datos de las capturas son inventados.': (
         'Kreix 0.5.0 és programari propietari de codi disponible: el pots fer servir, però no copiar-lo, redistribuir-lo ni vendre\'l. Les dades de les captures són inventades.',
         'Kreix 0.5.0 is proprietary, source-available software: you may use it, but not copy, redistribute or sell it. The data in the screenshots is made up.'),
