@@ -404,11 +404,12 @@ footer p { max-width: 36em; }
   .nap { right: auto; left: calc(var(--gutter) + 72px); top: calc(52px + 72px - var(--nap-w) * 0.52 + 2px); }   /* al pie de las barras pequenas, por delante */
   .top .wrap { gap: 12px; min-height: 64px; }
   .closing-mark { opacity: .35; }
-  .closing-box { --pt-w: clamp(124px, 38vw, 300px); padding: 28px clamp(14px, 4.5vw, 24px); }
-  .closing-box h2 { margin-bottom: 18px; }
+  .closing-box { --pt-w: clamp(150px, 47vw, 330px); padding: 28px 4px 28px clamp(14px, 4.5vw, 24px); }   /* perros mas grandes: menos margen a su derecha */
+  .closing-box h2 { margin-bottom: 18px; padding-right: clamp(10px, 4vw, 20px); }
   .cta-anchor { left: 0; }                                        /* el boton ocupa su columna, hasta la pata */
   .cta-anchor .btn { white-space: normal; min-height: 54px; padding: 10px 10px; font-size: clamp(14px, 4.1vw, 17px); line-height: 1.2; }
-  .cta-anchor .cta-note { padding: 7px 6px; font-size: clamp(11.5px, 3.4vw, 14px); }
+  .cta-anchor .cta-note { left: 50%; right: auto; transform: translateX(-50%); width: max-content; white-space: nowrap; padding: 0 0 6px; border: 0; background: none; color: var(--muted); font-size: clamp(11.5px, 3.3vw, 14px); }   /* texto centrado justo encima del boton, sin caja */
+  :root.not-windows .cta-anchor .btn { border-top-left-radius: 6px; border-top-right-radius: 6px; }
   .promises { grid-template-columns: 1fr; }
   .promise, .promise + .promise { padding: 30px 0 8px; border-left: 0; }
   .promise + .promise { border-top: 1px solid var(--border); margin-top: 22px; }
