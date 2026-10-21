@@ -55,7 +55,14 @@
   themeButton.addEventListener("click", function () {
     var next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
     root.setAttribute("data-theme", next);
-    try { localStorage.setItem("kreix-theme", next); } catch (e) { /* sin almacenamiento: se queda en esta visita */ }
+    try { sessionStorage.setItem("kreix-theme", next); } catch (e) { /* sin almacenamiento: igual, dura esta visita */ }
+    syncMeta();
+  });
+  /* Si el dispositivo cambia de modo (por ejemplo, al anochecer) y no se ha elegido otro en esta visita, la web lo sigue */
+  var systemLight = matchMedia("(prefers-color-scheme: light)");
+  systemLight.addEventListener("change", function (e) {
+    try { if (sessionStorage.getItem("kreix-theme")) return; } catch (err) { /* sin almacenamiento */ }
+    root.setAttribute("data-theme", e.matches ? "light" : "dark");
     syncMeta();
   });
 

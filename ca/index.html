@@ -16,13 +16,15 @@
 <link rel="preload" href="../assets/fonts/DMSans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../styles.css">
 <script>
-  /* El tema y el sistema se deciden antes de pintar para que no parpadee: el tema, lo guardado o el del sistema; si el equipo
-     no es Windows (y solo si se reconoce claramente), la descarga se cambia por el aviso y el enlace para el ordenador. */
+  /* El tema y el sistema se deciden antes de pintar para que no parpadee. Si el equipo
+     no es Windows (y solo si se reconoce claramente), la descarga se cambia por el aviso y el enlace para el ordenador.
+     El tema es el del dispositivo; si se cambia con el boton, el cambio dura solo esta visita. */
   (function () {
     var ua = navigator.userAgent || "";
     if (!/Windows/i.test(ua) && /Android|iPhone|iPad|iPod|Macintosh|Mac OS X|CrOS|Linux/i.test(ua)) document.documentElement.classList.add("not-windows");
     var theme = "dark";
-    try { theme = localStorage.getItem("kreix-theme") || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"); } catch (e) {}
+    try { localStorage.removeItem("kreix-theme"); } catch (e) {}      /* antes se guardaba para siempre: ahora manda el dispositivo */
+    try { theme = sessionStorage.getItem("kreix-theme") || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"); } catch (e) {}
     document.documentElement.setAttribute("data-theme", theme);
     try {
       var chosen = localStorage.getItem("kreix-lang");
@@ -68,6 +70,7 @@
   <div class="hero wrap" id="inicio">
     <div class="hero-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
     <div class="nap" aria-hidden="true"><img src="../assets/perretes-durmiendo.webp" width="720" height="374" alt=""><span class="zz zz-blitzen"><i>z</i><i>z</i><i>z</i></span><span class="zz zz-black"><i>z</i><i>z</i><i>z</i></span></div>
+    <div class="day" aria-hidden="true"><img class="tail" src="../assets/perretes/black-cola.webp" width="770" height="606" alt=""><img src="../assets/perretes/blitzen.webp" width="770" height="606" alt=""><img class="blink" src="../assets/perretes/blitzen-ojos.webp" width="770" height="606" alt=""><img class="tongue" src="../assets/perretes/blitzen-lengua.webp" width="770" height="606" alt=""><img class="ear ear-bl" src="../assets/perretes/blitzen-oreja-izq.webp" width="770" height="606" alt=""><img class="ear ear-br" src="../assets/perretes/blitzen-oreja-der.webp" width="770" height="606" alt=""><img src="../assets/perretes/black.webp" width="770" height="606" alt=""><img class="blink blink-black" src="../assets/perretes/black-ojos.webp" width="770" height="606" alt=""><img class="ear ear-kl" src="../assets/perretes/black-oreja-izq.webp" width="770" height="606" alt=""><img class="ear ear-kr" src="../assets/perretes/black-oreja-der.webp" width="770" height="606" alt=""></div>
     <span class="stripes" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
     <h1>Kreix mai no et&nbsp;demana les claus del&nbsp;teu&nbsp;banc.</h1>
     <p class="lede">L'app de finances personals per a Windows que no et vigila: <strong>funciona sense connexió</strong> i ho guarda tot <strong>xifrat al teu ordinador</strong>.</p>
@@ -403,6 +406,18 @@
     </div>
   </section>
 
+  <!-- ===== Cierre ===== -->
+  <section class="closing" aria-labelledby="cierre">
+    <div class="wrap closing-box">
+      <div class="closing-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <h2 id="cierre">Els teus diners, el teu ordinador, les teves regles.</h2>
+      <a class="btn btn-primary btn-large on-windows" href="https://github.com/dasuarezang/kreix-web/releases/download/v0.5.0/Kreix-Setup-0.5.0.exe">Descarrega per a Windows</a>
+      <span class="btn off-windows" aria-disabled="true">Kreix és per a Windows</span>
+      <button class="btn btn-primary btn-large off-windows share-link" type="button" data-done="Enllaç copiat" aria-live="polite">Copia l'enllaç</button>
+      <p class="soon off-windows">Obre aquesta pàgina a l'ordinador per descarregar-lo. <a href="https://github.com/dasuarezang/kreix-web/releases/download/v0.5.0/Kreix-Setup-0.5.0.exe">Descarrega-ho igualment (37&nbsp;MB)</a></p>
+    </div>
+  </section>
+
   <!-- ===== Preguntas ===== -->
   <section id="preguntas">
     <div class="wrap">
@@ -455,24 +470,12 @@
     </div>
   </section>
 
-  <!-- ===== Cierre ===== -->
-  <section class="closing" aria-labelledby="cierre">
-    <div class="wrap closing-box">
-      <div class="closing-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-      <h2 id="cierre">Els teus diners, el teu ordinador, les teves regles.</h2>
-      <p>Kreix per a Windows ja es pot descarregar. Aquesta pàgina continuarà sent la guia. Sense compte, sense registre i sense connexió.</p>
-      <a class="btn btn-primary on-windows" href="https://github.com/dasuarezang/kreix-web/releases/download/v0.5.0/Kreix-Setup-0.5.0.exe">Descarrega per a Windows</a>
-      <span class="btn off-windows" aria-disabled="true">Kreix és per a Windows</span>
-      <button class="btn btn-primary off-windows share-link" type="button" data-done="Enllaç copiat" aria-live="polite">Copia l'enllaç</button>
-      <p class="soon off-windows">Obre aquesta pàgina a l'ordinador per descarregar-lo. <a href="https://github.com/dasuarezang/kreix-web/releases/download/v0.5.0/Kreix-Setup-0.5.0.exe">Descarrega-ho igualment (37&nbsp;MB)</a></p>
-    </div>
-  </section>
 </main>
 
 <footer>
   <div class="wrap">
     <a class="brand" href="#inicio"><img src="../assets/kreix-icono-oscuro.svg" alt="" width="30" height="30">Kreix</a>
-    <p>Kreix 0.5.0, un projecte personal. Les dades de les captures són inventades.</p>
+    <p class="rights"><span>© 2026 Daniel Suárez Angosto. Tots els drets reservats.</span> <span>Kreix 0.5.0 és programari propietari de codi disponible: el pots fer servir, però no copiar-lo, redistribuir-lo ni vendre'l. Les dades de les captures són inventades.</span></p>
   </div>
 </footer>
 

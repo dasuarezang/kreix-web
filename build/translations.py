@@ -443,12 +443,12 @@ T = {
     'Tu dinero, tu ordenador, tus reglas.': (
         'Els teus diners, el teu ordinador, les teves regles.',
         'Your money, your computer, your rules.'),
-    'Kreix para Windows ya se puede descargar. Esta página seguirá siendo la guía. Sin cuenta, sin registro y sin conexión.': (
-        'Kreix per a Windows ja es pot descarregar. Aquesta pàgina continuarà sent la guia. Sense compte, sense registre i sense connexió.',
-        'Kreix for Windows is ready to download. This page will stay the guide. No account, no sign-up and no connection.'),
-    'Kreix 0.5.0, un proyecto personal. Los datos de las capturas son inventados.': (
-        'Kreix 0.5.0, un projecte personal. Les dades de les captures són inventades.',
-        'Kreix 0.5.0, a personal project. The data in the screenshots is made up.'),
+    '© 2026 Daniel Suárez Angosto. Todos los derechos reservados.': (
+        '© 2026 Daniel Suárez Angosto. Tots els drets reservats.',
+        '© 2026 Daniel Suárez Angosto. All rights reserved.'),
+    'Kreix 0.5.0 es software propietario de código disponible: puedes usarlo, pero no copiarlo, redistribuirlo ni venderlo. Los datos de las capturas son inventados.': (
+        'Kreix 0.5.0 és programari propietari de codi disponible: el pots fer servir, però no copiar-lo, redistribuir-lo ni vendre\'l. Les dades de les captures són inventades.',
+        'Kreix 0.5.0 is proprietary, source-available software: you may use it, but not copy, redistribute or sell it. The data in the screenshots is made up.'),
     'Volver arriba': (
         'Torna amunt',
         'Back to top'),
