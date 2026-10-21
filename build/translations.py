@@ -41,9 +41,12 @@ T = {
     '>Preguntas</a>': (
         '>Preguntes</a>',
         '>Questions</a>'),
-    'Descarga: próximamente': (
-        'Descàrrega: aviat',
-        'Download: coming soon'),
+    '>Descargar</a>': (
+        '>Descarrega</a>',
+        '>Download</a>'),
+    '>Descargar para Windows</a>': (
+        '>Descarrega per a Windows</a>',
+        '>Download for Windows</a>'),
     'aria-label="Cambiar entre tema claro y oscuro" title="Cambiar tema"': (
         'aria-label="Canviar entre tema clar i fosc" title="Canviar tema"',
         'aria-label="Switch between light and dark theme" title="Change theme"'),
@@ -59,9 +62,9 @@ T = {
     'Cómo se protegen tus datos': (
         'Com es protegeixen les teves dades',
         'How your data is protected'),
-    'La descarga llegará pronto a esta misma página.': (
-        'La descàrrega arribarà aviat a aquesta mateixa pàgina.',
-        'The download is coming soon to this same page.'),
+    'Versión 0.5.0 para Windows 10 y 11 (64 bits). Si Windows te avisa al abrirlo es porque el instalador aún no está firmado: pulsa «Más información» y luego «Ejecutar de todas formas».': (
+        "Versió 0.5.0 per a Windows 10 i 11 (64 bits). Si Windows t'avisa en obrir-lo és perquè l'instal·lador encara no està signat: prem «Més informació» i després «Executa de totes maneres».",
+        'Version 0.5.0 for Windows 10 and 11 (64-bit). If Windows warns you when you open it, that is because the installer is not signed yet: click “More info” and then “Run anyway”.'),
     'Sin tus claves del banco': (
         'Sense les claus del teu banc',
         'No bank login details'),
@@ -431,21 +434,18 @@ T = {
     'Por ahora, solo en Windows. Una versión para el móvil está en estudio.': (
         'Per ara, només a Windows. Una versió per al mòbil està en estudi.',
         'For now, only on Windows. A phone version is being considered.'),
-    '¿Cuándo se podrá descargar?': (
-        'Quan es podrà descarregar?',
-        'When will it be available to download?'),
-    'Pronto. Esta página será el sitio de descarga y seguirá siendo la guía.': (
-        'Aviat. Aquesta pàgina serà el lloc de descàrrega i continuarà sent la guia.',
-        'Soon. This page will be the download site and will stay the guide.'),
+    '¿Cómo lo instalo?': (
+        "Com l'instal·lo?",
+        'How do I install it?'),
+    'Descarga el instalador y ábrelo. No pide permisos de administrador y crea un acceso directo en Inicio y en el escritorio. Como el instalador aún no está firmado, Windows puede avisarte la primera vez: pulsa «Más información» y «Ejecutar de todas formas».': (
+        "Descarrega l'instal·lador i obre'l. No demana permisos d'administrador i crea una drecera a Inici i a l'escriptori. Com que l'instal·lador encara no està signat, Windows pot avisar-te la primera vegada: prem «Més informació» i «Executa de totes maneres».",
+        'Download the installer and open it. It does not ask for administrator rights and it adds a shortcut to Start and to the desktop. Because the installer is not signed yet, Windows may warn you the first time: click “More info” and then “Run anyway”.'),
     'Tu dinero, tu ordenador, tus reglas.': (
         'Els teus diners, el teu ordinador, les teves regles.',
         'Your money, your computer, your rules.'),
-    'Kreix para Windows llegará pronto a esta página, que seguirá siendo la guía. Sin cuenta, sin registro y sin conexión.': (
-        'Kreix per a Windows arribarà aviat a aquesta pàgina, que continuarà sent la guia. Sense compte, sense registre i sense connexió.',
-        'Kreix for Windows is coming soon to this page, which will stay the guide. No account, no sign-up and no connection.'),
-    'Descarga para Windows: próximamente': (
-        'Descàrrega per a Windows: aviat',
-        'Download for Windows: coming soon'),
+    'Kreix para Windows ya se puede descargar. Esta página seguirá siendo la guía. Sin cuenta, sin registro y sin conexión.': (
+        'Kreix per a Windows ja es pot descarregar. Aquesta pàgina continuarà sent la guia. Sense compte, sense registre i sense connexió.',
+        'Kreix for Windows is ready to download. This page will stay the guide. No account, no sign-up and no connection.'),
     'Kreix 0.5.0, un proyecto personal. Los datos de las capturas son inventados.': (
         'Kreix 0.5.0, un projecte personal. Les dades de les captures són inventades.',
         'Kreix 0.5.0, a personal project. The data in the screenshots is made up.'),
