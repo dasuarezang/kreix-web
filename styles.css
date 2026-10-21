@@ -144,13 +144,30 @@ picture { display: block; }
 }
 
 /* ---- portada ---- */
-.hero { padding: clamp(56px, 9vw, 112px) 0 0; position: relative; }
-.hero-mark { position: absolute; right: -2%; top: clamp(40px, 6vw, 90px); display: flex; gap: clamp(14px, 2vw, 26px); height: clamp(200px, 30vw, 380px); transform: skewX(-24deg); opacity: .9; pointer-events: none; }
+.hero { padding: clamp(56px, 9vw, 112px) 0 0; position: relative; --mark-top: clamp(40px, 6vw, 90px); --mark-h: clamp(200px, 30vw, 380px); --nap-w: clamp(220px, 27vw, 340px); }
+.hero-mark { position: absolute; right: -2%; top: var(--mark-top); display: flex; gap: clamp(14px, 2vw, 26px); height: var(--mark-h); transform: skewX(-24deg); opacity: .9; pointer-events: none; }
 .hero-mark i { width: clamp(14px, 2.2vw, 28px); border-radius: 3px; background: var(--accent); }
 .hero-mark i:nth-child(2) { background: color-mix(in srgb, var(--accent) 62%, var(--red)); }
 .hero-mark i:nth-child(3) { background: color-mix(in srgb, var(--accent) 30%, var(--red)); }
 .hero-mark i:nth-child(4) { background: var(--red); }
-.hero > *:not(.hero-mark) { position: relative; }
+.hero > *:not(.hero-mark):not(.nap) { position: relative; }
+/* el gag: Blitzen y Black durmiendo al pie de las barras de la marca, por delante, igual que de noche en el programa */
+.nap { position: absolute; z-index: 1; right: 0; top: calc(var(--mark-top) + var(--mark-h) - var(--nap-w) * 0.52 + 18px); width: var(--nap-w); pointer-events: none; }
+.nap img { width: 100%; height: auto; }
+.zz { position: absolute; font: 800 clamp(15px, 1.9vw, 25px)/1 var(--display); color: var(--text); }
+.zz-blitzen { left: 60%; top: 9%; }
+.zz-black { left: 79%; top: 44%; font-size: clamp(12px, 1.5vw, 20px); }
+.zz i { position: absolute; left: 0; top: 0; font-style: normal; opacity: 0; animation: zz 3.3s linear infinite; }
+.zz i:nth-child(2) { animation-delay: -1.1s; }
+.zz i:nth-child(3) { animation-delay: -2.2s; }
+.zz-black i { animation-delay: -.6s; }
+.zz-black i:nth-child(2) { animation-delay: -1.7s; }
+.zz-black i:nth-child(3) { animation-delay: -2.8s; }
+@keyframes zz {                      /* cada z sale, sube en diagonal creciendo y se desvanece: z z Z */
+  0% { opacity: 0; transform: translate(0, 0) scale(.55); }
+  45% { opacity: .9; }
+  100% { opacity: 0; transform: translate(1.8em, -2.4em) scale(1.45); }
+}
 .hero .stripes { margin-bottom: 28px; }
 .hero h1 { font-size: clamp(40px, 7.2vw, 84px); max-width: 16ch; }
 .lede { margin-top: 26px; max-width: 34em; font-size: clamp(19px, 2.2vw, 22px); color: var(--soft); }
@@ -327,6 +344,8 @@ footer p { max-width: 36em; }
   .hero .stripes { display: none; }
   .hero-mark { height: 72px; top: 52px; left: calc(var(--gutter) + 10px); right: auto; gap: 10px; }
   .hero-mark i { width: 10px; }
+  .hero { --nap-w: 160px; }
+  .nap { right: auto; left: calc(var(--gutter) + 72px); top: calc(52px + 72px - var(--nap-w) * 0.52 + 2px); }   /* al pie de las barras pequenas, por delante */
   .top .wrap { gap: 12px; min-height: 64px; }
   .closing-mark { opacity: .35; }
   .promises { grid-template-columns: 1fr; }
