@@ -1,4 +1,4 @@
-/* Cinco cosas: el idioma elegido, el tema, las pestañas de la guía, la demostración del difuminado y la sección actual del menú. Sin dependencias. */
+/* Seis cosas: el idioma elegido, el enlace para el ordenador fuera de Windows, el tema, las pestañas de la guía, la demostración del difuminado y la sección actual del menú. Sin dependencias. */
 (function () {
   "use strict";
 
@@ -29,6 +29,21 @@
   /* El idioma que se elige con el selector se recuerda (la primera visita sigue el idioma del navegador) */
   Array.prototype.forEach.call(document.querySelectorAll(".lang a"), function (a) {
     a.addEventListener("click", function () { try { localStorage.setItem("kreix-lang", a.getAttribute("lang")); } catch (e) { /* sin almacenamiento */ } });
+  });
+
+  /* Fuera de Windows: copiar el enlace de esta pagina para abrirla en el ordenador (o compartirlo, si no se puede copiar) */
+  Array.prototype.forEach.call(document.querySelectorAll(".share-link"), function (button) {
+    var label = button.textContent;
+    function copied() {
+      button.textContent = button.dataset.done;
+      setTimeout(function () { button.textContent = label; }, 2500);
+    }
+    button.addEventListener("click", function () {
+      var url = location.href.split("#")[0];
+      function share() { if (navigator.share) navigator.share({ url: url }).catch(function () { /* cancelado */ }); }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(copied, share);
+      else share();
+    });
   });
 
   /* Tema claro / oscuro */

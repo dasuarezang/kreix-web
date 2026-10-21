@@ -41,6 +41,21 @@ T = {
     '>Preguntas</a>': (
         '>Preguntes</a>',
         '>Questions</a>'),
+    '>Kreix es para Windows</span>': (
+        '>Kreix és per a Windows</span>',
+        '>Kreix is for Windows</span>'),
+    'data-done="Enlace copiado"': (
+        'data-done="Enllaç copiat"',
+        'data-done="Link copied"'),
+    '>Copiar enlace</button>': (
+        ">Copia l'enllaç</button>",
+        '>Copy link</button>'),
+    'Abre esta página en tu ordenador para descargarlo.': (
+        "Obre aquesta pàgina a l'ordinador per descarregar-lo.",
+        'Open this page on your computer to download it.'),
+    '>Descargar igualmente (37&nbsp;MB)</a>': (
+        '>Descarrega-ho igualment (37&nbsp;MB)</a>',
+        '>Download anyway (37&nbsp;MB)</a>'),
     '>Descargar</a>': (
         '>Descarrega</a>',
         '>Download</a>'),
@@ -290,36 +305,21 @@ T = {
     '>extracto</text>': (
         '>extracte</text>',
         '>statement</text>'),
-    'font-size="16" class="soft">que bajas tú</text>': (
-        'font-size="15" class="soft">que baixes tu</text>',
-        'font-size="15" class="soft">you download</text>'),
-    '>extracto que</text>': (
-        '>extracte que</text>',
-        '>statement</text>'),
-    '>bajas tú</text>': (
-        '>baixes tu</text>',
-        '>you download</text>'),
+    '>CSV o Excel</text>': (
+        '>CSV o Excel</text>',
+        '>CSV or Excel</text>'),
     '>Tu ordenador</text>': (
         '>El teu ordinador</text>',
         '>Your computer</text>'),
-    'font-size="18" class="soft">calcula y te lo enseña</text>': (
-        'font-size="17" class="soft">calcula i t\'ho ensenya</text>',
-        'font-size="16" class="soft">calculates and shows it</text>'),
-    'font-size="17" class="soft">calcula y te lo enseña</text>': (
-        'font-size="17" class="soft">calcula i t\'ho ensenya</text>',
-        'font-size="15" class="soft">calculates and shows it</text>'),
+    '>cálculos y gráficos</text>': (
+        '>càlculs i gràfics</text>',
+        '>figures and charts</text>'),
     '>Archivo cifrado</text>': (
         '>Arxiu xifrat</text>',
         '>Encrypted file</text>'),
-    'font-size="16" class="soft">solo se abre con tu contraseña</text>': (
-        'font-size="15" class="soft">només s\'obre amb la contrasenya</text>',
-        'font-size="15" class="soft">only opens with your password</text>'),
-    '>solo se abre con</text>': (
-        ">només s'obre amb</text>",
-        '>only opens with</text>'),
-    '>tu contraseña</text>': (
-        '>la teva contrasenya</text>',
-        '>your password</text>'),
+    '>AES + contraseña maestra</text>': (
+        '>AES + contrasenya mestra</text>',
+        '>AES + master password</text>'),
     '>Sin conexión</text>': (
         '>Sense xarxa</text>',
         '>Offline</text>'),
