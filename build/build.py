@@ -20,7 +20,7 @@ ORDER = sorted(T, key=len, reverse=True)                        # primero los te
 PATTERN = re.compile("|".join(re.escape(k) for k in ORDER))
 
 
-FLAGS = {          # banderas redondas (24x24), las mismas que dibuja el programa en Ajustes
+FLAGS = {          # banderas (24x24) con las esquinas suaves, las mismas que dibuja el programa en Ajustes
     "es": '<rect width="24" height="24" fill="#C60B1E"/><rect y="6" width="24" height="12" fill="#FFC400"/>',
     "ca": '<rect width="24" height="24" fill="#FCDD09"/>' + "".join(f'<rect y="{i * 24 / 9:.3f}" width="24" height="{24 / 9:.3f}" fill="#DA121A"/>' for i in (1, 3, 5, 7)),
     "en": ('<rect width="24" height="24" fill="#012169"/><path d="M0 0L24 24M24 0L0 24" stroke="#fff" stroke-width="4.8"/>'
@@ -30,7 +30,7 @@ FLAGS = {          # banderas redondas (24x24), las mismas que dibuja el program
 
 
 def switcher(lang: str) -> str:
-    """El selector de idioma: tres banderas redondas, con enlaces relativos desde la pagina de cada idioma."""
+    """El selector de idioma: tres banderas, con enlaces relativos desde la pagina de cada idioma."""
     to = {
         "es": {"es": "./", "ca": "ca/", "en": "en/"},
         "ca": {"es": "../", "ca": "./", "en": "../en/"},
@@ -40,7 +40,7 @@ def switcher(lang: str) -> str:
     label = {"es": "Idioma", "ca": "Idioma", "en": "Language"}[lang]
     links = "".join(
         f'<a href="{to[code]}" lang="{code}" hreflang="{code}" title="{names[code]}" aria-label="{names[code]}"' + (' aria-current="true"' if code == lang else "") + ">"
-        f'<svg viewBox="0 0 24 24" aria-hidden="true"><clipPath id="flag-{code}"><circle cx="12" cy="12" r="12"/></clipPath><g clip-path="url(#flag-{code})">{FLAGS[code]}</g></svg></a>'
+        f'<svg viewBox="0 0 24 24" aria-hidden="true"><clipPath id="flag-{code}"><rect width="24" height="24" rx="3.4"/></clipPath><g clip-path="url(#flag-{code})">{FLAGS[code]}</g></svg></a>'
         for code in ("es", "ca", "en")
     )
     return f'<!--lang--><nav class="lang" aria-label="{label}">{links}</nav><!--/lang-->'
