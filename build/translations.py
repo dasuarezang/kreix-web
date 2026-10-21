@@ -446,9 +446,15 @@ T = {
     '</a>. Todos los derechos reservados.</span>': (
         '</a>. Tots els drets reservats.</span>',
         '</a>. All rights reserved.</span>'),
-    'Kreix 0.5.0 es software propietario de código disponible: puedes usarlo, pero no copiarlo, redistribuirlo ni venderlo. Los datos de las capturas son inventados.': (
-        'Kreix 0.5.0 és programari propietari de codi disponible: el pots fer servir, però no copiar-lo, redistribuir-lo ni vendre\'l. Les dades de les captures són inventades.',
-        'Kreix 0.5.0 is proprietary, source-available software: you may use it, but not copy, redistribute or sell it. The data in the screenshots is made up.'),
+    'Kreix 0.5.0 es software propietario de <a href="https://github.com/dasuarezang/kreix">código disponible</a>': (
+        'Kreix 0.5.0 és programari propietari de <a href="https://github.com/dasuarezang/kreix">codi disponible</a>',
+        'Kreix 0.5.0 is proprietary, <a href="https://github.com/dasuarezang/kreix">source-available</a> software'),
+    ': puedes usarlo, pero no copiarlo, redistribuirlo ni venderlo. Los datos de las capturas son inventados.': (
+        ': el pots fer servir, però no copiar-lo, redistribuir-lo ni vendre\'l. Les dades de les captures són inventades.',
+        ': you may use it, but not copy, redistribute or sell it. The data in the screenshots is made up.'),
+    'Y el código está a la vista: <a href="https://github.com/dasuarezang/kreix">léelo en GitHub</a>.': (
+        'I el codi és a la vista: <a href="https://github.com/dasuarezang/kreix">llegeix-lo a GitHub</a>.',
+        'And the code is in plain sight: <a href="https://github.com/dasuarezang/kreix">read it on GitHub</a>.'),
     'Volver arriba': (
         'Torna amunt',
         'Back to top'),
