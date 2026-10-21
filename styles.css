@@ -317,6 +317,18 @@ details p { padding: 0 48px 24px 0; color: var(--soft); }
 .closing-box h2 { font-size: clamp(36px, 6vw, 72px); max-width: 14ch; margin-bottom: clamp(28px, 4vw, 44px); position: relative; }   /* sin parrafo: el titulo y el boton mandan */
 .closing-box p { margin: 18px 0 30px; max-width: 30em; color: var(--soft); position: relative; }
 .closing-box .btn { position: relative; }
+/* Blitzen y Black senalan el boton de descarga con la pata. Lo mas importante de esta parte: el boton va en la misma fila que
+   la imagen y se coloca sobre ella, a la altura de la pata de Blitzen (el 80,5 % de su alto) y acabando justo antes de la
+   punta (el 6 % de su ancho). Como todo se mide sobre la imagen, a cualquier tamano de pantalla siguen senalandolo. */
+.closing-box { --pt-w: clamp(250px, 31vw, 380px); }
+.point-row { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr) var(--pt-w); }
+.pointers { display: block; width: var(--pt-w); height: auto; }
+.point-actions { position: relative; }
+.point-actions .btn { position: absolute; z-index: 1; top: 80.5%; right: calc(var(--pt-w) * -0.03); transform: translateY(-50%); white-space: nowrap; }
+@media (min-width: 900px) {          /* con sitio, los perros suben junto al titular */
+  .point-row { margin-top: calc(var(--pt-w) * -0.42); }
+  .closing-box h2 { position: relative; z-index: 2; }
+}
 .btn-large { min-height: 64px; padding: 18px 40px; font-size: 20px; }
 .closing-mark { position: absolute; right: clamp(-30px, 2vw, 40px); top: -10%; bottom: -10%; display: flex; gap: clamp(12px, 2vw, 22px); transform: skewX(-24deg); pointer-events: none; opacity: .95; }
 .closing-mark i { width: clamp(12px, 2vw, 22px); background: var(--accent); }
@@ -381,6 +393,8 @@ footer p { max-width: 36em; }
   .nap { right: auto; left: calc(var(--gutter) + 72px); top: calc(52px + 72px - var(--nap-w) * 0.52 + 2px); }   /* al pie de las barras pequenas, por delante */
   .top .wrap { gap: 12px; min-height: 64px; }
   .closing-mark { opacity: .35; }
+  .closing-box { --pt-w: clamp(118px, 36vw, 250px); padding: 30px 20px; }
+  .point-actions .btn { left: 0; white-space: normal; min-height: 0; padding: 12px 14px; font-size: 16px; }   /* el boton ocupa su columna, hasta la pata */
   .promises { grid-template-columns: 1fr; }
   .promise, .promise + .promise { padding: 30px 0 8px; border-left: 0; }
   .promise + .promise { border-top: 1px solid var(--border); margin-top: 22px; }
