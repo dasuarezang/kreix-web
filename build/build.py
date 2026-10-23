@@ -65,6 +65,7 @@ def build(lang: str) -> str:
     out = out.replace("assets/shots/", f"../assets/shots/{lang}/")
     out = re.sub(r'(href|src|srcset)="assets/', r'\1="../assets/', out)
     out = out.replace('href="styles.css"', 'href="../styles.css"').replace('src="script.js"', 'src="../script.js"')
+    out = out.replace('href="app/"', f'href="../app/?lang={lang}"')       # la app del movil abre en el idioma de la pagina
     return out
 
 

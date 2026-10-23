@@ -38,21 +38,9 @@ T = {
     '>Preguntas</a>': (
         '>Preguntes</a>',
         '>Questions</a>'),
-    '>Kreix es para Windows</span>': (
-        '>Kreix és per a Windows</span>',
-        '>Kreix is for Windows</span>'),
-    'data-done="Enlace copiado"': (
-        'data-done="Enllaç copiat"',
-        'data-done="Link copied"'),
-    '>Copiar enlace</button>': (
-        ">Copia l'enllaç</button>",
-        '>Copy link</button>'),
-    'Abre esta página en tu ordenador para descargarlo.': (
-        "Obre aquesta pàgina a l'ordinador per descarregar-lo.",
-        'Open this page on your computer to download it.'),
-    '>Descargar igualmente (37&nbsp;MB)</a>': (
-        '>Descarrega-ho igualment (37&nbsp;MB)</a>',
-        '>Download anyway (37&nbsp;MB)</a>'),
+    '>Descargar igualmente (38&nbsp;MB)</a>': (
+        '>Descarrega-ho igualment (38&nbsp;MB)</a>',
+        '>Download anyway (38&nbsp;MB)</a>'),
     '>Descargar</a>': (
         '>Descarrega</a>',
         '>Download</a>'),
@@ -65,18 +53,15 @@ T = {
     'Kreix nunca te&nbsp;pide las claves de&nbsp;tu&nbsp;banco.': (
         'Kreix mai no et&nbsp;demana les claus del&nbsp;teu&nbsp;banc.',
         'Kreix never asks for your&nbsp;bank login&nbsp;details.'),
-    'La app de finanzas personales para Windows que no te vigila: <strong>funciona sin conexión</strong> y guarda todo <strong>cifrado en tu ordenador</strong>.': (
-        "L'app de finances personals per a Windows que no et vigila: <strong>funciona sense connexió</strong> i ho guarda tot <strong>xifrat al teu ordinador</strong>.",
-        'The personal finance app for Windows that does not watch you: <strong>it works offline</strong> and keeps everything <strong>encrypted on your computer</strong>.'),
     'Empezar la guía': (
         'Comença la guia',
         'Start the guide'),
     'Cómo se protegen tus datos': (
         'Com es protegeixen les teves dades',
         'How your data is protected'),
-    'Versión 0.5.0 para Windows 10 y 11 (64 bits). Si Windows te avisa al abrirlo es porque el instalador aún no está firmado: pulsa «Más información» y luego «Ejecutar de todas formas».': (
-        "Versió 0.5.0 per a Windows 10 i 11 (64 bits). Si Windows t'avisa en obrir-lo és perquè l'instal·lador encara no està signat: prem «Més informació» i després «Executa de totes maneres».",
-        'Version 0.5.0 for Windows 10 and 11 (64-bit). If Windows warns you when you open it, that is because the installer is not signed yet: click “More info” and then “Run anyway”.'),
+    'Versión 0.6.0 para Windows 10 y 11 (64 bits). Si Windows te avisa al abrirlo es porque el instalador aún no está firmado: pulsa «Más información» y luego «Ejecutar de todas formas».': (
+        "Versió 0.6.0 per a Windows 10 i 11 (64 bits). Si Windows t'avisa en obrir-lo és perquè l'instal·lador encara no està signat: prem «Més informació» i després «Executa de totes maneres».",
+        'Version 0.6.0 for Windows 10 and 11 (64-bit). If Windows warns you when you open it, that is because the installer is not signed yet: click “More info” and then “Run anyway”.'),
     'Sin tus claves del banco': (
         'Sense les claus del teu banc',
         'No bank login details'),
@@ -86,9 +71,6 @@ T = {
     '100&nbsp;% sin conexión': (
         '100&nbsp;% sense connexió',
         '100% offline'),
-    'No se conecta a internet: ni para actualizarse ni para enviar nada. Sin cuenta, sin nube, sin anuncios y sin telemetría.': (
-        'No es connecta a internet: ni per actualitzar-se ni per enviar res. Sense compte, sense núvol, sense anuncis i sense telemetria.',
-        'It never connects to the internet: not to update itself, not to send anything. No account, no cloud, no ads and no telemetry.'),
     'Tus datos, cifrados': (
         'Les teves dades, xifrades',
         'Your data, encrypted'),
@@ -428,9 +410,6 @@ T = {
     '¿Funciona en Mac o en el móvil?': (
         'Funciona en Mac o al mòbil?',
         'Does it work on Mac or on a phone?'),
-    'Por ahora, solo en Windows. Una versión para el móvil está en estudio.': (
-        'Per ara, només a Windows. Una versió per al mòbil està en estudi.',
-        'For now, only on Windows. A phone version is being considered.'),
     '¿Cómo lo instalo?': (
         "Com l'instal·lo?",
         'How do I install it?'),
@@ -443,9 +422,9 @@ T = {
     '</a>. Todos los derechos reservados.</span>': (
         '</a>. Tots els drets reservats.</span>',
         '</a>. All rights reserved.</span>'),
-    'Kreix 0.5.0 es software propietario de <a href="https://github.com/dasuarezang/kreix">código disponible</a>': (
-        'Kreix 0.5.0 és programari propietari de <a href="https://github.com/dasuarezang/kreix">codi disponible</a>',
-        'Kreix 0.5.0 is proprietary, <a href="https://github.com/dasuarezang/kreix">source-available</a> software'),
+    'Kreix 0.6.0 es software propietario de <a href="https://github.com/dasuarezang/kreix">código disponible</a>': (
+        'Kreix 0.6.0 és programari propietari de <a href="https://github.com/dasuarezang/kreix">codi disponible</a>',
+        'Kreix 0.6.0 is proprietary, <a href="https://github.com/dasuarezang/kreix">source-available</a> software'),
     ': puedes usarlo, pero no copiarlo, redistribuirlo ni venderlo. Los datos de las capturas son inventados.': (
         ': el pots fer servir, però no copiar-lo, redistribuir-lo ni vendre\'l. Les dades de les captures són inventades.',
         ': you may use it, but not copy, redistribute or sell it. The data in the screenshots is made up.'),
@@ -488,4 +467,58 @@ T = {
     'Cuatro decisiones de diseño, y ninguna es negociable.': (
         'Quatre decisions de disseny, i cap no és negociable.',
         'Four design decisions, and none of them is negotiable.'),
+    '>En el móvil</a>': (
+        '>Al mòbil</a>',
+        '>On your phone</a>'),
+    'La app de finanzas personales para Windows y el móvil que no te vigila: <strong>funciona sin conexión</strong> y guarda todo <strong>cifrado en tu equipo</strong>.': (
+        "L'app de finances personals per a Windows i el mòbil que no et vigila: <strong>funciona sense connexió</strong> i ho guarda tot <strong>xifrat al teu equip</strong>.",
+        'The personal finance app for Windows and your phone that does not watch you: <strong>it works offline</strong> and keeps everything <strong>encrypted on your device</strong>.'),
+    '>Kreix para el móvil</span>': (
+        '>Kreix per al mòbil</span>',
+        '>Kreix for your phone</span>'),
+    '>Instalar la app</a>': (
+        ">Instal·la l'app</a>",
+        '>Install the app</a>'),
+    '>También en el móvil</a>': (
+        '>També al mòbil</a>',
+        '>Also on your phone</a>'),
+    'En el ordenador, Kreix es un programa para Windows: abre esta página en él para descargarlo.': (
+        "A l'ordinador, Kreix és un programa per a Windows: obre-hi aquesta pàgina per descarregar-lo.",
+        'On the computer, Kreix is a Windows program: open this page there to download it.'),
+    'Nunca envía tus datos a ningún sitio. El programa de Windows no se conecta a internet ni para actualizarse; la app del móvil, solo para descargarse desde esta web. Sin cuenta, sin nube, sin anuncios y sin telemetría.': (
+        "Mai no envia les teves dades enlloc. El programa de Windows no es connecta a internet ni per actualitzar-se; l'app del mòbil, només per descarregar-se des d'aquest web. Sense compte, sense núvol, sense anuncis i sense telemetria.",
+        'It never sends your data anywhere. The Windows program does not connect to the internet, not even to update itself; the phone app only does to download itself from this website. No account, no cloud, no ads and no telemetry.'),
+    '>Kreix en el móvil</h2>': (
+        '>Kreix al mòbil</h2>',
+        '>Kreix on your phone</h2>'),
+    'La misma app, adaptada al móvil: las mismas cifras, gráficos y explicaciones, con Blitzen y Black en Inicio. Se instala desde el navegador, sin tienda de apps, y guarda todo cifrado en el móvil.': (
+        "La mateixa app, adaptada al mòbil: les mateixes xifres, gràfics i explicacions, amb Blitzen i Black a Inici. S'instal·la des del navegador, sense botiga d'apps, i ho guarda tot xifrat al mòbil.",
+        'The same app, adapted to your phone: the same figures, charts and explanations, with Blitzen and Black on Home. It installs from the browser, with no app store, and keeps everything encrypted on the phone.'),
+    '>Ábrela en el móvil</h3>': (
+        '>Obre-la al mòbil</h3>',
+        '>Open it on your phone</h3>'),
+    'Pulsa «Abrir Kreix en el móvil» desde el propio móvil. La primera vez descarga unos 20&nbsp;MB; después funciona sin conexión.': (
+        'Prem «Obre Kreix al mòbil» des del mateix mòbil. La primera vegada descarrega uns 20&nbsp;MB; després funciona sense connexió.',
+        'Tap “Open Kreix on your phone” from the phone itself. The first time it downloads about 20&nbsp;MB; after that it works offline.'),
+    '>Instálala</h3>': (
+        '>Instal·la-la</h3>',
+        '>Install it</h3>'),
+    'En Android, con Chrome: menú ⋮ y «Instalar aplicación». En iPhone, con Safari: botón Compartir y «Añadir a pantalla de inicio». Queda como una app más.': (
+        "A Android, amb Chrome: menú ⋮ i «Instal·la l'aplicació». A l'iPhone, amb Safari: botó Comparteix i «Afegeix a la pantalla d'inici». Queda com una app més.",
+        'On Android, with Chrome: the ⋮ menu and “Install app”. On iPhone, with Safari: the Share button and “Add to Home Screen”. It stays like any other app.'),
+    '>Trae tus datos</h3>': (
+        '>Porta les teves dades</h3>',
+        '>Bring your data</h3>'),
+    'Importa los extractos desde el móvil o pásale los del ordenador: en Kreix para Windows, Datos, Exportar y «Pasar al móvil», y escanea el código QR con la app. Sin cables ni conexión.': (
+        "Importa els extractes des del mòbil o passa-li els de l'ordinador: a Kreix per a Windows, Dades, Exportar i «Passar al mòbil», i escaneja el codi QR amb l'app. Sense cables ni connexió.",
+        'Import your statements from the phone or send it the ones on your computer: in Kreix for Windows, Data, Export and “Send to phone”, then scan the QR code with the app. No cables, no connection.'),
+    '>Abrir Kreix en el móvil</a>': (
+        '>Obre Kreix al mòbil</a>',
+        '>Open Kreix on your phone</a>'),
+    'Tus datos se quedan cifrados en el móvil con tu contraseña maestra. La app solo se conecta a esta web para descargarse y, cuando hay una versión nueva, para actualizarse. También funciona en el navegador de un Mac o de un ordenador con Linux.': (
+        "Les teves dades es queden xifrades al mòbil amb la teva contrasenya mestra. L'app només es connecta a aquest web per descarregar-se i, quan hi ha una versió nova, per actualitzar-se. També funciona al navegador d'un Mac o d'un ordinador amb Linux.",
+        'Your data stays encrypted on the phone with your master password. The app only connects to this website to download itself and, when there is a new version, to update. It also works in the browser on a Mac or a Linux computer.'),
+    'En el móvil, sí: Android y iPhone tienen la app de Kreix, que se instala desde el navegador (mira «Kreix en el móvil»). En un Mac o en Linux puedes usar esa misma app desde el navegador. El programa con instalador es solo para Windows.': (
+        "Al mòbil, sí: Android i iPhone tenen l'app de Kreix, que s'instal·la des del navegador (mira «Kreix al mòbil»). En un Mac o a Linux pots fer servir aquesta mateixa app des del navegador. El programa amb instal·lador és només per a Windows.",
+        'On your phone, yes: Android and iPhone have the Kreix app, which installs from the browser (see “Kreix on your phone”). On a Mac or Linux you can use that same app in the browser. The program with an installer is Windows only.'),
 }

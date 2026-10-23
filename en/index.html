@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="../styles.css">
 <script>
   /* El tema y el sistema se deciden antes de pintar para que no parpadee. Si el equipo
-     no es Windows (y solo si se reconoce claramente), la descarga se cambia por el aviso y el enlace para el ordenador.
+     no es Windows (y solo si se reconoce claramente), la descarga se cambia por la app del movil.
      El tema es el del dispositivo; si se cambia con el boton, el cambio dura solo esta visita. */
   (function () {
     var ua = navigator.userAgent || "";
@@ -51,12 +51,13 @@
       <nav class="nav" aria-label="Main">
       <a href="#funciona">Getting started</a>
       <a href="#guia">The guide</a>
+      <a href="#movil">On your phone</a>
       <a href="#seguridad">Security</a>
       <a href="#preguntas">Questions</a>
     </nav>
       <div class="tools">
         <!--lang--><nav class="lang" aria-label="Language"><a href="../" lang="es" hreflang="es" title="Castellano" aria-label="Castellano"><svg viewBox="0 0 24 24" aria-hidden="true"><clipPath id="flag-es"><rect width="24" height="24" rx="3.4"/></clipPath><g clip-path="url(#flag-es)"><rect width="24" height="24" fill="#C60B1E"/><rect y="6" width="24" height="12" fill="#FFC400"/></g></svg></a><a href="../ca/" lang="ca" hreflang="ca" title="Català" aria-label="Català"><svg viewBox="0 0 24 24" aria-hidden="true"><clipPath id="flag-ca"><rect width="24" height="24" rx="3.4"/></clipPath><g clip-path="url(#flag-ca)"><rect width="24" height="24" fill="#FCDD09"/><rect y="2.667" width="24" height="2.667" fill="#DA121A"/><rect y="8.000" width="24" height="2.667" fill="#DA121A"/><rect y="13.333" width="24" height="2.667" fill="#DA121A"/><rect y="18.667" width="24" height="2.667" fill="#DA121A"/></g></svg></a><a href="./" lang="en" hreflang="en" title="English" aria-label="English" aria-current="true"><svg viewBox="0 0 24 24" aria-hidden="true"><clipPath id="flag-en"><rect width="24" height="24" rx="3.4"/></clipPath><g clip-path="url(#flag-en)"><rect width="24" height="24" fill="#012169"/><path d="M0 0L24 24M24 0L0 24" stroke="#fff" stroke-width="4.8"/><path d="M0 0L24 24M24 0L0 24" stroke="#C8102E" stroke-width="1.6"/><path d="M12 0V24M0 12H24" stroke="#fff" stroke-width="7"/><path d="M12 0V24M0 12H24" stroke="#C8102E" stroke-width="4"/></g></svg></a></nav><!--/lang-->
-        <a class="btn btn-small on-windows" href="https://github.com/dasuarezang/kreix-web/releases/download/v0.5.0/Kreix-Setup-0.5.0.exe">Download</a>
+        <a class="btn btn-small on-windows" href="https://github.com/dasuarezang/kreix-web/releases/download/v0.6.0/Kreix-Setup-0.6.0.exe">Download</a>
         <button class="theme" type="button" id="theme" aria-label="Switch between light and dark theme" title="Change theme">
       <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
       <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
@@ -75,15 +76,16 @@
     <div class="day" aria-hidden="true"><img class="tail" src="../assets/perretes/black-cola.webp" width="770" height="606" alt=""><img src="../assets/perretes/blitzen.webp" width="770" height="606" alt=""><img class="blink" src="../assets/perretes/blitzen-ojos.webp" width="770" height="606" alt=""><img class="tongue" src="../assets/perretes/blitzen-lengua.webp" width="770" height="606" alt=""><img src="../assets/perretes/black.webp" width="770" height="606" alt=""><img class="blink blink-black" src="../assets/perretes/black-ojos.webp" width="770" height="606" alt=""></div>
     <span class="stripes" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
     <h1>Kreix never asks for your&nbsp;bank login&nbsp;details.</h1>
-    <p class="lede">The personal finance app for Windows that does not watch you: <strong>it works offline</strong> and keeps everything <strong>encrypted on your computer</strong>.</p>
+    <p class="lede">The personal finance app for Windows and your phone that does not watch you: <strong>it works offline</strong> and keeps everything <strong>encrypted on your device</strong>.</p>
     <div class="actions">
-      <a class="btn btn-primary on-windows" href="https://github.com/dasuarezang/kreix-web/releases/download/v0.5.0/Kreix-Setup-0.5.0.exe">Download for Windows</a>
-      <div class="cta-stack off-windows"><span class="cta-note off-windows">Kreix is for Windows</span><button class="btn btn-primary off-windows share-link" type="button" data-done="Link copied" aria-live="polite">Copy link</button></div>
+      <a class="btn btn-primary on-windows" href="https://github.com/dasuarezang/kreix-web/releases/download/v0.6.0/Kreix-Setup-0.6.0.exe">Download for Windows</a>
+      <div class="cta-stack off-windows"><span class="cta-note off-windows">Kreix for your phone</span><a class="btn btn-primary off-windows" href="#movil">Install the app</a></div>
+      <a class="btn btn-ghost on-windows" href="#movil">Also on your phone</a>
       <a class="btn btn-ghost" href="#funciona">Start the guide</a>
       <a class="btn btn-ghost" href="#seguridad">How your data is protected</a>
     </div>
-    <p class="soon on-windows">Version 0.5.0 for Windows 10 and 11 (64-bit). If Windows warns you when you open it, that is because the installer is not signed yet: click “More info” and then “Run anyway”.</p>
-    <p class="soon off-windows">Open this page on your computer to download it. <a href="https://github.com/dasuarezang/kreix-web/releases/download/v0.5.0/Kreix-Setup-0.5.0.exe">Download anyway (37&nbsp;MB)</a></p>
+    <p class="soon on-windows">Version 0.6.0 for Windows 10 and 11 (64-bit). If Windows warns you when you open it, that is because the installer is not signed yet: click “More info” and then “Run anyway”.</p>
+    <p class="soon off-windows">On the computer, Kreix is a Windows program: open this page there to download it. <a href="https://github.com/dasuarezang/kreix-web/releases/download/v0.6.0/Kreix-Setup-0.6.0.exe">Download anyway (38&nbsp;MB)</a></p>
 
     <div class="promises">
       <div class="promise">
@@ -94,7 +96,7 @@
       <div class="promise">
         <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 19a26 26 0 0 1 36 0M12 26a17 17 0 0 1 24 0M18.5 33a8 8 0 0 1 11 0"/><circle cx="24" cy="39" r="1.5" fill="currentColor"/><path d="M6 42 42 6" stroke="var(--red)"/></svg>
         <p class="promise-title">100% offline</p>
-        <p>It never connects to the internet: not to update itself, not to send anything. No account, no cloud, no ads and no telemetry.</p>
+        <p>It never sends your data anywhere. The Windows program does not connect to the internet, not even to update itself; the phone app only does to download itself from this website. No account, no cloud, no ads and no telemetry.</p>
       </div>
       <div class="promise">
         <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="21" width="30" height="21" rx="5"/><path d="M15 21v-6a9 9 0 0 1 18 0v6"/><circle cx="24" cy="31" r="2.5" fill="currentColor"/></svg>
@@ -262,6 +264,35 @@
   </section>
 
   <!-- ===== Lo que mas te va a gustar ===== -->
+  <!-- ===== Kreix en el movil ===== -->
+  <section id="movil">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="rule"></div>
+        <h2>Kreix on your phone</h2>
+        <p>The same app, adapted to your phone: the same figures, charts and explanations, with Blitzen and Black on Home. It installs from the browser, with no app store, and keeps everything encrypted on the phone.</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <h3>Open it on your phone</h3>
+          <p>Tap “Open Kreix on your phone” from the phone itself. The first time it downloads about 20&nbsp;MB; after that it works offline.</p>
+        </li>
+        <li>
+          <h3>Install it</h3>
+          <p>On Android, with Chrome: the ⋮ menu and “Install app”. On iPhone, with Safari: the Share button and “Add to Home Screen”. It stays like any other app.</p>
+        </li>
+        <li>
+          <h3>Bring your data</h3>
+          <p>Import your statements from the phone or send it the ones on your computer: in Kreix for Windows, Data, Export and “Send to phone”, then scan the QR code with the app. No cables, no connection.</p>
+        </li>
+      </ol>
+      <div class="actions">
+        <a class="btn btn-primary" href="../app/?lang=en">Open Kreix on your phone</a>
+      </div>
+      <p class="note">Your data stays encrypted on the phone with your master password. The app only connects to this website to download itself and, when there is a new version, to update. It also works in the browser on a Mac or a Linux computer.</p>
+    </div>
+  </section>
+
   <section id="detalles">
     <div class="wrap">
       <div class="privacy-demo">
@@ -416,14 +447,14 @@
       <div class="point-row">
         <div class="point-actions">
           <div class="cta-anchor">
-            <span class="cta-note off-windows">Kreix is for Windows</span>
-            <a class="btn btn-primary btn-large on-windows" href="https://github.com/dasuarezang/kreix-web/releases/download/v0.5.0/Kreix-Setup-0.5.0.exe">Download for Windows</a>
-            <button class="btn btn-primary btn-large off-windows share-link" type="button" data-done="Link copied" aria-live="polite">Copy link</button>
+            <span class="cta-note off-windows">Kreix for your phone</span>
+            <a class="btn btn-primary btn-large on-windows" href="https://github.com/dasuarezang/kreix-web/releases/download/v0.6.0/Kreix-Setup-0.6.0.exe">Download for Windows</a>
+            <a class="btn btn-primary btn-large off-windows" href="#movil">Install the app</a>
           </div>
         </div>
         <img class="pointers" src="../assets/perretes/senalando.webp" width="908" height="677" alt="" aria-hidden="true">
       </div>
-      <p class="soon off-windows">Open this page on your computer to download it. <a href="https://github.com/dasuarezang/kreix-web/releases/download/v0.5.0/Kreix-Setup-0.5.0.exe">Download anyway (37&nbsp;MB)</a></p>
+      <p class="soon off-windows">On the computer, Kreix is a Windows program: open this page there to download it. <a href="https://github.com/dasuarezang/kreix-web/releases/download/v0.6.0/Kreix-Setup-0.6.0.exe">Download anyway (38&nbsp;MB)</a></p>
     </div>
   </section>
 
@@ -469,7 +500,7 @@
         </details>
         <details>
           <summary>Does it work on Mac or on a phone?</summary>
-          <p>For now, only on Windows. A phone version is being considered.</p>
+          <p>On your phone, yes: Android and iPhone have the Kreix app, which installs from the browser (see “Kreix on your phone”). On a Mac or Linux you can use that same app in the browser. The program with an installer is Windows only.</p>
         </details>
         <details>
           <summary>How do I install it?</summary>
@@ -484,7 +515,7 @@
 <footer>
   <div class="wrap">
     <a class="brand" href="#inicio"><img src="../assets/kreix-icono-oscuro.svg" alt="" width="30" height="30">Kreix</a>
-    <p class="rights"><span class="rights-owner">© 2026 <a class="author" href="https://dasuarezang.github.io/" rel="author">Daniel Suárez Angosto</a>. All rights reserved.</span> <span>Kreix 0.5.0 is proprietary, <a href="https://github.com/dasuarezang/kreix">source-available</a> software (<a href="https://github.com/dasuarezang/kreix/blob/main/LICENSE">PolyForm Strict</a>): you may use it, but not copy, redistribute or sell it. The data in the screenshots is made up.</span></p>
+    <p class="rights"><span class="rights-owner">© 2026 <a class="author" href="https://dasuarezang.github.io/" rel="author">Daniel Suárez Angosto</a>. All rights reserved.</span> <span>Kreix 0.6.0 is proprietary, <a href="https://github.com/dasuarezang/kreix">source-available</a> software (<a href="https://github.com/dasuarezang/kreix/blob/main/LICENSE">PolyForm Strict</a>): you may use it, but not copy, redistribute or sell it. The data in the screenshots is made up.</span></p>
   </div>
 </footer>
 
