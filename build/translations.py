@@ -5,9 +5,6 @@ Criterio: cada idioma escribe los nombres de los idiomas y las pestañas del pro
 (Inici / Comptes / Inversions / Importar / Configuració; Home / Accounts / Investments / Import / Settings)."""
 
 T = {
-    '<title>Kreix, guía de usuario</title>': (
-        "<title>Kreix, guia d'usuari</title>",
-        '<title>Kreix, user guide</title>'),
     'Kreix es la app de finanzas personales que no te vigila: no te pide las claves del banco, funciona sin conexión y guarda todo cifrado en tu ordenador. Esta es su guía.': (
         "Kreix és l'app de finances personals que no et vigila: no et demana les claus del banc, funciona sense connexió i ho guarda tot xifrat al teu ordinador. Aquesta és la seva guia.",
         'Kreix is the personal finance app that does not watch you: it never asks for your bank login details, works offline and keeps everything encrypted on your computer. This is its guide.'),
