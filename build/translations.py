@@ -59,9 +59,9 @@ T = {
     'Cómo se protegen tus datos': (
         'Com es protegeixen les teves dades',
         'How your data is protected'),
-    'Versión 0.6.0 para Windows 10 y 11 (64 bits). Si Windows te avisa al abrirlo es porque el instalador aún no está firmado: pulsa «Más información» y luego «Ejecutar de todas formas».': (
-        "Versió 0.6.0 per a Windows 10 i 11 (64 bits). Si Windows t'avisa en obrir-lo és perquè l'instal·lador encara no està signat: prem «Més informació» i després «Executa de totes maneres».",
-        'Version 0.6.0 for Windows 10 and 11 (64-bit). If Windows warns you when you open it, that is because the installer is not signed yet: click “More info” and then “Run anyway”.'),
+    'Versión 0.6.1 para Windows 10 y 11 (64 bits). Si Windows te avisa al abrirlo es porque el instalador aún no está firmado: pulsa «Más información» y luego «Ejecutar de todas formas».': (
+        "Versió 0.6.1 per a Windows 10 i 11 (64 bits). Si Windows t'avisa en obrir-lo és perquè l'instal·lador encara no està signat: prem «Més informació» i després «Executa de totes maneres».",
+        'Version 0.6.1 for Windows 10 and 11 (64-bit). If Windows warns you when you open it, that is because the installer is not signed yet: click “More info” and then “Run anyway”.'),
     'Sin tus claves del banco': (
         'Sense les claus del teu banc',
         'No bank login details'),
@@ -422,9 +422,9 @@ T = {
     '</a>. Todos los derechos reservados.</span>': (
         '</a>. Tots els drets reservats.</span>',
         '</a>. All rights reserved.</span>'),
-    'Kreix 0.6.0 es software propietario de <a href="https://github.com/dasuarezang/kreix">código disponible</a>': (
-        'Kreix 0.6.0 és programari propietari de <a href="https://github.com/dasuarezang/kreix">codi disponible</a>',
-        'Kreix 0.6.0 is proprietary, <a href="https://github.com/dasuarezang/kreix">source-available</a> software'),
+    'Kreix 0.6.1 es software propietario de <a href="https://github.com/dasuarezang/kreix">código disponible</a>': (
+        'Kreix 0.6.1 és programari propietari de <a href="https://github.com/dasuarezang/kreix">codi disponible</a>',
+        'Kreix 0.6.1 is proprietary, <a href="https://github.com/dasuarezang/kreix">source-available</a> software'),
     ': puedes usarlo, pero no copiarlo, redistribuirlo ni venderlo. Los datos de las capturas son inventados.': (
         ': el pots fer servir, però no copiar-lo, redistribuir-lo ni vendre\'l. Les dades de les captures són inventades.',
         ': you may use it, but not copy, redistribute or sell it. The data in the screenshots is made up.'),

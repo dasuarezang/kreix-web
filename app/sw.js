@@ -1,6 +1,6 @@
 // Service worker de Kreix: guarda la app entera en el movil para que abra sin conexion.
 // tools/build_pwa.py rellena la version (cambia con cualquier archivo) y la lista de archivos.
-const VERSION = "72154e39d952";
+const VERSION = "5f076112a8f0";
 const SHELL = `kreix-${VERSION}`;
 // Pyodide y sus paquetes (unos 17 MB, en pyodide/) van en una cache aparte que se conserva entre versiones de la app
 // mientras no cambie la de Pyodide: una actualizacion de Kreix no vuelve a descargarlos.

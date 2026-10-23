@@ -405,9 +405,19 @@ pre.sample-lines { font-family: var(--body); font-size: 12px; color: var(--muted
 .hub-icon svg { width: 24px; height: 24px; }
 .hub-card b { display: block; font-family: var(--medium); font-weight: normal; font-size: 16px; }
 .hub-card small { color: var(--muted); font-size: 13px; }
-.entry { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 18px; margin-top: 14px; }
-.entry h3 { font-family: var(--medium); font-weight: normal; font-size: 17px; margin: 0 0 8px; }
-.entry > p { margin: 0; }
+.entry { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; margin-top: 10px; }
+.entry summary {
+  display: flex; align-items: center; gap: 12px; padding: 16px 18px; cursor: pointer; list-style: none;
+  font-family: var(--medium); font-size: 16px; border-radius: 6px;
+}
+.entry summary::-webkit-details-marker { display: none; }
+.entry summary span { flex: 1; }
+.entry summary svg { width: 18px; height: 18px; color: var(--muted); flex: none; transition: transform .15s ease; }
+.entry summary:active { background: var(--hover); }
+.entry[open] summary { color: var(--accent-text); }
+.entry[open] summary svg { transform: rotate(90deg); color: var(--accent-text); }
+.entry-body { padding: 0 18px 18px; }
+.entry-body > p { margin: 0; }
 .entry-part { margin-top: 12px; }
 .entry-part b { font-family: var(--medium); font-weight: normal; font-size: 13px; color: var(--muted); }
 .entry-part.alert b { color: var(--red); }

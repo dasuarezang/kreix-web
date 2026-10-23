@@ -125,7 +125,8 @@ export async function renderAyuda(main, app, params = {}) {
         h("header.page-head", h("h1", d.section_title), h("p.sub", d.section_text)));
     if (d.summary) parts.push(h("p.caption", { style: { marginTop: "14px" } }, d.summary));
     if (d.empty) parts.push(h("p.empty", d.empty));
-    parts.push(...d.entries.map(entryCard));
+    const query = help.query.trim().toLowerCase();
+    parts.push(...d.entries.map((e) => entryCard(e, (query && e.term.toLowerCase() === query) || d.entries.length === 1)));
   } else {
     parts.push(h("div.hub", d.sections.map((s) => h("button.hub-card", { onclick: () => { help.section = s.key; app.render(); window.scrollTo(0, 0); } },
       h("span.hub-icon", icon(s.icon)), h("span", h("b", s.title), h("small", s.text))))));
@@ -133,8 +134,11 @@ export async function renderAyuda(main, app, params = {}) {
   main.replaceChildren(...parts);
 }
 
-function entryCard(e) {
-  return h("article.entry", h("h3", e.term), h("p", e.plain),
-    e.parts.map((p) => h(`div.entry-part${p.tone ? "." + p.tone : ""}`, h("b", p.label), h("p", p.text))));
+/** Un termino plegado: solo su nombre; la explicacion se despliega al tocarlo (como en el escritorio). */
+function entryCard(e, open = false) {
+  return h("details.entry", { open },
+    h("summary", h("span", e.term), icon("chevron", 2)),
+    h("div.entry-body", h("p", e.plain),
+      e.parts.map((p) => h(`div.entry-part${p.tone ? "." + p.tone : ""}`, h("b", p.label), h("p", p.text)))));
 }
 
