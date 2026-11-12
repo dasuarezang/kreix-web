@@ -521,4 +521,97 @@ T = {
     'En el móvil, sí: Android y iPhone tienen la app de Kreix, que se instala desde el navegador (mira «Kreix en el móvil»). En un Mac o en Linux puedes usar esa misma app desde el navegador. El programa con instalador es solo para Windows.': (
         "Al mòbil, sí: Android i iPhone tenen l'app de Kreix, que s'instal·la des del navegador (mira «Kreix al mòbil»). En un Mac o a Linux pots fer servir aquesta mateixa app des del navegador. El programa amb instal·lador és només per a Windows.",
         'On your phone, yes: Android and iPhone have the Kreix app, which installs from the browser (see “Kreix on your phone”). On a Mac or Linux you can use that same app in the browser. The program with an installer is Windows only.'),
+    # ---- el tráiler de la portada (build/trailer.html) ----
+    '<h2 class="sr-only">Tráiler: cómo funciona Kreix</h2>': (
+        '<h2 class="sr-only">Tràiler: com funciona Kreix</h2>',
+        '<h2 class="sr-only">Trailer: how Kreix works</h2>'),
+    'data-play="Reproducir el tráiler" data-pause="Pausar el tráiler"': (
+        'data-play="Reprodueix el tràiler" data-pause="Posa en pausa el tràiler"',
+        'data-play="Play the trailer" data-pause="Pause the trailer"'),
+    'data-again="Ver otra vez"': (
+        'data-again="Torna-ho a veure"',
+        'data-again="Watch again"'),
+    '<span>Ver cómo funciona</span>': (
+        '<span>Mira com funciona</span>',
+        '<span>See how it works</span>'),
+    '<li class="on">Así funciona Kreix, en un minuto.</li>': (
+        "<li class=\"on\">Així funciona Kreix, en un minut.</li>",
+        '<li class="on">How Kreix works, in one minute.</li>'),
+    '<li>Descarga el extracto de tu banco, en CSV o Excel.</li>': (
+        "<li>Descarrega l'extracte del teu banc, en CSV o Excel.</li>",
+        '<li>Download your bank statement, as CSV or Excel.</li>'),
+    '<li>Suéltalo en Kreix. Ves lo que ha leído antes de guardar nada.</li>': (
+        "<li>Deixa'l anar a Kreix. Veus el que ha llegit abans de guardar res.</li>",
+        '<li>Drop it into Kreix. You see what it read before anything is saved.</li>'),
+    '<li>Inicio lo resume: patrimonio, ahorro del mes y previsión a fin de mes.</li>': (
+        '<li>Inici ho resumeix: patrimoni, estalvi del mes i previsió a final de mes.</li>',
+        '<li>Home sums it up: net worth, savings this month and end-of-month forecast.</li>'),
+    '<li>Cuentas e Inversiones lo detallan: en qué gastas y cómo va tu cartera.</li>': (
+        '<li>Comptes i Inversions ho detallen: en què gastes i com va la teva cartera.</li>',
+        '<li>Accounts and Investments give the detail: what you spend on and how your portfolio is doing.</li>'),
+    '<li>Si alguien mira por encima del hombro, un clic difumina las cantidades.</li>': (
+        "<li>Si algú mira per sobre l'espatlla, un clic difumina les quantitats.</li>",
+        '<li>If someone looks over your shoulder, one click blurs the amounts.</li>'),
+    '<li>Y en el móvil, la misma app: pásale tus datos con un código QR, sin cables ni conexión.</li>': (
+        '<li>I al mòbil, la mateixa app: passa-li les teves dades amb un codi QR, sense cables ni connexió.</li>',
+        '<li>And on your phone, the same app: send it your data with a QR code, no cables and no connection.</li>'),
+    '<li>Sin las claves de tu banco, sin conexión y con todo cifrado.</li>': (
+        '<li>Sense les claus del teu banc, sense connexió i amb tot xifrat.</li>',
+        '<li>No bank login details, no connection, everything encrypted.</li>'),
+    '<li>Kreix, para Windows y para el móvil.</li>': (
+        '<li>Kreix, per a Windows i per al mòbil.</li>',
+        '<li>Kreix, for Windows and for your phone.</li>'),
+    '<b>La app de finanzas que no te vigila</b>': (
+        "<b>L'app de finances que no et vigila</b>",
+        '<b>The finance app that does not watch you</b>'),
+    '<b>Tu banco</b>': ('<b>El teu banc</b>', '<b>Your bank</b>'),
+    '<b>Movimientos</b>': ('<b>Moviments</b>', '<b>Transactions</b>'),
+    '<b>Descargar extracto</b>': ("<b>Descarregar l'extracte</b>", '<b>Download statement</b>'),
+    '<b>extracto.csv</b>': ('<b>extracte.csv</b>', '<b>statement.csv</b>'),
+    '<b>Tú lo descargas. Kreix nunca entra en tu banca.</b>': (
+        '<b>Tu el descarregues. Kreix mai no entra a la teva banca.</b>',
+        '<b>You download it. Kreix never logs in to your bank.</b>'),
+    '<b>Inicio</b>': ('<b>Inici</b>', '<b>Home</b>'),
+    '<b>Cuentas</b>': ('<b>Comptes</b>', '<b>Accounts</b>'),
+    '<b>Inversiones</b>': ('<b>Inversions</b>', '<b>Investments</b>'),
+    '<b>Datos</b>': ('<b>Dades</b>', '<b>Data</b>'),
+    '<b>Ajustes</b>': ('<b>Configuració</b>', '<b>Settings</b>'),
+    '<b>Importar extractos</b>': ('<b>Importar extractes</b>', '<b>Import statements</b>'),
+    '<b>Arrastra aquí tus extractos</b>': ('<b>Arrossega aquí els teus extractes</b>', '<b>Drag your statements here</b>'),
+    '<b>CSV o Excel de tu banco</b>': ('<b>CSV o Excel del teu banc</b>', '<b>CSV or Excel from your bank</b>'),
+    '<b>Extracto de Imagin, 54 movimientos nuevos</b>': (
+        "<b>Extracte d'Imagin, 54 moviments nous</b>",
+        '<b>Imagin statement, 54 new transactions</b>'),
+    '<b>Supermercado</b>': ('<b>Supermercat</b>', '<b>Groceries</b>'),
+    '<b>Nómina</b>': ('<b>Nòmina</b>', '<b>Salary</b>'),
+    '<b>Transporte</b>': ('<b>Transport</b>', '<b>Transport</b>'),
+    '<b>Ocio</b>': ('<b>Oci</b>', '<b>Leisure</b>'),
+    '<b>Restaurantes</b>': ('<b>Restaurants</b>', '<b>Restaurants</b>'),
+    '<b>Suscripciones</b>': ('<b>Subscripcions</b>', '<b>Subscriptions</b>'),
+    '<b>Importar</b>': ('<b>Importar</b>', '<b>Import</b>'),
+    '<b>Importado</b>': ('<b>Importat</b>', '<b>Imported</b>'),
+    '<b>54 movimientos importados</b>': ('<b>54 moviments importats</b>', '<b>54 transactions imported</b>'),
+    '<b>Deshacer</b>': ('<b>Desfer</b>', '<b>Undo</b>'),
+    '<b>Buenos días, Blitzen.</b>': ('<b>Bon dia, Blitzen.</b>', '<b>Good morning, Blitzen.</b>'),
+    '<b>Buenas noches, Blitzen.</b>': ('<b>Bona nit, Blitzen.</b>', '<b>Good evening, Blitzen.</b>'),
+    '<b>Patrimonio neto</b>': ('<b>Patrimoni net</b>', '<b>Net worth</b>'),
+    '<b>frente al mes pasado</b>': ('<b>respecte al mes passat</b>', '<b>vs last month</b>'),
+    '<b>rendimiento</b>': ('<b>rendiment</b>', '<b>return</b>'),
+    '<b>Liquidez</b>': ('<b>Liquiditat</b>', '<b>Cash</b>'),
+    '<b>Inversión</b>': ('<b>Inversió</b>', '<b>Investments</b>'),
+    '<b>Rendimiento global</b>': ('<b>Rendiment global</b>', '<b>Overall return</b>'),
+    '<b>Tasa de ahorro del mes</b>': ("<b>Taxa d'estalvi del mes</b>", '<b>Savings rate this month</b>'),
+    '<b>Previsión a fin de mes</b>': ('<b>Previsió a final de mes</b>', '<b>End-of-month forecast</b>'),
+    '<b>Gastos por categoría</b>': ('<b>Despeses per categoria</b>', '<b>Expenses by category</b>'),
+    '<b>Valor de la cartera</b>': ('<b>Valor de la cartera</b>', '<b>Portfolio value</b>'),
+    '<b>Cartera</b>': ('<b>Cartera</b>', '<b>Portfolio</b>'),
+    '<b>Aportado</b>': ('<b>Aportat</b>', '<b>Contributed</b>'),
+    '<b>Pasar al móvil</b>': ('<b>Passar al mòbil</b>', '<b>Send to phone</b>'),
+    '<b>Escanea el código con la app de Kreix.</b>': ("<b>Escaneja el codi amb l'app de Kreix.</b>", '<b>Scan the code with the Kreix app.</b>'),
+    '<b>Sin cables ni conexión</b>': ('<b>Sense cables ni connexió</b>', '<b>No cables, no connection</b>'),
+    '<b>Recibiendo…</b>': ('<b>Rebent…</b>', '<b>Receiving…</b>'),
+    '<b>Kreix nunca entra en tu banca.</b>': ('<b>Kreix mai no entra a la teva banca.</b>', '<b>Kreix never logs in to your bank.</b>'),
+    '<b>Sin cuenta, sin nube y sin telemetría.</b>': ('<b>Sense compte, sense núvol i sense telemetria.</b>', '<b>No account, no cloud and no telemetry.</b>'),
+    '<b>Solo se abre con tu contraseña maestra.</b>': ("<b>Només s'obre amb la teva contrasenya mestra.</b>", '<b>It only opens with your master password.</b>'),
+    '<b>Para Windows y para el móvil</b>': ('<b>Per a Windows i per al mòbil</b>', '<b>For Windows and for your phone</b>'),
 }

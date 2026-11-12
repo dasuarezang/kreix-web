@@ -103,3 +103,139 @@
     sections.forEach(function (s) { seen.observe(s); });
   }
 })();
+
+/* El tráiler de la portada: un reloj propio recorre las escenas (cada una se anima sola con CSS al recibir la clase "on"),
+   escala el lienzo al ancho disponible, cuenta las cifras y atiende los mandos. Sin dependencias. */
+(function () {
+  "use strict";
+  var root = document.getElementById("trailer");
+  if (!root || !window.requestAnimationFrame) return;
+  var stage = document.getElementById("tr-stage");
+  var canvas = document.getElementById("tr-canvas");
+  var start = document.getElementById("tr-start");
+  var startText = start.querySelector("span");
+  var toggle = document.getElementById("tr-toggle");
+  var segBox = document.getElementById("tr-segs");
+  var scenes = Array.prototype.slice.call(canvas.querySelectorAll(".tr-scene"));
+  var caps = Array.prototype.slice.call(document.querySelectorAll("#tr-caps li"));
+  var calm = matchMedia("(prefers-reduced-motion: reduce)");
+  var narrow = matchMedia("(max-width: 640px)");
+  var english = (document.documentElement.lang || "es").slice(0, 2) === "en";
+
+  /* Cifras con el formato de cada idioma, igual que el programa: 8.586,64 € o €8,586.64 */
+  function format(value, kind) {
+    var signed = kind.charAt(kind.length - 1) === "+";
+    var base = signed ? kind.slice(0, -1) : kind;
+    var sign = value < 0 ? "-" : (signed ? "+" : "");
+    var parts = Math.abs(value).toFixed(base === "pct0" ? 0 : 2).split(".");
+    var number = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, english ? "," : ".") + (parts[1] ? (english ? "." : ",") + parts[1] : "");
+    if (base === "eur") return english ? sign + "€" + number : sign + number + " €";
+    return sign + number + (english ? "%" : " %");
+  }
+  var counters = scenes.map(function () { return []; });
+  Array.prototype.forEach.call(canvas.querySelectorAll("[data-n]"), function (el) {
+    var value = parseFloat(el.getAttribute("data-n")), kind = el.getAttribute("data-f");
+    el.textContent = format(value, kind);
+    var count = el.getAttribute("data-count");
+    if (!count) return;
+    var at = count.split(",");
+    counters[scenes.indexOf(el.closest(".tr-scene"))].push({ el: el, value: value, kind: kind, from: +at[0], span: +at[1], shown: "" });
+  });
+
+  /* El lienzo tiene tamaño fijo y se escala entero: así el móvil y el ordenador ven lo mismo */
+  function fit() {
+    var tall = narrow.matches;
+    root.setAttribute("data-layout", tall ? "tall" : "wide");
+    canvas.style.setProperty("--s", (stage.clientWidth / (tall ? 400 : 960)).toFixed(4));
+    root.classList.add("ready");
+  }
+  fit();
+  if (window.ResizeObserver) new ResizeObserver(fit).observe(stage); else window.addEventListener("resize", fit);
+
+  /* La línea de tiempo */
+  var lengths = scenes.map(function (s) { return +s.getAttribute("data-d"); });
+  var starts = [], total = 0;
+  lengths.forEach(function (d) { starts.push(total); total += d; });
+  var segs = scenes.map(function (s, i) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "tr-seg";
+    b.style.setProperty("--grow", lengths[i]);
+    b.setAttribute("aria-label", (i + 1) + ". " + caps[i].textContent);
+    b.innerHTML = "<span><i></i></span>";
+    b.addEventListener("click", function () { seek(i); });
+    segBox.appendChild(b);
+    return b.querySelector("i");
+  });
+
+  var time = 0, current = 0, last = 0, frameId = 0, state = "idle";
+  function clamp(x) { return x < 0 ? 0 : (x > 1 ? 1 : x); }
+  function setState(next) {
+    state = next;
+    root.setAttribute("data-state", next);
+    toggle.setAttribute("aria-label", root.getAttribute(next === "playing" ? "data-pause" : "data-play"));
+    if (next === "ended") startText.textContent = start.getAttribute("data-again");
+  }
+  function show(index, restart) {
+    if (index === current && !restart) return;
+    scenes.forEach(function (s) { s.classList.remove("on"); });
+    caps.forEach(function (c, k) { c.classList.toggle("on", k === index); });
+    void canvas.offsetWidth;                       /* para que las animaciones de la escena empiecen de cero */
+    scenes[index].classList.add("on");
+    current = index;
+  }
+  function paint() {
+    var local = time - starts[current];
+    segs.forEach(function (fill, k) { fill.style.setProperty("--p", clamp((time - starts[k]) / lengths[k]).toFixed(3)); });
+    counters[current].forEach(function (c) {
+      var p = calm.matches ? 1 : clamp((local - c.from) / c.span);
+      var text = format(c.value * (1 - Math.pow(1 - p, 3)), c.kind);
+      if (text !== c.shown) { c.el.textContent = text; c.shown = text; }
+    });
+  }
+  function frame(now) {
+    if (state !== "playing") return;
+    time += Math.min(now - last, 100);
+    last = now;
+    if (time >= total) { time = total; paint(); setState("ended"); return; }
+    var index = 0;
+    while (index < scenes.length - 1 && time >= starts[index + 1]) index++;
+    show(index, false);
+    paint();
+    frameId = requestAnimationFrame(frame);
+  }
+  function play() {
+    if (state === "playing") return;
+    if (state === "idle" || state === "ended") { time = 0; show(0, true); }
+    setState("playing");
+    last = performance.now();
+    frameId = requestAnimationFrame(frame);
+  }
+  function pause() {
+    if (state !== "playing") return;
+    cancelAnimationFrame(frameId);
+    setState("paused");
+  }
+  function seek(index) {
+    cancelAnimationFrame(frameId);
+    time = starts[index];
+    state = "paused";
+    show(index, true);
+    paint();
+    play();
+  }
+  function flip() { if (state === "playing") pause(); else play(); }
+
+  stage.addEventListener("click", function () {
+    var fromStart = document.activeElement === start;
+    flip();
+    if (fromStart && state === "playing") toggle.focus();      /* el botón grande se esconde al empezar: el foco pasa a la pausa */
+  });
+  toggle.addEventListener("click", flip);
+  document.addEventListener("visibilitychange", function () { if (document.hidden) pause(); });
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(function (entries) { if (!entries[0].isIntersecting) pause(); }, { threshold: 0.15 }).observe(stage);
+  }
+  setState("idle");
+  paint();
+})();
