@@ -53,12 +53,6 @@ T = {
     'Kreix nunca te&nbsp;pide las claves de&nbsp;tu&nbsp;banco.': (
         'Kreix mai no et&nbsp;demana les claus del&nbsp;teu&nbsp;banc.',
         'Kreix never asks for your&nbsp;bank login&nbsp;details.'),
-    'Empezar la guía': (
-        'Comença la guia',
-        'Start the guide'),
-    'Cómo se protegen tus datos': (
-        'Com es protegeixen les teves dades',
-        'How your data is protected'),
     'Versión 0.6.1 para Windows 10 y 11 (64 bits). Si Windows te avisa al abrirlo es porque el instalador aún no está firmado: pulsa «Más información» y luego «Ejecutar de todas formas».': (
         "Versió 0.6.1 per a Windows 10 i 11 (64 bits). Si Windows t'avisa en obrir-lo és perquè l'instal·lador encara no està signat: prem «Més informació» i després «Executa de totes maneres».",
         'Version 0.6.1 for Windows 10 and 11 (64-bit). If Windows warns you when you open it, that is because the installer is not signed yet: click “More info” and then “Run anyway”.'),
@@ -437,33 +431,9 @@ T = {
     '<span>Menú</span>': (
         '<span>Menú</span>',
         '<span>Menu</span>'),
-    'No te vigila': (
-        'No et vigila',
-        'It never watches you'),
     'Sin cuenta, sin nube y sin telemetría. Nadie sabe cuánto ganas ni en qué lo gastas, ni siquiera nosotros. Compruébalo: funciona igual sin internet.': (
         'Sense compte, sense núvol i sense telemetria. Ningú sap quant guanyes ni en què ho gastes, ni tan sols nosaltres. Comprova-ho: funciona igual sense internet.',
         'No account, no cloud and no telemetry. Nobody knows how much you earn or what you spend it on, not even us. Check it yourself: it works the same without internet.'),
-    'Seguridad sin atajos': (
-        'Seguretat sense dreceres',
-        'Security with no shortcuts'),
-    'Todo lo que guarda va cifrado con tu contraseña maestra. Se descifra solo en memoria, se bloquea solo cuando no lo usas y, sin tu contraseña, no hay forma de abrirlo.': (
-        "Tot el que guarda va xifrat amb la teva contrasenya mestra. Es desxifra només a la memòria, es bloqueja sol quan no l'uses i, sense la teva contrasenya, no hi ha manera d'obrir-lo.",
-        'Everything it stores is encrypted with your master password. It is decrypted only in memory, locks itself when you are not using it and, without your password, there is no way to open it.'),
-    'Tu dinero, a la vista': (
-        'Els teus diners, a la vista',
-        'Your money, in plain sight'),
-    'Patrimonio, ahorro del mes, previsión a fin de mes, presupuestos, pagos recurrentes e inversiones. Inicio lo resume todo en una sola pantalla.': (
-        'Patrimoni, estalvi del mes, previsió a final de mes, pressupostos, pagaments recurrents i inversions. Inici ho resumeix tot en una sola pantalla.',
-        'Net worth, savings this month, end-of-month forecast, budgets, recurring payments and investments. Home sums it all up on a single screen.'),
-    'Fácil desde el primer minuto': (
-        'Fàcil des del primer minut',
-        'Easy from the first minute'),
-    'Sueltas el extracto de tu banco y ya está. Sin enlazar cuentas ni configurar nada. Si tu banco no está en la lista, Kreix te pregunta una vez qué columna es cada cosa y lo recuerda.': (
-        "Deixes anar l'extracte del teu banc i ja està. Sense enllaçar comptes ni configurar res. Si el teu banc no és a la llista, Kreix et pregunta una vegada quina columna és cada cosa i ho recorda.",
-        'You drop your bank statement in and that is it. No linking accounts, nothing to set up. If your bank is not on the list, Kreix asks you once which column is which and remembers it.'),
-    'Por qué Kreix': (
-        'Per què Kreix',
-        'Why Kreix'),
     'Cuatro decisiones de diseño, y ninguna es negociable.': (
         'Quatre decisions de disseny, i cap no és negociable.',
         'Four design decisions, and none of them is negotiable.'),
@@ -479,33 +449,18 @@ T = {
     '>Instalar la app</a>': (
         ">Instal·la l'app</a>",
         '>Install the app</a>'),
-    '>También en el móvil</a>': (
-        '>També al mòbil</a>',
-        '>Also on your phone</a>'),
     'En el ordenador, Kreix es un programa para Windows: abre esta página en él para descargarlo.': (
         "A l'ordinador, Kreix és un programa per a Windows: obre-hi aquesta pàgina per descarregar-lo.",
         'On the computer, Kreix is a Windows program: open this page there to download it.'),
-    'Nunca envía tus datos a ningún sitio. El programa de Windows no se conecta a internet ni para actualizarse; la app del móvil, solo para descargarse desde esta web. Sin cuenta, sin nube, sin anuncios y sin telemetría.': (
-        "Mai no envia les teves dades enlloc. El programa de Windows no es connecta a internet ni per actualitzar-se; l'app del mòbil, només per descarregar-se des d'aquest web. Sense compte, sense núvol, sense anuncis i sense telemetria.",
-        'It never sends your data anywhere. The Windows program does not connect to the internet, not even to update itself; the phone app only does to download itself from this website. No account, no cloud, no ads and no telemetry.'),
+    'Nunca envía tus datos a ningún sitio. El programa de Windows no se conecta a internet ni para actualizarse; la app del móvil, solo para descargarse desde esta web.': (
+        "Mai no envia les teves dades enlloc. El programa de Windows no es connecta a internet ni per actualitzar-se; l'app del mòbil, només per descarregar-se des d'aquest web.",
+        'It never sends your data anywhere. The Windows program does not connect to the internet, not even to update itself; the phone app only does to download itself from this website.'),
     '>Kreix en el móvil</h2>': (
         '>Kreix al mòbil</h2>',
         '>Kreix on your phone</h2>'),
     'La misma app, adaptada al móvil: las mismas cifras, gráficos y explicaciones, con Blitzen y Black en Inicio. Se instala desde el navegador, sin tienda de apps, y guarda todo cifrado en el móvil.': (
         "La mateixa app, adaptada al mòbil: les mateixes xifres, gràfics i explicacions, amb Blitzen i Black a Inici. S'instal·la des del navegador, sense botiga d'apps, i ho guarda tot xifrat al mòbil.",
         'The same app, adapted to your phone: the same figures, charts and explanations, with Blitzen and Black on Home. It installs from the browser, with no app store, and keeps everything encrypted on the phone.'),
-    '>Ábrela en el móvil</h3>': (
-        '>Obre-la al mòbil</h3>',
-        '>Open it on your phone</h3>'),
-    'Pulsa «Abrir Kreix en el móvil» desde el propio móvil. La primera vez descarga unos 20&nbsp;MB; después funciona sin conexión.': (
-        'Prem «Obre Kreix al mòbil» des del mateix mòbil. La primera vegada descarrega uns 20&nbsp;MB; després funciona sense connexió.',
-        'Tap “Open Kreix on your phone” from the phone itself. The first time it downloads about 20&nbsp;MB; after that it works offline.'),
-    '>Instálala</h3>': (
-        '>Instal·la-la</h3>',
-        '>Install it</h3>'),
-    'En Android, con Chrome: menú ⋮ y «Instalar aplicación». En iPhone, con Safari: botón Compartir y «Añadir a pantalla de inicio». Queda como una app más.': (
-        "A Android, amb Chrome: menú ⋮ i «Instal·la l'aplicació». A l'iPhone, amb Safari: botó Comparteix i «Afegeix a la pantalla d'inici». Queda com una app més.",
-        'On Android, with Chrome: the ⋮ menu and “Install app”. On iPhone, with Safari: the Share button and “Add to Home Screen”. It stays like any other app.'),
     '>Trae tus datos</h3>': (
         '>Porta les teves dades</h3>',
         '>Bring your data</h3>'),
@@ -614,4 +569,102 @@ T = {
     '<b>Sin cuenta, sin nube y sin telemetría.</b>': ('<b>Sense compte, sense núvol i sense telemetria.</b>', '<b>No account, no cloud and no telemetry.</b>'),
     '<b>Solo se abre con tu contraseña maestra.</b>': ("<b>Només s'obre amb la teva contrasenya mestra.</b>", '<b>It only opens with your master password.</b>'),
     '<b>Para Windows y para el móvil</b>': ('<b>Per a Windows i per al mòbil</b>', '<b>For Windows and for your phone</b>'),
+    'Lo que Kreix no tiene': (
+        'El que Kreix no té',
+        'What Kreix does not have'),
+    '>Banco</th>': ('>Banc</th>', '>Bank</th>'),
+    '>Estado</th>': ('>Estat</th>', '>Status</th>'),
+    '>Listo</td>': ('>A punt</td>', '>Ready</td>'),
+    '>En pruebas</td>': ('>En proves</td>', '>In testing</td>'),
+    '>Te pregunta las columnas</td>': ('>Et pregunta les columnes</td>', '>Asks you for the columns</td>'),
+    'aria-label="Código QR que abre la app de Kreix"': (
+        'aria-label="Codi QR que obre l\'app de Kreix"',
+        'aria-label="QR code that opens the Kreix app"'),
+    '¿Estás en el ordenador? Apunta con la cámara del móvil y la app se abre allí.': (
+        "Ets a l'ordinador? Apunta-hi amb la càmera del mòbil i l'app s'obre allà.",
+        'On your computer? Point your phone camera at it and the app opens there.'),
+    'También disponible para smartphones': (
+        'També disponible per a smartphones',
+        'Also available for smartphones'),
+    '<s>Claves del banco</s>': (
+        '<s>Claus del banc</s>',
+        '<s>Bank login details</s>'),
+    '<s>Envío de datos</s>': (
+        '<s>Enviament de dades</s>',
+        '<s>Sending your data</s>'),
+    '<s>Cuenta, nube y telemetría</s>': (
+        '<s>Compte, núvol i telemetria</s>',
+        '<s>Account, cloud and telemetry</s>'),
+    '<s>Datos sin cifrar</s>': (
+        '<s>Dades sense xifrar</s>',
+        '<s>Unencrypted data</s>'),
+    'aria-label="Tipo de móvil"': (
+        'aria-label="Tipus de mòbil"',
+        'aria-label="Phone type"'),
+    '>iPhone y iPad</button>': (
+        '>iPhone i iPad</button>',
+        '>iPhone and iPad</button>'),
+    'Los pasos son los de Chrome. En Edge y Samsung Internet son casi iguales.': (
+        'Els passos són els de Chrome. A Edge i Samsung Internet són gairebé iguals.',
+        'These steps are for Chrome. In Edge and Samsung Internet they are almost the same.'),
+    'Tiene que ser Safari: es donde «Añadir a pantalla de inicio» está siempre.': (
+        "Ha de ser Safari: és on «Afegir a la pantalla d'inici» hi és sempre.",
+        'It has to be Safari: that is where “Add to Home Screen” is always available.'),
+    '<h3>Abre Kreix en Chrome</h3>': (
+        '<h3>Obre Kreix a Chrome</h3>',
+        '<h3>Open Kreix in Chrome</h3>'),
+    'Pulsa «Abrir Kreix en el móvil», aquí abajo, desde el propio móvil. La primera vez descarga unos 20&nbsp;MB; después funciona sin conexión.': (
+        'Prem «Obre Kreix al mòbil», aquí sota, des del mateix mòbil. La primera vegada descarrega uns 20&nbsp;MB; després funciona sense connexió.',
+        'Tap “Open Kreix on your phone”, just below, from the phone itself. The first time it downloads about 20&nbsp;MB; after that it works offline.'),
+    '<h3>Abre el menú</h3>': (
+        '<h3>Obre el menú</h3>',
+        '<h3>Open the menu</h3>'),
+    'Toca los tres puntos (⋮), arriba a la derecha de Chrome.': (
+        'Toca els tres punts (⋮), a dalt a la dreta de Chrome.',
+        'Tap the three dots (⋮) at the top right of Chrome.'),
+    '<h3>Toca «Instalar aplicación»</h3>': (
+        "<h3>Toca «Instal·la l'aplicació»</h3>",
+        '<h3>Tap “Install app”</h3>'),
+    'Si no la ves, toca «Añadir a pantalla de inicio» y luego «Instalar». Hacen lo mismo.': (
+        "Si no la veus, toca «Afegeix a la pantalla d'inici» i després «Instal·la». Fan el mateix.",
+        'If you do not see it, tap “Add to Home screen” and then “Install”. Both do the same thing.'),
+    '<h3>Confirma</h3>': (
+        '<h3>Confirma</h3>',
+        '<h3>Confirm</h3>'),
+    'Toca «Instalar» en el cuadro que aparece. Tarda un segundo; sin tienda de apps y sin cuenta.': (
+        "Toca «Instal·la» al quadre que apareix. Triga un segon; sense botiga d'apps i sense compte.",
+        'Tap “Install” in the box that appears. It takes a second; no app store and no account.'),
+    '<h3>Ábrela desde la pantalla de inicio</h3>': (
+        "<h3>Obre-la des de la pantalla d'inici</h3>",
+        '<h3>Open it from your home screen</h3>'),
+    'Busca el icono de Kreix entre tus apps. Se abre a pantalla completa, como cualquier otra.': (
+        "Busca la icona de Kreix entre les teves apps. S'obre a pantalla completa, com qualsevol altra.",
+        'Look for the Kreix icon among your apps. It opens full screen, like any other app.'),
+    '<h3>Abre Kreix en Safari</h3>': (
+        '<h3>Obre Kreix a Safari</h3>',
+        '<h3>Open Kreix in Safari</h3>'),
+    'Pulsa «Abrir Kreix en el móvil», aquí abajo. Si el enlace se abre dentro de otra app (WhatsApp, Instagram…), cópialo y pégalo en Safari. La primera vez descarga unos 20&nbsp;MB.': (
+        "Prem «Obre Kreix al mòbil», aquí sota. Si l'enllaç s'obre dins d'una altra app (WhatsApp, Instagram…), copia'l i enganxa'l a Safari. La primera vegada descarrega uns 20&nbsp;MB.",
+        'Tap “Open Kreix on your phone”, just below. If the link opens inside another app (WhatsApp, Instagram…), copy it and paste it into Safari. The first time it downloads about 20&nbsp;MB.'),
+    '<h3>Toca Compartir</h3>': (
+        '<h3>Toca Compartir</h3>',
+        '<h3>Tap Share</h3>'),
+    'El cuadrado con una flecha hacia arriba: abajo en el iPhone, arriba a la derecha en el iPad.': (
+        "El quadrat amb una fletxa cap amunt: a baix a l'iPhone, a dalt a la dreta a l'iPad.",
+        'The square with an arrow pointing up: at the bottom on iPhone, at the top right on iPad.'),
+    '<h3>Baja y toca «Añadir a pantalla de inicio»</h3>': (
+        "<h3>Baixa i toca «Afegir a la pantalla d'inici»</h3>",
+        '<h3>Scroll down and tap “Add to Home Screen”</h3>'),
+    'La lista es larga: deslízala hacia arriba hasta ver la opción con un cuadrado y un «+».': (
+        "La llista és llarga: fes-la lliscar cap amunt fins a veure l'opció amb un quadrat i un «+».",
+        'The list is long: swipe it up until you see the option with a “+” square.'),
+    '<h3>Ponle nombre y toca «Añadir»</h3>': (
+        '<h3>Posa-li nom i toca «Afegeix»</h3>',
+        '<h3>Name it and tap “Add”</h3>'),
+    'Deja «Kreix» y toca «Añadir», arriba a la derecha.': (
+        'Deixa «Kreix» i toca «Afegeix», a dalt a la dreta.',
+        'Leave “Kreix” and tap “Add” at the top right.'),
+    'Ábrela desde el icono, no desde Safari: así se ve a pantalla completa.': (
+        'Obre-la des de la icona, no des de Safari: així es veu a pantalla completa.',
+        'Open it from the icon, not from Safari: that way it runs full screen.'),
 }

@@ -10,13 +10,13 @@
 <meta property="og:locale" content="en_GB">
 <meta property="og:title" content="Kreix never asks for your bank login details">
 <meta property="og:description" content="The finance app that does not watch you: no bank login details, no connection, everything encrypted on your computer.">
-<meta name="theme-color" content="#101418">
+<meta name="theme-color" content="#030405">
 <link rel="icon" type="image/svg+xml" href="../assets/kreix-icono-oscuro.svg?v=2">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png?v=2">
 <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon-180.png?v=2">
 <link rel="preload" href="../assets/fonts/MontserratExtraBold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/DMSans.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../styles.css?v=2">
+<link rel="stylesheet" href="../styles.css?v=7">
 <script>
   /* El tema y el sistema se deciden antes de pintar para que no parpadee. Si el equipo
      no es Windows (y solo si se reconoce claramente), la descarga se cambia por la app del movil.
@@ -35,7 +35,7 @@
     } catch (e) {}
   })();
 </script>
-<noscript><style>.panel[hidden] { display: grid; } .panel { margin-bottom: 48px; } .tabs { display: none; } .trailer { display: none; }</style></noscript>
+<noscript><style>.panel[hidden] { display: grid; } .panel { margin-bottom: 48px; } .tabs, .seg { display: none; } .os-panel[hidden] { display: block; } .trailer { display: none; }</style></noscript>
 </head>
 <body>
 <a class="skip" href="#contenido">Skip to content</a>
@@ -74,7 +74,6 @@
     <div class="hero-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
     <div class="nap" aria-hidden="true"><img src="../assets/perretes-durmiendo.webp" width="720" height="374" alt=""><span class="zz zz-blitzen"><i>z</i><i>z</i><i>z</i></span><span class="zz zz-black"><i>z</i><i>z</i><i>z</i></span></div>
     <div class="day" aria-hidden="true"><img class="tail" src="../assets/perretes/black-cola.webp" width="770" height="606" alt=""><img src="../assets/perretes/blitzen.webp" width="770" height="606" alt=""><img class="blink" src="../assets/perretes/blitzen-ojos.webp" width="770" height="606" alt=""><img class="tongue" src="../assets/perretes/blitzen-lengua.webp" width="770" height="606" alt=""><img src="../assets/perretes/black.webp" width="770" height="606" alt=""><img class="blink blink-black" src="../assets/perretes/black-ojos.webp" width="770" height="606" alt=""></div>
-    <span class="stripes" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
     <h1>Kreix never asks for your&nbsp;bank login&nbsp;details.</h1>
     <p class="lede">The personal finance app for Windows and your phone that does not watch you: <strong>it works offline</strong> and keeps everything <strong>encrypted on your device</strong>.</p>
     <div class="actions">
@@ -83,24 +82,6 @@
     </div>
     <p class="soon on-windows">Version 0.6.1 for Windows 10 and 11 (64-bit). If Windows warns you when you open it, that is because the installer is not signed yet: click “More info” and then “Run anyway”.</p>
     <p class="soon off-windows">On the computer, Kreix is a Windows program: open this page there to download it. <a href="https://github.com/dasuarezang/kreix-web/releases/download/v0.6.1/Kreix-Setup-0.6.1.exe">Download anyway (38&nbsp;MB)</a></p>
-
-    <div class="promises">
-      <div class="promise">
-        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="17" cy="24" r="8"/><path d="M25 24h18M37 24v6M31 24v4"/><path d="M6 42 42 6" stroke="var(--red)"/></svg>
-        <p class="promise-title">No bank login details</p>
-        <p>You download the statement and drop it into Kreix. Kreix never logs in to your bank and never stores your login details.</p>
-      </div>
-      <div class="promise">
-        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 19a26 26 0 0 1 36 0M12 26a17 17 0 0 1 24 0M18.5 33a8 8 0 0 1 11 0"/><circle cx="24" cy="39" r="1.5" fill="currentColor"/><path d="M6 42 42 6" stroke="var(--red)"/></svg>
-        <p class="promise-title">100% offline</p>
-        <p>It never sends your data anywhere. The Windows program does not connect to the internet, not even to update itself; the phone app only does to download itself from this website. No account, no cloud, no ads and no telemetry.</p>
-      </div>
-      <div class="promise">
-        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="21" width="30" height="21" rx="5"/><path d="M15 21v-6a9 9 0 0 1 18 0v6"/><circle cx="24" cy="31" r="2.5" fill="currentColor"/></svg>
-        <p class="promise-title">Your data, encrypted</p>
-        <p>Everything Kreix stores is encrypted with your master password. Without it, nobody can read it, not even us. Exports can be encrypted too.</p>
-      </div>
-    </div>
 
     <!--trailer-->
     <div class="trailer" id="trailer" data-state="idle" data-layout="wide" data-play="Play the trailer" data-pause="Pause the trailer">
@@ -381,194 +362,181 @@
     </noscript>
   </div>
 
-  <!-- ===== Por que Kreix ===== -->
-  <section id="porque">
+  <!-- ===== What Kreix does not have: cuatro cosas tachadas ===== -->
+  <section class="band" id="porque">
     <div class="wrap">
       <div class="section-head">
-        <div class="rule"></div>
-        <h2>Why Kreix</h2>
+        <h2>What Kreix does not have</h2>
         <p>Four design decisions, and none of them is negotiable.</p>
       </div>
-      <div class="why">
-        <div class="why-item">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 24s7-12 20-12 20 12 20 12-7 12-20 12S4 24 4 24z"/><circle cx="24" cy="24" r="5"/><path d="M6 42 42 6" stroke="var(--red)"/></svg>
-          <h3>It never watches you</h3>
-          <p>No account, no cloud and no telemetry. Nobody knows how much you earn or what you spend it on, not even us. Check it yourself: it works the same without internet.</p>
+      <dl class="ledger">
+        <div class="ledger-row">
+          <dt><s>Bank login details</s></dt>
+          <dd class="ledger-text">You download the statement and drop it into Kreix. Kreix never logs in to your bank and never stores your login details.</dd>
         </div>
-        <div class="why-item">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 5l15 6v11c0 10-6 17-15 21C15 39 9 32 9 22V11z"/><path d="M17 24l5 5 9-10"/></svg>
-          <h3>Security with no shortcuts</h3>
-          <p>Everything it stores is encrypted with your master password. It is decrypted only in memory, locks itself when you are not using it and, without your password, there is no way to open it.</p>
+        <div class="ledger-row">
+          <dt><s>Sending your data</s></dt>
+          <dd class="ledger-text">It never sends your data anywhere. The Windows program does not connect to the internet, not even to update itself; the phone app only does to download itself from this website.</dd>
         </div>
-        <div class="why-item">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 40V28M20 40V16M32 40V24M44 40V8"/><path d="M4 43h40"/></svg>
-          <h3>Your money, in plain sight</h3>
-          <p>Net worth, savings this month, end-of-month forecast, budgets, recurring payments and investments. Home sums it all up on a single screen.</p>
+        <div class="ledger-row">
+          <dt><s>Account, cloud and telemetry</s></dt>
+          <dd class="ledger-text">No account, no cloud and no telemetry. Nobody knows how much you earn or what you spend it on, not even us. Check it yourself: it works the same without internet.</dd>
         </div>
-        <div class="why-item">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6h17l9 9v27H12z"/><path d="M24 20v14M18 28l6 6 6-6"/></svg>
-          <h3>Easy from the first minute</h3>
-          <p>You drop your bank statement in and that is it. No linking accounts, nothing to set up. If your bank is not on the list, Kreix asks you once which column is which and remembers it.</p>
+        <div class="ledger-row">
+          <dt><s>Unencrypted data</s></dt>
+          <dd class="ledger-text">Everything Kreix stores is encrypted with your master password. Without it, nobody can read it, not even us. Exports can be encrypted too.</dd>
         </div>
-      </div>
+      </dl>
     </div>
   </section>
 
-  <!-- ===== Primeros pasos ===== -->
+  <!-- ===== Primeros pasos, y los bancos que reconoce ===== -->
   <section id="funciona">
     <div class="wrap">
       <div class="section-head">
-        <div class="rule"></div>
         <h2>Start in three steps</h2>
         <p>Without linking accounts or giving anyone access: just a file you can already download from your bank.</p>
       </div>
-      <ol class="steps">
-        <li>
-          <h3>Download the statement</h3>
-          <p>From your bank's website or app, as CSV or Excel. It is the same file you would download to keep.</p>
-        </li>
-        <li>
-          <h3>Drop it into Kreix</h3>
-          <p>Drag it onto Import. Kreix shows you what it read and saves nothing until you press Import. If you import the same statement again, Kreix does not duplicate transactions.</p>
-        </li>
-        <li>
-          <h3>See your money</h3>
-          <p>Home summarises your net worth, your savings this month and what is coming. Accounts and Investments give the detail.</p>
-        </li>
-      </ol>
+      <div class="start">
+        <ol class="steps steps-art">
+          <li>
+            <h3>Download the statement</h3>
+            <p>From your bank's website or app, as CSV or Excel. It is the same file you would download to keep.</p>
+            <svg class="sk" viewBox="0 0 160 100" aria-hidden="true"><rect class="b" x="1" y="5" width="104" height="90" rx="5"/><path class="s" d="M1 21h104"/><rect class="l" x="10" y="11" width="34" height="5" rx="2"/><rect class="l" x="10" y="31" width="58" height="5" rx="2"/><rect class="l" x="80" y="31" width="16" height="5" rx="2"/><rect class="l" x="10" y="43" width="44" height="5" rx="2"/><rect class="l" x="80" y="43" width="16" height="5" rx="2"/><rect class="l" x="10" y="55" width="52" height="5" rx="2"/><rect class="l" x="80" y="55" width="16" height="5" rx="2"/><rect class="h" x="50" y="70" width="46" height="16" rx="3"/><path class="on" d="M73 73.5v8M69.5 78l3.5 3.5 3.5-3.5"/><path class="s" d="M111 55h12M119 51l4 4-4 4"/><path class="b" d="M130 33h17l10 10v34h-27z"/><path class="s" d="M147 33v10h10"/><text x="143.5" y="66" text-anchor="middle">CSV</text></svg>
+          </li>
+          <li>
+            <h3>Drop it into Kreix</h3>
+            <p>Drag it onto Import. Kreix shows you what it read and saves nothing until you press Import. If you import the same statement again, Kreix does not duplicate transactions.</p>
+            <svg class="sk" viewBox="0 0 160 100" aria-hidden="true"><path class="b" d="M3 33h17l10 10v34h-27z"/><path class="s" d="M20 33v10h10"/><text x="16.5" y="66" text-anchor="middle">CSV</text><path class="hs" d="M36 55h13M45 50.5l4.5 4.5-4.5 4.5"/><rect class="b" x="56" y="5" width="103" height="90" rx="5"/><path class="s" d="M80 5v90"/><image href="../assets/kreix-icono-oscuro.svg" x="62" y="11" width="12" height="12"/><rect class="l" x="62" y="31" width="12" height="4" rx="2"/><rect class="l" x="62" y="41" width="12" height="4" rx="2"/><rect class="h" x="62" y="81" width="12" height="4" rx="2"/><rect class="zone" x="88" y="15" width="63" height="42" rx="4"/><g transform="translate(118 29) skewX(-24)"><rect class="k1" width="3" height="13"/><rect class="k2" x="5" width="3" height="13"/><rect class="k3" x="10" width="3" height="13"/><rect class="k4" x="15" width="3" height="13"/></g><rect class="l" x="88" y="66" width="38" height="5" rx="2"/><rect class="l" x="135" y="66" width="16" height="5" rx="2"/><rect class="l" x="88" y="78" width="28" height="5" rx="2"/><rect class="l" x="135" y="78" width="16" height="5" rx="2"/></svg>
+          </li>
+          <li>
+            <h3>See your money</h3>
+            <p>Home summarises your net worth, your savings this month and what is coming. Accounts and Investments give the detail.</p>
+            <svg class="sk" viewBox="0 0 160 100" aria-hidden="true"><rect class="b" x="1" y="5" width="158" height="90" rx="5"/><path class="s" d="M27 5v90"/><image href="../assets/kreix-icono-oscuro.svg" x="8" y="11" width="12" height="12"/><rect class="h" x="8" y="31" width="12" height="4" rx="2"/><rect class="l" x="8" y="41" width="12" height="4" rx="2"/><rect class="l" x="8" y="51" width="12" height="4" rx="2"/><rect class="l" x="38" y="14" width="30" height="4" rx="2"/><rect class="t" x="38" y="23" width="54" height="9" rx="2"/><rect class="g" x="38" y="37" width="24" height="4" rx="2"/><path class="area" d="M38 82C58 80 66 74 80 70s22-6 34-16 20-12 36-20V88H38z"/><path class="hs" d="M38 82C58 80 66 74 80 70s22-6 34-16 20-12 36-20"/><path class="s" d="M38 88h112"/></svg>
+          </li>
+        </ol>
+        <div class="banks" id="bancos">
+          <h3>Works with your bank</h3>
+          <p>Kreix reads CSV and Excel (.xlsx and the older .xls). It recognises these formats by their usual columns.</p>
+          <table>
+            <thead class="sr-only"><tr><th scope="col">Bank</th><th scope="col">Status</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Imagin</th><td class="ok">Ready</td></tr>
+              <tr><th scope="row">MyInvestor</th><td class="ok">Ready</td></tr>
+              <tr><th scope="row">CaixaBank</th><td class="beta">In testing</td></tr>
+              <tr><th scope="row">Santander</th><td class="beta">In testing</td></tr>
+              <tr><th scope="row">Revolut</th><td class="beta">In testing</td></tr>
+              <tr><th scope="row">Trade Republic</th><td class="beta">In testing</td></tr>
+              <tr class="other"><th scope="row">Any other bank</th><td>Asks you for the columns</td></tr>
+            </tbody>
+          </table>
+          <p class="note">If Kreix does not recognise a file, it shows you the first rows and asks which column is the date, the description and the amount. It remembers for next time. The CaixaBank, Santander, Revolut and Trade Republic formats are included but still being tested.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ===== Guia pantalla a pantalla ===== -->
-  <section id="guia">
+  <!-- ===== Guia pantalla a pantalla: la barra lateral del programa ===== -->
+  <section class="band" id="guia">
     <div class="wrap">
       <div class="section-head">
-        <div class="rule"></div>
         <h2>The guide, screen by screen</h2>
         <p>Each tab in the sidebar, in a few words. The data in the screenshots is made up.</p>
       </div>
-
-      <div class="tabs" role="tablist" aria-label="Kreix screens">
-        <button class="tab" role="tab" id="t-inicio" aria-controls="p-inicio" aria-selected="true" type="button">Home</button>
-        <button class="tab" role="tab" id="t-cuentas" aria-controls="p-cuentas" aria-selected="false" tabindex="-1" type="button">Accounts</button>
-        <button class="tab" role="tab" id="t-inversiones" aria-controls="p-inversiones" aria-selected="false" tabindex="-1" type="button">Investments</button>
-        <button class="tab" role="tab" id="t-importar" aria-controls="p-importar" aria-selected="false" tabindex="-1" type="button">Import</button>
-        <button class="tab" role="tab" id="t-ajustes" aria-controls="p-ajustes" aria-selected="false" tabindex="-1" type="button">Settings</button>
-      </div>
-
-      <div class="panel" role="tabpanel" id="p-inicio" aria-labelledby="t-inicio" tabindex="0">
-        <div>
-          <h3>Everything important at a glance</h3>
-          <ul>
-            <li>Your net worth, your return and this month's savings rate.</li>
-            <li>A forecast of how much money you will have at the end of the month, counting your fixed payments.</li>
-            <li>Upcoming payments, budgets and the transactions that have no category yet.</li>
-          </ul>
+      <div class="guide">
+        <div class="tabs" role="tablist" aria-label="Kreix screens">
+          <button class="tab" role="tab" id="t-inicio" aria-controls="p-inicio" aria-selected="true" type="button">Home</button>
+          <button class="tab" role="tab" id="t-cuentas" aria-controls="p-cuentas" aria-selected="false" tabindex="-1" type="button">Accounts</button>
+          <button class="tab" role="tab" id="t-inversiones" aria-controls="p-inversiones" aria-selected="false" tabindex="-1" type="button">Investments</button>
+          <button class="tab" role="tab" id="t-importar" aria-controls="p-importar" aria-selected="false" tabindex="-1" type="button">Import</button>
+          <button class="tab" role="tab" id="t-ajustes" aria-controls="p-ajustes" aria-selected="false" tabindex="-1" type="button">Settings</button>
         </div>
-        <figure class="frame">
-          <a class="only-dark" href="../assets/shots/en/inicio-dark.webp" target="_blank" rel="noopener"><img src="../assets/shots/en/inicio-dark.webp" width="1280" height="860" alt="Kreix Home in the dark theme." loading="lazy"></a>
-          <a class="only-light" href="../assets/shots/en/inicio-light.webp" target="_blank" rel="noopener"><img src="../assets/shots/en/inicio-light.webp" width="1280" height="860" alt="Kreix Home in the light theme." loading="lazy"></a>
-        </figure>
-      </div>
+        <div class="guide-panels">
+          <div class="panel" role="tabpanel" id="p-inicio" aria-labelledby="t-inicio" tabindex="0">
+            <div>
+              <h3>Everything important at a glance</h3>
+              <ul>
+                <li>Your net worth, your return and this month's savings rate.</li>
+                <li>A forecast of how much money you will have at the end of the month, counting your fixed payments.</li>
+                <li>Upcoming payments, budgets and the transactions that have no category yet.</li>
+              </ul>
+            </div>
+            <figure class="frame">
+              <a class="only-dark" href="../assets/shots/en/inicio-dark.webp" target="_blank" rel="noopener"><img src="../assets/shots/en/inicio-dark.webp" width="1280" height="860" alt="Kreix Home in the dark theme." loading="lazy"></a>
+              <a class="only-light" href="../assets/shots/en/inicio-light.webp" target="_blank" rel="noopener"><img src="../assets/shots/en/inicio-light.webp" width="1280" height="860" alt="Kreix Home in the light theme." loading="lazy"></a>
+            </figure>
+          </div>
 
-      <div class="panel" role="tabpanel" id="p-cuentas" aria-labelledby="t-cuentas" tabindex="0" hidden>
-        <div>
-          <h3>Your spending, made clear</h3>
-          <ul>
-            <li>Spending by category and balance over time, for one month or the whole history.</li>
-            <li>Change a transaction's category with a right click, or create your own rules.</li>
-            <li>Budgets by category and detected recurring payments.</li>
-          </ul>
-        </div>
-        <figure class="frame">
-          <a class="only-dark" href="../assets/shots/en/cuentas-dark.webp" target="_blank" rel="noopener"><img src="../assets/shots/en/cuentas-dark.webp" width="1280" height="860" alt="Accounts in the dark theme: balance, income, expenses and charts." loading="lazy"></a>
-          <a class="only-light" href="../assets/shots/en/cuentas-light.webp" target="_blank" rel="noopener"><img src="../assets/shots/en/cuentas-light.webp" width="1280" height="860" alt="Accounts in the light theme." loading="lazy"></a>
-        </figure>
-      </div>
+          <div class="panel" role="tabpanel" id="p-cuentas" aria-labelledby="t-cuentas" tabindex="0" hidden>
+            <div>
+              <h3>Your spending, made clear</h3>
+              <ul>
+                <li>Spending by category and balance over time, for one month or the whole history.</li>
+                <li>Change a transaction's category with a right click, or create your own rules.</li>
+                <li>Budgets by category and detected recurring payments.</li>
+              </ul>
+            </div>
+            <figure class="frame">
+              <a class="only-dark" href="../assets/shots/en/cuentas-dark.webp" target="_blank" rel="noopener"><img src="../assets/shots/en/cuentas-dark.webp" width="1280" height="860" alt="Accounts in the dark theme: balance, income, expenses and charts." loading="lazy"></a>
+              <a class="only-light" href="../assets/shots/en/cuentas-light.webp" target="_blank" rel="noopener"><img src="../assets/shots/en/cuentas-light.webp" width="1280" height="860" alt="Accounts in the light theme." loading="lazy"></a>
+            </figure>
+          </div>
 
-      <div class="panel" role="tabpanel" id="p-inversiones" aria-labelledby="t-inversiones" tabindex="0" hidden>
-        <div>
-          <h3>Your fund portfolio</h3>
-          <ul>
-            <li>Portfolio value, amount contributed, gain and return.</li>
-            <li>Breakdown by fund and growth compared with what you have contributed.</li>
-            <li>It is built from the orders and the portfolio you export from MyInvestor.</li>
-          </ul>
-        </div>
-        <figure class="frame">
-          <a class="only-dark" href="../assets/shots/en/inversiones-dark.webp" target="_blank" rel="noopener"><img src="../assets/shots/en/inversiones-dark.webp" width="1280" height="860" alt="Investments in the dark theme: portfolio value and breakdown by fund." loading="lazy"></a>
-          <a class="only-light" href="../assets/shots/en/inversiones-light.webp" target="_blank" rel="noopener"><img src="../assets/shots/en/inversiones-light.webp" width="1280" height="860" alt="Investments in the light theme." loading="lazy"></a>
-        </figure>
-      </div>
+          <div class="panel" role="tabpanel" id="p-inversiones" aria-labelledby="t-inversiones" tabindex="0" hidden>
+            <div>
+              <h3>Your fund portfolio</h3>
+              <ul>
+                <li>Portfolio value, amount contributed, gain and return.</li>
+                <li>Breakdown by fund and growth compared with what you have contributed.</li>
+                <li>It is built from the orders and the portfolio you export from MyInvestor.</li>
+              </ul>
+            </div>
+            <figure class="frame">
+              <a class="only-dark" href="../assets/shots/en/inversiones-dark.webp" target="_blank" rel="noopener"><img src="../assets/shots/en/inversiones-dark.webp" width="1280" height="860" alt="Investments in the dark theme: portfolio value and breakdown by fund." loading="lazy"></a>
+              <a class="only-light" href="../assets/shots/en/inversiones-light.webp" target="_blank" rel="noopener"><img src="../assets/shots/en/inversiones-light.webp" width="1280" height="860" alt="Investments in the light theme." loading="lazy"></a>
+            </figure>
+          </div>
 
-      <div class="panel" role="tabpanel" id="p-importar" aria-labelledby="t-importar" tabindex="0" hidden>
-        <div>
-          <h3>Drop and review</h3>
-          <ul>
-            <li>Drag your bank's CSV or Excel files onto the import area.</li>
-            <li>You see what was read before saving, and almost everything can be undone.</li>
-            <li>If Kreix does not recognise the file, it asks you which column is which and remembers it.</li>
-          </ul>
-        </div>
-        <figure class="frame">
-          <a class="only-dark" href="../assets/shots/en/importar-dark.webp" target="_blank" rel="noopener"><img src="../assets/shots/en/importar-dark.webp" width="1280" height="860" alt="Import in the dark theme: area to drop statements and the import result." loading="lazy"></a>
-          <a class="only-light" href="../assets/shots/en/importar-light.webp" target="_blank" rel="noopener"><img src="../assets/shots/en/importar-light.webp" width="1280" height="860" alt="Import in the light theme." loading="lazy"></a>
-        </figure>
-      </div>
+          <div class="panel" role="tabpanel" id="p-importar" aria-labelledby="t-importar" tabindex="0" hidden>
+            <div>
+              <h3>Drop and review</h3>
+              <ul>
+                <li>Drag your bank's CSV or Excel files onto the import area.</li>
+                <li>You see what was read before saving, and almost everything can be undone.</li>
+                <li>If Kreix does not recognise the file, it asks you which column is which and remembers it.</li>
+              </ul>
+            </div>
+            <figure class="frame">
+              <a class="only-dark" href="../assets/shots/en/importar-dark.webp" target="_blank" rel="noopener"><img src="../assets/shots/en/importar-dark.webp" width="1280" height="860" alt="Import in the dark theme: area to drop statements and the import result." loading="lazy"></a>
+              <a class="only-light" href="../assets/shots/en/importar-light.webp" target="_blank" rel="noopener"><img src="../assets/shots/en/importar-light.webp" width="1280" height="860" alt="Import in the light theme." loading="lazy"></a>
+            </figure>
+          </div>
 
-      <div class="panel" role="tabpanel" id="p-ajustes" aria-labelledby="t-ajustes" tabindex="0" hidden>
-        <div>
-          <h3>Your way</h3>
-          <ul>
-            <li>Spanish, Catalan or English, switching instantly.</li>
-            <li>Light or dark theme, text size and an animated sky on Home.</li>
-            <li>Password, automatic lock and encrypted backups.</li>
-          </ul>
+          <div class="panel" role="tabpanel" id="p-ajustes" aria-labelledby="t-ajustes" tabindex="0" hidden>
+            <div>
+              <h3>Your way</h3>
+              <ul>
+                <li>Spanish, Catalan or English, switching instantly.</li>
+                <li>Light or dark theme, text size and an animated sky on Home.</li>
+                <li>Password, automatic lock and encrypted backups.</li>
+              </ul>
+            </div>
+            <figure class="frame">
+              <a class="only-dark" href="../assets/shots/en/ajustes-dark.webp" target="_blank" rel="noopener"><img src="../assets/shots/en/ajustes-dark.webp" width="1280" height="860" alt="Settings in the dark theme: name, language and what you are interested in." loading="lazy"></a>
+              <a class="only-light" href="../assets/shots/en/ajustes-light.webp" target="_blank" rel="noopener"><img src="../assets/shots/en/ajustes-light.webp" width="1280" height="860" alt="Settings in the light theme." loading="lazy"></a>
+            </figure>
+          </div>
         </div>
-        <figure class="frame">
-          <a class="only-dark" href="../assets/shots/en/ajustes-dark.webp" target="_blank" rel="noopener"><img src="../assets/shots/en/ajustes-dark.webp" width="1280" height="860" alt="Settings in the dark theme: name, language and what you are interested in." loading="lazy"></a>
-          <a class="only-light" href="../assets/shots/en/ajustes-light.webp" target="_blank" rel="noopener"><img src="../assets/shots/en/ajustes-light.webp" width="1280" height="860" alt="Settings in the light theme." loading="lazy"></a>
-        </figure>
       </div>
     </div>
   </section>
 
-  <!-- ===== Lo que mas te va a gustar ===== -->
-  <!-- ===== Kreix en el movil ===== -->
-  <section id="movil">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="rule"></div>
-        <h2>Kreix on your phone</h2>
-        <p>The same app, adapted to your phone: the same figures, charts and explanations, with Blitzen and Black on Home. It installs from the browser, with no app store, and keeps everything encrypted on the phone.</p>
-      </div>
-      <ol class="steps">
-        <li>
-          <h3>Open it on your phone</h3>
-          <p>Tap “Open Kreix on your phone” from the phone itself. The first time it downloads about 20&nbsp;MB; after that it works offline.</p>
-        </li>
-        <li>
-          <h3>Install it</h3>
-          <p>On Android, with Chrome: the ⋮ menu and “Install app”. On iPhone, with Safari: the Share button and “Add to Home Screen”. It stays like any other app.</p>
-        </li>
-        <li>
-          <h3>Bring your data</h3>
-          <p>Import your statements from the phone or send it the ones on your computer: in Kreix for Windows, Data, Export and “Send to phone”, then scan the QR code with the app. No cables, no connection.</p>
-        </li>
-      </ol>
-      <div class="actions">
-        <a class="btn btn-primary" href="../app/?lang=en">Open Kreix on your phone</a>
-      </div>
-      <p class="note">Your data stays encrypted on the phone with your master password. The app only connects to this website to download itself and, when there is a new version, to update. It also works in the browser on a Mac or a Linux computer.</p>
-    </div>
-  </section>
-
+  <!-- ===== El ojo, y otros detalles ===== -->
   <section id="detalles">
     <div class="wrap">
       <div class="privacy-demo">
-        <div>
-          <div class="rule"></div>
-          <h3>An eye for when someone looks over your shoulder</h3>
+        <div class="privacy-text">
+          <h2>An eye for when someone looks over your shoulder</h2>
           <p>With one click, or Ctrl+H, Kreix blurs every amount, in figures, tables and charts. You can tell there is a number, but not which one. Try it.</p>
         </div>
         <div class="demo-card">
@@ -583,12 +551,110 @@
             </button>
           </div>
         </div>
+        <div class="more">
+          <div><h3>Automatic categories</h3><p>Kreix sorts your spending by itself, and your rules take priority over its own.</p></div>
+          <div><h3>Recurring payments</h3><p>It detects subscriptions and bills, and tells you when the next one is due. You remove the ones you no longer pay.</p></div>
+          <div><h3>Almost everything can be undone</h3><p>Every important change shows a notice with an Undo button.</p></div>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div class="more">
-        <div><h3>Automatic categories</h3><p>Kreix sorts your spending by itself, and your rules take priority over its own.</p></div>
-        <div><h3>Recurring payments</h3><p>It detects subscriptions and bills, and tells you when the next one is due. You remove the ones you no longer pay.</p></div>
-        <div><h3>Almost everything can be undone</h3><p>Every important change shows a notice with an Undo button.</p></div>
+  <!-- ===== Kreix en el movil ===== -->
+  <section class="band" id="movil">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Kreix on your phone</h2>
+        <p>The same app, adapted to your phone: the same figures, charts and explanations, with Blitzen and Black on Home. It installs from the browser, with no app store, and keeps everything encrypted on the phone.</p>
+      </div>
+      <div class="phone">
+        <div class="install">
+        <svg class="ph-sprite" width="0" height="0" aria-hidden="true" focusable="false">
+          <symbol id="ph-page" viewBox="0 0 120 200"><rect x="6" y="4" width="108" height="192" rx="18" class="ph-body"/><rect x="14" y="30" width="92" height="150" rx="6" class="ph-screen"/><rect x="14" y="14" width="76" height="12" rx="6" class="ph-hot"/><rect x="22" y="18" width="44" height="4" rx="2" class="ph-on"/><rect x="24" y="48" width="72" height="22" rx="6" class="ph-line"/><rect x="24" y="80" width="72" height="8" rx="4" class="ph-line"/><rect x="24" y="96" width="52" height="8" rx="4" class="ph-line"/></symbol>
+          <symbol id="ph-menu" viewBox="0 0 120 200"><rect x="6" y="4" width="108" height="192" rx="18" class="ph-body"/><rect x="14" y="30" width="92" height="150" rx="6" class="ph-screen"/><rect x="14" y="14" width="76" height="12" rx="6" class="ph-line"/><circle cx="99" cy="20" r="9" class="ph-hot"/><circle cx="99" cy="15.5" r="1.6" class="ph-on"/><circle cx="99" cy="20" r="1.6" class="ph-on"/><circle cx="99" cy="24.5" r="1.6" class="ph-on"/><rect x="24" y="48" width="72" height="8" rx="4" class="ph-line"/><rect x="24" y="66" width="52" height="8" rx="4" class="ph-line"/></symbol>
+          <symbol id="ph-install" viewBox="0 0 120 200"><rect x="6" y="4" width="108" height="192" rx="18" class="ph-body"/><rect x="14" y="30" width="92" height="150" rx="6" class="ph-screen"/><rect x="40" y="36" width="64" height="104" rx="8" class="ph-sheet"/><rect x="48" y="46" width="44" height="7" rx="3.5" class="ph-line"/><rect x="48" y="62" width="36" height="7" rx="3.5" class="ph-line"/><rect x="44" y="80" width="56" height="16" rx="6" class="ph-hot"/><rect x="52" y="85" width="40" height="6" rx="3" class="ph-on"/><rect x="48" y="106" width="40" height="7" rx="3.5" class="ph-line"/><rect x="48" y="122" width="34" height="7" rx="3.5" class="ph-line"/></symbol>
+          <symbol id="ph-confirm" viewBox="0 0 120 200"><rect x="6" y="4" width="108" height="192" rx="18" class="ph-body"/><rect x="14" y="30" width="92" height="150" rx="6" class="ph-screen"/><rect x="22" y="70" width="76" height="62" rx="10" class="ph-sheet"/><image href="../assets/kreix-icono-oscuro.svg" x="32" y="80" width="26" height="26"/><rect x="64" y="84" width="26" height="6" rx="3" class="ph-line"/><rect x="64" y="96" width="18" height="6" rx="3" class="ph-line"/><rect x="62" y="112" width="28" height="14" rx="6" class="ph-hot"/></symbol>
+          <symbol id="ph-home" viewBox="0 0 120 200"><rect x="6" y="4" width="108" height="192" rx="18" class="ph-body"/><rect x="14" y="30" width="92" height="150" rx="6" class="ph-screen"/><rect x="24" y="44" width="20" height="20" rx="5" class="ph-line"/><rect x="50" y="44" width="20" height="20" rx="5" class="ph-line"/><rect x="76" y="44" width="20" height="20" rx="5" class="ph-line"/><rect x="24" y="78" width="20" height="20" rx="5" class="ph-line"/><rect x="47" y="75" width="26" height="26" rx="7" class="ph-ring"/><image href="../assets/kreix-icono-oscuro.svg" x="50" y="78" width="20" height="20"/><rect x="76" y="78" width="20" height="20" rx="5" class="ph-line"/></symbol>
+          <symbol id="ph-share" viewBox="0 0 120 200"><rect x="6" y="4" width="108" height="192" rx="18" class="ph-body"/><rect x="14" y="30" width="92" height="150" rx="6" class="ph-screen"/><rect x="24" y="48" width="72" height="8" rx="4" class="ph-line"/><rect x="24" y="66" width="52" height="8" rx="4" class="ph-line"/><rect x="14" y="156" width="92" height="24" rx="4" class="ph-bar"/><path d="M60 172v-11M55.5 165.5 60 161l4.5 4.5M54 167v7h12v-7" class="ph-hotline"/></symbol>
+          <symbol id="ph-sheet" viewBox="0 0 120 200"><rect x="6" y="4" width="108" height="192" rx="18" class="ph-body"/><rect x="14" y="30" width="92" height="150" rx="6" class="ph-screen"/><rect x="14" y="70" width="92" height="110" rx="10" class="ph-sheet"/><rect x="24" y="82" width="72" height="14" rx="6" class="ph-line"/><rect x="24" y="102" width="72" height="14" rx="6" class="ph-line"/><rect x="24" y="122" width="72" height="16" rx="6" class="ph-hot"/><rect x="34" y="127" width="52" height="6" rx="3" class="ph-on"/><rect x="24" y="144" width="72" height="14" rx="6" class="ph-line"/></symbol>
+        </svg>
+          <div class="seg" role="tablist" id="os-tabs" aria-label="Phone type">
+            <button class="seg-btn" role="tab" id="t-android" aria-controls="p-android" aria-selected="true" type="button">Android</button>
+            <button class="seg-btn" role="tab" id="t-iphone" aria-controls="p-iphone" aria-selected="false" tabindex="-1" type="button">iPhone and iPad</button>
+          </div>
+          <div class="os-panel" role="tabpanel" id="p-android" aria-labelledby="t-android" tabindex="0">
+            <p class="os-note">These steps are for Chrome. In Edge and Samsung Internet they are almost the same.</p>
+              <ol class="steps steps-art">
+                <li>
+                  <h3>Open Kreix in Chrome</h3>
+                  <p>Tap “Open Kreix on your phone”, just below, from the phone itself. The first time it downloads about 20&nbsp;MB; after that it works offline.</p>
+                  <svg class="ph" viewBox="0 0 120 200" aria-hidden="true"><use href="#ph-page"/></svg>
+                </li>
+                <li>
+                  <h3>Open the menu</h3>
+                  <p>Tap the three dots (⋮) at the top right of Chrome.</p>
+                  <svg class="ph" viewBox="0 0 120 200" aria-hidden="true"><use href="#ph-menu"/></svg>
+                </li>
+                <li>
+                  <h3>Tap “Install app”</h3>
+                  <p>If you do not see it, tap “Add to Home screen” and then “Install”. Both do the same thing.</p>
+                  <svg class="ph" viewBox="0 0 120 200" aria-hidden="true"><use href="#ph-install"/></svg>
+                </li>
+                <li>
+                  <h3>Confirm</h3>
+                  <p>Tap “Install” in the box that appears. It takes a second; no app store and no account.</p>
+                  <svg class="ph" viewBox="0 0 120 200" aria-hidden="true"><use href="#ph-confirm"/></svg>
+                </li>
+                <li>
+                  <h3>Open it from your home screen</h3>
+                  <p>Look for the Kreix icon among your apps. It opens full screen, like any other app.</p>
+                  <svg class="ph" viewBox="0 0 120 200" aria-hidden="true"><use href="#ph-home"/></svg>
+                </li>
+              </ol>
+          </div>
+          <div class="os-panel" role="tabpanel" id="p-iphone" aria-labelledby="t-iphone" tabindex="0" hidden>
+            <p class="os-note">It has to be Safari: that is where “Add to Home Screen” is always available.</p>
+              <ol class="steps steps-art">
+                <li>
+                  <h3>Open Kreix in Safari</h3>
+                  <p>Tap “Open Kreix on your phone”, just below. If the link opens inside another app (WhatsApp, Instagram…), copy it and paste it into Safari. The first time it downloads about 20&nbsp;MB.</p>
+                  <svg class="ph" viewBox="0 0 120 200" aria-hidden="true"><use href="#ph-page"/></svg>
+                </li>
+                <li>
+                  <h3>Tap Share</h3>
+                  <p>The square with an arrow pointing up: at the bottom on iPhone, at the top right on iPad.</p>
+                  <svg class="ph" viewBox="0 0 120 200" aria-hidden="true"><use href="#ph-share"/></svg>
+                </li>
+                <li>
+                  <h3>Scroll down and tap “Add to Home Screen”</h3>
+                  <p>The list is long: swipe it up until you see the option with a “+” square.</p>
+                  <svg class="ph" viewBox="0 0 120 200" aria-hidden="true"><use href="#ph-sheet"/></svg>
+                </li>
+                <li>
+                  <h3>Name it and tap “Add”</h3>
+                  <p>Leave “Kreix” and tap “Add” at the top right.</p>
+                  <svg class="ph" viewBox="0 0 120 200" aria-hidden="true"><use href="#ph-confirm"/></svg>
+                </li>
+                <li>
+                  <h3>Open it from your home screen</h3>
+                  <p>Open it from the icon, not from Safari: that way it runs full screen.</p>
+                  <svg class="ph" viewBox="0 0 120 200" aria-hidden="true"><use href="#ph-home"/></svg>
+                </li>
+              </ol>
+          </div>
+          <div class="bring">
+            <h3>Bring your data</h3>
+            <p>Import your statements from the phone or send it the ones on your computer: in Kreix for Windows, Data, Export and “Send to phone”, then scan the QR code with the app. No cables, no connection.</p>
+          </div>
+          <div class="actions">
+            <a class="btn btn-primary" href="../app/?lang=en">Open Kreix on your phone</a>
+          </div>
+          <p class="note">Your data stays encrypted on the phone with your master password. The app only connects to this website to download itself and, when there is a new version, to update. It also works in the browser on a Mac or a Linux computer.</p>
+        </div>
+        <figure class="qr">
+          <svg viewBox="-2 -2 37 37" shape-rendering="crispEdges" role="img" aria-label="QR code that opens the Kreix app"><path d="M0 0h7v1h-7zM8 0h1v1h-1zM10 0h1v1h-1zM15 0h1v1h-1zM17 0h2v1h-2zM21 0h1v1h-1zM26 0h7v1h-7zM0 1h1v1h-1zM6 1h1v1h-1zM8 1h2v1h-2zM14 1h3v1h-3zM18 1h1v1h-1zM20 1h3v1h-3zM26 1h1v1h-1zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h3v1h-3zM6 2h1v1h-1zM9 2h1v1h-1zM14 2h2v1h-2zM18 2h5v1h-5zM24 2h1v1h-1zM26 2h1v1h-1zM28 2h3v1h-3zM32 2h1v1h-1zM0 3h1v1h-1zM2 3h3v1h-3zM6 3h1v1h-1zM9 3h2v1h-2zM12 3h1v1h-1zM14 3h1v1h-1zM16 3h1v1h-1zM18 3h1v1h-1zM20 3h2v1h-2zM26 3h1v1h-1zM28 3h3v1h-3zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h3v1h-3zM6 4h1v1h-1zM11 4h1v1h-1zM14 4h2v1h-2zM17 4h2v1h-2zM21 4h1v1h-1zM23 4h1v1h-1zM26 4h1v1h-1zM28 4h3v1h-3zM32 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM9 5h1v1h-1zM11 5h1v1h-1zM18 5h1v1h-1zM20 5h2v1h-2zM26 5h1v1h-1zM32 5h1v1h-1zM0 6h7v1h-7zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h1v1h-1zM26 6h7v1h-7zM12 7h3v1h-3zM16 7h1v1h-1zM19 7h2v1h-2zM1 8h1v1h-1zM6 8h8v1h-8zM15 8h1v1h-1zM17 8h1v1h-1zM19 8h1v1h-1zM22 8h4v1h-4zM31 8h2v1h-2zM0 9h1v1h-1zM5 9h1v1h-1zM8 9h1v1h-1zM10 9h2v1h-2zM15 9h3v1h-3zM19 9h1v1h-1zM22 9h2v1h-2zM28 9h3v1h-3zM3 10h1v1h-1zM5 10h2v1h-2zM8 10h1v1h-1zM10 10h1v1h-1zM12 10h4v1h-4zM17 10h1v1h-1zM21 10h2v1h-2zM26 10h1v1h-1zM28 10h1v1h-1zM30 10h2v1h-2zM1 11h2v1h-2zM4 11h2v1h-2zM8 11h1v1h-1zM11 11h2v1h-2zM17 11h4v1h-4zM22 11h1v1h-1zM25 11h7v1h-7zM6 12h2v1h-2zM13 12h1v1h-1zM15 12h3v1h-3zM20 12h1v1h-1zM23 12h2v1h-2zM26 12h2v1h-2zM32 12h1v1h-1zM2 13h1v1h-1zM4 13h2v1h-2zM8 13h3v1h-3zM13 13h3v1h-3zM18 13h2v1h-2zM23 13h5v1h-5zM30 13h3v1h-3zM3 14h2v1h-2zM6 14h1v1h-1zM8 14h2v1h-2zM12 14h3v1h-3zM16 14h1v1h-1zM21 14h2v1h-2zM24 14h3v1h-3zM28 14h1v1h-1zM31 14h1v1h-1zM0 15h2v1h-2zM5 15h1v1h-1zM7 15h2v1h-2zM11 15h1v1h-1zM14 15h1v1h-1zM20 15h1v1h-1zM24 15h2v1h-2zM27 15h1v1h-1zM30 15h1v1h-1zM32 15h1v1h-1zM0 16h1v1h-1zM3 16h1v1h-1zM5 16h3v1h-3zM10 16h4v1h-4zM15 16h2v1h-2zM22 16h2v1h-2zM25 16h1v1h-1zM27 16h2v1h-2zM32 16h1v1h-1zM3 17h3v1h-3zM7 17h1v1h-1zM9 17h2v1h-2zM17 17h1v1h-1zM19 17h1v1h-1zM22 17h2v1h-2zM26 17h1v1h-1zM29 17h4v1h-4zM1 18h1v1h-1zM4 18h1v1h-1zM6 18h5v1h-5zM13 18h1v1h-1zM15 18h1v1h-1zM19 18h1v1h-1zM22 18h2v1h-2zM25 18h3v1h-3zM29 18h2v1h-2zM32 18h1v1h-1zM0 19h3v1h-3zM4 19h1v1h-1zM7 19h3v1h-3zM14 19h1v1h-1zM18 19h3v1h-3zM23 19h2v1h-2zM26 19h1v1h-1zM28 19h3v1h-3zM2 20h3v1h-3zM6 20h2v1h-2zM9 20h4v1h-4zM14 20h2v1h-2zM17 20h1v1h-1zM20 20h1v1h-1zM25 20h1v1h-1zM27 20h3v1h-3zM32 20h1v1h-1zM0 21h6v1h-6zM7 21h1v1h-1zM11 21h1v1h-1zM13 21h1v1h-1zM17 21h3v1h-3zM21 21h3v1h-3zM28 21h2v1h-2zM0 22h1v1h-1zM4 22h5v1h-5zM10 22h4v1h-4zM25 22h1v1h-1zM28 22h1v1h-1zM31 22h1v1h-1zM0 23h1v1h-1zM5 23h1v1h-1zM8 23h1v1h-1zM10 23h1v1h-1zM13 23h1v1h-1zM16 23h1v1h-1zM24 23h1v1h-1zM27 23h4v1h-4zM0 24h4v1h-4zM6 24h4v1h-4zM12 24h4v1h-4zM17 24h4v1h-4zM24 24h6v1h-6zM8 25h2v1h-2zM14 25h4v1h-4zM19 25h3v1h-3zM23 25h2v1h-2zM28 25h1v1h-1zM30 25h1v1h-1zM32 25h1v1h-1zM0 26h7v1h-7zM8 26h2v1h-2zM13 26h2v1h-2zM16 26h2v1h-2zM22 26h3v1h-3zM26 26h1v1h-1zM28 26h1v1h-1zM30 26h2v1h-2zM0 27h1v1h-1zM6 27h1v1h-1zM9 27h3v1h-3zM13 27h1v1h-1zM15 27h1v1h-1zM17 27h1v1h-1zM19 27h1v1h-1zM23 27h2v1h-2zM28 27h3v1h-3zM32 27h1v1h-1zM0 28h1v1h-1zM2 28h3v1h-3zM6 28h1v1h-1zM9 28h1v1h-1zM11 28h1v1h-1zM14 28h1v1h-1zM16 28h2v1h-2zM19 28h2v1h-2zM22 28h1v1h-1zM24 28h6v1h-6zM31 28h1v1h-1zM0 29h1v1h-1zM2 29h3v1h-3zM6 29h1v1h-1zM9 29h3v1h-3zM13 29h1v1h-1zM15 29h1v1h-1zM17 29h4v1h-4zM23 29h3v1h-3zM27 29h2v1h-2zM32 29h1v1h-1zM0 30h1v1h-1zM2 30h3v1h-3zM6 30h1v1h-1zM10 30h1v1h-1zM12 30h2v1h-2zM15 30h1v1h-1zM19 30h1v1h-1zM21 30h5v1h-5zM27 30h2v1h-2zM30 30h3v1h-3zM0 31h1v1h-1zM6 31h1v1h-1zM8 31h1v1h-1zM11 31h1v1h-1zM13 31h3v1h-3zM22 31h1v1h-1zM25 31h1v1h-1zM27 31h4v1h-4zM0 32h7v1h-7zM9 32h1v1h-1zM11 32h2v1h-2zM15 32h1v1h-1zM18 32h1v1h-1zM22 32h4v1h-4zM27 32h1v1h-1zM31 32h1v1h-1z"/></svg>
+          <figcaption>On your computer? Point your phone camera at it and the app opens there.</figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -597,7 +663,6 @@
   <div class="security" id="seguridad">
     <div class="wrap">
       <div class="section-head">
-        <div class="rule"></div>
         <h2>Your data never leaves your computer</h2>
         <p>You do not have to trust a promise: Kreix is built so that it has nothing to send and nowhere to send it.</p>
       </div>
@@ -672,42 +737,32 @@
       </div>
 
       <div class="verify">
-        <h3>Check it yourself</h3>
-        <ol>
-          <li>Disconnect Wi-Fi or the network cable.</li>
-          <li>Open Kreix and use it as usual: import, look at your charts, change categories. Everything works the same, because it never needed a connection.</li>
+        <div class="verify-text">
+          <h3>Check it yourself</h3>
+          <p>For extra assurance, create an outbound rule in Windows Firewall that blocks Kreix and check that it keeps working.</p>
+          <p class="code-link">And the code is in plain sight: <a href="https://github.com/dasuarezang/kreix">read it on GitHub</a>.</p>
+        </div>
+        <ol class="proof">
+          <li>
+            <svg class="sk" viewBox="0 0 160 100" aria-hidden="true"><g transform="translate(56 2)"><path class="s2" d="M6 19a26 26 0 0 1 36 0M12 26a17 17 0 0 1 24 0M18.5 33a8 8 0 0 1 11 0"/><circle class="t" cx="24" cy="39" r="2"/><path class="cut" d="M6 42 42 6"/></g><rect class="b" x="42" y="54" width="76" height="38" rx="4"/><path class="s" d="M28 96h104"/><image href="../assets/kreix-icono-oscuro.svg" x="50" y="61" width="12" height="12"/><rect class="l" x="68" y="64" width="40" height="5" rx="2"/><rect class="l" x="50" y="80" width="58" height="5" rx="2"/></svg>
+            <p>Disconnect Wi-Fi or the network cable.</p>
+          </li>
+          <li>
+            <svg class="sk" viewBox="0 0 160 100" aria-hidden="true"><path class="ok" d="M66 26l10 10 20-22"/><rect class="b" x="42" y="54" width="76" height="38" rx="4"/><path class="s" d="M28 96h104"/><image href="../assets/kreix-icono-oscuro.svg" x="50" y="60" width="10" height="10"/><rect class="t" x="66" y="61" width="30" height="7" rx="2"/><path class="hs" d="M50 86c12-1 18-4 26-6s14-3 20-7 8-5 14-8"/></svg>
+            <p>Open Kreix and use it as usual: import, look at your charts, change categories. Everything works the same, because it never needed a connection.</p>
+          </li>
         </ol>
-        <p>For extra assurance, create an outbound rule in Windows Firewall that blocks Kreix and check that it keeps working.</p>
-        <p class="code-link">And the code is in plain sight: <a href="https://github.com/dasuarezang/kreix">read it on GitHub</a>.</p>
       </div>
 
       <div class="honest">
         <h3>Good to know</h3>
-        <p>The file that Export creates (.kreix) can be encrypted with your password, but that is optional. If you do not encrypt it, keep it somewhere safe. And write down your master password somewhere safe: if you lose it, there is no way to recover your data.</p>
+        <div class="honest-body">
+          <svg class="sk" viewBox="0 0 160 100" aria-hidden="true"><path class="b" d="M30 8h36l18 18v66H30z"/><path class="s" d="M66 8v18h18"/><text class="big" x="57" y="52" text-anchor="middle">.kreix</text><rect class="lockbox" x="45" y="66" width="24" height="18" rx="3"/><path class="hs" d="M50.5 66v-5a6.5 6.5 0 0 1 13 0v5"/><g transform="rotate(5 124 54)"><rect class="b" x="98" y="34" width="54" height="40" rx="3"/><circle class="t" cx="109" cy="50" r="2.4"/><circle class="t" cx="117" cy="50" r="2.4"/><circle class="t" cx="125" cy="50" r="2.4"/><circle class="t" cx="133" cy="50" r="2.4"/><circle class="t" cx="141" cy="50" r="2.4"/><rect class="l" x="106" y="60" width="30" height="4" rx="2"/></g></svg>
+          <p>The file that Export creates (.kreix) can be encrypted with your password, but that is optional. If you do not encrypt it, keep it somewhere safe. And write down your master password somewhere safe: if you lose it, there is no way to recover your data.</p>
+        </div>
       </div>
     </div>
   </div>
-
-  <!-- ===== Bancos ===== -->
-  <section id="bancos">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="rule"></div>
-        <h2>Works with your bank</h2>
-        <p>Kreix reads CSV and Excel (.xlsx and the older .xls). It recognises these formats by their usual columns.</p>
-      </div>
-      <ul class="banks">
-        <li>Imagin</li>
-        <li>MyInvestor</li>
-        <li>CaixaBank</li>
-        <li>Santander</li>
-        <li>Revolut</li>
-        <li>Trade Republic</li>
-        <li class="other">Any other bank</li>
-      </ul>
-      <p class="note">If Kreix does not recognise a file, it shows you the first rows and asks which column is the date, the description and the amount. It remembers for next time. The CaixaBank, Santander, Revolut and Trade Republic formats are included but still being tested.</p>
-    </div>
-  </section>
 
   <!-- ===== Cierre ===== -->
   <section class="closing" aria-labelledby="cierre">
@@ -729,53 +784,52 @@
   </section>
 
   <!-- ===== Preguntas ===== -->
-  <section id="preguntas">
+  <section class="band" id="preguntas">
     <div class="wrap">
       <div class="section-head">
-        <div class="rule"></div>
         <h2>Frequently asked questions</h2>
       </div>
       <div class="faq">
-        <details>
-          <summary>Does Kreix need my login details or access to my bank?</summary>
+        <div class="qa">
+          <h3>Does Kreix need my login details or access to my bank?</h3>
           <p>No, never. Kreix does not connect to your bank. It works with the statements you download yourself.</p>
-        </details>
-        <details>
-          <summary>Does it connect to the internet?</summary>
+        </div>
+        <div class="qa">
+          <h3>Does it connect to the internet?</h3>
           <p>No. It works exactly the same offline, and it has nothing to send information outside your computer.</p>
-        </details>
-        <details>
-          <summary>Where is my data stored?</summary>
+        </div>
+        <div class="qa">
+          <h3>Where is my data stored?</h3>
           <p>In an encrypted file inside your application data folder (on Windows, %APPDATA%\Kreix). It is only decrypted in memory while Kreix is open.</p>
-        </details>
-        <details>
-          <summary>What happens if I forget the password?</summary>
+        </div>
+        <div class="qa">
+          <h3>What happens if I forget the password?</h3>
           <p>It cannot be recovered: there is no spare key, which is why nobody else can read your data. You can start from scratch with a new password. Keep backups and write the password down somewhere safe.</p>
-        </details>
-        <details>
-          <summary>What happens if I import the same statement twice?</summary>
+        </div>
+        <div class="qa">
+          <h3>What happens if I import the same statement twice?</h3>
           <p>Nothing: Kreix recognises the transactions it already has and does not duplicate them.</p>
-        </details>
-        <details>
-          <summary>Can I take my data to another computer?</summary>
+        </div>
+        <div class="qa">
+          <h3>Can I take my data to another computer?</h3>
           <p>Yes. Export creates a .kreix file that you drop into Import on the other computer. You can encrypt it with your password. Importing it replaces any data that was there.</p>
-        </details>
-        <details>
-          <summary>Can I undo a change?</summary>
+        </div>
+        <div class="qa">
+          <h3>Can I undo a change?</h3>
           <p>Almost every important change shows a notice with an Undo button: imports, category changes, new rules, budgets and deletions.</p>
-        </details>
-        <details>
-          <summary>Which languages is it available in?</summary>
+        </div>
+        <div class="qa">
+          <h3>Which languages is it available in?</h3>
           <p>Spanish, Catalan and English. You choose when you first open it and can change it at any time in Settings.</p>
-        </details>
-        <details>
-          <summary>Does it work on Mac or on a phone?</summary>
+        </div>
+        <div class="qa">
+          <h3>Does it work on Mac or on a phone?</h3>
           <p>On your phone, yes: Android and iPhone have the Kreix app, which installs from the browser (see “Kreix on your phone”). On a Mac or Linux you can use that same app in the browser. The program with an installer is Windows only.</p>
-        </details>
-        <details>
-          <summary>How do I install it?</summary>
+        </div>
+        <div class="qa">
+          <h3>How do I install it?</h3>
           <p>Download the installer and open it. It does not ask for administrator rights and it adds a shortcut to Start and to the desktop. Because the installer is not signed yet, Windows may warn you the first time: click “More info” and then “Run anyway”.</p>
-        </details>
+        </div>
       </div>
     </div>
   </section>
@@ -791,6 +845,6 @@
 
 <a class="to-top" href="#inicio" aria-label="Back to top" title="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></a>
 
-<script src="../script.js" defer></script>
+<script src="../script.js?v=4" defer></script>
 </body>
 </html>

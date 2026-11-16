@@ -35,7 +35,7 @@
   var root = document.documentElement;
   var themeButton = document.getElementById("theme");
   var meta = document.querySelector('meta[name="theme-color"]');
-  function syncMeta() { if (meta) meta.setAttribute("content", root.getAttribute("data-theme") === "light" ? "#f6f2ea" : "#101418"); }
+  function syncMeta() { if (meta) meta.setAttribute("content", root.getAttribute("data-theme") === "light" ? "#d0c4a6" : "#030405"); }
   syncMeta();
   themeButton.addEventListener("click", function () {
     var next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
@@ -51,26 +51,33 @@
     syncMeta();
   });
 
-  /* Pestañas de la guía (con flechas, Inicio y Fin) */
-  var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
-  function select(tab, focus) {
-    tabs.forEach(function (t) {
-      var on = t === tab;
-      t.setAttribute("aria-selected", on ? "true" : "false");
-      t.tabIndex = on ? 0 : -1;
-      document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+  /* Pestañas (con flechas, Inicio y Fin): las pantallas de la guía y, en «Kreix en el móvil», el tipo de teléfono */
+  Array.prototype.forEach.call(document.querySelectorAll('[role="tablist"]'), function (list) {
+    var tabs = Array.prototype.slice.call(list.querySelectorAll('[role="tab"]'));
+    function select(tab, focus, byUser) {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute("aria-selected", on ? "true" : "false");
+        t.tabIndex = on ? 0 : -1;
+        document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+      });
+      if (focus) tab.focus();
+      if (byUser && tab.scrollIntoView) tab.scrollIntoView({ block: "nearest", inline: "nearest" });   /* en móvil la fila de pestañas se desliza */
+    }
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener("click", function () { select(tab, false, true); });
+      tab.addEventListener("keydown", function (e) {
+        var go = { ArrowRight: i + 1, ArrowLeft: i - 1, ArrowDown: i + 1, ArrowUp: i - 1, Home: 0, End: tabs.length - 1 }[e.key];
+        if (go === undefined) return;
+        e.preventDefault();
+        select(tabs[(go + tabs.length) % tabs.length], true, true);
+      });
     });
-    if (focus) tab.focus();
-    if (tab.scrollIntoView) tab.scrollIntoView({ block: "nearest", inline: "nearest" });   /* en móvil la fila de pestañas se desliza */
-  }
-  tabs.forEach(function (tab, i) {
-    tab.addEventListener("click", function () { select(tab, false); });
-    tab.addEventListener("keydown", function (e) {
-      var go = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 }[e.key];
-      if (go === undefined) return;
-      e.preventDefault();
-      select(tabs[(go + tabs.length) % tabs.length], true);
-    });
+    /* La guía de instalación se abre por el teléfono desde el que se lee (un iPad moderno dice ser un Mac, pero es táctil) */
+    if (list.id === "os-tabs") {
+      var ua = navigator.userAgent || "";
+      if (/iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) select(document.getElementById("t-iphone"), false, false);
+    }
   });
 
   /* El ojo: difumina la cifra de ejemplo, igual que el programa. Oculta, el número tampoco llega al lector de pantalla */
