@@ -85,6 +85,8 @@
       var ua = navigator.userAgent || "";
       if (/iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) select(document.getElementById("t-iphone"), false, false);
     }
+    /* y en un Samsung, el navegador que trae es Samsung Internet */
+    if (list.id === "br-tabs" && /SamsungBrowser/i.test(navigator.userAgent || "")) select(document.getElementById("t-samsung"), false, false);
   });
 
   /* El ojo: difumina la cifra de ejemplo, igual que el programa. Oculta, el número tampoco llega al lector de pantalla */

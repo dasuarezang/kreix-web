@@ -310,9 +310,20 @@ section { padding: clamp(72px, 10vw, 132px) 0 0; }
 /* el movil: la guia cambia segun el telefono (Android o iPhone) y cada paso dibuja donde hay que tocar */
 .seg { display: inline-flex; gap: 6px; padding: 5px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); }
 .seg-btn { min-height: 42px; padding: 0 20px; border: 2px solid transparent; border-radius: 4px; background: transparent; color: var(--muted); font: 700 16px/1 var(--body); cursor: pointer; transition: background .15s, color .15s; }
+.seg-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 22px; }
+.os-logo { width: 24px; height: 24px; flex: none; fill: currentColor; }   /* logo en un solo color: sigue al texto del botón y, por tanto, al tema */
+.br-logo { width: 18px; height: 18px; flex: none; }
 .seg-btn:hover { color: var(--text); }
 .seg-btn[aria-selected="true"] { background: var(--accent); border-color: var(--nav-edge); color: var(--on-accent); }
+/* cada sistema se tiñe con lo suyo: Android en su verde; el iPhone en el color del texto, que da el negro o el blanco según el tema */
+.seg-btn[data-os="android"][aria-selected="true"] { background: #3ddc84; border-color: #3ddc84; color: #0b1f13; }
+.seg-btn[data-os="iphone"][aria-selected="true"] { background: var(--text); border-color: var(--text); color: var(--bg); }
+.seg-sub { margin-bottom: 4px; }
+.seg-sub .seg-btn { min-height: 38px; padding: 0 16px; font-size: 15px; }
+.seg-sub .br-logo { width: 17px; height: 17px; }
 .os-panel[hidden] { display: none; }
+.os-note { display: flex; align-items: center; gap: 10px; }
+.os-note .br-logo { color: var(--text); }
 .os-note { margin: 16px 0 20px; color: var(--muted); font-size: var(--fs-small); }
 .ph-sprite { position: absolute; }
 .ph { display: block; width: 62px; height: auto; }
@@ -325,6 +336,22 @@ section { padding: clamp(72px, 10vw, 132px) 0 0; }
 .ph-bar { fill: var(--surface); }
 .ph-ring { fill: none; stroke: var(--accent); stroke-width: 3; }
 .ph-hotline { fill: none; stroke: var(--accent); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+.ph-cam { fill: var(--edge); }
+.ph-grab { fill: var(--edge); opacity: .6; }
+/* movimiento: el panel entra suave al cambiar de pestaña y el botón (o el gesto) que hay que tocar late despacio */
+@keyframes os-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes ph-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+@keyframes ph-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2.5px); } }
+.os-panel:not([hidden]) { animation: os-in .28s ease both; }
+.os-panel:not([hidden]) .steps-art li { animation: os-in .36s ease both; }
+.steps-art li:nth-child(2) { animation-delay: .05s; }
+.steps-art li:nth-child(3) { animation-delay: .1s; }
+.steps-art li:nth-child(4) { animation-delay: .15s; }
+.steps-art li:nth-child(5) { animation-delay: .2s; }
+.ph-hot, .ph-on, .ph-ring { transform-box: fill-box; transform-origin: center; animation: ph-pulse 2.4s ease-in-out infinite; }
+.ph-hot.ph-still, .ph-on.ph-still { animation: none; }
+.ph-hotline { animation: ph-bob 1.8s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .os-panel:not([hidden]), .os-panel:not([hidden]) .steps-art li, .ph-hot, .ph-on, .ph-ring, .ph-hotline { animation: none; } }
 .bring { padding: 26px 0 0 70px; }
 .bring h3 { font-size: var(--fs-h3); }
 .bring p { margin-top: 6px; color: var(--soft); font-size: 17px; max-width: 34em; }
@@ -994,7 +1021,8 @@ footer p { max-width: 36em; }
   .install .steps-art li > .ph { grid-column: 2; grid-row: 1; justify-self: end; width: clamp(34px, 6.2vh, 54px); }
   .install .steps-art h3 { grid-column: 1 / -1; grid-row: 2; margin-top: clamp(8px, 1.6vh, 14px); font-size: clamp(16px, 2.4vh, 20px); }
   .install .steps-art p { grid-column: 1 / -1; grid-row: 3; font-size: clamp(13.5px, 1.95vh, 15px); line-height: 1.4; }
-  .seg-btn { min-height: clamp(36px, 5.2vh, 42px); }
+  .seg-btn { min-height: clamp(38px, 5.6vh, 48px); }
+  .seg-sub .seg-btn { min-height: clamp(32px, 4.6vh, 38px); }
   .os-note { margin: clamp(6px, 1.2vh, 12px) 0 clamp(8px, 1.6vh, 16px); font-size: clamp(14px, 2vh, 15px); }
   .screen-bring .phone { align-items: center; }
   .bring { padding: 0; }
