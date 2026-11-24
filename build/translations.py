@@ -419,9 +419,33 @@ T = {
     'Kreix 0.6.1 es software propietario de <a href="https://github.com/dasuarezang/kreix">código disponible</a>': (
         'Kreix 0.6.1 és programari propietari de <a href="https://github.com/dasuarezang/kreix">codi disponible</a>',
         'Kreix 0.6.1 is proprietary, <a href="https://github.com/dasuarezang/kreix">source-available</a> software'),
-    ': puedes usarlo, pero no copiarlo, redistribuirlo ni venderlo. Los datos de las capturas son inventados.': (
-        ': el pots fer servir, però no copiar-lo, redistribuir-lo ni vendre\'l. Les dades de les captures són inventades.',
-        ': you may use it, but not copy, redistribute or sell it. The data in the screenshots is made up.'),
+    ': puedes usarlo, pero no copiarlo, redistribuirlo ni venderlo.</span>': (
+        ': el pots fer servir, però no copiar-lo, redistribuir-lo ni vendre\'l.</span>',
+        ': you may use it, but not copy, redistribute or sell it.</span>'),
+    '<span>Los datos de las capturas son inventados.</span>': (
+        '<span>Les dades de les captures són inventades.</span>',
+        '<span>The data in the screenshots is made up.</span>'),
+    '<p>Finanzas personales sin conexión, cifradas en tu equipo.</p>': (
+        '<p>Finances personals sense connexió, xifrades al teu equip.</p>',
+        '<p>Personal finance that works offline, encrypted on your computer.</p>'),
+    'aria-label="Secciones"': (
+        'aria-label="Seccions"',
+        'aria-label="Sections"'),
+    '<h2>Secciones</h2>': (
+        '<h2>Seccions</h2>',
+        '<h2>Sections</h2>'),
+    '<h2>Descarga</h2>': (
+        '<h2>Descàrrega</h2>',
+        '<h2>Download</h2>'),
+    '<h2>Idioma y tema</h2>': (
+        '<h2>Idioma i tema</h2>',
+        '<h2>Language and theme</h2>'),
+    '>Código en GitHub</a>': (
+        '>Codi a GitHub</a>',
+        '>Code on GitHub</a>'),
+    '<span>Cambiar tema</span>': (
+        '<span>Canviar tema</span>',
+        '<span>Change theme</span>'),
     'Y el código está a la vista: <a href="https://github.com/dasuarezang/kreix">léelo en GitHub</a>.': (
         'I el codi és a la vista: <a href="https://github.com/dasuarezang/kreix">llegeix-lo a GitHub</a>.',
         'And the code is in plain sight: <a href="https://github.com/dasuarezang/kreix">read it on GitHub</a>.'),
@@ -604,9 +628,30 @@ T = {
     '>iPhone y iPad</button>': (
         '>iPhone i iPad</button>',
         '>iPhone and iPad</button>'),
-    'Los pasos son los de Chrome. En Edge y Samsung Internet son casi iguales.': (
-        'Els passos són els de Chrome. A Edge i Samsung Internet són gairebé iguals.',
-        'These steps are for Chrome. In Edge and Samsung Internet they are almost the same.'),
+    'Los pasos son los de Chrome. En Edge son casi iguales.': (
+        'Els passos són els de Chrome. A Edge són gairebé iguals.',
+        'These steps are for Chrome. In Edge they are almost the same.'),
+    'aria-label="Navegador"': (
+        'aria-label="Navegador"',
+        'aria-label="Browser"'),
+    'Los pasos son los de Samsung Internet, el navegador que traen los Samsung Galaxy.': (
+        'Els passos són els de Samsung Internet, el navegador que porten els Samsung Galaxy.',
+        'These steps are for Samsung Internet, the browser that comes on Samsung Galaxy phones.'),
+    '<h3>Abre Kreix en Samsung Internet</h3>': (
+        '<h3>Obre Kreix a Samsung Internet</h3>',
+        '<h3>Open Kreix in Samsung Internet</h3>'),
+    'Toca las tres rayas (≡), abajo a la derecha.': (
+        'Toca les tres ratlles (≡), a baix a la dreta.',
+        'Tap the three lines (≡) at the bottom right.'),
+    '<h3>Toca «Añadir página a» y luego «Pantalla de inicio»</h3>': (
+        "<h3>Toca «Afegeix la pàgina a» i després «Pantalla d'inici»</h3>",
+        '<h3>Tap “Add page to” and then “Home screen”</h3>'),
+    'Si tu versión muestra «Instalar», úsalo: hace lo mismo.': (
+        "Si la teva versió mostra «Instal·la», fes-la servir: fa el mateix.",
+        'If your version shows “Install”, use it: it does the same thing.'),
+    'Toca «Añadir» en el cuadro que aparece. Tarda un segundo; sin tienda de apps y sin cuenta.': (
+        "Toca «Afegeix» al quadre que apareix. Triga un segon; sense botiga d'apps i sense compte.",
+        'Tap “Add” in the box that appears. It takes a second; no app store and no account.'),
     'Tiene que ser Safari: es donde «Añadir a pantalla de inicio» está siempre.': (
         "Ha de ser Safari: és on «Afegir a la pantalla d'inici» hi és sempre.",
         'It has to be Safari: that is where “Add to Home Screen” is always available.'),

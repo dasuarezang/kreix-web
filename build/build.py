@@ -29,21 +29,50 @@ FLAGS = {          # banderas (24x24) con las esquinas suaves, las mismas que di
 }
 
 
-def switcher(lang: str) -> str:
-    """El selector de idioma: tres banderas, con enlaces relativos desde la pagina de cada idioma."""
-    to = {
+def _flag(code: str, uid: str) -> str:
+    return f'<svg viewBox="0 0 24 24" aria-hidden="true"><clipPath id="{uid}"><rect width="24" height="24" rx="3.4"/></clipPath><g clip-path="url(#{uid})">{FLAGS[code]}</g></svg>'
+
+
+def _targets(lang: str) -> dict[str, str]:
+    """Enlaces relativos a cada idioma desde la pagina de `lang`."""
+    return {
         "es": {"es": "./", "ca": "ca/", "en": "en/"},
         "ca": {"es": "../", "ca": "./", "en": "../en/"},
         "en": {"es": "../", "ca": "../ca/", "en": "./"},
     }[lang]
-    names = {"es": "Castellano", "ca": "Català", "en": "English"}
-    label = {"es": "Idioma", "ca": "Idioma", "en": "Language"}[lang]
+
+
+NAMES = {"es": "Castellano", "ca": "Català", "en": "English"}
+LABEL = {"es": "Idioma", "ca": "Idioma", "en": "Language"}
+CHEVRON = '<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>'
+
+
+def switcher(lang: str) -> str:
+    """El selector de idioma de la cabecera: un boton con el idioma actual que abre la lista (en el movil, la lista va siempre a la vista)."""
+    to = _targets(lang)
     links = "".join(
-        f'<a href="{to[code]}" lang="{code}" hreflang="{code}" title="{names[code]}" aria-label="{names[code]}"' + (' aria-current="true"' if code == lang else "") + ">"
-        f'<svg viewBox="0 0 24 24" aria-hidden="true"><clipPath id="flag-{code}"><rect width="24" height="24" rx="3.4"/></clipPath><g clip-path="url(#flag-{code})">{FLAGS[code]}</g></svg></a>'
+        f'<a href="{to[code]}" lang="{code}" hreflang="{code}" title="{NAMES[code]}" aria-label="{NAMES[code]}"' + (' aria-current="true"' if code == lang else "") + ">"
+        f'{_flag(code, "flag-" + code)}<span>{NAMES[code]}</span></a>'
         for code in ("es", "ca", "en")
     )
-    return f'<!--lang--><nav class="lang" aria-label="{label}">{links}</nav><!--/lang-->'
+    button = (f'<button class="lang-btn" type="button" aria-expanded="false" aria-controls="lang-list" aria-label="{LABEL[lang]}: {NAMES[lang]}">'
+              f'{_flag(lang, "flag-btn")}<span>{lang.upper()}</span>{CHEVRON}</button>')
+    return f'<!--lang--><nav class="lang" aria-label="{LABEL[lang]}">{button}<div class="lang-list" id="lang-list">{links}</div></nav><!--/lang-->'
+
+
+def footer_langs(lang: str) -> str:
+    """Los tres idiomas como enlaces de texto en el pie."""
+    to = _targets(lang)
+    links = "".join(
+        f'<a href="{to[code]}" lang="{code}" hreflang="{code}"' + (' aria-current="true"' if code == lang else "") + f">{NAMES[code]}</a>"
+        for code in ("es", "ca", "en")
+    )
+    return f'<!--flang--><div class="foot-lang" role="group" aria-label="{LABEL[lang]}">{links}</div><!--/flang-->'
+
+
+def fill_switchers(html: str, lang: str) -> str:
+    html = re.sub(r"<!--lang-->.*?<!--/lang-->", lambda _: switcher(lang), html, count=1, flags=re.S)
+    return re.sub(r"<!--flang-->.*?<!--/flang-->", lambda _: footer_langs(lang), html, count=1, flags=re.S)
 
 
 def build(lang: str) -> str:
@@ -60,7 +89,7 @@ def build(lang: str) -> str:
         raise SystemExit(f"[{lang}] estos textos de translations.py ya no estan en index.html:\n  " + "\n  ".join(m[:90] for m in missing))
     out = out.replace('<html lang="es"', f'<html lang="{html_lang}"', 1)
     out = out.replace('content="es_ES"', f'content="{og_locale}"', 1)
-    out = re.sub(r"<!--lang-->.*?<!--/lang-->", lambda _: switcher(lang), out, count=1, flags=re.S)
+    out = fill_switchers(out, lang)
     # rutas: la pagina vive un nivel mas abajo; las capturas son las de la app en ese idioma
     out = out.replace("assets/shots/", f"../assets/shots/{lang}/")
     out = re.sub(r'(href|src|srcset)="assets/', r'\1="../assets/', out)
@@ -80,7 +109,7 @@ def untranslated(lang: str, html: str) -> list[str]:
 
 def main() -> None:
     global SOURCE
-    es = re.sub(r"<!--lang-->.*?<!--/lang-->", lambda _: switcher("es"), SOURCE, count=1, flags=re.S)
+    es = fill_switchers(SOURCE, "es")
     if es != SOURCE:                                       # el selector del castellano tambien sale de aqui
         (ROOT / "index.html").write_text(es, encoding="utf-8", newline="\n")
         SOURCE = es
