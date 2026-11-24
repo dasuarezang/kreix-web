@@ -9,25 +9,25 @@
 @font-face { font-family: "Montserrat"; src: url("assets/fonts/MontserratExtraBold.woff2") format("woff2"); font-weight: 800; font-display: swap; }
 
 :root {
-  --bg: #161b21;
-  --chrome: #030405;          /* la cabecera y el pie: mas oscuros que la pagina, para que se distingan de ella */
-  --side: #0c0f12;
-  --surface: #1c222a;
-  --surface-alt: #232a33;
-  --border: #2a323d;
-  --edge: #3c4756;
-  --text: #efebe3;
-  --muted: #8d97a4;
+  --bg: #090c10;
+  --chrome: #000102;          /* la cabecera y el pie: mas oscuros que la pagina, para que se distingan de ella */
+  --side: #040609;
+  --surface: #19212b;
+  --surface-alt: #222c38;
+  --border: #303c4a;
+  --edge: #5a687a;
+  --text: #f7f3eb;
+  --muted: #a9b3c0;
   --accent: #f5be1e;
   --accent-hover: #ffcc3d;
   --on-accent: #1a1500;
   --accent-text: #f5be1e;
-  --red: #f54f53;
-  --green: #4db48c;
-  --green-text: #4db48c;
-  --hover: #1f252c;
-  --band: #0e1115;
-  --soft: color-mix(in srgb, var(--text) 82%, var(--bg));
+  --red: #ff5a5e;
+  --green: #55c99d;
+  --green-text: #5fd3a6;
+  --hover: #1e2833;
+  --band: #030508;
+  --soft: color-mix(in srgb, var(--text) 90%, var(--bg));
   --display: "Montserrat", "Segoe UI", system-ui, sans-serif;
   --body: "DM Sans", "Segoe UI", system-ui, sans-serif;
   --gutter: clamp(20px, 5vw, 56px);
