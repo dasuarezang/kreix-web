@@ -989,7 +989,7 @@ footer { background: var(--chrome); border-top: 1px solid var(--edge); padding: 
 :root { --hdr: 69px; --A: calc(100vh - var(--hdr)); --pad: clamp(14px, 2.6vh, 34px); }
 @supports (height: 100svh) { :root { --A: calc(100svh - var(--hdr)); } }
 
-@media (min-width: 1021px) and (min-height: 540px) {
+@media (min-width: 1021px) and (min-height: 640px) {
   html { scroll-snap-type: y mandatory; scroll-padding-top: var(--hdr); }
   .hero-main, .hero .trailer, .screen, .closing {
     min-height: var(--A); display: flex; flex-direction: column; justify-content: center; box-sizing: border-box;
@@ -1108,16 +1108,12 @@ footer { background: var(--chrome); border-top: 1px solid var(--edge); padding: 
 
 /* en el móvil (y en ventanas muy bajas) no se fuerza nada: cada apartado sigue su curso, con menos aire entre ellos,
    y el tráiler se ajusta para verse completo en la pantalla */
-@media (max-width: 1020px), (max-height: 539px) {
+@media (max-width: 1020px), (max-height: 639px) {
   :root { --hdr: 65px; }
   .tr-stage, .tr-panel { width: min(100%, calc((var(--A) - 120px) * 16 / 9)); margin-inline: auto; }
 }
 @media (max-width: 640px) {
   .tr-stage, .tr-panel { width: min(100%, calc((var(--A) - 120px) * 400 / 540)); }
-}
-@media (max-width: 1020px) {
-  html { scroll-snap-type: y proximity; }
-  .hero-main, .hero .trailer, .screen, .closing { scroll-snap-align: start; }
 }
 @media (max-width: 900px) {
   section, .security { padding-top: clamp(48px, 9vw, 72px); }
@@ -1126,7 +1122,7 @@ footer { background: var(--chrome); border-top: 1px solid var(--edge); padding: 
   .hero .trailer { margin-top: clamp(28px, 6vw, 48px); }
 }
 
-@media (min-width: 1021px) and (min-height: 540px) and (max-height: 660px) {      /* ventanas bajas: menos aire para que todo siga cabiendo */
+@media (min-width: 1021px) and (min-height: 620px) and (max-height: 660px) {      /* ventanas bajas: menos aire para que todo siga cabiendo */
   :root { --pad: 10px; }
   .band > .screen:first-child { padding-top: calc(var(--pad) + 30px); }
   .section-head { margin-bottom: 10px; }
@@ -1144,7 +1140,7 @@ footer { background: var(--chrome); border-top: 1px solid var(--edge); padding: 
   .lede { margin-top: 14px; font-size: 17px; line-height: 1.5; }
   .actions { margin-top: 20px; }
 }
-@media (min-width: 1021px) and (max-width: 1200px) and (min-height: 540px) {      /* pantallas estrechas (1024 px): tarjetas y dibujos un poco más pequeños */
+@media (min-width: 1021px) and (max-width: 1200px) and (min-height: 620px) {      /* pantallas estrechas (1024 px): tarjetas y dibujos un poco más pequeños */
   .install .steps-art { gap: 10px; }
   .install .steps-art li { padding: 10px 11px; }
   .install .steps-art li > .ph { width: clamp(30px, 5.2vh, 42px); }
@@ -1189,3 +1185,31 @@ footer { background: var(--chrome); border-top: 1px solid var(--edge); padding: 
   .screen + .screen { margin-top: clamp(28px, 5vw, 44px); }
 }
 .install .steps-art h3 { font-size: 20px; }      /* los pasos del movil: titulos de tarjeta algo menores */
+
+/* con el dedo (móvil y tableta) el deslizamiento es libre: nada se encuadra ni se frena */
+@media (pointer: coarse), (hover: none) {
+  html { scroll-snap-type: none; }
+  .hero-main, .hero .trailer, .screen, .closing, footer { scroll-snap-align: none; }
+}
+
+/* ordenador con ventana estrecha (1021–1240 px): la cabecera nunca salta de línea, enlaces y espacios se aprietan un poco */
+.nav a { white-space: nowrap; }
+@media (min-width: 1021px) and (max-width: 1240px) {
+  .top .wrap, .menu { gap: 14px; }
+  .tools { gap: 8px; }
+  .nav { gap: 0; }
+  .nav a { padding: 8px 9px; font-size: 15px; }
+  .nav a::after { left: 9px; right: 9px; }
+}
+@media (min-width: 1021px) and (max-width: 1200px) and (min-height: 640px) { :root { --pad: clamp(10px, 2vh, 24px); } }
+
+/* ventanas estrechas: el titular y el texto de la portada dejan libre el sitio de Blitzen y Black, nunca quedan debajo */
+@media (min-width: 761px) {
+  .hero h1 { max-width: min(16ch, calc(100% - var(--nap-w) * 1.04)); }
+  .lede { max-width: min(34em, calc(100% - var(--nap-w) * 1.04)); }
+  :root[data-theme="light"] .hero h1 { max-width: min(16ch, calc(100% - var(--day-w) * 1.04)); }
+  :root[data-theme="light"] .lede { max-width: min(34em, calc(100% - var(--day-w) * 1.04)); }
+}
+
+/* Chrome / Samsung Internet: centrado bajo el selector de Android / iPhone */
+.seg-sub { transform: translateX(calc(var(--os-w, 100%) / 2 - 50%)); }

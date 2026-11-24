@@ -19,6 +19,15 @@
   });
   matchMedia("(min-width: 1021px)").addEventListener("change", function (e) { if (e.matches) setMenu(false); });
 
+  /* El selector de navegador (Android) queda centrado bajo el selector de sistema: se mide el ancho de este y se pasa al CSS */
+  var osTabs = document.getElementById("os-tabs");
+  if (osTabs) {
+    var setOsW = function () { document.documentElement.style.setProperty("--os-w", osTabs.offsetWidth + "px"); };
+    setOsW();
+    if (window.ResizeObserver) new ResizeObserver(setOsW).observe(osTabs); else window.addEventListener("resize", setOsW);
+    window.addEventListener("load", setOsW);
+  }
+
   /* Botón de volver arriba: solo aparece cuando ya se ha bajado un buen trozo */
   var toTop = document.querySelector(".to-top");
   var waiting = false;
