@@ -1100,6 +1100,11 @@ footer p { max-width: 36em; }
 /* Blitzen y Black se asoman por encima del QR: el corte plano de la imagen cae sobre el borde del código y sus patitas se apoyan en el margen blanco, sin tapar ningún módulo */
 .qr svg { position: relative; z-index: 1; }
 .qr-dogs { position: absolute; z-index: 2; left: 0; top: 0; width: 100%; height: auto; transform: translateY(-88.4%); pointer-events: none; }
+.qr-dogs img { display: block; width: 100%; height: auto; }
+.qr .qr-dogs svg { position: absolute; inset: 0; z-index: auto; width: 100%; height: 100%; padding: 0; border: 0; border-radius: 0; background: none; }
+.qr-dogs .lid { opacity: 0; animation: blink 4.3s infinite; }                /* los párpados tapan los ojos al parpadear */
+.qr-dogs .lid-b { animation-delay: -1.7s; }
+@media (prefers-reduced-motion: reduce) { .qr-dogs .lid { animation: none; } }
 @media (pointer: coarse) { .tr-seg { height: 40px; padding: 18px 0; } }      /* las barras del tráiler, con zona táctil de 40 px */
 @media (max-width: 900px) {          /* menos hueco entre apartados en el móvil */
   section, .security { padding-top: clamp(32px, 7vw, 48px); }
