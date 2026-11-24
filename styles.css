@@ -930,6 +930,8 @@ footer p { max-width: 36em; }
   .bring { padding-left: 0; }
   .seg { display: flex; }
   .seg-btn { flex: 1; padding: 0 10px; }
+  .seg-btn { white-space: nowrap; }
+  .seg-sub .seg-btn { flex: 1 1 auto; gap: 7px; padding: 0 12px; font-size: 14px; }   /* «Samsung Internet» es largo: los botones se reparten el ancho según su texto */
   .proof { grid-template-columns: minmax(0, 1fr); }
   .honest-body { grid-template-columns: minmax(0, 1fr); justify-items: start; }
 }
