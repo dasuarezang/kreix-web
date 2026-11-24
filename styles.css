@@ -9,6 +9,8 @@
 @font-face { font-family: "Montserrat"; src: url("assets/fonts/MontserratExtraBold.woff2") format("woff2"); font-weight: 800; font-display: swap; }
 
 :root {
+  /* escala tipografica: titulos (Montserrat) h2 > h3 > h4; textos (DM Sans) cuerpo > pequeno; etiquetas en negrita para los puntos de una lista */
+  --fs-h3: clamp(26px, 3vw, 32px); --fs-h4: 22px; --fs-label: 19px; --fs-body: 17px; --fs-small: 15px;
   --bg: #090c10;
   --chrome: #000102;          /* la cabecera y el pie: mas oscuros que la pagina, para que se distingan de ella */
   --side: #040609;
@@ -64,8 +66,8 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--body);
-  font-size: 18px;
-  line-height: 1.6;
+  font-size: var(--fs-body);
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
 main { overflow-x: hidden; overflow-x: clip; }   /* (hidden para Safari antiguo, que no conoce clip) */                 /* la marca de la portada sangra hasta el borde sin crear scroll horizontal */
@@ -209,7 +211,7 @@ section { padding: clamp(72px, 10vw, 132px) 0 0; }
 /* lo que Kreix no tiene: cuatro cosas tachadas con el rojo de la marca (el mismo corte que el "Sin conexion" del esquema) */
 .ledger { margin: 0; border-top: 2px solid var(--text); }
 .ledger-row { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 8px 36px; align-items: start; padding: 30px 0; border-bottom: 1px solid var(--border); }
-.ledger dt { font: 800 clamp(24px, 2.8vw, 34px)/1.2 var(--display); letter-spacing: -0.015em; text-wrap: balance; }
+.ledger dt { font: 800 var(--fs-h3)/1.2 var(--display); letter-spacing: -0.015em; text-wrap: balance; }
 .ledger dt s { text-decoration: line-through var(--red); text-decoration-thickness: .09em; text-decoration-skip-ink: none; }
 .ledger dd { margin: 0; color: var(--soft); max-width: 34em; padding-top: 5px; }
 
@@ -220,7 +222,7 @@ section { padding: clamp(72px, 10vw, 132px) 0 0; }
   content: counter(paso); grid-row: span 2; display: grid; place-items: center; width: 46px; height: 46px; border-radius: 6px;
   border: 2px solid var(--accent); color: var(--accent-text); font: 800 20px/1 var(--display);
 }
-.steps h3 { grid-column: 2; font-size: 23px; }
+.steps h3 { grid-column: 2; font-size: var(--fs-h4); }
 .steps p { grid-column: 2; margin-top: 6px; color: var(--soft); font-size: 17px; max-width: 34em; }
 .steps-art li { grid-template-columns: 46px minmax(0, 1fr) auto; grid-template-rows: auto 1fr; }
 .steps-art li > svg { grid-column: 3; grid-row: 1 / span 2; align-self: center; }
@@ -252,8 +254,8 @@ section { padding: clamp(72px, 10vw, 132px) 0 0; }
 
 /* los bancos: una tabla con el estado de cada formato (punto y texto de color, como los estados del programa) */
 .banks { padding-top: 26px; border-top: 1px solid var(--border); }
-.banks h3 { font: 700 20px/1.3 var(--body); letter-spacing: 0; }
-.banks > p { margin-top: 6px; color: var(--soft); font-size: 16px; }
+.banks h3 { font: 700 var(--fs-label)/1.35 var(--body); letter-spacing: 0; }
+.banks > p { margin-top: 6px; color: var(--soft); font-size: var(--fs-small); }
 .banks table { width: 100%; margin-top: 18px; border-collapse: collapse; font-size: 17px; }
 .banks tbody tr { border-top: 1px solid var(--border); }
 .banks tbody tr:last-child { border-bottom: 1px solid var(--border); }
@@ -278,7 +280,7 @@ section { padding: clamp(72px, 10vw, 132px) 0 0; }
 .panel { display: grid; gap: 26px; }
 .panel .frame { margin: 0; order: -1; }
 .panel > div { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 12px 36px; align-items: start; }
-.panel h3 { font-size: clamp(22px, 2.4vw, 28px); }
+.panel h3 { font-size: var(--fs-h4); }
 .panel ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
 .panel li { position: relative; padding-left: 22px; color: var(--soft); font-size: 17px; }
 .panel li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 10px; height: 2px; background: var(--edge); }
@@ -311,7 +313,7 @@ section { padding: clamp(72px, 10vw, 132px) 0 0; }
 .seg-btn:hover { color: var(--text); }
 .seg-btn[aria-selected="true"] { background: var(--accent); border-color: var(--nav-edge); color: var(--on-accent); }
 .os-panel[hidden] { display: none; }
-.os-note { margin: 16px 0 20px; color: var(--muted); font-size: 16px; }
+.os-note { margin: 16px 0 20px; color: var(--muted); font-size: var(--fs-small); }
 .ph-sprite { position: absolute; }
 .ph { display: block; width: 62px; height: auto; }
 .ph-body { fill: var(--side); stroke: var(--edge); stroke-width: 2.5; }
@@ -324,12 +326,12 @@ section { padding: clamp(72px, 10vw, 132px) 0 0; }
 .ph-ring { fill: none; stroke: var(--accent); stroke-width: 3; }
 .ph-hotline { fill: none; stroke: var(--accent); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
 .bring { padding: 26px 0 0 70px; }
-.bring h3 { font-size: 23px; }
+.bring h3 { font-size: var(--fs-h3); }
 .bring p { margin-top: 6px; color: var(--soft); font-size: 17px; max-width: 34em; }
 .phone .actions { margin-top: 30px; }
 .qr { margin: 0; justify-self: end; position: sticky; top: 100px; width: min(100%, 290px); }
 .qr svg { display: block; width: 100%; height: auto; padding: 8px; border-radius: 6px; background: #fff; fill: #000; }
-.qr figcaption { margin-top: 14px; color: var(--soft); font-size: 16px; }
+.qr figcaption { margin-top: 14px; color: var(--soft); font-size: var(--fs-small); }
 
 /* seguridad */
 /* los apartados se alternan: uno sobre el fondo y el siguiente sobre una franja mas oscura que entra en diagonal, con la inclinacion de la marca */
@@ -346,26 +348,26 @@ section { padding: clamp(72px, 10vw, 132px) 0 0; }
 .diagram .cut { stroke: var(--red); stroke-width: 4; stroke-linecap: round; }
 .diagram .lock { fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
 .how { margin: 0; padding: 0; list-style: none; display: grid; gap: 26px; }
-.how h3 { font: 700 20px/1.3 var(--body); letter-spacing: 0; }
+.how h3 { font: 700 var(--fs-label)/1.35 var(--body); letter-spacing: 0; }
 .how p { margin-top: 6px; color: var(--soft); font-size: 17px; }
 /* "Compruebalo tu": la prueba en dos vinetas a la misma altura (sin red, y Kreix sigue funcionando); la raya amarilla la marca */
 .verify, .honest { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 24px 36px; align-items: start; }
 .verify { margin-top: clamp(48px, 6vw, 72px); padding-top: 30px; border-top: 2px solid var(--accent); }
-.verify h3 { font-size: clamp(26px, 3.2vw, 36px); }
-.verify-text p { margin-top: 16px; color: var(--soft); font-size: 16.5px; max-width: 26em; }
+.verify h3 { font-size: var(--fs-h3); }
+.verify-text p { margin-top: 16px; color: var(--soft); font-size: var(--fs-body); max-width: 26em; }
 .verify-text .code-link { color: var(--text); font-weight: 500; }
 .verify-text .code-link a { text-decoration-color: var(--accent); text-underline-offset: 3px; }
 .proof { counter-reset: paso; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 .proof li { counter-increment: paso; display: grid; grid-template-columns: 38px minmax(0, 1fr); gap: 18px 14px; align-content: start; padding: 22px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); }
 .proof .sk { grid-column: 1 / -1; grid-row: 1; width: 100%; max-width: 200px; margin-inline: auto; }
 .proof li::before { content: counter(paso); display: grid; place-items: center; width: 38px; height: 38px; border-radius: 6px; border: 2px solid var(--accent); color: var(--accent-text); font: 800 17px/1 var(--display); grid-column: 1; grid-row: 2; }
-.proof p { grid-column: 2; grid-row: 2; color: var(--soft); font-size: 16.5px; padding-top: 5px; }
+.proof p { grid-column: 2; grid-row: 2; color: var(--soft); font-size: var(--fs-body); padding-top: 5px; }
 .honest { margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--border); }
-.honest h3 { font: 700 20px/1.3 var(--body); letter-spacing: 0; }
+.honest h3 { font: 700 var(--fs-label)/1.35 var(--body); letter-spacing: 0; }
 .honest-body { display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 24px; align-items: center; }
 .honest-body .sk { width: 132px; }
-.honest p { color: var(--soft); font-size: 16.5px; max-width: 40em; }
-.note { margin-top: 18px; color: var(--soft); font-size: 16px; max-width: 42em; }
+.honest p { color: var(--soft); font-size: var(--fs-body); max-width: 40em; }
+.note { margin-top: 18px; color: var(--soft); font-size: var(--fs-small); max-width: 42em; }
 
 /* preguntas: todas a la vista, en una reticula de dos columnas; cada una bajo su raya, con una barra de la marca delante */
 .faq { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(36px, 5vw, 72px); border-bottom: 1px solid var(--border); }
@@ -374,7 +376,7 @@ section { padding: clamp(72px, 10vw, 132px) 0 0; }
 .qa:nth-child(4n + 2)::before { background: color-mix(in srgb, var(--accent) 62%, var(--red)); }
 .qa:nth-child(4n + 3)::before { background: color-mix(in srgb, var(--accent) 30%, var(--red)); }
 .qa:nth-child(4n + 4)::before { background: var(--red); }
-.qa h3 { font: 700 19px/1.4 var(--body); letter-spacing: 0; }
+.qa h3 { font: 700 var(--fs-label)/1.35 var(--body); letter-spacing: 0; }
 .qa p { margin-top: 6px; color: var(--soft); font-size: 17px; }
 
 /* cierre */
@@ -412,7 +414,7 @@ section { padding: clamp(72px, 10vw, 132px) 0 0; }
 .closing-mark i:nth-child(4) { background: var(--red); }
 
 /* pie */
-footer { background: var(--chrome); border-top: 1px solid var(--edge); padding: 40px 0 56px; color: color-mix(in srgb, var(--text) 72%, var(--chrome)); font-size: 15.5px; }
+footer { background: var(--chrome); border-top: 1px solid var(--edge); padding: 40px 0 56px; color: color-mix(in srgb, var(--text) 72%, var(--chrome)); font-size: var(--fs-small); }
 footer .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 32px; }
 footer .brand { font-size: 18px; color: var(--text); }
 footer .brand img { width: 30px; height: 30px; }
@@ -925,7 +927,7 @@ footer p { max-width: 36em; }
   .band > .screen:first-child { padding-top: calc(var(--pad) + clamp(30px, 4vw, 50px)); }   /* deja sitio a la esquina en diagonal de la franja */
   .section-head { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); margin-bottom: clamp(14px, 3vh, 34px); gap: 8px 36px; align-items: end; }
   .section-head h2, .privacy-text h2 { font-size: clamp(26px, min(3.9vw, 5.8vh), 46px); }
-  .section-head p { font-size: clamp(15.5px, 2.3vh, 18px); line-height: 1.5; }
+  .section-head p { font-size: clamp(15.5px, 2.3vh, 17px); line-height: 1.5; }
 
   /* portada */
   .hero-main {
@@ -947,20 +949,20 @@ footer p { max-width: 36em; }
   /* lo que Kreix no tiene: las cuatro cosas, en dos columnas */
   .ledger { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(28px, 4vw, 56px); }
   .ledger-row { display: block; padding: clamp(14px, 3.2vh, 34px) 0; }
-  .ledger dt { font-size: clamp(22px, min(2.8vw, 4.2vh), 34px); }
-  .ledger dd { padding-top: clamp(6px, 1.2vh, 12px); font-size: clamp(15.5px, 2.3vh, 18px); line-height: 1.5; max-width: 30em; }
+  .ledger dt { font-size: clamp(22px, min(2.6vw, 4.2vh), 32px); }
+  .ledger dd { padding-top: clamp(6px, 1.2vh, 12px); font-size: clamp(15.5px, 2.3vh, 17px); line-height: 1.5; max-width: 30em; }
 
   /* tres pasos y bancos */
   .start { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(24px, 4vw, 56px); align-items: center; }
   .steps li { padding: clamp(9px, 1.9vh, 22px) 0; grid-template-columns: 40px minmax(0, 1fr); }
-  .steps h3 { font-size: clamp(18px, 2.7vh, 23px); }
+  .steps h3 { font-size: clamp(18px, 2.7vh, 22px); }
   .steps p { margin-top: 4px; font-size: clamp(14.5px, 2.15vh, 17px); line-height: 1.45; }
   .steps li::before { width: 40px; height: 40px; font-size: 18px; }
   .steps-art li { grid-template-columns: 40px minmax(0, 1fr) auto; }
   .steps-art li > .sk { width: clamp(96px, 15vh, 140px); }
   .banks { padding-top: clamp(10px, 2vh, 22px); }
-  .banks h3 { font-size: clamp(17px, 2.5vh, 20px); }
-  .banks > p, .banks .note { font-size: clamp(13.5px, 2vh, 15.5px); line-height: 1.45; }
+  .banks h3 { font-size: clamp(17px, 2.5vh, 19px); }
+  .banks > p, .banks .note { font-size: clamp(14px, 2vh, 15px); line-height: 1.45; }
   .banks table { margin-top: 10px; font-size: clamp(14.5px, 2.2vh, 17px); }
   .banks th, .banks td { padding: clamp(4px, 1vh, 10px) 0; }
   .banks td { font-size: clamp(13px, 1.9vh, 15px); }
@@ -971,16 +973,16 @@ footer p { max-width: 36em; }
   .tab { min-height: clamp(38px, 5.6vh, 46px); font-size: 16px; }
   .panel { grid-template-columns: minmax(0, 1fr) clamp(230px, 23vw, 290px); gap: clamp(18px, 2.4vw, 34px); align-items: center; }
   .panel > div { display: block; }
-  .panel h3 { font-size: clamp(19px, 2.6vh, 24px); }
+  .panel h3 { font-size: clamp(19px, 2.6vh, 22px); }
   .panel ul { margin-top: 12px; gap: 8px; }
-  .panel li { font-size: clamp(14.5px, 2.15vh, 16.5px); line-height: 1.45; }
+  .panel li { font-size: clamp(14.5px, 2.15vh, 17px); line-height: 1.45; }
 
   /* el ojo */
   .privacy-demo { gap: clamp(14px, 3vh, 30px) clamp(32px, 5vw, 72px); align-items: center; }
-  .privacy-text p { margin-top: 12px; font-size: clamp(15.5px, 2.3vh, 18px); }
+  .privacy-text p { margin-top: 12px; font-size: clamp(15.5px, 2.3vh, 17px); }
   .demo-card { padding: clamp(20px, 3.6vh, 32px); }
   .more { gap: 8px; padding-top: clamp(12px, 2.4vh, 24px); }
-  .more h3, .more p { font-size: clamp(14.5px, 2.15vh, 16.5px); line-height: 1.5; }
+  .more h3, .more p { font-size: clamp(14.5px, 2.15vh, 17px); line-height: 1.5; }
 
   /* kreix en el móvil: los pasos, en una fila de tarjetas */
   .install .steps-art { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: clamp(10px, 1.6vw, 20px); border-top: 0; }
@@ -990,29 +992,29 @@ footer p { max-width: 36em; }
   }
   .install .steps-art li::before { grid-column: 1; grid-row: 1; }
   .install .steps-art li > .ph { grid-column: 2; grid-row: 1; justify-self: end; width: clamp(34px, 6.2vh, 54px); }
-  .install .steps-art h3 { grid-column: 1 / -1; grid-row: 2; margin-top: clamp(8px, 1.6vh, 14px); font-size: clamp(16px, 2.4vh, 20px); }
-  .install .steps-art p { grid-column: 1 / -1; grid-row: 3; font-size: clamp(13.5px, 1.95vh, 15.5px); line-height: 1.4; }
+  .install .steps-art h3 { grid-column: 1 / -1; grid-row: 2; margin-top: clamp(8px, 1.6vh, 14px); font-size: clamp(16px, 2.4vh, 22px); }
+  .install .steps-art p { grid-column: 1 / -1; grid-row: 3; font-size: clamp(13.5px, 1.95vh, 15px); line-height: 1.4; }
   .seg-btn { min-height: clamp(36px, 5.2vh, 42px); }
-  .os-note { margin: clamp(6px, 1.2vh, 12px) 0 clamp(8px, 1.6vh, 16px); font-size: clamp(14px, 2vh, 16px); }
+  .os-note { margin: clamp(6px, 1.2vh, 12px) 0 clamp(8px, 1.6vh, 16px); font-size: clamp(14px, 2vh, 15px); }
   .screen-bring .phone { align-items: center; }
   .bring { padding: 0; }
-  .bring h3 { font-size: clamp(22px, 3.4vh, 30px); }
-  .bring p { font-size: clamp(15.5px, 2.3vh, 18px); }
+  .bring h3 { font-size: clamp(24px, 3.4vh, 32px); }
+  .bring p { font-size: clamp(15.5px, 2.3vh, 17px); }
   .qr { position: static; width: min(100%, clamp(190px, 38vh, 290px)); }
 
   /* seguridad */
   .security-grid { align-items: center; }
   .how { gap: clamp(10px, 2.2vh, 24px); }
-  .how h3 { font-size: clamp(16px, 2.4vh, 20px); }
+  .how h3 { font-size: clamp(16px, 2.4vh, 19px); }
   .how p { margin-top: 3px; font-size: clamp(14.5px, 2.1vh, 17px); line-height: 1.45; }
   .diagram { max-height: calc(var(--A) - 2 * var(--pad) - 130px); }
   .verify { margin-top: 0; padding-top: clamp(16px, 3vh, 30px); }
-  .verify h3 { font-size: clamp(24px, min(3.2vw, 4.8vh), 36px); }
-  .verify-text p { margin-top: 12px; font-size: clamp(14.5px, 2.1vh, 16.5px); }
+  .verify h3 { font-size: clamp(24px, min(3vw, 4.8vh), 32px); }
+  .verify-text p { margin-top: 12px; font-size: clamp(14.5px, 2.1vh, 17px); }
   .proof { gap: clamp(12px, 2vw, 24px); }
   .proof li { padding: clamp(12px, 2.4vh, 22px); gap: clamp(8px, 1.6vh, 18px) 14px; }
   .proof .sk { max-width: clamp(110px, 17vh, 190px); }
-  .proof p, .honest p { font-size: clamp(14.5px, 2.1vh, 16.5px); line-height: 1.45; }
+  .proof p, .honest p { font-size: clamp(14.5px, 2.1vh, 17px); line-height: 1.45; }
   .honest { margin-top: clamp(14px, 3.2vh, 36px); padding-top: clamp(12px, 2.6vh, 26px); }
   .honest-body .sk { width: clamp(96px, 14vh, 132px); }
   .honest-body { grid-template-columns: clamp(96px, 14vh, 132px) minmax(0, 1fr); }
