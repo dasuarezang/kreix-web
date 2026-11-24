@@ -1096,3 +1096,10 @@ footer p { max-width: 36em; }
   background: linear-gradient(90deg, var(--accent) 0 8px, transparent 8px 12.7px, color-mix(in srgb, var(--accent) 62%, var(--red)) 12.7px 20.7px, transparent 20.7px 25.4px,
     color-mix(in srgb, var(--accent) 30%, var(--red)) 25.4px 33.4px, transparent 33.4px 38.1px, var(--red) 38.1px 46px);
 }
+
+/* Blitzen se asoma por detrás del QR: solo se ve de la cabeza para arriba (el resto queda tapado por el código) */
+.qr-peek { position: absolute; z-index: 0; top: 0; left: 6%; width: 84%; aspect-ratio: 770 / 606; transform: translateY(-52.8%); pointer-events: none; }
+.qr-peek img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.qr-peek .blink { opacity: 0; animation: blink 4.3s infinite; }
+.qr-peek .tongue { transform-origin: 28.73% 37.17%; animation: tongue 7s linear infinite; }
+.qr svg { position: relative; z-index: 1; }
