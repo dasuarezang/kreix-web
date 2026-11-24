@@ -16,7 +16,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon-180.png?v=2">
 <link rel="preload" href="../assets/fonts/MontserratExtraBold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/DMSans.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../styles.css?v=8">
+<link rel="stylesheet" href="../styles.css?v=9">
 <script>
   /* El tema y el sistema se deciden antes de pintar para que no parpadee. Si el equipo
      no es Windows (y solo si se reconoce claramente), la descarga se cambia por la app del movil.
@@ -71,6 +71,7 @@
 
   <!-- ===== Portada ===== -->
   <div class="hero wrap" id="inicio">
+    <div class="hero-main">
     <div class="hero-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
     <div class="nap" aria-hidden="true"><img src="../assets/perretes-durmiendo.webp" width="720" height="374" alt=""><span class="zz zz-blitzen"><i>z</i><i>z</i><i>z</i></span><span class="zz zz-black"><i>z</i><i>z</i><i>z</i></span></div>
     <div class="day" aria-hidden="true"><img class="tail" src="../assets/perretes/black-cola.webp" width="770" height="606" alt=""><img src="../assets/perretes/blitzen.webp" width="770" height="606" alt=""><img class="blink" src="../assets/perretes/blitzen-ojos.webp" width="770" height="606" alt=""><img class="tongue" src="../assets/perretes/blitzen-lengua.webp" width="770" height="606" alt=""><img src="../assets/perretes/black.webp" width="770" height="606" alt=""><img class="blink blink-black" src="../assets/perretes/black-ojos.webp" width="770" height="606" alt=""></div>
@@ -82,6 +83,7 @@
     </div>
     <p class="soon on-windows">Version 0.6.1 for Windows 10 and 11 (64-bit). If Windows warns you when you open it, that is because the installer is not signed yet: click “More info” and then “Run anyway”.</p>
     <p class="soon off-windows">On the computer, Kreix is a Windows program: open this page there to download it. <a href="https://github.com/dasuarezang/kreix-web/releases/download/v0.6.1/Kreix-Setup-0.6.1.exe">Download anyway (38&nbsp;MB)</a></p>
+    </div>
 
     <!--trailer-->
     <div class="trailer" id="trailer" data-state="idle" data-layout="wide" data-play="Play the trailer" data-pause="Pause the trailer">
@@ -364,7 +366,7 @@
 
   <!-- ===== What Kreix does not have: cuatro cosas tachadas ===== -->
   <section class="band" id="porque">
-    <div class="wrap">
+    <div class="wrap screen">
       <div class="section-head">
         <h2>What Kreix does not have</h2>
         <p>Four design decisions, and none of them is negotiable.</p>
@@ -392,7 +394,7 @@
 
   <!-- ===== Primeros pasos, y los bancos que reconoce ===== -->
   <section id="funciona">
-    <div class="wrap">
+    <div class="wrap screen">
       <div class="section-head">
         <h2>Start in three steps</h2>
         <p>Without linking accounts or giving anyone access: just a file you can already download from your bank.</p>
@@ -438,7 +440,7 @@
 
   <!-- ===== Guia pantalla a pantalla: la barra lateral del programa ===== -->
   <section class="band" id="guia">
-    <div class="wrap">
+    <div class="wrap screen">
       <div class="section-head">
         <h2>The guide, screen by screen</h2>
         <p>Each tab in the sidebar, in a few words. The data in the screenshots is made up.</p>
@@ -533,7 +535,7 @@
 
   <!-- ===== El ojo, y otros detalles ===== -->
   <section id="detalles">
-    <div class="wrap">
+    <div class="wrap screen">
       <div class="privacy-demo">
         <div class="privacy-text">
           <h2>An eye for when someone looks over your shoulder</h2>
@@ -562,13 +564,12 @@
 
   <!-- ===== Kreix en el movil ===== -->
   <section class="band" id="movil">
-    <div class="wrap">
+    <div class="wrap screen">
       <div class="section-head">
         <h2>Kreix on your phone</h2>
         <p>The same app, adapted to your phone: the same figures, charts and explanations, with Blitzen and Black on Home. It installs from the browser, with no app store, and keeps everything encrypted on the phone.</p>
       </div>
-      <div class="phone">
-        <div class="install">
+      <div class="install">
         <svg class="ph-sprite" width="0" height="0" aria-hidden="true" focusable="false">
           <symbol id="ph-page" viewBox="0 0 120 200"><rect x="6" y="4" width="108" height="192" rx="18" class="ph-body"/><rect x="14" y="30" width="92" height="150" rx="6" class="ph-screen"/><rect x="14" y="14" width="76" height="12" rx="6" class="ph-hot"/><rect x="22" y="18" width="44" height="4" rx="2" class="ph-on"/><rect x="24" y="48" width="72" height="22" rx="6" class="ph-line"/><rect x="24" y="80" width="72" height="8" rx="4" class="ph-line"/><rect x="24" y="96" width="52" height="8" rx="4" class="ph-line"/></symbol>
           <symbol id="ph-menu" viewBox="0 0 120 200"><rect x="6" y="4" width="108" height="192" rx="18" class="ph-body"/><rect x="14" y="30" width="92" height="150" rx="6" class="ph-screen"/><rect x="14" y="14" width="76" height="12" rx="6" class="ph-line"/><circle cx="99" cy="20" r="9" class="ph-hot"/><circle cx="99" cy="15.5" r="1.6" class="ph-on"/><circle cx="99" cy="20" r="1.6" class="ph-on"/><circle cx="99" cy="24.5" r="1.6" class="ph-on"/><rect x="24" y="48" width="72" height="8" rx="4" class="ph-line"/><rect x="24" y="66" width="52" height="8" rx="4" class="ph-line"/></symbol>
@@ -642,6 +643,11 @@
                 </li>
               </ol>
           </div>
+        </div>
+    </div>
+    <div class="wrap screen screen-bring">
+      <div class="phone">
+        <div class="install">
           <div class="bring">
             <h3>Bring your data</h3>
             <p>Import your statements from the phone or send it the ones on your computer: in Kreix for Windows, Data, Export and “Send to phone”, then scan the QR code with the app. No cables, no connection.</p>
@@ -661,7 +667,7 @@
 
   <!-- ===== Seguridad ===== -->
   <div class="security" id="seguridad">
-    <div class="wrap">
+    <div class="wrap screen">
       <div class="section-head">
         <h2>Your data never leaves your computer</h2>
         <p>You do not have to trust a promise: Kreix is built so that it has nothing to send and nowhere to send it.</p>
@@ -736,6 +742,8 @@
         </ul>
       </div>
 
+    </div>
+    <div class="wrap screen screen-proof">
       <div class="verify">
         <div class="verify-text">
           <h3>Check it yourself</h3>
@@ -785,7 +793,7 @@
 
   <!-- ===== Preguntas ===== -->
   <section class="band" id="preguntas">
-    <div class="wrap">
+    <div class="wrap screen">
       <div class="section-head">
         <h2>Frequently asked questions</h2>
       </div>
@@ -814,6 +822,10 @@
           <h3>Can I take my data to another computer?</h3>
           <p>Yes. Export creates a .kreix file that you drop into Import on the other computer. You can encrypt it with your password. Importing it replaces any data that was there.</p>
         </div>
+      </div>
+    </div>
+    <div class="wrap screen screen-faq2">
+      <div class="faq">
         <div class="qa">
           <h3>Can I undo a change?</h3>
           <p>Almost every important change shows a notice with an Undo button: imports, category changes, new rules, budgets and deletions.</p>

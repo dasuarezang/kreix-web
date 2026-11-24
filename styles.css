@@ -138,13 +138,14 @@ p { margin: 0; }
 .stripes i:nth-child(4) { background: var(--red); }
 
 /* ---- portada ---- */
-.hero { padding: clamp(56px, 9vw, 112px) 0 0; position: relative; --mark-top: clamp(40px, 6vw, 90px); --mark-h: clamp(200px, 30vw, 380px); --nap-w: clamp(220px, 27vw, 340px); --day-w: clamp(210px, 23vw, 300px); }
+.hero { position: relative; --mark-top: clamp(40px, 6vw, 90px); --mark-h: clamp(200px, 30vw, 380px); --nap-w: clamp(220px, 27vw, 340px); --day-w: clamp(210px, 23vw, 300px); }
 .hero-mark { position: absolute; right: -2%; top: var(--mark-top); display: flex; gap: clamp(14px, 2vw, 26px); height: var(--mark-h); transform: skewX(-24deg); opacity: .9; pointer-events: none; }
 .hero-mark i { width: clamp(14px, 2.2vw, 28px); border-radius: 3px; background: var(--accent); }
 .hero-mark i:nth-child(2) { background: color-mix(in srgb, var(--accent) 62%, var(--red)); }
 .hero-mark i:nth-child(3) { background: color-mix(in srgb, var(--accent) 30%, var(--red)); }
 .hero-mark i:nth-child(4) { background: var(--red); }
-.hero > *:not(.hero-mark):not(.nap):not(.day) { position: relative; }
+.hero-main { padding: clamp(56px, 9vw, 112px) 0 0; position: relative; }
+.hero > *:not(.hero-main), .hero-main > *:not(.hero-mark):not(.nap):not(.day) { position: relative; }
 /* el gag: Blitzen y Black durmiendo al pie de las barras de la marca, por delante, igual que de noche en el programa */
 .nap { position: absolute; z-index: 1; right: 0; top: calc(var(--mark-top) + var(--mark-h) - var(--nap-w) * 0.52 + 18px); width: var(--nap-w); pointer-events: none; }
 .nap img { width: 100%; height: auto; }
@@ -465,7 +466,7 @@ footer p { max-width: 36em; }
   .tabs { flex-direction: row; overflow-x: auto; margin-inline: calc(-1 * var(--gutter)); padding: 0 var(--gutter) 6px; scrollbar-width: none; }
   .tabs::-webkit-scrollbar { display: none; }
   .tab { flex: none; padding: 0 18px; border-color: var(--border); }
-  .hero { padding-top: 140px; }
+  .hero-main { padding-top: 140px; }
   .hero-mark { height: 72px; top: 52px; left: calc(var(--gutter) + 10px); right: auto; gap: 10px; }
   .hero-mark i { width: 10px; }
   .hero { --nap-w: 160px; }
@@ -902,4 +903,178 @@ footer p { max-width: 36em; }
   .seg-btn { flex: 1; padding: 0 10px; }
   .proof { grid-template-columns: minmax(0, 1fr); }
   .honest-body { grid-template-columns: minmax(0, 1fr); justify-items: start; }
+}
+
+/* ==== cada apartado, entero en la pantalla ====
+   En el ordenador, cada "pantalla" de la web (la portada, el tráiler, cada apartado...) mide justo lo que la ventana deja libre bajo la
+   cabecera, centra su contenido y se queda encuadrada al bajar: la rueda del ratón salta de una a otra y nunca hay que buscar el
+   resto de un apartado más abajo. Los tamaños se miden también con el alto de la ventana (vh), así que el contenido se
+   ajusta a portátiles bajos y a monitores grandes. Los apartados largos se reparten en varias pantallas. */
+:root { --hdr: 69px; --A: calc(100vh - var(--hdr)); --pad: clamp(14px, 2.6vh, 34px); }
+@supports (height: 100svh) { :root { --A: calc(100svh - var(--hdr)); } }
+
+@media (min-width: 1021px) and (min-height: 540px) {
+  html { scroll-snap-type: y mandatory; scroll-padding-top: var(--hdr); }
+  .hero-main, .hero .trailer, .screen, .closing {
+    min-height: var(--A); display: flex; flex-direction: column; justify-content: center; box-sizing: border-box;
+    scroll-snap-align: start; padding-block: var(--pad);
+  }
+  footer { scroll-snap-align: end; }
+  section, .security { padding-top: 0; }
+  .band { margin-top: 0; padding: 0; }
+  .band > .screen:first-child { padding-top: calc(var(--pad) + clamp(30px, 4vw, 50px)); }   /* deja sitio a la esquina en diagonal de la franja */
+  .section-head { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); margin-bottom: clamp(14px, 3vh, 34px); gap: 8px 36px; align-items: end; }
+  .section-head h2, .privacy-text h2 { font-size: clamp(26px, min(3.9vw, 5.8vh), 46px); }
+  .section-head p { font-size: clamp(15.5px, 2.3vh, 18px); line-height: 1.5; }
+
+  /* portada */
+  .hero-main {
+    padding-top: var(--pad);
+    --mark-h: clamp(190px, min(30vw, 50vh), 380px); --nap-w: clamp(210px, min(27vw, 42vh), 340px); --day-w: clamp(200px, min(23vw, 37vh), 300px);
+    --mark-top: calc(50% - var(--mark-h) / 2 - 24px);
+  }
+  .hero h1 { font-size: clamp(38px, min(7.2vw, 9.6vh), 84px); }
+  .lede { margin-top: clamp(12px, 2.4vh, 26px); font-size: clamp(17px, min(2.2vw, 2.9vh), 22px); }
+  .actions { margin-top: clamp(16px, 3.2vh, 36px); }
+  .soon { margin-top: clamp(8px, 1.6vh, 14px); font-size: clamp(13.5px, 1.9vh, 15px); }
+
+  /* tráiler: el lienzo y los mandos caben juntos en la pantalla */
+  .hero .trailer { margin: 0; }
+  .tr-stage, .tr-panel { width: min(100%, calc((var(--A) - 2 * var(--pad) - 112px) * 16 / 9)); margin-inline: auto; }
+  .tr-panel { margin-top: 8px; }
+  .tr-caps { font-size: clamp(15px, 2.2vh, 17px); }
+
+  /* lo que Kreix no tiene: las cuatro cosas, en dos columnas */
+  .ledger { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(28px, 4vw, 56px); }
+  .ledger-row { display: block; padding: clamp(14px, 3.2vh, 34px) 0; }
+  .ledger dt { font-size: clamp(22px, min(2.8vw, 4.2vh), 34px); }
+  .ledger dd { padding-top: clamp(6px, 1.2vh, 12px); font-size: clamp(15.5px, 2.3vh, 18px); line-height: 1.5; max-width: 30em; }
+
+  /* tres pasos y bancos */
+  .start { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(24px, 4vw, 56px); align-items: center; }
+  .steps li { padding: clamp(9px, 1.9vh, 22px) 0; grid-template-columns: 40px minmax(0, 1fr); }
+  .steps h3 { font-size: clamp(18px, 2.7vh, 23px); }
+  .steps p { margin-top: 4px; font-size: clamp(14.5px, 2.15vh, 17px); line-height: 1.45; }
+  .steps li::before { width: 40px; height: 40px; font-size: 18px; }
+  .steps-art li { grid-template-columns: 40px minmax(0, 1fr) auto; }
+  .steps-art li > .sk { width: clamp(96px, 15vh, 140px); }
+  .banks { padding-top: clamp(10px, 2vh, 22px); }
+  .banks h3 { font-size: clamp(17px, 2.5vh, 20px); }
+  .banks > p, .banks .note { font-size: clamp(13.5px, 2vh, 15.5px); line-height: 1.45; }
+  .banks table { margin-top: 10px; font-size: clamp(14.5px, 2.2vh, 17px); }
+  .banks th, .banks td { padding: clamp(4px, 1vh, 10px) 0; }
+  .banks td { font-size: clamp(13px, 1.9vh, 15px); }
+  .banks .note { margin-top: 10px; }
+
+  /* la guía: pestañas, captura y texto, uno junto al otro */
+  .guide { grid-template-columns: 170px minmax(0, 1fr); gap: clamp(18px, 2.4vw, 36px); align-items: center; }
+  .tab { min-height: clamp(38px, 5.6vh, 46px); font-size: 16px; }
+  .panel { grid-template-columns: minmax(0, 1fr) clamp(230px, 23vw, 290px); gap: clamp(18px, 2.4vw, 34px); align-items: center; }
+  .panel > div { display: block; }
+  .panel h3 { font-size: clamp(19px, 2.6vh, 24px); }
+  .panel ul { margin-top: 12px; gap: 8px; }
+  .panel li { font-size: clamp(14.5px, 2.15vh, 16.5px); line-height: 1.45; }
+
+  /* el ojo */
+  .privacy-demo { gap: clamp(14px, 3vh, 30px) clamp(32px, 5vw, 72px); align-items: center; }
+  .privacy-text p { margin-top: 12px; font-size: clamp(15.5px, 2.3vh, 18px); }
+  .demo-card { padding: clamp(20px, 3.6vh, 32px); }
+  .more { gap: 8px; padding-top: clamp(12px, 2.4vh, 24px); }
+  .more h3, .more p { font-size: clamp(14.5px, 2.15vh, 16.5px); line-height: 1.5; }
+
+  /* kreix en el móvil: los pasos, en una fila de tarjetas */
+  .install .steps-art { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: clamp(10px, 1.6vw, 20px); border-top: 0; }
+  .install .steps-art li {
+    grid-template-columns: 40px minmax(0, 1fr); grid-template-rows: auto auto 1fr; align-content: start; padding: clamp(10px, 2vh, 20px);
+    border: 1px solid var(--border); border-radius: 6px; background: var(--surface);
+  }
+  .install .steps-art li::before { grid-column: 1; grid-row: 1; }
+  .install .steps-art li > .ph { grid-column: 2; grid-row: 1; justify-self: end; width: clamp(34px, 6.2vh, 54px); }
+  .install .steps-art h3 { grid-column: 1 / -1; grid-row: 2; margin-top: clamp(8px, 1.6vh, 14px); font-size: clamp(16px, 2.4vh, 20px); }
+  .install .steps-art p { grid-column: 1 / -1; grid-row: 3; font-size: clamp(13.5px, 1.95vh, 15.5px); line-height: 1.4; }
+  .seg-btn { min-height: clamp(36px, 5.2vh, 42px); }
+  .os-note { margin: clamp(6px, 1.2vh, 12px) 0 clamp(8px, 1.6vh, 16px); font-size: clamp(14px, 2vh, 16px); }
+  .screen-bring .phone { align-items: center; }
+  .bring { padding: 0; }
+  .bring h3 { font-size: clamp(22px, 3.4vh, 30px); }
+  .bring p { font-size: clamp(15.5px, 2.3vh, 18px); }
+  .qr { position: static; width: min(100%, clamp(190px, 38vh, 290px)); }
+
+  /* seguridad */
+  .security-grid { align-items: center; }
+  .how { gap: clamp(10px, 2.2vh, 24px); }
+  .how h3 { font-size: clamp(16px, 2.4vh, 20px); }
+  .how p { margin-top: 3px; font-size: clamp(14.5px, 2.1vh, 17px); line-height: 1.45; }
+  .diagram { max-height: calc(var(--A) - 2 * var(--pad) - 130px); }
+  .verify { margin-top: 0; padding-top: clamp(16px, 3vh, 30px); }
+  .verify h3 { font-size: clamp(24px, min(3.2vw, 4.8vh), 36px); }
+  .verify-text p { margin-top: 12px; font-size: clamp(14.5px, 2.1vh, 16.5px); }
+  .proof { gap: clamp(12px, 2vw, 24px); }
+  .proof li { padding: clamp(12px, 2.4vh, 22px); gap: clamp(8px, 1.6vh, 18px) 14px; }
+  .proof .sk { max-width: clamp(110px, 17vh, 190px); }
+  .proof p, .honest p { font-size: clamp(14.5px, 2.1vh, 16.5px); line-height: 1.45; }
+  .honest { margin-top: clamp(14px, 3.2vh, 36px); padding-top: clamp(12px, 2.6vh, 26px); }
+  .honest-body .sk { width: clamp(96px, 14vh, 132px); }
+  .honest-body { grid-template-columns: clamp(96px, 14vh, 132px) minmax(0, 1fr); }
+
+  /* cierre */
+  .closing-box { --pt-w: clamp(220px, min(31vw, 52vh), 380px); padding: clamp(24px, 5vh, 72px) clamp(36px, 6vw, 72px); }
+  .closing-box h2 { font-size: clamp(34px, min(6vw, 9vh), 72px); margin-bottom: clamp(16px, 3.4vh, 44px); }
+
+  /* preguntas */
+  .qa { padding: clamp(11px, 2.3vh, 24px) 0 clamp(12px, 2.6vh, 28px) 28px; }
+  .qa::before { top: calc(clamp(11px, 2.3vh, 24px) + 5px); }
+  .qa h3 { font-size: clamp(16px, 2.4vh, 19px); }
+  .qa p { font-size: clamp(14.5px, 2.15vh, 17px); line-height: 1.5; }
+  .screen-faq2 { min-height: calc(var(--A) - 150px); }
+  footer { padding: 28px 0 32px; }
+}
+
+/* en el móvil (y en ventanas muy bajas) no se fuerza nada: cada apartado sigue su curso, con menos aire entre ellos,
+   y el tráiler se ajusta para verse completo en la pantalla */
+@media (max-width: 1020px), (max-height: 539px) {
+  :root { --hdr: 65px; }
+  .tr-stage, .tr-panel { width: min(100%, calc((var(--A) - 120px) * 16 / 9)); margin-inline: auto; }
+}
+@media (max-width: 640px) {
+  .tr-stage, .tr-panel { width: min(100%, calc((var(--A) - 120px) * 400 / 540)); }
+}
+@media (max-width: 1020px) {
+  html { scroll-snap-type: y proximity; }
+  .hero-main, .hero .trailer, .screen, .closing { scroll-snap-align: start; }
+}
+@media (max-width: 900px) {
+  section, .security { padding-top: clamp(48px, 9vw, 72px); }
+  .band { margin-top: clamp(40px, 7vw, 64px); padding: clamp(72px, 12vw, 96px) 0 clamp(44px, 8vw, 64px); }
+  .screen + .screen { margin-top: clamp(40px, 7vw, 64px); }
+  .hero .trailer { margin-top: clamp(28px, 6vw, 48px); }
+}
+
+@media (min-width: 1021px) and (min-height: 540px) and (max-height: 660px) {      /* ventanas bajas: menos aire para que todo siga cabiendo */
+  :root { --pad: 10px; }
+  .band > .screen:first-child { padding-top: calc(var(--pad) + 30px); }
+  .section-head { margin-bottom: 10px; }
+  .section-head p { line-height: 1.4; }
+  .install .steps-art p { line-height: 1.4; }
+  .install .steps-art h3 { margin-top: 6px; }
+  .panel li { line-height: 1.4; }
+}
+@media (max-width: 1020px) {          /* el tráiler, centrado en su propia pantalla */
+  .hero .trailer { min-height: var(--A); display: flex; flex-direction: column; justify-content: center; margin-top: 0; padding-block: 16px; box-sizing: border-box; }
+}
+@media (max-width: 900px) and (max-height: 700px) {          /* móviles bajos: la portada, con el botón a la vista */
+  .hero-main { padding-top: 112px; --mark-top: 40px; }
+  .hero h1 { font-size: clamp(30px, 9vw, 40px); }
+  .lede { margin-top: 14px; font-size: 17px; line-height: 1.5; }
+  .actions { margin-top: 20px; }
+}
+@media (min-width: 1021px) and (max-width: 1200px) and (min-height: 540px) {      /* pantallas estrechas (1024 px): tarjetas y dibujos un poco más pequeños */
+  .install .steps-art { gap: 10px; }
+  .install .steps-art li { padding: 10px 11px; }
+  .install .steps-art li > .ph { width: clamp(30px, 5.2vh, 42px); }
+  .install .steps-art h3 { font-size: clamp(15px, 2.2vh, 18px); }
+  .steps-art li > .sk { width: 92px; }
+  .steps li { column-gap: 16px; }
+  .start { grid-template-columns: minmax(0, 11fr) minmax(0, 10fr); gap: 28px; }
+  .banks > p, .banks .note { font-size: 13.5px; }
 }
