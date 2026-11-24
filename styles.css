@@ -1062,7 +1062,7 @@ footer p { max-width: 36em; }
   .hero .trailer { min-height: var(--A); display: flex; flex-direction: column; justify-content: center; margin-top: 0; padding-block: 16px; box-sizing: border-box; }
 }
 @media (max-width: 900px) and (max-height: 700px) {          /* móviles bajos: la portada, con el botón a la vista */
-  .hero-main { padding-top: 112px; --mark-top: 40px; }
+  .hero-main { padding-top: 128px; --mark-top: 46px; }
   .hero h1 { font-size: clamp(30px, 9vw, 40px); }
   .lede { margin-top: 14px; font-size: 17px; line-height: 1.5; }
   .actions { margin-top: 20px; }
@@ -1103,3 +1103,12 @@ footer p { max-width: 36em; }
 .qr-peek .blink { opacity: 0; animation: blink 4.3s infinite; }
 .qr-peek .tongue { transform-origin: 28.73% 37.17%; animation: tongue 7s linear infinite; }
 .qr svg { position: relative; z-index: 1; }
+
+@media (pointer: coarse) { .tr-seg { height: 40px; padding: 18px 0; } }      /* las barras del tráiler, con zona táctil de 40 px */
+@media (max-width: 900px) {          /* menos hueco entre apartados en el móvil */
+  section, .security { padding-top: clamp(32px, 7vw, 48px); }
+  .band { margin-top: clamp(24px, 5vw, 40px); padding-top: clamp(64px, 11vw, 84px); }
+  .screen + .screen { margin-top: clamp(28px, 5vw, 44px); }
+}
+.qr-peek-black { transform: translateY(-66%); }      /* Black es más bajito: sube un poco más para que se le vea la cara */
+.qr-peek-black .blink { animation-delay: -1.7s; }

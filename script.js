@@ -22,7 +22,14 @@
   /* Botón de volver arriba: solo aparece cuando ya se ha bajado un buen trozo */
   var toTop = document.querySelector(".to-top");
   var waiting = false;
-  function showToTop() { waiting = false; toTop.classList.toggle("show", window.scrollY > 900); }
+  var lastY = window.scrollY, goingUp = false, narrow = matchMedia("(max-width: 1020px)");
+  /* en el móvil solo aparece al subir (así no tapa el texto mientras se lee hacia abajo) */
+  function showToTop() {
+    waiting = false;
+    var y = window.scrollY;
+    if (Math.abs(y - lastY) > 6) { goingUp = y < lastY; lastY = y; }
+    toTop.classList.toggle("show", y > 900 && (!narrow.matches || goingUp));
+  }
   window.addEventListener("scroll", function () { if (!waiting) { waiting = true; requestAnimationFrame(showToTop); } }, { passive: true });
   showToTop();
 
