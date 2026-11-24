@@ -1077,3 +1077,22 @@ footer p { max-width: 36em; }
   .start { grid-template-columns: minmax(0, 11fr) minmax(0, 10fr); gap: 28px; }
   .banks > p, .banks .note { font-size: 13.5px; }
 }
+
+/* el código QR: esquinas de visor en amarillo, como al apuntar con la cámara, y las cuatro barras de la marca en el pie */
+.qr { position: relative; }
+.qr::before {
+  content: ""; position: absolute; inset: -12px -12px auto; aspect-ratio: 1; pointer-events: none; z-index: 1;
+  --c: var(--accent);
+  background:
+    linear-gradient(var(--c), var(--c)) 0 0 / 30px 4px no-repeat, linear-gradient(var(--c), var(--c)) 0 0 / 4px 30px no-repeat,
+    linear-gradient(var(--c), var(--c)) 100% 0 / 30px 4px no-repeat, linear-gradient(var(--c), var(--c)) 100% 0 / 4px 30px no-repeat,
+    linear-gradient(var(--c), var(--c)) 0 100% / 30px 4px no-repeat, linear-gradient(var(--c), var(--c)) 0 100% / 4px 30px no-repeat,
+    linear-gradient(var(--c), var(--c)) 100% 100% / 30px 4px no-repeat, linear-gradient(var(--c), var(--c)) 100% 100% / 4px 30px no-repeat;
+}
+.qr svg { border: 1px solid var(--border); }
+.qr figcaption { margin-top: 24px; padding-top: 14px; border-top: 1px solid var(--border); }
+.qr figcaption::before {
+  content: ""; display: block; width: 46px; height: 12px; margin-bottom: 10px; transform: skewX(-24deg); transform-origin: left;
+  background: linear-gradient(90deg, var(--accent) 0 8px, transparent 8px 12.7px, color-mix(in srgb, var(--accent) 62%, var(--red)) 12.7px 20.7px, transparent 20.7px 25.4px,
+    color-mix(in srgb, var(--accent) 30%, var(--red)) 25.4px 33.4px, transparent 33.4px 38.1px, var(--red) 38.1px 46px);
+}
