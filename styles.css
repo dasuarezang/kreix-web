@@ -992,7 +992,7 @@ footer p { max-width: 36em; }
   }
   .install .steps-art li::before { grid-column: 1; grid-row: 1; }
   .install .steps-art li > .ph { grid-column: 2; grid-row: 1; justify-self: end; width: clamp(34px, 6.2vh, 54px); }
-  .install .steps-art h3 { grid-column: 1 / -1; grid-row: 2; margin-top: clamp(8px, 1.6vh, 14px); font-size: clamp(16px, 2.4vh, 22px); }
+  .install .steps-art h3 { grid-column: 1 / -1; grid-row: 2; margin-top: clamp(8px, 1.6vh, 14px); font-size: clamp(16px, 2.4vh, 20px); }
   .install .steps-art p { grid-column: 1 / -1; grid-row: 3; font-size: clamp(13.5px, 1.95vh, 15px); line-height: 1.4; }
   .seg-btn { min-height: clamp(36px, 5.2vh, 42px); }
   .os-note { margin: clamp(6px, 1.2vh, 12px) 0 clamp(8px, 1.6vh, 16px); font-size: clamp(14px, 2vh, 15px); }
@@ -1113,3 +1113,4 @@ footer p { max-width: 36em; }
   .band { margin-top: clamp(24px, 5vw, 40px); padding-top: clamp(64px, 11vw, 84px); }
   .screen + .screen { margin-top: clamp(28px, 5vw, 44px); }
 }
+.install .steps-art h3 { font-size: 20px; }      /* los pasos del movil: titulos de tarjeta algo menores */
