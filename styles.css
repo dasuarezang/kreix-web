@@ -1026,7 +1026,6 @@ footer p { max-width: 36em; }
   .qa::before { top: calc(clamp(11px, 2.3vh, 24px) + 5px); }
   .qa h3 { font-size: clamp(16px, 2.4vh, 19px); }
   .qa p { font-size: clamp(14.5px, 2.15vh, 17px); line-height: 1.5; }
-  .screen-faq2 { min-height: calc(var(--A) - 150px); }
   footer { padding: 28px 0 32px; }
 }
 
