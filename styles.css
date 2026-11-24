@@ -1104,7 +1104,16 @@ footer p { max-width: 36em; }
 .qr .qr-dogs svg { position: absolute; inset: 0; z-index: auto; width: 100%; height: 100%; padding: 0; border: 0; border-radius: 0; background: none; }
 .qr-dogs .lid { opacity: 0; animation: blink 4.3s infinite; }                /* los párpados tapan los ojos al parpadear */
 .qr-dogs .lid-b { animation-delay: -1.7s; }
-@media (prefers-reduced-motion: reduce) { .qr-dogs .lid { animation: none; } }
+.qr-dogs .tongue { transform-box: fill-box; transform-origin: 50% 0; opacity: 0; animation: lick 7s infinite; }   /* Blitzen se relame cada siete segundos */
+@keyframes lick {
+  0%, 78% { opacity: 0; transform: scaleY(.2); }
+  82% { opacity: 1; transform: scaleY(1); }
+  86% { transform: scaleY(1) translateX(-3px); }
+  90% { transform: scaleY(1) translateX(3px); }
+  94% { opacity: 1; transform: scaleY(1) translateX(0); }
+  97%, 100% { opacity: 0; transform: scaleY(.2); }
+}
+@media (prefers-reduced-motion: reduce) { .qr-dogs .lid, .qr-dogs .tongue { animation: none; } }
 @media (pointer: coarse) { .tr-seg { height: 40px; padding: 18px 0; } }      /* las barras del tráiler, con zona táctil de 40 px */
 @media (max-width: 900px) {          /* menos hueco entre apartados en el móvil */
   section, .security { padding-top: clamp(32px, 7vw, 48px); }
