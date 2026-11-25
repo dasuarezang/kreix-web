@@ -443,6 +443,9 @@ T = {
     '>Código en GitHub</a>': (
         '>Codi a GitHub</a>',
         '>Code on GitHub</a>'),
+    'aria-label="Tema"': (
+        'aria-label="Tema"',
+        'aria-label="Theme"'),
     '<span>Claro</span>': (
         '<span>Clar</span>',
         '<span>Light</span>'),

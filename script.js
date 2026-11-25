@@ -65,16 +65,22 @@
 
   /* Tema claro / oscuro */
   var root = document.documentElement;
-  var themeButtons = document.querySelectorAll(".theme, .foot-theme");   /* el de la cabecera y el del pie */
+  var themeButtons = document.querySelectorAll(".theme");   /* el de la cabecera y el del pie */
   var meta = document.querySelector('meta[name="theme-color"]');
-  function syncMeta() { if (meta) meta.setAttribute("content", root.getAttribute("data-theme") === "light" ? "#d0c4a6" : "#030405"); }
+  var footThemeBtns = document.querySelectorAll("[data-theme-set]");   /* el interruptor del pie: Claro / Oscuro */
+  function syncMeta() {
+    var light = root.getAttribute("data-theme") === "light";
+    if (meta) meta.setAttribute("content", light ? "#d0c4a6" : "#030405");
+    Array.prototype.forEach.call(footThemeBtns, function (b) { b.setAttribute("aria-pressed", (b.getAttribute("data-theme-set") === "light") === light ? "true" : "false"); });
+  }
   syncMeta();
-  function toggleTheme() {
-    var next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+  function setTheme(next) {
     root.setAttribute("data-theme", next);
     try { sessionStorage.setItem("kreix-theme", next); } catch (e) { /* sin almacenamiento: igual, dura esta visita */ }
     syncMeta();
   }
+  function toggleTheme() { setTheme(root.getAttribute("data-theme") === "light" ? "dark" : "light"); }
+  Array.prototype.forEach.call(footThemeBtns, function (b) { b.addEventListener("click", function () { setTheme(b.getAttribute("data-theme-set")); }); });
   Array.prototype.forEach.call(themeButtons, function (b) { b.addEventListener("click", toggleTheme); });
   /* Si el dispositivo cambia de modo (por ejemplo, al anochecer) y no se ha elegido otro en esta visita, la web lo sigue */
   var systemLight = matchMedia("(prefers-color-scheme: light)");
