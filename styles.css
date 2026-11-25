@@ -498,6 +498,7 @@ footer { background: var(--chrome); border-top: 1px solid var(--edge); padding: 
 :root:not([data-theme="light"]) .foot-theme::before { transform: translateX(100%); }
 .ft-opt { position: relative; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 0 6px; border: 0; border-radius: 4px; background: none; color: var(--muted); font: 700 15px/1 var(--body); cursor: pointer; transition: color .2s; }
 .ft-opt svg { width: 18px; height: 18px; flex: none; }
+.ft-opt span { min-width: 5.3ch; text-align: center; }      /* las dos etiquetas miden lo mismo: «Claro» es mas corto que «Oscuro» y dejaba mas aire a la izquierda que a la derecha */
 .ft-opt:hover { color: var(--text); }
 .ft-opt:focus-visible { outline: 2px solid var(--text); outline-offset: 1px; }
 :root[data-theme="light"] .foot-theme .ft-light, :root:not([data-theme="light"]) .foot-theme .ft-dark { color: var(--on-accent); }
