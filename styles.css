@@ -111,10 +111,9 @@ p { margin: 0; }
 .nav a:hover::after { transform: scaleX(.3) skewX(-24deg); }
 .nav a[aria-current] { color: var(--text); background: none; }
 .nav a[aria-current]::after { transform: scaleX(1) skewX(-24deg); }
-/* al bajar, la cabecera estrena una línea con las cuatro barras de la marca (sin sombras) */
-.top::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 3px; opacity: 0; transition: opacity .2s; pointer-events: none;
+/* la cabecera lleva siempre, en su borde inferior, una línea con las cuatro barras de la marca (sin sombras) */
+.top::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 3px; pointer-events: none;
   background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 62%, var(--red)), color-mix(in srgb, var(--accent) 30%, var(--red)), var(--red)); }
-.top.scrolled::after { opacity: 1; }
 .lang { position: relative; }
 .lang-btn { display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 12px 0 10px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface-alt); color: var(--text); font: 700 15px/1 var(--body); cursor: pointer; }
 .lang-btn:hover, .lang-btn[aria-expanded="true"] { border-color: var(--edge); }
@@ -1209,6 +1208,12 @@ footer { background: var(--chrome); border-top: 1px solid var(--edge); padding: 
 .qr-dogs { position: absolute; z-index: 2; left: 0; top: 0; width: 100%; height: auto; transform: translateY(-88.4%); pointer-events: none; }
 .qr-dogs img { display: block; width: 100%; height: auto; }
 .qr .qr-dogs svg { position: absolute; inset: 0; z-index: auto; width: 100%; height: 100%; padding: 0; border: 0; border-radius: 0; background: none; }
+.qr-dogs svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+/* el botón de abrir la app solo aparece en el móvil (con el dedo, sin cursor); en un ordenador no tendría sentido abrir la app ahí */
+.actions-mobile { display: none; }
+.btn-wrap { position: relative; display: block; max-width: 100%; }
+.btn-dogs { left: auto; right: 12px; top: auto; bottom: calc(100% - 1px); width: clamp(104px, 34%, 140px); transform: none; }
+@media (pointer: coarse), (hover: none) { .actions-mobile { display: flex; margin-top: 62px; } .btn-wrap { flex: 1 1 100%; } .btn-wrap .btn { width: 100%; } }
 .qr-dogs .lid { opacity: 0; animation: blink 4.3s infinite; }                /* los párpados tapan los ojos al parpadear */
 .qr-dogs .lid-b { animation-delay: -1.7s; }
 @media (prefers-reduced-motion: reduce) { .qr-dogs .lid { animation: none; } }
