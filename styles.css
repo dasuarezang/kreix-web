@@ -309,7 +309,9 @@ section { padding: clamp(72px, 10vw, 132px) 0 0; }
 .privacy-text p { margin-top: 16px; color: var(--soft); max-width: 32em; }
 .demo-card { grid-area: card; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 32px; }
 .demo-card small { display: block; color: var(--muted); font-size: 15px; }
+.demo-card { container-type: inline-size; }
 .demo-card .figure { margin: 10px 0 18px; font: 800 clamp(40px, 6vw, 56px)/1.1 var(--display); transition: filter .25s ease; }
+@supports (width: 1cqi) { .demo-card .figure { font-size: min(clamp(40px, 6vw, 56px), 16cqi); } }   /* el importe se ajusta al ancho de la tarjeta: en ventanas estrechas de ordenador ya no se sale */
 .demo-card .figure[data-hidden="true"] { filter: blur(11px); user-select: none; }
 .demo-card .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
 .chip { display: inline-block; font-size: 15px; font-weight: 700; color: var(--green-text); }   /* la variacion: texto con el color del signo, sin caja */
