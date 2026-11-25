@@ -1,21 +1,24 @@
 """Capturas en tema claro del programa de Windows para la guía en PDF (datos de demostración, nunca datos reales).
 
-Uso:  C:/Users/dssua/kreix/.venv/Scripts/python build/guia/capturas.py
-Salida: build/guia/img/pc-*.png
+Uso:  KREIX_REPO=RUTA/kreix KREIX_LANG=ca RUTA/kreix/.venv/Scripts/python build/guia/capturas.py
+      (KREIX_LANG: es por defecto, ca o en; KREIX_REPO: la carpeta del repo kreix, con su origin/main al dia)
+Salida: build/guia/img/pc-*.png (castellano) o build/guia/img/<idioma>/pc-*.png
 """
 from __future__ import annotations
 
 import os
 import sys
 import tempfile
+from datetime import datetime
 from decimal import Decimal
 from pathlib import Path
 
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 os.environ.setdefault("QT_QPA_FONTDIR", r"C:\Windows\Fonts")
 
-KREIX = Path(r"C:\Users\dssua\kreix")
-OUT = Path(__file__).resolve().parent / "img"
+KREIX = Path(os.environ.get("KREIX_REPO", r"C:\Users\dssua\kreix"))
+LANG = os.environ.get("KREIX_LANG", "es")
+OUT = Path(__file__).resolve().parent / "img" / ("" if LANG == "es" else LANG)
 sys.path.insert(0, str(KREIX))
 sys.path.insert(0, str(KREIX / "tools"))
 
@@ -37,7 +40,14 @@ def main() -> None:
     app.setStyle("Fusion")
     from ui import fonts
     fonts.setup_application(app)
-    window = build_window(f"sqlite:///{tmp / 'demo.db'}", "demo")
+    db = f"sqlite:///{tmp / 'demo.db'}"
+    if LANG != "es":                                   # el idioma se guarda antes: la ventana nace ya en ese idioma
+        from dataclasses import replace
+        first = build_window(db, "demo")
+        first._svc.settings.save(replace(first._settings, language=LANG))
+        first.deleteLater()
+    window = build_window(db, "demo")
+    window.clock = window.dashboard.clock = lambda: datetime.now().replace(hour=11, minute=30, second=0, microsecond=0)   # el saludo es de dia, sea la hora que sea
     window.show()
     window._apply_user_name("Blitzen", announce=False)
     window.apply_theme("light")

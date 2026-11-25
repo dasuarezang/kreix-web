@@ -1,0 +1,338 @@
+[0] Kreix
+[1] Guía de uso
+[2] Kreix,<br/>paso a paso
+[3] Cómo usar el programa de Windows y la app del móvil: importar tus extractos, entender cada pantalla y cada cifra, y mantener tus datos a salvo.
+[4] Versión 0.6.1 del programa
+[5] Noviembre de 2026
+[6] dasuarezang.github.io/kreix-web
+[7] Contenido
+[8] Índice
+[9] Qué es Kreix y cómo se usa
+[10] Instalar y primer arranque
+[11] Importar tus extractos
+[12] Recorrido por el programa
+[13] Tus movimientos, presupuestos y metas
+[14] Entender las cifras
+[15] Seguridad y copias
+[16] Llevar tus datos de un sitio a otro
+[17] Kreix en el móvil
+[18] Atajos y pequeños trucos
+[19] Problemas habituales
+[20] Glosario
+[21] <b>Cómo leer esta guía.</b> Si es tu primera vez, lee los capítulos 1 a 3 y vuelve cuando quieras al resto. Todas las capturas usan datos de demostración inventados: ninguna cifra es real.
+[22] Kreix es un programa de finanzas personales. Lee los extractos que tú descargas de tu banco y te enseña, en un solo sitio, cuánto tienes, cuánto gastas, cuánto ahorras y cómo va tu inversión. Existe en dos formas que comparten la misma lógica y el mismo formato de datos:
+[23] Programa de Windows
+[24] El programa principal, para Windows 10 y 11. Es donde se importan los extractos, se organiza todo y se hacen las copias de seguridad.
+[25] App del móvil
+[26] La misma app adaptada al móvil (Android y iPhone). Se instala desde el navegador, sin tienda de apps, y funciona sin conexión. Los datos se le pasan desde el ordenador con un código QR.
+[27] Cuatro ideas que conviene tener claras
+[28] <b>Kreix no se conecta a tu banco.</b> Nunca te pide claves ni accesos. Trabaja con archivos CSV o Excel que descargas tú desde la web o la app de tu banco.
+[29] <b>Todo se queda en tu equipo.</b> No hay cuentas, servidores ni telemetría. Los datos se guardan cifrados con una contraseña maestra que solo tú conoces.
+[30] <b>Puedes reimportar sin miedo.</b> Si importas dos veces el mismo extracto, o dos que se solapan, solo se añade lo nuevo.
+[31] <b>Casi todo se deshace.</b> Tras cada cambio importante aparece un aviso con un botón <i>Deshacer</i>.
+[32] Qué necesitas para empezar
+[33] Un equipo con Windows 10 u 11 (64 bits), para el programa. El móvil es opcional.
+[34] Los extractos de tu banco en <b>CSV o Excel</b> (no se importan PDF). Los bancos reconocidos de serie están en el capítulo 3; para cualquier otro, Kreix te ayuda a indicar qué columna es cada cosa.
+[35] Unos minutos para elegir una contraseña maestra que no olvides: <b>si la pierdes, nadie puede recuperar los datos</b>.
+[36] Instalar el programa
+[37] Descarga el instalador (<i>Kreix-Setup-0.6.1.exe</i>) desde la web y ábrelo.
+[38] El instalador no pide permisos de administrador: instala Kreix en tu carpeta de usuario y crea un acceso directo en el menú Inicio y, si quieres, en el escritorio. Puedes elegir el idioma del instalador (castellano, català o English).
+[39] Como el instalador aún no está firmado, Windows puede avisarte la primera vez. Pulsa <b>Más información</b> y después <b>Ejecutar de todas formas</b>.
+[40] <b>Al desinstalar</b> no se borran tus datos: siguen en <code>%APPDATA%\Kreix</code> hasta que tú los elimines.
+[41] La contraseña maestra
+[42] La primera vez que abres Kreix te pide crear una contraseña maestra (mínimo 8 caracteres). Debajo, un medidor de cuatro franjas, que se llenan y pasan de rojo a amarillo y a verde, y una frase te dicen lo difícil que sería adivinarla y cómo mejorarla. Es un aviso, no una regla: el único mínimo son 8 caracteres.
+[43] Crear la contraseña maestra, con el medidor de fortaleza.
+[44] <b>Apúntala en un sitio seguro.</b> Kreix cifra tus datos con ella y no existe ninguna llave de repuesto. Si la olvidas, la única salida es empezar de cero.
+[45] La bienvenida
+[46] Después, un cuadro te hace tres preguntas rápidas. Todo se puede cambiar luego en <b>Ajustes</b>:
+[47] <b>Idioma.</b> Castellano, català o English. Se propone el del sistema.
+[48] <b>Tu nombre.</b> Para que Inicio te salude según la hora. Es opcional.
+[49] <b>Qué quieres gestionar.</b> Tus cuentas bancarias, tus inversiones o ambas cosas (siempre queda al menos una). Inicio se adapta a lo que elijas.
+[50] La primera pantalla
+[51] Con Kreix todavía vacío, Inicio explica en tres pasos qué descargar y dónde soltarlo, y ofrece <b>Probar con datos de ejemplo</b>: datos inventados, con un aviso arriba y un botón <i>Empezar con mis datos</i>. Se quitan solos en cuanto importas extractos reales, así que nunca se mezclan con los tuyos.
+[52] Inicio con Kreix vacío: tres pasos para empezar.
+[53] Todo empieza en <b>Datos &gt; Importar</b>. Descarga el extracto de tu banco en CSV o Excel, arrástralo a la ventana (o pulsa <i>Seleccionar archivos</i>) y elige la cuenta a la que pertenece.
+[54] <b>Suelta el archivo.</b> Kreix detecta el banco y el tipo de archivo por las cabeceras, no por el nombre ni la extensión. Funcionan archivos sin extensión o con <i>.csv.txt</i>.
+[55] <b>Revisa lo que ha leído.</b> Aparece una tarjeta por archivo con su tipo, el número de filas, las fechas, cuántos movimientos son nuevos y cuántos ya estaban. Todavía no se ha guardado nada.
+[56] <b>Pulsa Importar.</b> Se guardan solo los movimientos nuevos y un aviso te deja <i>Deshacer</i> si algo no es lo que esperabas.
+[57] Vista previa de la importación: lo que Kreix ha leído, antes de guardar nada.
+[58] Qué archivos reconoce
+[59] Origen
+[60] Archivo
+[61] Observaciones
+[62] <b>Imagin</b>
+[63] Extracto de movimientos
+[64] CSV o Excel
+[65] <b>MyInvestor</b>
+[66] Operaciones y cartera
+[67] El extracto de cartera no lleva fecha: Kreix te pregunta a qué día corresponde.
+[68] <b>CaixaBank</b>
+[69] Ingresos y gastos en columnas distintas. En pruebas.
+[70] <b>Santander</b>
+[71] En pruebas.
+[72] <b>Revolut</b>
+[73] Extracto de la cuenta (CSV)
+[74] En inglés o en español. Resta la comisión y solo lee los movimientos en euros. En pruebas.
+[75] <b>Trade Republic</b>
+[76] Transacciones (CSV)
+[77] Lee la cuenta de efectivo; deja fuera las compras y ventas de bolsa. En pruebas.
+[78] <b>Cualquier otro banco</b>
+[79] Un asistente te pregunta qué columna es cada cosa.
+[80] <b>Histórico de precios</b>
+[81] CSV o Excel de un fondo
+[82] Una columna de fecha y otra de precio, y opcionalmente el ISIN.
+[83] Admite CSV con punto y coma, coma o tabulador, en UTF-8 o Windows-1252, y Excel (<i>.xlsx</i> y el antiguo <i>.xls</i>, incluso el que algunos bancos guardan como tabla web). Los importes en formato español (<i>-2,99EUR</i>, <i>1.234,56 €</i>) se limpian solos. Un archivo <i>.kreix</i> se restaura directamente (capítulo 8).
+[84] Si tu banco no está en la lista
+[85] Al soltar un archivo que Kreix no reconoce aparece el botón <b>Asignar las columnas</b>. Un asistente te enseña las primeras filas, propone las columnas por sus títulos y tú las corriges:
+[86] La fila de los títulos (se salta las líneas de presentación que traen algunos Excel).
+[87] El importe: una columna con signo, o dos de ingresos y gastos; y si los gastos vienen como números positivos.
+[88] Los decimales (<i>1.234,56</i> o <i>1,234.56</i>) y el orden de la fecha (día/mes/año o mes/día/año).
+[89] El saldo, que es opcional; si lo das, Kreix comprueba que encadena.
+[90] El asistente para importar de otro banco.
+[91] Antes de guardar ves cuántos movimientos se leen y los primeros, para comprobar fechas, importes y signos. El formato queda guardado con el nombre que le pongas y se aplica solo a los archivos siguientes; en <i>Importar &gt; Bancos que ya conozco</i> se puede olvidar.
+[92] Duplicados y varias cuentas
+[93] <b>Kreix nunca duplica movimientos.</b> Puedes reimportar el mismo extracto, o varios que se solapan. Dos pagos idénticos el mismo día se distinguen por el saldo posterior.
+[94] En Importar eliges la <b>cuenta de destino</b> de cada extracto. El mismo extracto importado en dos cuentas distintas no cuenta como duplicado. La cartera de inversión es una sola.
+[95] Si un archivo no se puede leer, Kreix explica el motivo y qué hacer (por ejemplo, descargarlo otra vez en CSV o Excel sin editarlo).
+[96] Histórico de precios de un fondo
+[97] Si has descargado el histórico de precios de un fondo (de tu banco, Morningstar, Yahoo o Investing), suéltalo también en Importar. Kreix toma el ISIN de una columna, del nombre del archivo o del selector <i>Fondo del histórico</i>. Con él, la gráfica de cada fondo pasa de un punto al mes a puntos de días reales. El valor de hoy no cambia: sigue mandando tu último extracto de cartera.
+[98] Arriba a la izquierda están las tres vistas de tus datos: <b>Inicio</b>, <b>Cuentas</b> e <b>Inversiones</b>. Abajo, con su icono, las herramientas: <b>Datos</b> (con <i>Importar</i> y <i>Exportar</i>), <b>Ajustes</b> y <b>Ayuda</b>, y debajo el conmutador de modo claro y oscuro y el ojo del modo privacidad.
+[99] Inicio
+[100] Tu situación de un vistazo. Te saluda según la hora con tu nombre, el día y la hora, y la fecha de la última actualización de datos (el último día en que importaste algo).
+[101] Inicio: patrimonio neto, rendimiento, tasa de ahorro, previsión, próximos pagos y presupuestos.
+[102] <b>Patrimonio neto:</b> todo lo que tienes, cuentas más inversiones, con cuánto es liquidez y cuánto inversión. Una línea en verde o rojo dice cuánto ha subido o bajado frente al cierre del mes anterior.
+[103] <b>Rendimiento global y tasa de ahorro del mes.</b>
+[104] <b>Previsión a fin de mes:</b> cuánto dinero tendrás el último día del mes con tus pagos fijos que quedan, tus ingresos fijos que aún faltan (la nómina) y tu gasto de cada día. Es una estimación y la Ayuda explica cómo se hace.
+[105] <b>Próximos pagos:</b> tus pagos recurrentes que tocan en las próximas semanas, por fecha.
+[106] <b>Presupuestos del mes:</b> pasan solos de uno en uno; puedes pasarlos con las flechas, los puntos o las teclas ← →.
+[107] <b>Metas de ahorro</b> y <b>Por clasificar:</b> los movimientos sin categoría, con una regla propuesta si un comercio se repite.
+[108] Con datos ya cargados, una lista de <b>primeros pasos</b> (importar la cuenta, las operaciones, la cartera, definir un presupuesto) que puedes ocultar.
+[109] <b>Un Inicio vivo.</b> Junto al saludo hay un cielo animado que sigue la hora real (sol de día, luna y estrellas de noche), con Blitzen y Black, los perros del autor. Se desactiva en <i>Ajustes &gt; Cielo animado y luz según la hora</i>.
+[110] Cuentas
+[111] Todo lo de tus cuentas bancarias: saldo, ingresos, gastos, tasa de ahorro, gasto medio, mayor gasto y categoría principal; gastos por categoría, evolución del saldo, ingresos y gastos por mes, presupuestos, pagos recurrentes y la tabla de movimientos.
+[112] Cuentas: métricas, gráficos, presupuestos, recurrentes y movimientos.
+[113] <b>Por mes o en global.</b> El selector de arriba cambia entre <i>Todo el historial</i> y cada mes con datos (las flechas saltan al mes anterior o siguiente). En un mes, el saldo es el saldo al cierre y la media de gasto pasa de mensual a diaria.
+[114] <b>Varias cuentas.</b> El selector tiene una casilla por cuenta: marca las que quieras combinar y todo se recalcula con ellas. <i>Gestionar cuentas</i> permite añadir, renombrar y eliminar.
+[115] Inversiones
+[116] Todo lo de tu cartera: valor, aportado, plusvalía, rentabilidad (TWR y TIR), distribución por fondo, aportado frente a valor, evolución de cada fondo, posiciones actuales y operaciones.
+[117] Inversiones: valor, rentabilidad, reparto por fondo y operaciones.
+[118] La tarjeta <b>Evolución de cada fondo</b> dibuja una línea por fondo con su valor al cierre de cada mes (o, si eliges uno, su valor frente a lo aportado). Es una <b>estimación</b>: Kreix reconstruye las participaciones que tenías con tus operaciones y las multiplica por un precio interpolado entre los valores liquidativos que conoce. Cuantos más extractos de cartera importes, más fiel es la curva. Con un mes elegido ves el valor estimado al cierre, lo aportado en el mes, la variación sin contar aportaciones y la rentabilidad del mes.
+[119] Datos: Importar y Exportar
+[120] <b>Importar</b> se explica en el capítulo 3. <b>Exportar</b> guarda todos tus datos en un único archivo <i>.kreix</i> para hacer una copia o llevarlos a otro equipo, y desde ahí se pasan al móvil (capítulo 8).
+[121] Exportar: el archivo .kreix y «Pasar al móvil».
+[122] Ajustes
+[123] Organizados en tarjetas por tema. Cada interruptor se aplica al momento:
+[124] <b>Tu nombre, Idioma y Lo que te interesa.</b> El idioma cambia toda la aplicación (menús, ayuda, avisos, fechas y números) sin perder tu sitio. En inglés los números se escriben 1,234.56; en castellano y catalán, 1.234,56. Si desactivas cuentas o inversiones, sus pestañas siguen ahí y puedes reactivarlas desde la propia pestaña.
+[125] <b>Tamaño del texto</b> (normal, grande o muy grande) para toda la aplicación.
+[126] <b>Cielo animado y luz según la hora.</b>
+[127] <b>Contar Bizum como ingresos y gastos</b> y <b>Contar traspasos entrantes como ingresos</b>: afectan al cálculo de la tasa de ahorro (capítulo 6).
+[128] <b>Reglas de categorías.</b> Tus reglas mandan sobre las que trae Kreix (capítulo 5).
+[129] <b>Seguridad</b> (cambiar la contraseña, bloqueo automático, bloquear ahora) y <b>Copias de seguridad</b> (carpeta, cuántas conservar, restaurar): capítulo 7.
+[130] <b>Tus datos:</b> dónde se guardan y <i>Borrar todos los datos</i> (deja la base vacía y conserva los ajustes). <b>Acerca de:</b> la versión y las novedades.
+[131] Ajustes: tu nombre, idioma, lo que te interesa, aspecto, reglas y tus datos.
+[132] Ayuda
+[133] Un glosario para quien no sabe de finanzas, en seis temas: <i>Tu dinero de un vistazo, Tus cuentas bancarias, Tus inversiones, Rentabilidad, Avisos</i> y <i>Usar Kreix</i>. Cada término se despliega al pulsarlo, con cómo lo calcula Kreix, un ejemplo, un aviso (<i>Ojo</i>) y un consejo (<i>Qué hacer</i>). Junto a las cifras principales hay un «?» que abre su explicación ya desplegada. El buscador <b>Ctrl+K</b> también encuentra páginas, acciones, movimientos y términos de la ayuda.
+[134] La tabla de movimientos
+[135] En Cuentas, los movimientos van del más reciente al más antiguo y, dentro de un mismo día, en su orden real (se reconstruye con la cadena de saldos). Puedes buscar por concepto, filtrar por categoría y ordenar pulsando cualquier cabecera. Con varias cuentas aparece una columna <i>Cuenta</i>. Pulsar una categoría en el gráfico de gastos, o un presupuesto, filtra la tabla con esos movimientos.
+[136] Cada movimiento tiene un botón <b>•••</b> (también doble clic o clic derecho) para cambiar su categoría, crear una regla o copiar el concepto. El botón <b>Exportar</b> de la tabla guarda en CSV (UTF-8, separado por punto y coma, coma decimal) o Excel las filas que se ven, con el filtro y el orden actuales. No exporta a PDF.
+[137] Categorías a tu gusto
+[138] Kreix categoriza tus gastos con reglas por palabras clave (sueldo, supermercado, suscripciones, ocio, restaurantes, transporte, vivienda, salud, Bizum…), con un diccionario amplio de comercios y recibos habituales. <b>Tú mandas:</b>
+[139] <b>Cambiar categoría</b> de un movimiento: tu elección no la pisa ninguna regla. <b>Volver a la categoría automática</b> la devuelve a Kreix.
+[140] <b>Crear regla para «…»</b> lleva a una categoría todos los conceptos con esa palabra, también los que importes después. Se gestionan en <i>Ajustes &gt; Reglas de categorías</i>.
+[141] <b>Por clasificar.</b> Inicio cuenta los movimientos sin categoría y, si un comercio se repite, propone una regla para clasificarlos de un clic.
+[142] Presupuestos
+[143] En Cuentas, el panel <b>Presupuestos</b> (botón <i>Definir presupuestos</i>) fija un tope mensual por categoría. La barra se pone <b>verde</b> mientras te sobra, <b>amarilla</b> al pasar del 85 % y <b>roja</b> al superarlo. Con un mes elegido compara el gasto de ese mes; con todo el historial, el gasto medio mensual. Inicio avisa de los que estás a punto de superar o ya has superado.
+[144] Pagos recurrentes
+[145] Kreix detecta tus suscripciones y recibos mensuales, te dice cuánto suman al mes y al año y cuándo toca el siguiente. Un cargo cuenta como recurrente si se repite al menos <b>tres meses seguidos</b>, cada unos 30 días y con un importe estable (hasta un 20 % de diferencia). Si deja de aparecer durante mes y medio se da por cancelado. El supermercado no entra (varía de importe y se repite más de una vez al mes) y los traspasos, Bizum e ingresos nunca cuentan.
+[146] <b>Tú decides.</b> Con ••• (o clic derecho) sobre un gasto, <i>Marcar «…» como pago recurrente</i> lo añade aunque Kreix no lo detecte (con un solo cargo vale; uno anual cuenta un doceavo al mes). <i>«…» no es un pago recurrente</i> lo quita si Kreix se equivocó. Los marcados por ti llevan «marcado por ti» y se pueden desmarcar.
+[147] Metas de ahorro
+[148] En Inicio, el panel <b>Metas de ahorro</b> muestra una barra por meta. <i>Gestionar metas</i> permite crear, editar y eliminar metas (por ejemplo, «1.000 € para vacaciones») y <b>apuntar ahorro</b>. Kreix no mueve dinero: solo lleva la cuenta. Si le pones fecha, te dice cuánto habría que apartar al mes para llegar a tiempo.
+[149] Traspasos entre tus cuentas
+[150] Una salida y una entrada del mismo importe en dos cuentas tuyas se emparejan y no cuentan como gasto ni como ingreso. Los traspasos que <b>entran</b> cuentan como ingreso y los que salen son neutros, salvo que lo cambies en Ajustes.
+[151] Avisos de lo que no cuadra
+[152] En vez de importar en silencio, Kreix avisa de saldos con huecos, de una cartera que no coincide con las operaciones o de importes incoherentes.
+[153] Cifra
+[154] Qué es y cómo se calcula
+[155] <b>Patrimonio neto</b>
+[156] Saldo de tus cuentas más el valor de mercado de la última foto de cartera de cada fondo. Inicio muestra cuánto es liquidez y cuánto inversión, y qué porcentaje es cada parte.
+[157] <b>Rendimiento global</b>
+[158] (valor de mercado − capital invertido) ÷ capital invertido, según el extracto de cartera.
+[159] <b>Tasa de ahorro</b>
+[160] (ingresos − gastos) ÷ ingresos del mes. Puede ser negativa.
+[161] <b>TIR</b>
+[162] Tasa interna de retorno anualizada con fechas irregulares (XIRR, base 365 días). Tiene en cuenta cuándo aportaste cada euro.
+[163] <b>TWR</b>
+[164] Rentabilidad ponderada en el tiempo: encadena los tramos entre aportaciones, así que el momento en que aportas no la afecta.
+[165] Qué cuenta como ingreso o gasto
+[166] Los <b>traspasos entre cuentas propias</b> que entran cuentan como ingreso; los que salen son neutros. Es una opción en Ajustes.
+[167] Los <b>Bizum</b> cuentan como ingreso o gasto. También es una opción en Ajustes.
+[168] Las <b>aportaciones a MyInvestor</b> no son gasto: se calculan desde las compras de MyInvestor, para no contarlas dos veces.
+[169] Cuánto fiarte de la TIR y el TWR
+[170] Se reconstruyen desde el historial de operaciones. Si falta alguna operación, la cartera no cuadra con ellas: Kreix te lo avisa y <b>oculta la TIR y el TWR</b> hasta que se corrija, en lugar de enseñar cifras engañosas. Para evitarlo, exporta de tu banco el historial completo desde el inicio.
+[171] <b>Las estimaciones se llaman estimaciones.</b> La previsión a fin de mes y el valor de los fondos al cierre de cada mes son cálculos aproximados. La Ayuda explica cómo se hace cada uno.
+[172] El modo privacidad
+[173] El ojo de la barra lateral (o <b>Ctrl+H</b>) difumina todas las cantidades en euros, también en gráficos y tablas: se ve que hay una cifra, nunca cuál. La cifra real ni llega a pantalla, así que es seguro para compartir pantalla o trabajar en público.
+[174] Cómo leer cada gráfico
+[175] Bajo cada gráfico hay una frase que dice lo que cuenta («Tu saldo ha subido 3.099,12 € en este periodo»). Léela primero: resume lo que el gráfico quiere decir.
+[176] Tus datos nunca se guardan en claro. Con la contraseña maestra, los datos se cifran en tu equipo y solo se descifran en memoria mientras Kreix está abierto. Lo que hay en disco es un único archivo cifrado, <code>kreix.krx</code>, en <code>%APPDATA%\Kreix</code>.
+[177] Qué hace Kreix por ti
+[178] <b>Cifrado:</b> la clave se deriva de tu contraseña con PBKDF2-HMAC-SHA256 (600 000 vueltas y una sal aleatoria) y los datos se cifran con Fernet (AES con autenticación). Una contraseña incorrecta o un archivo alterado se rechazan.
+[179] <b>En memoria:</b> al desbloquear, la base se descifra directamente a la RAM, sin archivos temporales en claro. Kreix guarda el archivo cifrado unos segundos después de cada cambio y al cerrar, con escritura atómica y una copia <i>.bak</i> también cifrada.
+[180] <b>Sin red:</b> no hay cuentas, servidores ni telemetría.
+[181] Cambiar la contraseña
+[182] <b>Ajustes &gt; Seguridad</b> la cambia comprobando la actual. Los datos se vuelven a cifrar con una clave y una sal nuevas, y las copias de seguridad también se recifran con la nueva para que ninguna siga abriéndose con la vieja.
+[183] Bloqueo automático
+[184] Kreix esconde todo y vuelve a pedir la contraseña:
+[185] tras unos minutos sin tocar el equipo (1, 2, 5, 10, 15 o 30; o nunca),
+[186] al minimizar la ventana,
+[187] cuando Windows se bloquea (<b>Win+L</b>) o el equipo se suspende (cada uno se puede apagar).
+[188] <b>Ctrl+L</b> o <i>Ajustes &gt; Seguridad &gt; Bloquear ahora</i> lo bloquea al momento. A partir del tercer fallo seguido hay que esperar 5, 10, 20 y, como máximo, 30 segundos antes de probar de nuevo.
+[189] Copias de seguridad automáticas
+[190] Kreix hace una copia cifrada (<code>Kreix-copia-AAAA-MM-DD_HH-MM.kreix</code>) al abrir si aún no hay ninguna, después de guardar cambios (como máximo una por hora y nunca si no hay nada nuevo) y al cerrar.
+[191] Se guardan en la carpeta que elijas en <i>Ajustes &gt; Copias de seguridad</i> (por defecto, junto a los datos) y se conservan las últimas 3, 5, 10 o 20.
+[192] Abajo a la izquierda ves cuándo se hizo la última. <b>Comprobar la última copia</b> la abre de verdad y dice cuántos movimientos y cuentas tiene.
+[193] Se restauran desde la misma pantalla escribiendo la contraseña maestra.
+[194] <b>Copia fuera del equipo.</b> Las copias se guardan por defecto junto a tus datos. Para estar a salvo de un fallo del disco, elige una carpeta en otra unidad o en una nube que ya uses: el archivo está cifrado.
+[195] Si olvidas la contraseña
+[196] No hay forma de recuperar los datos. En la pantalla de bloqueo, <b>He olvidado la contraseña</b> borra el archivo cifrado (tras pedir confirmación) para empezar de cero con una contraseña nueva e importar de nuevo tus extractos. Por eso las copias y la contraseña apuntada en un sitio seguro son tan importantes.
+[197] Lo que no está cifrado
+[198] Un archivo <b>.kreix</b> exportado sin marcar la casilla de cifrado, y el archivo que importas mientras Kreix lo valida. Trátalos como datos sensibles: contienen tu información financiera.
+[199] El archivo .kreix
+[200] <b>Datos &gt; Exportar</b> crea un archivo <i>.kreix</i> (un ZIP con una copia consistente de la base de datos y una ficha con la versión y los totales). Sirve para hacer una copia o para llevar tus datos a otro ordenador.
+[201] La casilla <b>Cifrar el archivo con mi contraseña maestra</b> está activa por defecto. Al importarlo, en este u otro ordenador, Kreix pide la contraseña con la que se exportó.
+[202] <b>Si no lo cifras, el archivo no está cifrado.</b> Guárdalo en un sitio seguro y no lo compartas.
+[203] Se exporta todo: cuentas, movimientos, categorías, operaciones, cartera y ajustes (también tu nombre y tu idioma), incluida la protección anti-duplicados.
+[204] Pasar los datos a otro ordenador
+[205] En el ordenador de origen, <b>Datos &gt; Exportar</b> y guarda el archivo <i>.kreix</i>.
+[206] En el otro ordenador, instala Kreix, ve a <b>Importar</b> y arrastra el archivo.
+[207] Los datos quedan idénticos a los de origen.
+[208] <b>Importar un .kreix reemplaza</b> los datos que hubiera en ese equipo (pide confirmación si ya había). Un archivo recibido se trata como no fiable: solo se aceptan sus dos entradas, se comprueba la integridad de la base de datos y se rechaza si trae disparadores o vistas, si es de una versión más reciente o si es demasiado grande.
+[209] Pasar los datos al móvil con un código QR
+[210] Es la forma de llevar tus datos del ordenador a la app del móvil sin cables ni conexión. Primero instala la app en el móvil (capítulo 9). Después:
+[211] En el ordenador, abre <b>Datos &gt; Exportar &gt; Pasar al móvil</b>. Aparece un código QR que va cambiando (unos seis códigos por segundo).
+[212] En el móvil, abre la app, ve a <b>Datos</b> y pulsa <b>Escanear el código QR</b>.
+[213] Apunta la cámara a la pantalla del ordenador, sin moverla, hasta que la barra de progreso llegue al 100 %. No hace falta que empiece en ningún sitio: la app va juntando los trozos.
+[214] <b>Qué se transfiere.</b> Todos los datos, con el mismo formato que el archivo <i>.kreix</i>. Lo que recibas <b>reemplazará los datos que haya en el móvil</b>. La primera vez, el móvil te pedirá permiso para usar la cámara.
+[215] La app del móvil es una aplicación web (PWA) que ejecuta la misma lógica que el programa de Windows, con la interfaz adaptada al móvil. Se instala desde el navegador, funciona sin conexión y guarda todo cifrado en el móvil con el mismo formato que el ordenador. Dice exactamente lo mismo que el programa: mismas cifras, mismos gráficos, mismas explicaciones.
+[216] Instalarla en Android
+[217] <b>Abre Kreix en Chrome</b> desde el propio móvil (<i>dasuarezang.github.io/kreix-web/app/</i>). La primera vez descarga unos 20 MB; después funciona sin conexión.
+[218] <b>Abre el menú:</b> los tres puntos (⋮), arriba a la derecha.
+[219] <b>Toca «Instalar aplicación».</b> Si no la ves, toca «Añadir a pantalla de inicio» y luego «Instalar»: hacen lo mismo.
+[220] <b>Confirma</b> con «Instalar». Sin tienda de apps y sin cuenta.
+[221] <b>Ábrela desde la pantalla de inicio.</b> Se abre a pantalla completa, como cualquier otra app.
+[222] En <b>Samsung Internet</b> los pasos son: menú de las tres rayas (≡), abajo a la derecha → «Añadir página a» → «Pantalla de inicio» → «Añadir». En Edge son casi iguales a los de Chrome.
+[223] Instalarla en iPhone y iPad
+[224] <b>Abre Kreix en Safari.</b> Si el enlace se abre dentro de otra app (WhatsApp, Instagram…), cópialo y pégalo en Safari.
+[225] <b>Toca Compartir:</b> el cuadrado con una flecha hacia arriba (abajo en el iPhone, arriba a la derecha en el iPad).
+[226] <b>Baja y toca «Añadir a pantalla de inicio».</b> La lista es larga: deslízala hasta ver la opción con un cuadrado y un «+».
+[227] <b>Deja «Kreix» como nombre y toca «Añadir»,</b> arriba a la derecha.
+[228] <b>Ábrela desde el icono,</b> no desde Safari: así se ve a pantalla completa.
+[229] El primer arranque en el móvil
+[230] Funciona igual que en el ordenador: creas una contraseña maestra (con el mismo medidor), eliges idioma, nombre y lo que quieres gestionar, y puedes probar con datos de ejemplo.
+[231] Contraseña maestra
+[232] Bienvenida
+[233] Primera pantalla
+[234] Las pantallas
+[235] Abajo hay una barra con cinco pestañas: <b>Inicio, Cuentas, Inversiones, Datos y Ajustes</b>. Arriba, tres botones: la <b>Ayuda</b> («?»), el <b>modo privacidad</b> (el ojo) y el cambio de <b>tema claro u oscuro</b>.
+[236] <b>Inicio, Cuentas e Inversiones</b> muestran lo mismo que el programa de Windows, con las tarjetas apiladas. Los movimientos tienen su menú para cambiar categoría o crear reglas, y puedes definir presupuestos y metas.
+[237] <b>Ayuda:</b> el mismo glosario que en el ordenador.
+[238] Datos: importar, recibir y exportar
+[239] En la pestaña <b>Datos</b> puedes <b>Elegir archivos</b> (extractos CSV o Excel, o un archivo <i>.kreix</i>) de las carpetas Descargas o Archivos del móvil, con la misma vista previa «Revisa antes de importar» que en el ordenador. Debajo, <b>Escanear el código QR</b> recibe los datos del ordenador y <b>Exportar datos…</b> guarda un archivo <i>.kreix</i> (cifrado si dejas marcada la casilla).
+[240] Importar extractos
+[241] Recibir del ordenador y exportar
+[242] Ajustes y seguridad en el móvil
+[243] Aquí están el idioma, el nombre, lo que te interesa, el tamaño del texto, el cielo animado y las opciones de Bizum y traspasos, igual que en el ordenador, y las <b>reglas de categorías</b>.
+[244] <b>Seguridad:</b> <i>Cambiar contraseña maestra…</i> y <i>Bloquear ahora</i>.
+[245] <b>Bloqueo automático:</b> si no usas Kreix durante unos minutos, esconde tus datos y vuelve a pedir la contraseña. Tú eliges cuánto tiempo.
+[246] <b>Bloquear al salir de la app:</b> al cambiar de app o apagar la pantalla, Kreix vuelve a pedir la contraseña antes de mostrar tus datos.
+[247] <b>Copias de seguridad:</b> en el móvil se hacen a mano desde <i>Datos &gt; Exportar</i>: guarda el archivo <i>.kreix</i> en tu nube o envíatelo. Kreix guarda además la versión anterior de tus datos, cifrada, por si algo falla al guardar.
+[248] Aspecto y cálculos
+[249] Diferencias con el programa de Windows
+[250] Pensado para importar y organizar con calma, con atajos de teclado.
+[251] Pensada para consultar y para importar extractos descargados en el propio móvil.
+[252] Guarda los datos en <code>%APPDATA%\Kreix</code> y hace copias de seguridad automáticas.
+[253] Guarda los datos cifrados dentro del navegador del móvil. Las copias se hacen a mano, exportando un <i>.kreix</i> de vez en cuando.
+[254] Genera el código QR para pasar los datos.
+[255] Lee el código QR con la cámara.
+[256] Se instala con un instalador de Windows.
+[257] Se instala desde el navegador, sin tienda de apps.
+[258] <b>Cuidado al borrar datos del navegador.</b> Los datos de la app viven en el almacenamiento del navegador. Si borras los datos del sitio o desinstalas el navegador, se pierden. Guarda de vez en cuando un archivo <i>.kreix</i> exportado, o vuelve a pasar los datos desde el ordenador.
+[259] En un Mac o en Linux puedes usar esa misma app desde el navegador, ya que el programa con instalador es solo para Windows.
+[260] Atajos de teclado (programa de Windows)
+[261] <kbd>Ctrl</kbd> + <kbd>H</kbd>
+[262] Oculta o muestra las cantidades (modo privacidad).
+[263] <kbd>Ctrl</kbd> + <kbd>1</kbd> … <kbd>7</kbd>
+[264] Cambian de página, en este orden: Inicio, Cuentas, Inversiones, Importar, Exportar, Ajustes, Ayuda.
+[265] <kbd>Ctrl</kbd> + <kbd>K</kbd>
+[266] Busca en todo: páginas, acciones, movimientos y explicaciones de la ayuda.
+[267] <kbd>Ctrl</kbd> + <kbd>T</kbd>
+[268] Alterna el modo claro y oscuro.
+[269] <kbd>Ctrl</kbd> + <kbd>F</kbd>
+[270] Va al buscador de movimientos.
+[271] <kbd>Ctrl</kbd> + <kbd>L</kbd>
+[272] Bloquea Kreix al momento.
+[273] Recalcula la página.
+[274] Pasan los presupuestos del mes en Inicio.
+[275] Pequeños trucos
+[276] <b>Cada «?» tiene su explicación.</b> Pulsa el «?» junto a una cifra para ver su definición y cómo la calcula Kreix.
+[277] <b>Deshacer es solo el último cambio.</b> Si quieres revertir algo, hazlo justo después, mientras el aviso sigue a la vista.
+[278] <b>Reimporta sin miedo.</b> Para añadir un mes nuevo, descarga el extracto completo y suéltalo: solo se añade lo nuevo.
+[279] <b>Tamaño del texto.</b> Si lees con dificultad, <i>Ajustes &gt; Tamaño del texto</i> lo hace más grande en toda la aplicación.
+[280] <b>Modo oscuro o claro.</b> El conmutador del sol y la luna está debajo del menú lateral (en el móvil, arriba a la derecha).
+[281] <b>Probar sin riesgo.</b> «Probar con datos de ejemplo» te deja explorar sin importar nada, y desaparece solo al importar tus datos.
+[282] <b>Hasta decenas de miles de filas.</b> Los movimientos se ordenan, filtran y cargan en una fracción de segundo, y la ventana recuerda su tamaño y la última página.
+[283] Windows me avisa al abrir el instalador.
+[284] Es porque el instalador aún no está firmado. Pulsa <b>Más información</b> y luego <b>Ejecutar de todas formas</b>.
+[285] Kreix no reconoce mi extracto.
+[286] Pulsa <b>Asignar las columnas</b> y dile qué columna es la fecha, el concepto y el importe. Si el archivo es un PDF, descárgalo en CSV o Excel: Kreix no importa PDF.
+[287] El archivo no se puede leer.
+[288] Descárgalo otra vez, en CSV o Excel y sin abrirlo ni editarlo antes en otra aplicación. Kreix explica el motivo en la propia tarjeta.
+[289] Los importes salen con el signo cambiado.
+[290] En el asistente de columnas, indica que los gastos vienen como números positivos (o corrige el signo del importe) y comprueba la vista previa antes de guardar.
+[291] Me equivoqué al importar.
+[292] Pulsa <b>Deshacer</b> en el aviso que aparece justo después. Si ya pasó el aviso, <i>Ajustes &gt; Borrar todos los datos</i> deja la base vacía (los ajustes se conservan) para empezar de nuevo.
+[293] La TIR y el TWR no aparecen.
+[294] Kreix los oculta cuando la cartera no cuadra con las operaciones (falta alguna). Importa el historial completo de operaciones desde el inicio.
+[295] Un movimiento está en la categoría equivocada.
+[296] Con ••• (o clic derecho) elige <b>Cambiar categoría</b>, o crea una regla para que pase siempre.
+[297] He olvidado la contraseña.
+[298] No se puede recuperar. En la pantalla de bloqueo, <b>He olvidado la contraseña</b> borra el archivo cifrado para empezar de cero con una nueva.
+[299] El código QR no se completa en el móvil.
+[300] Acerca el móvil sin moverlo, sube el brillo de la pantalla del ordenador, evita reflejos y comprueba que el navegador tiene permiso de cámara en los ajustes del móvil.
+[301] La app del móvil no se instala o no aparece la opción.
+[302] Usa Chrome (Android) o Safari (iPhone). En iPhone, si el enlace se abrió desde otra app, cópialo y ábrelo directamente en Safari.
+[303] Los datos del móvil desaparecieron.
+[304] Se guardan en el navegador: si se borran los datos del sitio, se pierden. Vuelve a pasarlos desde el ordenador con el código QR o importa tu último <i>.kreix</i>.
+[305] Patrimonio neto
+[306] Todo lo que tienes: el saldo de tus cuentas más el valor de tu cartera de inversión.
+[307] Liquidez
+[308] El dinero disponible en tus cuentas, el que puedes usar al momento.
+[309] Tasa de ahorro
+[310] Qué parte de lo que ingresas en el mes no te lo gastas: (ingresos − gastos) ÷ ingresos.
+[311] Valor liquidativo
+[312] El precio de una participación de un fondo en un día concreto.
+[313] Participación
+[314] Cada «trozo» de un fondo de inversión. Tu inversión vale participaciones × valor liquidativo.
+[315] Plusvalía
+[316] La ganancia (o pérdida) de una inversión: lo que vale ahora menos lo que pusiste.
+[317] Rendimiento
+[318] La plusvalía en porcentaje sobre lo invertido.
+[319] TWR
+[320] Rentabilidad que no depende de cuándo aportas: encadena los tramos entre aportaciones.
+[321] TIR
+[322] Rentabilidad anualizada que sí tiene en cuenta cuándo aportaste cada cantidad.
+[323] ISIN
+[324] El código internacional de 12 caracteres que identifica un fondo.
+[325] Pago recurrente
+[326] Un cargo que se repite cada mes con un importe parecido: suscripciones, recibos.
+[327] Traspaso
+[328] Mover dinero entre dos cuentas tuyas. No es un gasto ni un ingreso.
+[329] Regla de categoría
+[330] «Si el concepto contiene esta palabra, va a esta categoría». Las tuyas mandan sobre las de Kreix.
+[331] La contraseña con la que se cifran tus datos. No se puede recuperar.
+[332] Archivo .kreix
+[333] Un único archivo con todos tus datos, para copias y para llevarlos a otro equipo.
+[334] PWA
+[335] La app del móvil: una aplicación web que se instala desde el navegador y funciona sin conexión.
+[336] ¿Algo que no queda claro?
+[337] La Ayuda de Kreix explica cada cifra con ejemplos, y la web tiene la guía en línea y las preguntas frecuentes:<br/><b>dasuarezang.github.io/kreix-web</b>

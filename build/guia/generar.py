@@ -1,6 +1,6 @@
 """Genera Kreix-Guia-es.pdf a partir de guia.html (Edge o Chrome sin cabeza) y rellena los numeros de pagina del indice.
 
-Uso:  python build/guia/generar.py
+Uso:  python build/guia/generar.py [es] [ca] [en]     (sin argumentos: los tres idiomas)
 Primero imprime el PDF, mira en que pagina empieza cada capitulo, escribe esos numeros en el indice de guia.html y vuelve a
 imprimir para comprobar que no se ha movido nada. Necesita pymupdf (pip install pymupdf).
 """
@@ -15,8 +15,7 @@ from pathlib import Path
 import pymupdf
 
 AQUI = Path(__file__).resolve().parent
-HTML = AQUI / "guia.html"
-SALIDA = AQUI / "Kreix-Guia-es.pdf"
+IDIOMAS = ("es", "ca", "en")
 NAVEGADORES = [
     r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe",
     r"C:\Program Files\Microsoft\Edge\Application\msedge.exe",
@@ -24,11 +23,11 @@ NAVEGADORES = [
 ]
 
 
-def imprimir(destino: Path) -> None:
+def imprimir(html: Path, destino: Path) -> None:
     navegador = next((n for n in NAVEGADORES if Path(n).exists()), None)
     if not navegador:
         sys.exit("No encuentro Edge ni Chrome.")
-    subprocess.run([navegador, "--headless", "--disable-gpu", "--no-pdf-header-footer", f"--print-to-pdf={destino}", HTML.as_uri()],
+    subprocess.run([navegador, "--headless", "--disable-gpu", "--no-pdf-header-footer", f"--print-to-pdf={destino}", html.as_uri()],
                    check=True, capture_output=True, timeout=180)
 
 
@@ -45,15 +44,20 @@ def paginas_de_capitulos(pdf: Path, titulos: list[str]) -> list[int]:
     return encontradas
 
 
-def main() -> None:
-    html = HTML.read_text(encoding="utf-8")
+def generar(idioma: str) -> None:
+    if idioma != "es":
+        from traducir import construir
+        construir(idioma)
+    html_path = AQUI / ("guia.html" if idioma == "es" else f"guia.{idioma}.html")
+    salida = AQUI / f"Kreix-Guia-{idioma}.pdf"
+    html = html_path.read_text(encoding="utf-8")
     titulos = re.findall(r'<li><b>\d+</b><span>([^<]+)</span><i class="pg">', html)
     if not titulos:
         sys.exit("El indice de guia.html no tiene los <i class=\"pg\"> esperados.")
     with tempfile.TemporaryDirectory() as tmp:
         prueba = Path(tmp) / "prueba.pdf"
-        for intento in range(3):
-            imprimir(prueba)
+        for _ in range(3):
+            imprimir(html_path, prueba)
             paginas = paginas_de_capitulos(prueba, titulos)
             nuevo = html
             for titulo, n in zip(titulos, paginas):
@@ -61,13 +65,19 @@ def main() -> None:
             if nuevo == html:
                 break
             html = nuevo
-            HTML.write_text(html, encoding="utf-8")
+            html_path.write_text(html, encoding="utf-8")
         else:
             sys.exit("Los numeros de pagina no se estabilizan.")
-        SALIDA.write_bytes(prueba.read_bytes())
-    with pymupdf.open(SALIDA) as doc:
+        salida.write_bytes(prueba.read_bytes())
+    with pymupdf.open(salida) as doc:
         total = len(doc)
-    print(f"{SALIDA.name}: {total} paginas. Capitulos en las paginas {paginas}.")
+    print(f"{salida.name}: {total} paginas. Capitulos en las paginas {paginas}.")
+
+
+def main() -> None:
+    elegidos = sys.argv[1:] or list(IDIOMAS)
+    for idioma in elegidos:
+        generar(idioma)
 
 
 if __name__ == "__main__":

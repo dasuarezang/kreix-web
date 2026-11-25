@@ -1,0 +1,198 @@
+[140] <b>Crear regla per a «…»</b> porta a una categoria tots els conceptes amb aquesta paraula, també els que importis després. Es gestionen a <i>Configuració &gt; Regles de categories</i>.
+[141] <b>Per classificar.</b> Inici compta els moviments sense categoria i, si un comerç es repeteix, proposa una regla per classificar-los d'un clic.
+[142] Pressupostos
+[143] A Comptes, el panell <b>Pressupostos</b> (botó <i>Definir pressupostos</i>) fixa un topall mensual per categoria. La barra es posa <b>verda</b> mentre et sobra, <b>groga</b> en passar del 85 % i <b>vermella</b> en superar-lo. Amb un mes triat compara la despesa d'aquest mes; amb tot l'historial, la despesa mitjana mensual. Inici avisa dels que estàs a punt de superar o ja has superat.
+[144] Pagaments recurrents
+[145] Kreix detecta les teves subscripcions i rebuts mensuals, et diu quant sumen al mes i a l'any i quan toca el següent. Un càrrec compta com a recurrent si es repeteix almenys <b>tres mesos seguits</b>, cada uns 30 dies i amb un import estable (fins a un 20 % de diferència). Si deixa d'aparèixer durant un mes i mig es dona per cancel·lat. El supermercat no hi entra (varia d'import i es repeteix més d'una vegada al mes) i els traspassos, Bizum i ingressos mai no compten.
+[146] <b>Tu decideixes.</b> Amb ••• (o clic dret) sobre una despesa, <i>Marcar «…» com a pagament recurrent</i> l'afegeix encara que Kreix no el detecti (amb un sol càrrec val; un d'anual compta un dotzè al mes). <i>«…» no és un pagament recurrent</i> el treu si Kreix s'ha equivocat. Els marcats per tu porten «marcat per tu» i es poden desmarcar.
+[147] Metes d'estalvi
+[148] A Inici, el panell <b>Metes d'estalvi</b> mostra una barra per meta. <i>Gestionar metes</i> permet crear, editar i eliminar metes (per exemple, «1.000 € per a vacances») i <b>apuntar estalvi</b>. Kreix no mou diners: només porta el compte. Si hi poses data, et diu quant caldria apartar al mes per arribar a temps.
+[149] Traspassos entre els teus comptes
+[150] Una sortida i una entrada del mateix import en dos comptes teus s'aparellen i no compten com a despesa ni com a ingrés. Els traspassos que <b>entren</b> compten com a ingrés i els que surten són neutres, tret que ho canviïs a Configuració.
+[151] Avisos del que no quadra
+[152] En lloc d'importar en silenci, Kreix avisa de saldos amb buits, d'una cartera que no coincideix amb les operacions o d'imports incoherents.
+[153] Xifra
+[154] Què és i com es calcula
+[155] <b>Patrimoni net</b>
+[156] Saldo dels teus comptes més el valor de mercat de l'última foto de cartera de cada fons. Inici mostra quant és liquiditat i quant inversió, i quin percentatge és cada part.
+[157] <b>Rendiment global</b>
+[158] (valor de mercat − capital invertit) ÷ capital invertit, segons l'extracte de cartera.
+[159] <b>Taxa d'estalvi</b>
+[160] (ingressos − despeses) ÷ ingressos del mes. Pot ser negativa.
+[161] <b>TIR</b>
+[162] Taxa interna de retorn anualitzada amb dates irregulars (XIRR, base 365 dies). Té en compte quan vas aportar cada euro.
+[163] <b>TWR</b>
+[164] Rendibilitat ponderada en el temps: encadena els trams entre aportacions, així que el moment en què aportes no l'afecta.
+[165] Què compta com a ingrés o despesa
+[166] Els <b>traspassos entre comptes propis</b> que entren compten com a ingrés; els que surten són neutres. És una opció a Configuració.
+[167] Els <b>Bizum</b> compten com a ingrés o despesa. També és una opció a Configuració.
+[168] Les <b>aportacions a MyInvestor</b> no són despesa: es calculen a partir de les compres de MyInvestor, per no comptar-les dues vegades.
+[169] Quant refiar-te de la TIR i el TWR
+[170] Es reconstrueixen des de l'historial d'operacions. Si falta alguna operació, la cartera no quadra amb elles: Kreix t'ho avisa i <b>amaga la TIR i el TWR</b> fins que es corregeixi, en lloc d'ensenyar xifres enganyoses. Per evitar-ho, exporta del teu banc l'historial complet des de l'inici.
+[171] <b>Les estimacions es diuen estimacions.</b> La previsió a final de mes i el valor dels fons al tancament de cada mes són càlculs aproximats. L'Ajuda explica com es fa cadascun.
+[172] El mode privacitat
+[173] L'ull de la barra lateral (o <b>Ctrl+H</b>) difumina totes les quantitats en euros, també en gràfics i taules: es veu que hi ha una xifra, mai quina. La xifra real ni arriba a la pantalla, així que és segur per compartir pantalla o treballar en públic.
+[174] Com llegir cada gràfic
+[175] Sota cada gràfic hi ha una frase que diu el que compta («El teu saldo ha pujat 3.099,12 € en aquest període»). Llegeix-la primer: resumeix el que el gràfic vol dir.
+[176] Les teves dades mai no es desen en clar. Amb la contrasenya mestra, les dades es xifren al teu equip i només es desxifren en memòria mentre Kreix és obert. El que hi ha al disc és un únic arxiu xifrat, <code>kreix.krx</code>, a <code>%APPDATA%\Kreix</code>.
+[177] Què fa Kreix per tu
+[178] <b>Xifrat:</b> la clau es deriva de la teva contrasenya amb PBKDF2-HMAC-SHA256 (600 000 voltes i una sal aleatòria) i les dades es xifren amb Fernet (AES amb autenticació). Una contrasenya incorrecta o un arxiu alterat es rebutgen.
+[179] <b>En memòria:</b> en desbloquejar, la base es desxifra directament a la RAM, sense arxius temporals en clar. Kreix desa l'arxiu xifrat uns segons després de cada canvi i en tancar, amb escriptura atòmica i una còpia <i>.bak</i> també xifrada.
+[180] <b>Sense xarxa:</b> no hi ha comptes, servidors ni telemetria.
+[181] Canviar la contrasenya
+[182] <b>Configuració &gt; Seguretat</b> la canvia comprovant l'actual. Les dades es tornen a xifrar amb una clau i una sal noves, i les còpies de seguretat també es tornen a xifrar amb la nova perquè cap no continuï obrint-se amb la vella.
+[183] Bloqueig automàtic
+[184] Kreix amaga tot i torna a demanar la contrasenya:
+[185] després d'uns minuts sense tocar l'equip (1, 2, 5, 10, 15 o 30; o mai),
+[186] en minimitzar la finestra,
+[187] quan Windows es bloqueja (<b>Win+L</b>) o l'equip se suspèn (cadascun es pot apagar).
+[188] <b>Ctrl+L</b> o <i>Configuració &gt; Seguretat &gt; Bloqueja ara</i> el bloqueja a l'instant. A partir del tercer error seguit cal esperar 5, 10, 20 i, com a màxim, 30 segons abans de tornar-ho a provar.
+[189] Còpies de seguretat automàtiques
+[190] Kreix fa una còpia xifrada (<code>Kreix-copia-AAAA-MM-DD_HH-MM.kreix</code>) en obrir si encara no n'hi ha cap, després de desar canvis (com a màxim una per hora i mai si no hi ha res de nou) i en tancar.
+[191] Es desen a la carpeta que triïs a <i>Configuració &gt; Còpies de seguretat</i> (per defecte, al costat de les dades) i es conserven les últimes 3, 5, 10 o 20.
+[192] A baix a l'esquerra veus quan es va fer l'última. <b>Comprova l'última còpia</b> l'obre de debò i diu quants moviments i comptes té.
+[193] Es restauren des de la mateixa pantalla escrivint la contrasenya mestra.
+[194] <b>Còpia fora de l'equip.</b> Les còpies es desen per defecte al costat de les teves dades. Per estar a recer d'una avaria del disc, tria una carpeta en una altra unitat o en un núvol que ja facis servir: l'arxiu està xifrat.
+[195] Si oblides la contrasenya
+[196] No hi ha manera de recuperar les dades. A la pantalla de bloqueig, <b>He oblidat la contrasenya</b> esborra l'arxiu xifrat (després de demanar confirmació) per començar de zero amb una contrasenya nova i tornar a importar els teus extractes. Per això les còpies i la contrasenya apuntada en un lloc segur són tan importants.
+[197] El que no està xifrat
+[198] Un arxiu <b>.kreix</b> exportat sense marcar la casella de xifrat, i l'arxiu que importes mentre Kreix el valida. Tracta'ls com a dades sensibles: contenen la teva informació financera.
+[199] L'arxiu .kreix
+[200] <b>Dades &gt; Exportar</b> crea un arxiu <i>.kreix</i> (un ZIP amb una còpia consistent de la base de dades i una fitxa amb la versió i els totals). Serveix per fer una còpia o per portar les teves dades a un altre ordinador.
+[201] La casella <b>Xifrar l'arxiu amb la meva contrasenya mestra</b> està activa per defecte. En importar-lo, en aquest o en un altre ordinador, Kreix demana la contrasenya amb què es va exportar.
+[202] <b>Si no el xifres, l'arxiu no està xifrat.</b> Desa'l en un lloc segur i no el comparteixis.
+[203] S'exporta tot: comptes, moviments, categories, operacions, cartera i configuració (també el teu nom i el teu idioma), inclosa la protecció anti-duplicats.
+[204] Passar les dades a un altre ordinador
+[205] A l'ordinador d'origen, <b>Dades &gt; Exportar</b> i desa l'arxiu <i>.kreix</i>.
+[206] A l'altre ordinador, instal·la Kreix, ves a <b>Importar</b> i arrossega l'arxiu.
+[207] Les dades queden idèntiques a les d'origen.
+[208] <b>Importar un .kreix reemplaça</b> les dades que hi hagués en aquest equip (demana confirmació si ja n'hi havia). Un arxiu rebut es tracta com a no fiable: només s'accepten les seves dues entrades, es comprova la integritat de la base de dades i es rebutja si porta disparadors o vistes, si és d'una versió més recent o si és massa gran.
+[209] Passar les dades al mòbil amb un codi QR
+[210] És la manera de portar les teves dades de l'ordinador a l'app del mòbil sense cables ni connexió. Primer instal·la l'app al mòbil (capítol 9). Després:
+[211] A l'ordinador, obre <b>Dades &gt; Exportar &gt; Passar al mòbil</b>. Apareix un codi QR que va canviant (uns sis codis per segon).
+[212] Al mòbil, obre l'app, ves a <b>Dades</b> i prem <b>Escanejar el codi QR</b>.
+[213] Apunta la càmera a la pantalla de l'ordinador, sense moure-la, fins que la barra de progrés arribi al 100 %. No cal que comenci enlloc concret: l'app va ajuntant els trossos.
+[214] <b>Què es transfereix.</b> Totes les dades, amb el mateix format que l'arxiu <i>.kreix</i>. El que rebis <b>substituirà les dades que hi hagi al mòbil</b>. La primera vegada, el mòbil et demanarà permís per fer servir la càmera.
+[215] L'app del mòbil és una aplicació web (PWA) que executa la mateixa lògica que el programa de Windows, amb la interfície adaptada al mòbil. S'instal·la des del navegador, funciona sense connexió i desa tot xifrat al mòbil amb el mateix format que l'ordinador. Diu exactament el mateix que el programa: mateixes xifres, mateixos gràfics, mateixes explicacions.
+[216] Instal·lar-la a Android
+[217] <b>Obre Kreix a Chrome</b> des del mateix mòbil (<i>dasuarezang.github.io/kreix-web/app/</i>). La primera vegada descarrega uns 20 MB; després funciona sense connexió.
+[218] <b>Obre el menú:</b> els tres punts (⋮), a dalt a la dreta.
+[219] <b>Toca «Instal·lar aplicació».</b> Si no la veus, toca «Afegir a la pantalla d'inici» i després «Instal·lar»: fan el mateix.
+[220] <b>Confirma</b> amb «Instal·lar». Sense botiga d'apps i sense compte.
+[221] <b>Obre-la des de la pantalla d'inici.</b> S'obre a pantalla completa, com qualsevol altra app.
+[222] A <b>Samsung Internet</b> els passos són: menú de les tres ratlles (≡), a baix a la dreta → «Afegir pàgina a» → «Pantalla d'inici» → «Afegir». A Edge són gairebé iguals que a Chrome.
+[223] Instal·lar-la a iPhone i iPad
+[224] <b>Obre Kreix a Safari.</b> Si l'enllaç s'obre dins d'una altra app (WhatsApp, Instagram…), copia'l i enganxa'l a Safari.
+[225] <b>Toca Compartir:</b> el quadrat amb una fletxa cap amunt (a baix a l'iPhone, a dalt a la dreta a l'iPad).
+[226] <b>Baixa i toca «Afegir a la pantalla d'inici».</b> La llista és llarga: llisca-la fins a veure l'opció amb un quadrat i un «+».
+[227] <b>Deixa «Kreix» com a nom i toca «Afegir»,</b> a dalt a la dreta.
+[228] <b>Obre-la des de la icona,</b> no des de Safari: així es veu a pantalla completa.
+[229] La primera arrencada al mòbil
+[230] Funciona igual que a l'ordinador: crees una contrasenya mestra (amb el mateix mesurador), tries idioma, nom i el que vols gestionar, i pots provar amb dades d'exemple.
+[231] Contrasenya mestra
+[232] Benvinguda
+[233] Primera pantalla
+[234] Les pantalles
+[235] A baix hi ha una barra amb cinc pestanyes: <b>Inici, Comptes, Inversions, Dades i Configuració</b>. A dalt, tres botons: l'<b>Ajuda</b> («?»), el <b>mode privacitat</b> (l'ull) i el canvi de <b>tema clar o fosc</b>.
+[236] <b>Inici, Comptes i Inversions</b> mostren el mateix que el programa de Windows, amb les targetes apilades. Els moviments tenen el seu menú per canviar la categoria o crear regles, i pots definir pressupostos i metes.
+[237] <b>Ajuda:</b> el mateix glossari que a l'ordinador.
+[238] Dades: importar, rebre i exportar
+[239] A la pestanya <b>Dades</b> pots <b>Triar fitxers</b> (extractes CSV o Excel, o un arxiu <i>.kreix</i>) de les carpetes Baixades o Arxius del mòbil, amb la mateixa vista prèvia «Revisa abans d'importar» que a l'ordinador. A sota, <b>Escanejar el codi QR</b> rep les dades de l'ordinador i <b>Exportar dades…</b> desa un arxiu <i>.kreix</i> (xifrat si deixes marcada la casella).
+[240] Importar extractes
+[241] Rebre de l'ordinador i exportar
+[242] Configuració i seguretat al mòbil
+[243] Aquí hi ha l'idioma, el nom, el que t'interessa, la mida del text, el cel animat i les opcions de Bizum i traspassos, igual que a l'ordinador, i les <b>regles de categories</b>.
+[244] <b>Seguretat:</b> <i>Canviar contrasenya mestra…</i> i <i>Bloqueja ara</i>.
+[245] <b>Bloqueig automàtic:</b> si no fas servir Kreix durant uns minuts, amaga les teves dades i torna a demanar la contrasenya. Tu tries quant temps.
+[246] <b>Bloquejar en sortir de l'app:</b> en canviar d'app o apagar la pantalla, Kreix torna a demanar la contrasenya abans de mostrar les teves dades.
+[247] <b>Còpies de seguretat:</b> al mòbil es fan a mà des de <i>Dades &gt; Exportar</i>: desa l'arxiu <i>.kreix</i> al teu núvol o envia-te'l. Kreix desa a més la versió anterior de les teves dades, xifrada, per si alguna cosa falla en desar.
+[248] Aspecte i càlculs
+[249] Diferències amb el programa de Windows
+[250] Pensat per importar i organitzar amb calma, amb dreceres de teclat.
+[251] Pensada per consultar i per importar extractes descarregats al mateix mòbil.
+[252] Desa les dades a <code>%APPDATA%\Kreix</code> i fa còpies de seguretat automàtiques.
+[253] Desa les dades xifrades dins del navegador del mòbil. Les còpies es fan a mà, exportant un <i>.kreix</i> de tant en tant.
+[254] Genera el codi QR per passar les dades.
+[255] Llegeix el codi QR amb la càmera.
+[256] S'instal·la amb un instal·lador de Windows.
+[257] S'instal·la des del navegador, sense botiga d'apps.
+[258] <b>Compte en esborrar dades del navegador.</b> Les dades de l'app viuen a l'emmagatzematge del navegador. Si esborres les dades del lloc o desinstal·les el navegador, es perden. Desa de tant en tant un arxiu <i>.kreix</i> exportat, o torna a passar les dades des de l'ordinador.
+[259] En un Mac o en Linux pots fer servir aquesta mateixa app des del navegador, ja que el programa amb instal·lador és només per a Windows.
+[260] Dreceres de teclat (programa de Windows)
+[261] <kbd>Ctrl</kbd> + <kbd>H</kbd>
+[262] Amaga o mostra les quantitats (mode privacitat).
+[263] <kbd>Ctrl</kbd> + <kbd>1</kbd> … <kbd>7</kbd>
+[264] Canvien de pàgina, en aquest ordre: Inici, Comptes, Inversions, Importar, Exportar, Configuració, Ajuda.
+[265] <kbd>Ctrl</kbd> + <kbd>K</kbd>
+[266] Ho cerca tot: pàgines, accions, moviments i explicacions de l'ajuda.
+[267] <kbd>Ctrl</kbd> + <kbd>T</kbd>
+[268] Alterna el mode clar i fosc.
+[269] <kbd>Ctrl</kbd> + <kbd>F</kbd>
+[270] Va al cercador de moviments.
+[271] <kbd>Ctrl</kbd> + <kbd>L</kbd>
+[272] Bloqueja Kreix a l'instant.
+[273] Recalcula la pàgina.
+[274] Passen els pressupostos del mes a Inici.
+[275] Petits trucs
+[276] <b>Cada «?» té la seva explicació.</b> Prem el «?» al costat d'una xifra per veure'n la definició i com la calcula Kreix.
+[277] <b>Desfer és només l'últim canvi.</b> Si vols revertir alguna cosa, fes-ho just després, mentre l'avís continua a la vista.
+[278] <b>Reimporta sense por.</b> Per afegir un mes nou, descarrega l'extracte complet i deixa'l anar: només s'afegeix el que és nou.
+[279] <b>Mida del text.</b> Si llegeixes amb dificultat, <i>Configuració &gt; Mida del text</i> ho fa més gran a tota l'aplicació.
+[280] <b>Mode fosc o clar.</b> El commutador del sol i la lluna és sota el menú lateral (al mòbil, a dalt a la dreta).
+[281] <b>Provar sense risc.</b> «Provar amb dades d'exemple» et deixa explorar sense importar res, i desapareix sol en importar les teves dades.
+[282] <b>Fins a desenes de milers de files.</b> Els moviments s'ordenen, filtren i carreguen en una fracció de segon, i la finestra recorda la seva mida i l'última pàgina.
+[283] Windows m'avisa en obrir l'instal·lador.
+[284] És perquè l'instal·lador encara no està signat. Prem <b>Més informació</b> i després <b>Executa de totes maneres</b>.
+[285] Kreix no reconeix el meu extracte.
+[286] Prem <b>Assigna les columnes</b> i digues-li quina columna és la data, el concepte i l'import. Si l'arxiu és un PDF, descarrega'l en CSV o Excel: Kreix no importa PDF.
+[287] L'arxiu no es pot llegir.
+[288] Descarrega'l un altre cop, en CSV o Excel i sense obrir-lo ni editar-lo abans en una altra aplicació. Kreix explica el motiu a la mateixa targeta.
+[289] Els imports surten amb el signe canviat.
+[290] A l'assistent de columnes, indica que les despeses vénen com a nombres positius (o corregeix el signe de l'import) i comprova la vista prèvia abans de desar.
+[291] M'he equivocat en importar.
+[292] Prem <b>Desfer</b> a l'avís que apareix just després. Si ja ha passat l'avís, <i>Configuració &gt; Esborrar totes les dades</i> deixa la base buida (la configuració es conserva) per començar de nou.
+[293] La TIR i el TWR no apareixen.
+[294] Kreix els amaga quan la cartera no quadra amb les operacions (en falta alguna). Importa l'historial complet d'operacions des de l'inici.
+[295] Un moviment és a la categoria equivocada.
+[296] Amb ••• (o clic dret) tria <b>Canviar categoria</b>, o crea una regla perquè passi sempre.
+[297] He oblidat la contrasenya.
+[298] No es pot recuperar. A la pantalla de bloqueig, <b>He oblidat la contrasenya</b> esborra l'arxiu xifrat per començar de zero amb una de nova.
+[299] El codi QR no es completa al mòbil.
+[300] Acosta el mòbil sense moure'l, puja la brillantor de la pantalla de l'ordinador, evita reflexos i comprova que el navegador té permís de càmera a la configuració del mòbil.
+[301] L'app del mòbil no s'instal·la o no apareix l'opció.
+[302] Fes servir Chrome (Android) o Safari (iPhone). A l'iPhone, si l'enllaç s'ha obert des d'una altra app, copia'l i obre'l directament a Safari.
+[303] Les dades del mòbil han desaparegut.
+[304] Es desen al navegador: si s'esborren les dades del lloc, es perden. Torna a passar-les des de l'ordinador amb el codi QR o importa el teu darrer <i>.kreix</i>.
+[305] Patrimoni net
+[306] Tot el que tens: el saldo dels teus comptes més el valor de la teva cartera d'inversió.
+[307] Liquiditat
+[308] Els diners disponibles als teus comptes, els que pots fer servir a l'instant.
+[309] Taxa d'estalvi
+[310] Quina part del que ingresses al mes no te la gastes: (ingressos − despeses) ÷ ingressos.
+[311] Valor liquidatiu
+[312] El preu d'una participació d'un fons en un dia concret.
+[313] Participació
+[314] Cada «tros» d'un fons d'inversió. La teva inversió val participacions × valor liquidatiu.
+[315] Plusvàlua
+[316] El guany (o pèrdua) d'una inversió: el que val ara menys el que hi vas posar.
+[317] Rendiment
+[318] La plusvàlua en percentatge sobre l'invertit.
+[319] TWR
+[320] Rendibilitat que no depèn de quan aportes: encadena els trams entre aportacions.
+[321] TIR
+[322] Rendibilitat anualitzada que sí que té en compte quan vas aportar cada quantitat.
+[323] ISIN
+[324] El codi internacional de 12 caràcters que identifica un fons.
+[325] Pagament recurrent
+[326] Un càrrec que es repeteix cada mes amb un import semblant: subscripcions, rebuts.
+[327] Traspàs
+[328] Moure diners entre dos comptes teus. No és una despesa ni un ingrés.
+[329] Regla de categoria
+[330] «Si el concepte conté aquesta paraula, va a aquesta categoria». Les teves manen sobre les de Kreix.
+[331] La contrasenya amb què es xifren les teves dades. No es pot recuperar.
+[332] Arxiu .kreix
+[333] Un únic arxiu amb totes les teves dades, per a còpies i per portar-les a un altre equip.
+[334] PWA
+[335] L'app del mòbil: una aplicació web que s'instal·la des del navegador i funciona sense connexió.
+[336] Hi ha alguna cosa que no queda clara?
+[337] L'Ajuda de Kreix explica cada xifra amb exemples, i el web té la guia en línia i les preguntes freqüents:<br/><b>dasuarezang.github.io/kreix-web</b>

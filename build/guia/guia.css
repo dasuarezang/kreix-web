@@ -118,7 +118,7 @@ kbd { font: 700 8.3pt var(--body); border: 1px solid var(--edge); border-bottom-
 .phones.two-up .shot { max-width: 52mm; }
 
 /* ---------- preguntas y glosario ---------- */
-.faq dt { font: 800 10.8pt var(--display); margin: 5mm 0 1.2mm; break-after: avoid; }
+.faq dt { font: 800 10.8pt var(--display); margin: 4mm 0 1mm; break-after: avoid; }
 .faq dd { margin: 0; break-inside: avoid; }
 .glossary { display: grid; grid-template-columns: 41mm 1fr; border-top: 1px solid var(--border); margin: 0 0 8mm; }
 .glossary dt, .glossary dd { margin: 0; padding: 1.2mm 0; border-bottom: 1px solid var(--border); break-inside: avoid; }
@@ -145,7 +145,7 @@ kbd { font: 700 8.3pt var(--body); border: 1px solid var(--edge); border-bottom-
 .toc-list .pg { font: 700 11pt var(--display); font-style: normal; color: var(--muted); padding-right: 2mm; }
 .deco-pic { width: 50mm; }
 .float-pic { float: right; width: 38mm; height: auto; margin: 1mm 0 3mm 7mm; }
-.float-tall { width: 33mm; margin-top: -1mm; }
+.float-tall { width: 28mm; margin-top: -1mm; }
 /* dibujo en el hueco que queda al final de la pagina: ni pegado abajo ni centrado del todo (3 partes de aire arriba, 2 abajo) */
 .pic-slot { flex: 1; display: flex; flex-direction: column; align-items: center; min-height: 30mm; }
 .pic-slot::before { content: ""; flex: 3; }
