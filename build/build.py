@@ -61,10 +61,10 @@ def switcher(lang: str) -> str:
 
 
 def footer_langs(lang: str) -> str:
-    """Los tres idiomas como enlaces de texto en el pie."""
+    """Los tres idiomas en el pie, como botones con bandera iguales al de la cabecera."""
     to = _targets(lang)
     links = "".join(
-        f'<a href="{to[code]}" lang="{code}" hreflang="{code}"' + (' aria-current="true"' if code == lang else "") + f">{NAMES[code]}</a>"
+        f'<a href="{to[code]}" lang="{code}" hreflang="{code}"' + (' aria-current="true"' if code == lang else "") + f">{_flag(code, 'flagf-' + code)}<span>{NAMES[code]}</span></a>"
         for code in ("es", "ca", "en")
     )
     return f'<!--flang--><div class="foot-lang" role="group" aria-label="{LABEL[lang]}">{links}</div><!--/flang-->'
