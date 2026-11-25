@@ -1272,3 +1272,33 @@ footer { background: var(--chrome); border-top: 1px solid var(--edge); padding: 
 
 /* Chrome / Samsung Internet: centrado bajo el selector de Android / iPhone */
 .seg-sub { transform: translateX(calc(var(--os-w, 100%) / 2 - 50%)); }
+
+/* tarjeta de la guia en PDF, justo bajo la de descargar: la de cierre del reves, mas baja y del mismo ancho. Las barras a la izquierda,
+   Blitzen leyendo por encima de ellas y el boton rojo a la derecha; todo centrado en vertical, con el mismo aire arriba y abajo */
+.guide-card {
+  position: relative; overflow: hidden; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center;
+  gap: clamp(20px, 4vw, 56px); margin-top: clamp(14px, 2.4vh, 24px);
+  padding: clamp(14px, 2.6vh, 26px) clamp(28px, 5vw, 72px) clamp(14px, 2.6vh, 26px) clamp(28px, 5vw, 72px);
+  border: 1px solid var(--border); border-radius: 6px; background: var(--surface);
+}
+.guide-mark { position: absolute; left: clamp(-30px, 1vw, 20px); top: -10%; bottom: -10%; display: flex; flex-direction: row-reverse; gap: clamp(10px, 1.6vw, 18px); transform: skewX(24deg); pointer-events: none; opacity: .95; }
+.guide-mark i { width: clamp(10px, 1.6vw, 18px); background: var(--accent); }
+.guide-mark i:nth-child(2) { background: color-mix(in srgb, var(--accent) 62%, var(--red)); }
+.guide-mark i:nth-child(3) { background: color-mix(in srgb, var(--accent) 30%, var(--red)); }
+.guide-mark i:nth-child(4) { background: var(--red); }
+.guide-reader { position: relative; display: block; height: clamp(104px, 18vh, 196px); width: auto; }
+.guide-text { position: relative; min-width: 0; align-self: center; }
+.guide-text h2 { font-size: clamp(24px, 2.9vw, 34px); }
+.guide-text p { margin: 8px 0 0; max-width: 30em; text-wrap: balance; color: var(--soft); font-size: var(--fs-body); }
+.guide-card .btn { position: relative; align-self: center; }
+.btn-red { background: var(--red); color: #fff; }
+.btn-red:hover { background: color-mix(in srgb, var(--red) 86%, #000); }
+:root:not([data-theme="light"]) .btn-red { color: #1a0507; }
+:root:not([data-theme="light"]) .btn-red:hover { background: color-mix(in srgb, var(--red) 88%, #fff); }
+@media (max-width: 760px) {
+  .guide-card { grid-template-columns: auto minmax(0, 1fr); padding: 22px 20px 22px 18px; gap: 14px 16px; }
+  .guide-mark { opacity: .35; }
+  .guide-reader { height: auto; width: clamp(84px, 24vw, 120px); }
+  .guide-card .btn { grid-column: 1 / -1; width: 100%; }
+}
+@media (min-width: 761px) and (max-height: 740px) { .guide-reader { height: 96px; } }      /* ventanas bajas: que las dos tarjetas quepan en la pantalla */

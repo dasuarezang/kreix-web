@@ -410,6 +410,15 @@ T = {
     'Descarga el instalador y ábrelo. No pide permisos de administrador y crea un acceso directo en Inicio y en el escritorio. Como el instalador aún no está firmado, Windows puede avisarte la primera vez: pulsa «Más información» y «Ejecutar de todas formas».': (
         "Descarrega l'instal·lador i obre'l. No demana permisos d'administrador i crea una drecera a Inici i a l'escriptori. Com que l'instal·lador encara no està signat, Windows pot avisar-te la primera vegada: prem «Més informació» i «Executa de totes maneres».",
         'Download the installer and open it. It does not ask for administrator rights and it adds a shortcut to Start and to the desktop. Because the installer is not signed yet, Windows may warn you the first time: click “More info” and then “Run anyway”.'),
+    'Guía de uso en PDF': (
+        "Guia d'ús en PDF",
+        'User guide (PDF)'),
+    'Todo Kreix explicado paso a paso, para leer con calma o imprimir.': (
+        'Tot Kreix explicat pas a pas, per llegir amb calma o imprimir.',
+        'All of Kreix explained step by step, to read at your own pace or print out.'),
+    'Descargar la guía': (
+        'Descarregar la guia',
+        'Download the guide'),
     '100&nbsp;% Offline<br>100&nbsp;% Cifrado<br>100&nbsp;% Privado': (
         '100&nbsp;% Offline<br>100&nbsp;% Xifrat<br>100&nbsp;% Privat',
         '100% Offline<br>100% Encrypted<br>100% Private'),
