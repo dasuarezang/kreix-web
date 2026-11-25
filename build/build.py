@@ -93,6 +93,7 @@ def build(lang: str) -> str:
     out = out.replace('content="es_ES"', f'content="{og_locale}"', 1)
     out = fill_switchers(out, lang)
     # rutas: la pagina vive un nivel mas abajo; las capturas son las de la app en ese idioma
+    out = out.replace("assets/guia/Kreix-Guia-es.pdf", f"assets/guia/Kreix-Guia-{lang}.pdf")     # cada idioma descarga su guia
     out = out.replace("assets/shots/", f"../assets/shots/{lang}/")
     out = re.sub(r'(href|src|srcset)="assets/', r'\1="../assets/', out)
     out = out.replace('href="styles.css', 'href="../styles.css').replace('src="script.js', 'src="../script.js')
