@@ -140,10 +140,10 @@ kbd { font: 700 8.3pt var(--body); border: 1px solid var(--edge); border-bottom-
 .point-logo img { width: 15mm; height: 15mm; border-radius: 3.4mm; }
 .point-logo span { font: 800 23pt var(--display); letter-spacing: -.01em; }
 .point-dogs { width: 54mm; height: auto; }
-.deco-calc { width: 62mm; }
+.deco-calc { width: 60mm; }
 
 .toc-list .pg { font: 700 11pt var(--display); font-style: normal; color: var(--muted); padding-right: 2mm; }
-.deco-pic { width: 50mm; }
+.deco-pic { width: 53mm; }
 .float-pic { float: right; width: 38mm; height: auto; margin: 1mm 0 3mm 7mm; }
 .float-tall { width: 28mm; margin-top: -1mm; }
 /* dibujo en el hueco que queda al final de la pagina: ni pegado abajo ni centrado del todo (3 partes de aire arriba, 2 abajo) */

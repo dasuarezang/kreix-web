@@ -7,6 +7,7 @@ imprimir para comprobar que no se ha movido nada. Necesita pymupdf (pip install 
 from __future__ import annotations
 
 import re
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -44,12 +45,40 @@ def paginas_de_capitulos(pdf: Path, titulos: list[str]) -> list[int]:
     return encontradas
 
 
-def optimizar(origen: Path, destino: Path) -> None:
-    """Reduce las imagenes a 150 ppp como mucho (los dibujos y capturas salen de Chrome mucho mas grandes de lo que hace falta en una pagina A4)."""
-    pymupdf.TOOLS.mupdf_display_errors(False)
-    with pymupdf.open(origen) as doc:
-        doc.rewrite_images(dpi_threshold=170, dpi_target=150, quality=82)
-        doc.save(destino, garbage=3, deflate=True)
+def preparar_copia(html_path: Path, tmp: Path) -> Path:
+    """Copia la guia a una carpeta temporal con las imagenes ya reducidas (Chrome las incrusta tal cual: las capturas, a JPEG de 1000 px
+    como mucho, y los dibujos con transparencia, a 640 px). Optimizar el PDF despues con MuPDF rompia los degradados del logo."""
+    from PIL import Image
+
+    raiz = AQUI.parent.parent
+    (tmp / "build" / "guia").mkdir(parents=True)
+    shutil.copytree(raiz / "assets" / "fonts", tmp / "assets" / "fonts")
+    shutil.copy(raiz / "assets" / "kreix-icono-oscuro.svg", tmp / "assets" / "kreix-icono-oscuro.svg")
+    (tmp / "assets" / "perretes").mkdir(parents=True)
+    texto = html_path.read_text(encoding="utf-8")
+
+    def reducir(origen: Path, destino: Path, ancho: int) -> Path:
+        im = Image.open(origen)
+        if im.width > ancho:
+            im = im.resize((ancho, round(im.height * ancho / im.width)), Image.LANCZOS)
+        destino.parent.mkdir(parents=True, exist_ok=True)
+        if im.mode in ("RGBA", "LA", "P"):
+            im.convert("RGBA").save(destino.with_suffix(".png"), optimize=True)
+            return destino.with_suffix(".png")
+        im.convert("RGB").save(destino.with_suffix(".jpg"), quality=85, optimize=True)
+        return destino.with_suffix(".jpg")
+
+    for ref in sorted(set(re.findall(r'src="((?:\.\./\.\./assets/perretes/|img/)[^"]+)"', texto))):
+        origen = (AQUI / ref).resolve()
+        destino = (tmp / "build" / "guia" / ref).resolve()
+        ancho = 1000 if ref.startswith("img/") and origen.suffix == ".png" and ("/pc-" in ref or "/mv-" in ref or ref.startswith(("img/pc-", "img/mv-"))) else 640
+        nuevo = reducir(origen, destino, ancho)
+        if nuevo.suffix != origen.suffix:
+            texto = texto.replace(f'src="{ref}"', f'src="{ref[: -len(origen.suffix)]}{nuevo.suffix}"')
+    shutil.copy(AQUI / "guia.css", tmp / "build" / "guia" / "guia.css")
+    copia = tmp / "build" / "guia" / html_path.name
+    copia.write_text(texto, encoding="utf-8")
+    return copia
 
 
 def generar(idioma: str) -> None:
@@ -65,7 +94,9 @@ def generar(idioma: str) -> None:
     with tempfile.TemporaryDirectory() as tmp:
         prueba = Path(tmp) / "prueba.pdf"
         for _ in range(3):
-            imprimir(html_path, prueba)
+            copia_dir = Path(tmp) / "copia"
+            shutil.rmtree(copia_dir, ignore_errors=True)
+            imprimir(preparar_copia(html_path, copia_dir), prueba)
             paginas = paginas_de_capitulos(prueba, titulos)
             nuevo = html
             for titulo, n in zip(titulos, paginas):
@@ -76,7 +107,7 @@ def generar(idioma: str) -> None:
             html_path.write_text(html, encoding="utf-8")
         else:
             sys.exit("Los numeros de pagina no se estabilizan.")
-        optimizar(prueba, salida)
+        salida.write_bytes(prueba.read_bytes())
     with pymupdf.open(salida) as doc:
         total = len(doc)
     print(f"{salida.name}: {total} paginas. Capitulos en las paginas {paginas}.")
