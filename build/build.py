@@ -6,6 +6,7 @@ el script falla y dice cuál, para que ninguna página se quede con un texto a m
 """
 from __future__ import annotations
 
+import hashlib
 import re
 import sys
 from pathlib import Path
@@ -18,6 +19,11 @@ SOURCE = (ROOT / "index.html").read_text(encoding="utf-8")
 LANGS = {"ca": (0, "ca", "ca_ES"), "en": (1, "en", "en_GB")}
 ORDER = sorted(T, key=len, reverse=True)                        # primero los textos largos: nunca se pisan
 PATTERN = re.compile("|".join(re.escape(k) for k in ORDER))
+
+
+def pdf_version(lang: str) -> str:
+    """Huella corta de cada PDF de la guia: va en el enlace (?v=...) para que el navegador no ensene una copia vieja cuando el PDF cambia."""
+    return hashlib.sha1((ROOT / "assets" / "guia" / f"Kreix-Guia-{lang}.pdf").read_bytes()).hexdigest()[:8]
 
 
 FLAGS = {          # banderas (24x24) con las esquinas suaves, las mismas que dibuja el programa en Ajustes
@@ -93,7 +99,7 @@ def build(lang: str) -> str:
     out = out.replace('content="es_ES"', f'content="{og_locale}"', 1)
     out = fill_switchers(out, lang)
     # rutas: la pagina vive un nivel mas abajo; las capturas son las de la app en ese idioma
-    out = out.replace("assets/guia/Kreix-Guia-es.pdf", f"assets/guia/Kreix-Guia-{lang}.pdf")     # cada idioma descarga su guia
+    out = re.sub(r"assets/guia/Kreix-Guia-es\.pdf(\?v=[0-9a-f]+)?", f"assets/guia/Kreix-Guia-{lang}.pdf?v={pdf_version(lang)}", out)     # cada idioma descarga su guia
     out = out.replace("assets/shots/", f"../assets/shots/{lang}/")
     out = re.sub(r'(href|src|srcset)="assets/', r'\1="../assets/', out)
     out = out.replace('href="styles.css', 'href="../styles.css').replace('src="script.js', 'src="../script.js')
@@ -113,6 +119,7 @@ def untranslated(lang: str, html: str) -> list[str]:
 def main() -> None:
     global SOURCE
     es = fill_switchers(SOURCE, "es")
+    es = re.sub(r"assets/guia/Kreix-Guia-es\.pdf(\?v=[0-9a-f]+)?", f"assets/guia/Kreix-Guia-es.pdf?v={pdf_version('es')}", es)
     if es != SOURCE:                                       # el selector del castellano tambien sale de aqui
         (ROOT / "index.html").write_text(es, encoding="utf-8", newline="\n")
         SOURCE = es

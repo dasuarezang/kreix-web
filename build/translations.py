@@ -41,9 +41,6 @@ T = {
     '>Descargar igualmente (38&nbsp;MB)</a>': (
         '>Descarrega-ho igualment (38&nbsp;MB)</a>',
         '>Download anyway (38&nbsp;MB)</a>'),
-    '>Descargar</a>': (
-        '>Descarrega</a>',
-        '>Download</a>'),
     '>Descargar para Windows</a>': (
         '>Descarrega per a Windows</a>',
         '>Download for Windows</a>'),
@@ -410,6 +407,9 @@ T = {
     'Descarga el instalador y ábrelo. No pide permisos de administrador y crea un acceso directo en Inicio y en el escritorio. Como el instalador aún no está firmado, Windows puede avisarte la primera vez: pulsa «Más información» y «Ejecutar de todas formas».': (
         "Descarrega l'instal·lador i obre'l. No demana permisos d'administrador i crea una drecera a Inici i a l'escriptori. Com que l'instal·lador encara no està signat, Windows pot avisar-te la primera vegada: prem «Més informació» i «Executa de totes maneres».",
         'Download the installer and open it. It does not ask for administrator rights and it adds a shortcut to Start and to the desktop. Because the installer is not signed yet, Windows may warn you the first time: click “More info” and then “Run anyway”.'),
+    'Descargas': (
+        'Descàrregues',
+        'Downloads'),
     'Guía de uso (PDF)': (
         "Guia d'ús (PDF)",
         'User guide (PDF)'),
