@@ -15,6 +15,7 @@
 
 @page { size: A4; margin: 17mm 17mm 19mm; @bottom-left { content: "Kreix · Guía de uso"; font: 500 8pt "DM Sans"; color: #626872; }
   @bottom-right { content: counter(page); font: 700 8.5pt "Montserrat"; color: #22262b; } }
+@page toc { margin-right: 0; @bottom-right { content: counter(page); font: 700 8.5pt "Montserrat"; color: #22262b; padding-right: 17mm; } }
 @page cover { margin: 0; @bottom-left { content: none; } @bottom-right { content: none; } }
 
 * { box-sizing: border-box; }
@@ -40,7 +41,7 @@ h3 { font-size: 12.8pt; margin: 7mm 0 2.6mm; }
 
 /* ---------- portada ---------- */
 .cover { page: cover; position: relative; width: 210mm; height: 297mm; padding: 22mm 20mm 18mm; background: var(--side); overflow: hidden; break-after: page; display: flex; flex-direction: column; }
-.cover-bars { position: absolute; left: 0; top: 0; width: 210mm; height: 270mm; overflow: hidden; }
+.cover-bars { position: absolute; left: 0; top: 0; width: 210mm; height: 270mm; overflow: visible; }
 .cover-bars .b1 { fill: var(--accent); }
 .cover-bars .b2 { fill: color-mix(in srgb, var(--accent) 62%, var(--red)); }
 .cover-bars .b3 { fill: color-mix(in srgb, var(--accent) 30%, var(--red)); }
@@ -48,16 +49,20 @@ h3 { font-size: 12.8pt; margin: 7mm 0 2.6mm; }
 .cover-top { position: relative; display: flex; align-items: center; gap: 4mm; }
 .cover-logo { width: 13mm; height: 13mm; border-radius: 3mm; }
 .cover-word { font: 800 19pt var(--display); letter-spacing: -.01em; }
-.cover-top .stripes { display: none; }
 .cover-main { position: relative; margin-top: 52mm; max-width: 118mm; }
 .cover-main .eyebrow { font-size: 10pt; }
 .cover h1 { font: 800 44pt/1.02 var(--display); letter-spacing: -.025em; margin: 0 0 8mm; }
 .cover-lede { font-size: 12.5pt; line-height: 1.5; color: #3a3f46; max-width: 105mm; }
-.cover-dogs { position: absolute; left: 14mm; bottom: 34mm; width: 108mm; }
+.cover-reader { position: absolute; left: 112mm; bottom: 33mm; width: 76mm; }
 .cover-foot { position: absolute; left: 20mm; right: 20mm; bottom: 15mm; display: flex; justify-content: space-between; font: 500 8.5pt var(--body); color: #3a3f46; border-top: 1px solid var(--edge); padding-top: 4mm; }
 
 /* ---------- indice ---------- */
 .page { break-after: page; }
+.toc { position: relative; page: toc; padding-right: 17mm; }
+/* los perretes asoman por el borde derecho de la pagina: recortes ya girados, pegados al borde (sin salirse, para no reducir la escala del PDF) */
+.peek { position: absolute; right: 0; height: auto; }
+.peek-a { top: 64mm; width: 16.5mm; }
+.peek-b { top: 98mm; width: 13.6mm; }
 h2.big { font-size: 30pt; margin-bottom: 9mm; }
 .toc-list { list-style: none; padding: 0; margin: 0 0 9mm; border-top: 1px solid var(--border); }
 .toc-list li { display: grid; grid-template-columns: 14mm 1fr; align-items: center; padding: 3.4mm 0; border-bottom: 1px solid var(--border); }
@@ -116,12 +121,23 @@ kbd { font: 700 8.3pt var(--body); border: 1px solid var(--edge); border-bottom-
 .faq dt { font: 800 10.8pt var(--display); margin: 5mm 0 1.2mm; break-after: avoid; }
 .faq dd { margin: 0; break-inside: avoid; }
 .glossary { display: grid; grid-template-columns: 41mm 1fr; border-top: 1px solid var(--border); margin: 0 0 8mm; }
-.glossary dt, .glossary dd { margin: 0; padding: 1.9mm 0; border-bottom: 1px solid var(--border); break-inside: avoid; }
+.glossary dt, .glossary dd { margin: 0; padding: 1.2mm 0; border-bottom: 1px solid var(--border); break-inside: avoid; }
 .glossary dt { font: 700 9.8pt var(--display); }
 
 .closing { display: flex; align-items: center; gap: 4mm; padding: 5mm 6mm; border: 1px solid var(--border); border-radius: 6px; background: var(--side); break-inside: avoid; }
-.closing img { width: 20mm; height: auto; flex: none; }
-.closing img + img { margin-left: 0; width: 16mm; }
+.closing img { width: 38mm; height: auto; flex: none; }
 .closing div { margin-left: 3mm; }
 .closing p { margin: 0 0 1mm; }
 .closing-title { font: 800 11.5pt var(--display); }
+
+/* dibujos de los perretes sueltos dentro de los capitulos */
+.deco { display: block; height: auto; }
+/* capitulos que acaban con un dibujo centrado al pie de la pagina: la seccion ocupa la pagina entera (o dos) y el dibujo se empuja abajo */
+.fill { display: flex; flex-direction: column; min-height: 256mm; }
+.fill-2 { min-height: 500mm; }
+.point-row { margin: auto auto 0; padding-top: 3mm; display: flex; align-items: flex-end; justify-content: center; gap: 2mm; }
+.point-logo { display: flex; align-items: center; gap: 3.5mm; padding-bottom: 2mm; }
+.point-logo img { width: 15mm; height: 15mm; border-radius: 3.4mm; }
+.point-logo span { font: 800 23pt var(--display); letter-spacing: -.01em; }
+.point-dogs { width: 54mm; height: auto; }
+.deco-calc { width: 62mm; margin: auto auto 0; padding-top: 6mm; }
