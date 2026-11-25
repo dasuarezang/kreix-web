@@ -536,7 +536,6 @@ footer { background: var(--chrome); border-top: 1px solid var(--edge); padding: 
   .faq { grid-template-columns: minmax(0, 1fr); }
   .qr { position: static; }
   .privacy-demo { grid-template-columns: minmax(0, 1fr); grid-template-areas: "text" "card" "more"; }
-  .qr { display: none; }                       /* en el propio movil no hay nada que escanear */
   .tabs { flex-direction: row; overflow-x: auto; margin-inline: calc(-1 * var(--gutter)); padding: 0 var(--gutter) 6px; scrollbar-width: none; }
   .tabs::-webkit-scrollbar { display: none; }
   .tab { flex: none; padding: 0 18px; border-color: var(--border); }
@@ -1184,6 +1183,13 @@ footer { background: var(--chrome); border-top: 1px solid var(--edge); padding: 
   .band { margin-top: clamp(24px, 5vw, 40px); padding-top: clamp(64px, 11vw, 84px); }
   .screen + .screen { margin-top: clamp(28px, 5vw, 44px); }
 }
+/* el QR solo tiene sentido en un ordenador: en un móvil o tableta (puntero táctil, sin cursor) no hay nada que escanear.
+   En un ordenador con la ventana estrecha o en vertical sigue visible, apilado bajo el texto y centrado */
+@media (max-width: 900px) {
+  .bring { padding-left: 0; }
+  .qr { justify-self: center; width: min(100%, 290px); margin-top: calc(min(100vw - 2 * var(--gutter), 290px) * .36); }
+}
+@media (max-width: 900px) and (pointer: coarse), (max-width: 900px) and (hover: none) { .qr { display: none; } }
 .install .steps-art h3 { font-size: 20px; }      /* los pasos del movil: titulos de tarjeta algo menores */
 
 /* con el dedo (móvil y tableta) el deslizamiento es libre: nada se encuadra ni se frena */
