@@ -44,6 +44,14 @@ def paginas_de_capitulos(pdf: Path, titulos: list[str]) -> list[int]:
     return encontradas
 
 
+def optimizar(origen: Path, destino: Path) -> None:
+    """Reduce las imagenes a 150 ppp como mucho (los dibujos y capturas salen de Chrome mucho mas grandes de lo que hace falta en una pagina A4)."""
+    pymupdf.TOOLS.mupdf_display_errors(False)
+    with pymupdf.open(origen) as doc:
+        doc.rewrite_images(dpi_threshold=170, dpi_target=150, quality=82)
+        doc.save(destino, garbage=3, deflate=True)
+
+
 def generar(idioma: str) -> None:
     if idioma != "es":
         from traducir import construir
@@ -68,7 +76,7 @@ def generar(idioma: str) -> None:
             html_path.write_text(html, encoding="utf-8")
         else:
             sys.exit("Los numeros de pagina no se estabilizan.")
-        salida.write_bytes(prueba.read_bytes())
+        optimizar(prueba, salida)
     with pymupdf.open(salida) as doc:
         total = len(doc)
     print(f"{salida.name}: {total} paginas. Capitulos en las paginas {paginas}.")
