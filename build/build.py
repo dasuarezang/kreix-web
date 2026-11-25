@@ -61,13 +61,15 @@ def switcher(lang: str) -> str:
 
 
 def footer_langs(lang: str) -> str:
-    """Los tres idiomas en el pie, como botones con bandera iguales al de la cabecera."""
+    """El selector de idioma del pie: un boton con la bandera y el nombre del idioma actual que abre la lista hacia arriba."""
     to = _targets(lang)
     links = "".join(
         f'<a href="{to[code]}" lang="{code}" hreflang="{code}"' + (' aria-current="true"' if code == lang else "") + f">{_flag(code, 'flagf-' + code)}<span>{NAMES[code]}</span></a>"
         for code in ("es", "ca", "en")
     )
-    return f'<!--flang--><div class="foot-lang" role="group" aria-label="{LABEL[lang]}">{links}</div><!--/flang-->'
+    button = (f'<button class="foot-btn" type="button" aria-expanded="false" aria-controls="foot-list" aria-label="{LABEL[lang]}: {NAMES[lang]}">'
+              f'{_flag(lang, "flagf-btn")}<span>{NAMES[lang]}</span>{CHEVRON}</button>')
+    return f'<!--flang--><div class="foot-lang">{button}<div class="foot-list" id="foot-list" role="group" aria-label="{LABEL[lang]}">{links}</div></div><!--/flang-->'
 
 
 def fill_switchers(html: str, lang: str) -> str:

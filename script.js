@@ -48,24 +48,24 @@
   window.addEventListener("scroll", markScrolled, { passive: true });
   markScrolled();
 
-  /* Selector de idioma de la cabecera: un botón con el idioma actual que abre la lista (se cierra con Esc o al tocar fuera) */
-  var langBox = document.querySelector(".lang");
-  var langBtn = langBox && langBox.querySelector(".lang-btn");
-  function setLang(open) { langBox.classList.toggle("open", open); langBtn.setAttribute("aria-expanded", open ? "true" : "false"); }
-  if (langBtn) {
+  /* Selectores de idioma (el de la cabecera y el del pie): un botón con el idioma actual que abre la lista (se cierra con Esc o al tocar fuera) */
+  Array.prototype.forEach.call(document.querySelectorAll(".lang, .foot-lang"), function (langBox) {
+    var langBtn = langBox.querySelector(".lang-btn, .foot-btn");
+    if (!langBtn) return;
+    function setLang(open) { langBox.classList.toggle("open", open); langBtn.setAttribute("aria-expanded", open ? "true" : "false"); }
     langBtn.addEventListener("click", function () { setLang(!langBox.classList.contains("open")); });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape" && langBox.classList.contains("open")) { setLang(false); langBtn.focus(); } });
     document.addEventListener("click", function (e) { if (langBox.classList.contains("open") && !langBox.contains(e.target)) setLang(false); });
-  }
+  });
 
   /* El idioma que se elige con el selector se recuerda (la primera visita sigue el idioma del navegador) */
-  Array.prototype.forEach.call(document.querySelectorAll(".lang a"), function (a) {
+  Array.prototype.forEach.call(document.querySelectorAll(".lang a, .foot-lang a"), function (a) {
     a.addEventListener("click", function () { try { localStorage.setItem("kreix-lang", a.getAttribute("lang")); } catch (e) { /* sin almacenamiento */ } });
   });
 
   /* Tema claro / oscuro */
   var root = document.documentElement;
-  var themeButtons = document.querySelectorAll(".theme");   /* el de la cabecera y el del pie */
+  var themeButtons = document.querySelectorAll(".theme, .foot-theme");   /* el de la cabecera y el del pie */
   var meta = document.querySelector('meta[name="theme-color"]');
   function syncMeta() { if (meta) meta.setAttribute("content", root.getAttribute("data-theme") === "light" ? "#d0c4a6" : "#030405"); }
   syncMeta();
