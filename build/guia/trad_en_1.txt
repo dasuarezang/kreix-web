@@ -1,0 +1,140 @@
+[0] Kreix
+[1] User guide
+[2] Kreix,<br/>step by step
+[3] How to use the Windows program and the phone app: import your statements, understand every screen and every figure, and keep your data safe.
+[4] Version 0.6.1 of the program
+[5] November 2026
+[6] dasuarezang.github.io/kreix-web
+[7] Contents
+[8] Table of contents
+[9] What Kreix is and how to use it
+[10] Installing and first launch
+[11] Importing your statements
+[12] A tour of the program
+[13] Your transactions, budgets and goals
+[14] Understanding the figures
+[15] Security and backups
+[16] Moving your data from one place to another
+[17] Kreix on your phone
+[18] Shortcuts and little tricks
+[19] Common problems
+[20] Glossary
+[21] <b>How to read this guide.</b> If this is your first time, read chapters 1 to 3 and come back to the rest whenever you like. All the screenshots use made-up demo data: no figure is real.
+[22] Kreix is a personal finance program. It reads the statements you download from your bank and shows you, in one place, how much you have, how much you spend, how much you save and how your investments are doing. It comes in two forms that share the same logic and the same data format:
+[23] Windows program
+[24] The main program, for Windows 10 and 11. This is where you import statements, organize everything and make backups.
+[25] Phone app
+[26] The same app adapted to the phone (Android and iPhone). It installs from the browser, with no app store, and works without a connection. Your data is passed to it from the computer with a QR code.
+[27] Four ideas worth having clear
+[28] <b>Kreix does not connect to your bank.</b> It never asks for passwords or access. It works with CSV or Excel files that you download yourself from your bank's website or app.
+[29] <b>Everything stays on your device.</b> There are no accounts, servers or telemetry. Your data is stored encrypted with a master password that only you know.
+[30] <b>You can re-import without worrying.</b> If you import the same statement twice, or two that overlap, only what is new is added.
+[31] <b>Almost everything can be undone.</b> After every important change a notice appears with an <i>Undo</i> button.
+[32] What you need to get started
+[33] A device running Windows 10 or 11 (64-bit), for the program. The phone is optional.
+[34] Your bank statements in <b>CSV or Excel</b> (PDFs are not imported). The banks recognized out of the box are listed in chapter 3; for any other, Kreix helps you say which column is which.
+[35] A few minutes to choose a master password you will not forget: <b>if you lose it, nobody can recover your data</b>.
+[36] Installing the program
+[37] Download the installer (<i>Kreix-Setup-0.6.1.exe</i>) from the website and open it.
+[38] The installer does not ask for administrator permissions: it installs Kreix in your user folder and creates a shortcut in the Start menu and, if you want, on the desktop. You can choose the installer's language (Spanish, Catalan or English).
+[39] Because the installer is not signed yet, Windows may warn you the first time. Click <b>More info</b> and then <b>Run anyway</b>.
+[40] <b>Uninstalling</b> does not delete your data: it stays in <code>%APPDATA%\Kreix</code> until you remove it.
+[41] The master password
+[42] The first time you open Kreix it asks you to create a master password (minimum 8 characters). Below it, a meter with four segments, which fill up and go from red to yellow to green, and a sentence tell you how hard it would be to guess and how to improve it. It is a warning, not a rule: the only minimum is 8 characters.
+[43] Creating the master password, with the strength meter.
+[44] <b>Write it down somewhere safe.</b> Kreix encrypts your data with it and there is no spare key. If you forget it, the only way out is to start from scratch.
+[45] The welcome
+[46] Next, a dialog asks you three quick questions. Everything can be changed later in <b>Settings</b>:
+[47] <b>Language.</b> Spanish, Catalan or English. The system's language is suggested.
+[48] <b>Your name.</b> So that Home greets you according to the time of day. It is optional.
+[49] <b>What you want to manage.</b> Your bank accounts, your investments or both (at least one always stays on). Home adapts to what you choose.
+[50] The first screen
+[51] While Kreix is still empty, Home explains in three steps what to download and where to drop it, and offers <b>Try with sample data</b>: made-up data, with a notice at the top and a <i>Start with my data</i> button. It removes itself as soon as you import real statements, so it never gets mixed up with yours.
+[52] Home with an empty Kreix: three steps to get started.
+[53] Everything starts at <b>Data &gt; Import</b>. Download your bank statement as CSV or Excel, drag it into the window (or click <i>Select files</i>) and choose the account it belongs to.
+[54] <b>Drop the file.</b> Kreix detects the bank and the file type from the headers, not from the name or the extension. Files with no extension or with <i>.csv.txt</i> work too.
+[55] <b>Check what it has read.</b> A card appears for each file with its type, the number of rows, the dates, how many transactions are new and how many were already there. Nothing has been saved yet.
+[56] <b>Click Import.</b> Only the new transactions are saved, and a notice lets you <i>Undo</i> if something is not what you expected.
+[57] Import preview: what Kreix has read, before saving anything.
+[58] Which files it recognizes
+[59] Source
+[60] File
+[61] Notes
+[62] <b>Imagin</b>
+[63] Transactions statement
+[64] CSV or Excel
+[65] <b>MyInvestor</b>
+[66] Operations and portfolio
+[67] The portfolio statement has no date: Kreix asks you which day it corresponds to.
+[68] <b>CaixaBank</b>
+[69] Income and expenses in separate columns. Being tested.
+[70] <b>Santander</b>
+[71] Being tested.
+[72] <b>Revolut</b>
+[73] Account statement (CSV)
+[74] In English or Spanish. Subtracts the fee and only reads transactions in euros. Being tested.
+[75] <b>Trade Republic</b>
+[76] Transactions (CSV)
+[77] Reads the cash account; leaves out stock purchases and sales. Being tested.
+[78] <b>Any other bank</b>
+[79] A wizard asks you which column is which.
+[80] <b>Price history</b>
+[81] CSV or Excel of a fund
+[82] One date column and one price column, and optionally the ISIN.
+[83] It accepts CSV with semicolons, commas or tabs, in UTF-8 or Windows-1252, and Excel (<i>.xlsx</i> and the old <i>.xls</i>, even the kind some banks save as a web table). Amounts in Spanish format (<i>-2,99EUR</i>, <i>1.234,56 €</i>) are cleaned up automatically. A <i>.kreix</i> file is restored directly (chapter 8).
+[84] If your bank is not on the list
+[85] When you drop a file that Kreix does not recognize, the <b>Assign the columns</b> button appears. A wizard shows you the first rows, suggests the columns from their titles, and you correct them:
+[86] The title row (it skips the introduction lines that some Excel files have).
+[87] The amount: one column with a sign, or two for income and expenses; and whether expenses come as positive numbers.
+[88] The decimals (<i>1.234,56</i> or <i>1,234.56</i>) and the date order (day/month/year or month/day/year).
+[89] The balance, which is optional; if you provide it, Kreix checks that it chains correctly.
+[90] The wizard for importing from another bank.
+[91] Before saving you see how many transactions are read and the first ones, so you can check dates, amounts and signs. The format is saved under the name you give it and is applied automatically to later files; in <i>Import &gt; Banks I already know</i> you can forget it.
+[92] Duplicates and several accounts
+[93] <b>Kreix never duplicates transactions.</b> You can re-import the same statement, or several that overlap. Two identical payments on the same day are told apart by the balance that follows.
+[94] In Import you choose the <b>destination account</b> of each statement. The same statement imported into two different accounts does not count as a duplicate. The investment portfolio is a single one.
+[95] If a file cannot be read, Kreix explains why and what to do (for example, download it again as CSV or Excel without editing it).
+[96] A fund's price history
+[97] If you have downloaded a fund's price history (from your bank, Morningstar, Yahoo or Investing), drop it into Import too. Kreix takes the ISIN from a column, from the file name or from the <i>Fund of the history</i> selector. With it, each fund's chart goes from one point per month to real daily points. Today's value does not change: your latest portfolio statement still rules.
+[98] At the top left are the three views of your data: <b>Home</b>, <b>Accounts</b> and <b>Investments</b>. Below, with their icons, are the tools: <b>Data</b> (with <i>Import</i> and <i>Export</i>), <b>Settings</b> and <b>Help</b>, and under them the light/dark mode switch and the eye for privacy mode.
+[99] Home
+[100] Your situation at a glance. It greets you according to the time of day with your name, the day and the time, and the date of the last data update (the last day you imported something).
+[101] Home: net worth, return, savings rate, forecast, upcoming payments and budgets.
+[102] <b>Net worth:</b> everything you own, accounts plus investments, with how much is cash and how much is invested. A green or red line says how much it has gone up or down compared with the close of the previous month.
+[103] <b>Overall return and savings rate for the month.</b>
+[104] <b>End-of-month forecast:</b> how much money you will have on the last day of the month, given your remaining fixed payments, your fixed income still to come (your salary) and your daily spending. It is an estimate and Help explains how it is made.
+[105] <b>Upcoming payments:</b> your recurring payments due in the next few weeks, by date.
+[106] <b>Budgets of the month:</b> they move on by themselves one by one; you can move through them with the arrows, the dots or the ← → keys.
+[107] <b>Savings goals</b> and <b>To classify:</b> transactions with no category, with a suggested rule if a merchant repeats.
+[108] Once data is loaded, a list of <b>first steps</b> (import the account, the operations, the portfolio, set a budget) that you can hide.
+[109] <b>A lively Home.</b> Next to the greeting there is an animated sky that follows the real time (sun by day, moon and stars at night), with Blitzen and Black, the author's dogs. It can be turned off in <i>Settings &gt; Animated sky and light by time of day</i>.
+[110] Accounts
+[111] Everything about your bank accounts: balance, income, expenses, savings rate, average spending, biggest expense and main category; expenses by category, balance over time, income and expenses by month, budgets, recurring payments and the transactions table.
+[112] Accounts: metrics, charts, budgets, recurring payments and transactions.
+[113] <b>By month or overall.</b> The selector at the top switches between <i>All history</i> and each month with data (the arrows jump to the previous or next month). In a month, the balance is the closing balance and the average spending changes from monthly to daily.
+[114] <b>Several accounts.</b> The selector has a checkbox for each account: tick the ones you want to combine and everything is recalculated with them. <i>Manage accounts</i> lets you add, rename and delete.
+[115] Investments
+[116] Everything about your portfolio: value, contributed, capital gain, return (TWR and IRR), distribution by fund, contributed versus value, evolution of each fund, current positions and operations.
+[117] Investments: value, return, breakdown by fund and operations.
+[118] The <b>Evolution of each fund</b> card draws one line per fund with its value at the close of each month (or, if you pick one, its value against what you contributed). It is an <b>estimate</b>: Kreix reconstructs the units you held from your operations and multiplies them by a price interpolated between the net asset values it knows. The more portfolio statements you import, the more faithful the curve is. With a month chosen you see the estimated value at the close, what was contributed during the month, the change excluding contributions and the month's return.
+[119] Data: Import and Export
+[120] <b>Import</b> is explained in chapter 3. <b>Export</b> saves all your data in a single <i>.kreix</i> file to make a copy or move it to another device, and from there it is passed to the phone (chapter 8).
+[121] Export: the .kreix file and «Send to phone».
+[122] Settings
+[123] Organized in cards by topic. Each switch applies instantly:
+[124] <b>Your name, Language and What you're interested in.</b> The language changes the whole application (menus, help, notices, dates and numbers) without losing your place. In English numbers are written 1,234.56; in Spanish and Catalan, 1.234,56. If you turn off accounts or investments, their tabs are still there and you can turn them back on from the tab itself.
+[125] <b>Text size</b> (normal, large or extra large) for the whole application.
+[126] <b>Animated sky and light by time of day.</b>
+[127] <b>Count Bizum as income and expenses</b> and <b>Count incoming transfers as income</b>: they affect the savings rate calculation (chapter 6).
+[128] <b>Category rules.</b> Your rules take precedence over the ones Kreix comes with (chapter 5).
+[129] <b>Security</b> (change the password, automatic lock, lock now) and <b>Backups</b> (folder, how many to keep, restore): chapter 7.
+[130] <b>Your data:</b> where it is stored and <i>Delete all data</i> (leaves the database empty and keeps the settings). <b>About:</b> the version and what's new.
+[131] Settings: your name, language, what you're interested in, appearance, rules and your data.
+[132] Help
+[133] A glossary for people who don't know finance, in six topics: <i>Your money at a glance, Your bank accounts, Your investments, Return, Warnings</i> and <i>Using Kreix</i>. Each term unfolds when you click it, with how Kreix calculates it, an example, a warning (<i>Watch out</i>) and a tip (<i>What to do</i>). Next to the main figures there is a «?» that opens its explanation already unfolded. The <b>Ctrl+K</b> search also finds pages, actions, transactions and help terms.
+[134] The transactions table
+[135] In Accounts, transactions go from the most recent to the oldest and, within the same day, in their real order (it is reconstructed from the chain of balances). You can search by description, filter by category and sort by clicking any header. With several accounts an <i>Account</i> column appears. Clicking a category in the expenses chart, or a budget, filters the table to those transactions.
+[136] Each transaction has a <b>•••</b> button (also double-click or right-click) to change its category, create a rule or copy the description. The table's <b>Export</b> button saves the rows you can see, with the current filter and order, as CSV (UTF-8, semicolon-separated, decimal comma) or Excel. It does not export to PDF.
+[137] Categories your way
+[138] Kreix categorizes your expenses with keyword rules (salary, groceries, subscriptions, leisure, restaurants, transport, housing, health, Bizum…), with a broad dictionary of common merchants and bills. <b>You're in charge:</b>
+[139] <b>Change category</b> of a transaction: no rule overrides your choice. <b>Back to the automatic category</b> hands it back to Kreix.

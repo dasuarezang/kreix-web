@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Kreix · User guide</title>
+<link href="guia.css" rel="stylesheet"/>
+<style>@page { @bottom-left { content: "Kreix · User guide"; } }</style></head>
+<body>
+<!-- ============================ PORTADA ============================ -->
+<section class="cover">
+<svg aria-hidden="true" class="cover-bars" viewbox="0 0 210 270"><polygon class="b1" points="82.77,270.00 203.05,0.00 210.00,0.00 210.00,21.43 99.27,270.00"></polygon><polygon class="b2" points="110.27,270.00 210.00,46.12 210.00,83.16 126.77,270.00"></polygon><polygon class="b3" points="137.77,270.00 210.00,107.86 210.00,144.90 154.27,270.00"></polygon><polygon class="b4" points="165.27,270.00 210.00,169.59 210.00,206.63 181.77,270.00"></polygon></svg>
+<div class="cover-top">
+<img alt="" class="cover-logo" src="../../assets/kreix-icono-oscuro.svg"/>
+<span class="cover-word">Kreix</span>
+</div>
+<div class="cover-main">
+<p class="eyebrow">User guide</p>
+<h1>Kreix,<br/>step by step</h1>
+<p class="cover-lede">How to use the Windows program and the phone app: import your statements, understand every screen and every figure, and keep your data safe.</p>
+</div>
+<img alt="" class="cover-reader" src="../../assets/perretes/blitzen-leyendo.webp"/>
+<div class="cover-foot">
+<span>Version 0.6.1 of the program</span>
+<span>November 2026</span>
+<span>dasuarezang.github.io/kreix-web</span>
+</div>
+</section>
+<!-- ============================ ÍNDICE ============================ -->
+<section class="page toc">
+<img alt="" class="peek peek-a" src="img/asoma-blitzen.png"/>
+<img alt="" class="peek peek-b" src="img/asoma-black.png"/>
+<p class="eyebrow">Contents</p>
+<h2 class="big">Table of contents</h2>
+<ol class="toc-list">
+<li><b>1</b><span>What Kreix is and how to use it</span><i class="pg">3</i></li>
+<li><b>2</b><span>Installing and first launch</span><i class="pg">4</i></li>
+<li><b>3</b><span>Importing your statements</span><i class="pg">6</i></li>
+<li><b>4</b><span>A tour of the program</span><i class="pg">9</i></li>
+<li><b>5</b><span>Your transactions, budgets and goals</span><i class="pg">14</i></li>
+<li><b>6</b><span>Understanding the figures</span><i class="pg">16</i></li>
+<li><b>7</b><span>Security and backups</span><i class="pg">17</i></li>
+<li><b>8</b><span>Moving your data from one place to another</span><i class="pg">19</i></li>
+<li><b>9</b><span>Kreix on your phone</span><i class="pg">20</i></li>
+<li><b>10</b><span>Shortcuts and little tricks</span><i class="pg">24</i></li>
+<li><b>11</b><span>Common problems</span><i class="pg">25</i></li>
+<li><b>12</b><span>Glossary</span><i class="pg">26</i></li>
+</ol>
+<div class="note-box">
+<p><b>How to read this guide.</b> If this is your first time, read chapters 1 to 3 and come back to the rest whenever you like. All the screenshots use made-up demo data: no figure is real.</p>
+</div>
+</section>
+<!-- ============================ 1 ============================ -->
+<section class="chapter fill">
+<header class="ch-head"><span class="ch-num">1</span><h2>What Kreix is and how to use it</h2></header>
+<p>Kreix is a personal finance program. It reads the statements you download from your bank and shows you, in one place, how much you have, how much you spend, how much you save and how your investments are doing. It comes in two forms that share the same logic and the same data format:</p>
+<div class="two">
+<div class="card"><h3>Windows program</h3><p>The main program, for Windows 10 and 11. This is where you import statements, organize everything and make backups.</p></div>
+<div class="card"><h3>Phone app</h3><p>The same app adapted to the phone (Android and iPhone). It installs from the browser, with no app store, and works without a connection. Your data is passed to it from the computer with a QR code.</p></div>
+</div>
+<h3>Four ideas worth having clear</h3>
+<ol class="steps">
+<li><b>Kreix does not connect to your bank.</b> It never asks for passwords or access. It works with CSV or Excel files that you download yourself from your bank's website or app.</li>
+<li><b>Everything stays on your device.</b> There are no accounts, servers or telemetry. Your data is stored encrypted with a master password that only you know.</li>
+<li><b>You can re-import without worrying.</b> If you import the same statement twice, or two that overlap, only what is new is added.</li>
+<li><b>Almost everything can be undone.</b> After every important change a notice appears with an <i>Undo</i> button.</li>
+</ol>
+<h3>What you need to get started</h3>
+<ul class="list">
+<li>A device running Windows 10 or 11 (64-bit), for the program. The phone is optional.</li>
+<li>Your bank statements in <b>CSV or Excel</b> (PDFs are not imported). The banks recognized out of the box are listed in chapter 3; for any other, Kreix helps you say which column is which.</li>
+<li>A few minutes to choose a master password you will not forget: <b>if you lose it, nobody can recover your data</b>.</li>
+</ul>
+<div class="point-row">
+<div class="point-logo"><img alt="" src="../../assets/kreix-icono-oscuro.svg"/><span>Kreix</span></div>
+<img alt="" class="point-dogs" src="../../assets/perretes/senalando.webp"/>
+</div>
+</section>
+<!-- ============================ 2 ============================ -->
+<section class="chapter">
+<header class="ch-head"><span class="ch-num">2</span><h2>Installing and first launch</h2></header>
+<h3>Installing the program</h3>
+<ol class="steps">
+<li>Download the installer (<i>Kreix-Setup-0.6.1.exe</i>) from the website and open it.</li>
+<li>The installer does not ask for administrator permissions: it installs Kreix in your user folder and creates a shortcut in the Start menu and, if you want, on the desktop. You can choose the installer's language (Spanish, Catalan or English).</li>
+<li>Because the installer is not signed yet, Windows may warn you the first time. Click <b>More info</b> and then <b>Run anyway</b>.</li>
+</ol>
+<div class="tip"><b>Uninstalling</b> does not delete your data: it stays in <code>%APPDATA%\Kreix</code> until you remove it.</div>
+<h3>The master password</h3>
+<p>The first time you open Kreix it asks you to create a master password (minimum 8 characters). Below it, a meter with four segments, which fill up and go from red to yellow to green, and a sentence tell you how hard it would be to guess and how to improve it. It is a warning, not a rule: the only minimum is 8 characters.</p>
+<div class="figs"><figure class="shot w50"><img alt="" src="img/en/pc-bloqueo.png"/><figcaption>Creating the master password, with the strength meter.</figcaption></figure></div>
+<div class="warn"><b>Write it down somewhere safe.</b> Kreix encrypts your data with it and there is no spare key. If you forget it, the only way out is to start from scratch.</div>
+<h3>The welcome</h3>
+<p>Next, a dialog asks you three quick questions. Everything can be changed later in <b>Settings</b>:</p>
+<ul class="list">
+<li><b>Language.</b> Spanish, Catalan or English. The system's language is suggested.</li>
+<li><b>Your name.</b> So that Home greets you according to the time of day. It is optional.</li>
+<li><b>What you want to manage.</b> Your bank accounts, your investments or both (at least one always stays on). Home adapts to what you choose.</li>
+</ul>
+<h3>The first screen</h3>
+<p>While Kreix is still empty, Home explains in three steps what to download and where to drop it, and offers <b>Try with sample data</b>: made-up data, with a notice at the top and a <i>Start with my data</i> button. It removes itself as soon as you import real statements, so it never gets mixed up with yours.</p>
+<div class="figs"><figure class="shot w64"><img alt="" src="img/en/pc-bienvenida.png"/><figcaption>Home with an empty Kreix: three steps to get started.</figcaption></figure></div>
+</section>
+<!-- ============================ 3 ============================ -->
+<section class="chapter">
+<header class="ch-head"><span class="ch-num">3</span><h2>Importing your statements</h2></header>
+<p>Everything starts at <b>Data &gt; Import</b>. Download your bank statement as CSV or Excel, drag it into the window (or click <i>Select files</i>) and choose the account it belongs to.</p>
+<ol class="steps">
+<li><b>Drop the file.</b> Kreix detects the bank and the file type from the headers, not from the name or the extension. Files with no extension or with <i>.csv.txt</i> work too.</li>
+<li><b>Check what it has read.</b> A card appears for each file with its type, the number of rows, the dates, how many transactions are new and how many were already there. Nothing has been saved yet.</li>
+<li><b>Click Import.</b> Only the new transactions are saved, and a notice lets you <i>Undo</i> if something is not what you expected.</li>
+</ol>
+<div class="figs"><figure class="shot w86"><img alt="" src="img/en/pc-importar.png"/><figcaption>Import preview: what Kreix has read, before saving anything.</figcaption></figure></div>
+<h3>Which files it recognizes</h3>
+<table>
+<thead><tr><th>Source</th><th>File</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td><b>Imagin</b></td><td>Transactions statement</td><td>CSV or Excel</td></tr>
+<tr><td><b>MyInvestor</b></td><td>Operations and portfolio</td><td>The portfolio statement has no date: Kreix asks you which day it corresponds to.</td></tr>
+<tr><td><b>CaixaBank</b></td><td>Transactions statement</td><td>Income and expenses in separate columns. Being tested.</td></tr>
+<tr><td><b>Santander</b></td><td>Transactions statement</td><td>Being tested.</td></tr>
+<tr><td><b>Revolut</b></td><td>Account statement (CSV)</td><td>In English or Spanish. Subtracts the fee and only reads transactions in euros. Being tested.</td></tr>
+<tr><td><b>Trade Republic</b></td><td>Transactions (CSV)</td><td>Reads the cash account; leaves out stock purchases and sales. Being tested.</td></tr>
+<tr><td><b>Any other bank</b></td><td>Transactions statement</td><td>A wizard asks you which column is which.</td></tr>
+<tr><td><b>Price history</b></td><td>CSV or Excel of a fund</td><td>One date column and one price column, and optionally the ISIN.</td></tr>
+</tbody>
+</table>
+<p class="small">It accepts CSV with semicolons, commas or tabs, in UTF-8 or Windows-1252, and Excel (<i>.xlsx</i> and the old <i>.xls</i>, even the kind some banks save as a web table). Amounts in Spanish format (<i>-2,99EUR</i>, <i>1.234,56 €</i>) are cleaned up automatically. A <i>.kreix</i> file is restored directly (chapter 8).</p>
+<h3>If your bank is not on the list</h3>
+<p>When you drop a file that Kreix does not recognize, the <b>Assign the columns</b> button appears. A wizard shows you the first rows, suggests the columns from their titles, and you correct them:</p>
+<ul class="list">
+<li>The title row (it skips the introduction lines that some Excel files have).</li>
+<li>The amount: one column with a sign, or two for income and expenses; and whether expenses come as positive numbers.</li>
+<li>The decimals (<i>1.234,56</i> or <i>1,234.56</i>) and the date order (day/month/year or month/day/year).</li>
+<li>The balance, which is optional; if you provide it, Kreix checks that it chains correctly.</li>
+</ul>
+<div class="figs"><figure class="shot w62"><img alt="" src="img/en/pc-otro-banco.png"/><figcaption>The wizard for importing from another bank.</figcaption></figure></div>
+<p>Before saving you see how many transactions are read and the first ones, so you can check dates, amounts and signs. The format is saved under the name you give it and is applied automatically to later files; in <i>Import &gt; Banks I already know</i> you can forget it.</p>
+<h3>Duplicates and several accounts</h3>
+<ul class="list">
+<li><b>Kreix never duplicates transactions.</b> You can re-import the same statement, or several that overlap. Two identical payments on the same day are told apart by the balance that follows.</li>
+<li>In Import you choose the <b>destination account</b> of each statement. The same statement imported into two different accounts does not count as a duplicate. The investment portfolio is a single one.</li>
+<li>If a file cannot be read, Kreix explains why and what to do (for example, download it again as CSV or Excel without editing it).</li>
+</ul>
+<h3>A fund's price history</h3>
+<p>If you have downloaded a fund's price history (from your bank, Morningstar, Yahoo or Investing), drop it into Import too. Kreix takes the ISIN from a column, from the file name or from the <i>Fund of the history</i> selector. With it, each fund's chart goes from one point per month to real daily points. Today's value does not change: your latest portfolio statement still rules.</p>
+</section>
+<!-- ============================ 4 ============================ -->
+<section class="chapter">
+<header class="ch-head"><span class="ch-num">4</span><h2>A tour of the program</h2></header>
+<p>At the top left are the three views of your data: <b>Home</b>, <b>Accounts</b> and <b>Investments</b>. Below, with their icons, are the tools: <b>Data</b> (with <i>Import</i> and <i>Export</i>), <b>Settings</b> and <b>Help</b>, and under them the light/dark mode switch and the eye for privacy mode.</p>
+<h3>Home</h3>
+<p>Your situation at a glance. It greets you according to the time of day with your name, the day and the time, and the date of the last data update (the last day you imported something).</p>
+<div class="figs"><figure class="shot w72"><img alt="" src="img/en/pc-inicio.png"/><figcaption>Home: net worth, return, savings rate, forecast, upcoming payments and budgets.</figcaption></figure></div>
+<ul class="list">
+<li><b>Net worth:</b> everything you own, accounts plus investments, with how much is cash and how much is invested. A green or red line says how much it has gone up or down compared with the close of the previous month.</li>
+<li><b>Overall return and savings rate for the month.</b></li>
+<li><b>End-of-month forecast:</b> how much money you will have on the last day of the month, given your remaining fixed payments, your fixed income still to come (your salary) and your daily spending. It is an estimate and Help explains how it is made.</li>
+<li><b>Upcoming payments:</b> your recurring payments due in the next few weeks, by date.</li>
+<li><b>Budgets of the month:</b> they move on by themselves one by one; you can move through them with the arrows, the dots or the ← → keys.</li>
+<li><b>Savings goals</b> and <b>To classify:</b> transactions with no category, with a suggested rule if a merchant repeats.</li>
+<li>Once data is loaded, a list of <b>first steps</b> (import the account, the operations, the portfolio, set a budget) that you can hide.</li>
+</ul>
+<div class="tip"><b>A lively Home.</b> Next to the greeting there is an animated sky that follows the real time (sun by day, moon and stars at night), with Blitzen and Black, the author's dogs. It can be turned off in <i>Settings &gt; Animated sky and light by time of day</i>.</div>
+<h3>Accounts</h3>
+<p>Everything about your bank accounts: balance, income, expenses, savings rate, average spending, biggest expense and main category; expenses by category, balance over time, income and expenses by month, budgets, recurring payments and the transactions table.</p>
+<div class="figs"><figure class="shot w52"><img alt="" src="img/en/pc-cuentas.png"/><figcaption>Accounts: metrics, charts, budgets, recurring payments and transactions.</figcaption></figure></div>
+<ul class="list">
+<li><b>By month or overall.</b> The selector at the top switches between <i>All history</i> and each month with data (the arrows jump to the previous or next month). In a month, the balance is the closing balance and the average spending changes from monthly to daily.</li>
+<li><b>Several accounts.</b> The selector has a checkbox for each account: tick the ones you want to combine and everything is recalculated with them. <i>Manage accounts</i> lets you add, rename and delete.</li>
+</ul>
+<h3>Investments</h3>
+<p>Everything about your portfolio: value, contributed, capital gain, return (TWR and IRR), distribution by fund, contributed versus value, evolution of each fund, current positions and operations.</p>
+<div class="figs"><figure class="shot w66"><img alt="" src="img/en/pc-inversion.png"/><figcaption>Investments: value, return, breakdown by fund and operations.</figcaption></figure></div>
+<p>The <b>Evolution of each fund</b> card draws one line per fund with its value at the close of each month (or, if you pick one, its value against what you contributed). It is an <b>estimate</b>: Kreix reconstructs the units you held from your operations and multiplies them by a price interpolated between the net asset values it knows. The more portfolio statements you import, the more faithful the curve is. With a month chosen you see the estimated value at the close, what was contributed during the month, the change excluding contributions and the month's return.</p>
+<h3>Data: Import and Export</h3>
+<p><b>Import</b> is explained in chapter 3. <b>Export</b> saves all your data in a single <i>.kreix</i> file to make a copy or move it to another device, and from there it is passed to the phone (chapter 8).</p>
+<div class="figs"><figure class="shot w62"><img alt="" src="img/en/pc-exportar.png"/><figcaption>Export: the .kreix file and «Send to phone».</figcaption></figure></div>
+<h3>Settings</h3>
+<p>Organized in cards by topic. Each switch applies instantly:</p>
+<ul class="list">
+<li><b>Your name, Language and What you're interested in.</b> The language changes the whole application (menus, help, notices, dates and numbers) without losing your place. In English numbers are written 1,234.56; in Spanish and Catalan, 1.234,56. If you turn off accounts or investments, their tabs are still there and you can turn them back on from the tab itself.</li>
+<li><b>Text size</b> (normal, large or extra large) for the whole application.</li>
+<li><b>Animated sky and light by time of day.</b></li>
+<li><b>Count Bizum as income and expenses</b> and <b>Count incoming transfers as income</b>: they affect the savings rate calculation (chapter 6).</li>
+<li><b>Category rules.</b> Your rules take precedence over the ones Kreix comes with (chapter 5).</li>
+<li><b>Security</b> (change the password, automatic lock, lock now) and <b>Backups</b> (folder, how many to keep, restore): chapter 7.</li>
+<li><b>Your data:</b> where it is stored and <i>Delete all data</i> (leaves the database empty and keeps the settings). <b>About:</b> the version and what's new.</li>
+</ul>
+<div class="figs"><figure class="shot w50"><img alt="" src="img/en/pc-ajustes.png"/><figcaption>Settings: your name, language, what you're interested in, appearance, rules and your data.</figcaption></figure></div>
+<h3>Help</h3>
+<p>A glossary for people who don't know finance, in six topics: <i>Your money at a glance, Your bank accounts, Your investments, Return, Warnings</i> and <i>Using Kreix</i>. Each term unfolds when you click it, with how Kreix calculates it, an example, a warning (<i>Watch out</i>) and a tip (<i>What to do</i>). Next to the main figures there is a «?» that opens its explanation already unfolded. The <b>Ctrl+K</b> search also finds pages, actions, transactions and help terms.</p>
+</section>
+<!-- ============================ 5 ============================ -->
+<section class="chapter fill fill-2">
+<header class="ch-head"><span class="ch-num">5</span><h2>Your transactions, budgets and goals</h2></header>
+<h3>The transactions table</h3>
+<p>In Accounts, transactions go from the most recent to the oldest and, within the same day, in their real order (it is reconstructed from the chain of balances). You can search by description, filter by category and sort by clicking any header. With several accounts an <i>Account</i> column appears. Clicking a category in the expenses chart, or a budget, filters the table to those transactions.</p>
+<p>Each transaction has a <b>•••</b> button (also double-click or right-click) to change its category, create a rule or copy the description. The table's <b>Export</b> button saves the rows you can see, with the current filter and order, as CSV (UTF-8, semicolon-separated, decimal comma) or Excel. It does not export to PDF.</p>
+<h3>Categories your way</h3>
+<p>Kreix categorizes your expenses with keyword rules (salary, groceries, subscriptions, leisure, restaurants, transport, housing, health, Bizum…), with a broad dictionary of common merchants and bills. <b>You're in charge:</b></p>
+<ul class="list">
+<li><b>Change category</b> of a transaction: no rule overrides your choice. <b>Back to the automatic category</b> hands it back to Kreix.</li>
+<li><b>Create rule for «…»</b> sends every description containing that word to a category, including the ones you import later. They are managed in <i>Settings &gt; Category rules</i>.</li>
+<li><b>To classify.</b> Home counts the transactions without a category and, if a merchant repeats, suggests a rule to classify them in one click.</li>
+</ul>
+<h3>Budgets</h3>
+<p>In Accounts, the <b>Budgets</b> panel (<i>Set budgets</i> button) sets a monthly cap per category. The bar is <b>green</b> while you are under, <b>yellow</b> once you pass 85 % and <b>red</b> when you exceed it. With a month chosen it compares that month's spending; with all history, the average monthly spending. Home warns you about the ones you are about to exceed or already have.</p>
+<h3>Recurring payments</h3>
+<p>Kreix detects your subscriptions and monthly bills, tells you how much they add up to per month and per year and when the next one is due. A charge counts as recurring if it repeats at least <b>three months in a row</b>, about every 30 days and with a stable amount (up to a 20 % difference). If it stops appearing for a month and a half it is considered cancelled. Groceries do not qualify (the amount varies and it repeats more than once a month), and transfers, Bizum and income never count.</p>
+<div class="tip"><b>You decide.</b> With ••• (or right-click) on an expense, <i>Mark «…» as a recurring payment</i> adds it even if Kreix does not detect it (a single charge is enough; an annual one counts a twelfth per month). <i>«…» is not a recurring payment</i> removes it if Kreix got it wrong. The ones you marked say «marked by you» and can be unmarked.</div>
+<h3>Savings goals</h3>
+<p>In Home, the <b>Savings goals</b> panel shows one bar per goal. <i>Manage goals</i> lets you create, edit and delete goals (for example, «€1,000 for a holiday») and <b>add savings</b>. Kreix does not move money: it only keeps count. If you give a goal a date, it tells you how much you would need to set aside each month to get there on time.</p>
+<h3>Transfers between your accounts</h3>
+<p>An outgoing and an incoming amount of the same size in two of your accounts are paired and count neither as an expense nor as income. Incoming transfers <b>do</b> count as income and outgoing ones are neutral, unless you change that in Settings.</p>
+<h3>Warnings about what doesn't add up</h3>
+<p>Instead of importing silently, Kreix warns you about balances with gaps, a portfolio that does not match the operations or inconsistent amounts.</p>
+<div class="pic-slot"><img alt="" class="deco deco-calc" src="../../assets/perretes/black-calculadora.webp"/></div>
+</section>
+<!-- ============================ 6 ============================ -->
+<section class="chapter">
+<header class="ch-head"><span class="ch-num">6</span><h2>Understanding the figures</h2></header>
+<table>
+<thead><tr><th>Figure</th><th>What it is and how it is calculated</th></tr></thead>
+<tbody>
+<tr><td><b>Net worth</b></td><td>The balance of your accounts plus the market value of the latest portfolio snapshot of each fund. Home shows how much is cash and how much is invested, and what percentage each part is.</td></tr>
+<tr><td><b>Overall return</b></td><td>(market value − invested capital) ÷ invested capital, according to the portfolio statement.</td></tr>
+<tr><td><b>Savings rate</b></td><td>(income − expenses) ÷ income for the month. It can be negative.</td></tr>
+<tr><td><b>IRR</b></td><td>Internal rate of return, annualized with irregular dates (XIRR, 365-day basis). It takes into account when you contributed each euro.</td></tr>
+<tr><td><b>TWR</b></td><td>Time-weighted return: it chains the stretches between contributions, so the moment you contribute does not affect it.</td></tr>
+</tbody>
+</table>
+<h3>What counts as income or expense</h3>
+<ul class="list">
+<li><b>Transfers between your own accounts</b> that come in count as income; outgoing ones are neutral. It is an option in Settings.</li>
+<li><b>Bizum</b> payments count as income or expense. This is also an option in Settings.</li>
+<li><b>Contributions to MyInvestor</b> are not an expense: they are calculated from MyInvestor purchases, so they are not counted twice.</li>
+</ul>
+<h3>How far to trust the IRR and the TWR</h3>
+<p>They are reconstructed from the operations history. If an operation is missing, the portfolio does not match them: Kreix warns you and <b>hides the IRR and the TWR</b> until it is fixed, instead of showing misleading figures. To avoid this, export the complete history from your bank, from the very beginning.</p>
+<div class="warn"><b>Estimates are called estimates.</b> The end-of-month forecast and the value of the funds at each month's close are approximate calculations. Help explains how each one is made.</div>
+<h3>Privacy mode</h3>
+<p>The eye in the sidebar (or <b>Ctrl+H</b>) blurs every amount in euros, in charts and tables too: you can tell there is a number, never which one. The real figure never even reaches the screen, so it is safe for sharing your screen or working in public.</p>
+<h3>How to read each chart</h3>
+<p>Under each chart there is a sentence that says what it shows («Your balance has risen by €3,099.12 in this period»). Read it first: it sums up what the chart means.</p>
+</section>
+<!-- ============================ 7 ============================ -->
+<section class="chapter fill fill-2">
+<header class="ch-head"><span class="ch-num">7</span><h2>Security and backups</h2></header>
+<p>Your data is never stored in the clear. With the master password, data is encrypted on your device and only decrypted in memory while Kreix is open. What is on disk is a single encrypted file, <code>kreix.krx</code>, in <code>%APPDATA%\Kreix</code>.</p>
+<h3>What Kreix does for you</h3>
+<ul class="list">
+<li><b>Encryption:</b> the key is derived from your password with PBKDF2-HMAC-SHA256 (600,000 iterations and a random salt) and the data is encrypted with Fernet (authenticated AES). A wrong password or a tampered file is rejected.</li>
+<li><b>In memory:</b> when you unlock, the database is decrypted straight into RAM, with no temporary files in the clear. Kreix saves the encrypted file a few seconds after each change and on closing, with atomic writes and a <i>.bak</i> copy that is also encrypted.</li>
+<li><b>No network:</b> there are no accounts, servers or telemetry.</li>
+</ul>
+<h3>Changing the password</h3>
+<p><b>Settings &gt; Security</b> changes it after checking the current one. The data is re-encrypted with a new key and salt, and the backups are re-encrypted with the new one too, so none of them can still be opened with the old one.</p>
+<h3>Automatic lock</h3>
+<p>Kreix hides everything and asks for the password again:</p>
+<ul class="list">
+<li>after a few minutes without touching the device (1, 2, 5, 10, 15 or 30; or never),</li>
+<li>when you minimize the window,</li>
+<li>when Windows is locked (<b>Win+L</b>) or the device goes to sleep (each one can be turned off).</li>
+</ul>
+<p><b>Ctrl+L</b> or <i>Settings &gt; Security &gt; Lock now</i> locks it instantly. From the third failed attempt in a row you have to wait 5, 10, 20 and, at most, 30 seconds before trying again.</p>
+<h3>Automatic backups</h3>
+<ul class="list">
+<li>Kreix makes an encrypted copy (<code>Kreix-copia-YYYY-MM-DD_HH-MM.kreix</code>) when it opens if there is none yet, after saving changes (at most one per hour and never if there is nothing new) and when it closes.</li>
+<li>They are stored in the folder you choose in <i>Settings &gt; Backups</i> (by default, next to your data) and the latest 3, 5, 10 or 20 are kept.</li>
+<li>At the bottom left you see when the last one was made. <b>Check the latest backup</b> really opens it and tells you how many transactions and accounts it has.</li>
+<li>They are restored from the same screen by typing the master password.</li>
+</ul>
+<div class="tip"><b>Copy off the device.</b> Backups are stored by default next to your data. To be safe from a disk failure, choose a folder on another drive or in a cloud you already use: the file is encrypted.</div>
+<h3>If you forget the password</h3>
+<p>There is no way to recover the data. On the lock screen, <b>I forgot the password</b> deletes the encrypted file (after asking for confirmation) so you can start from scratch with a new password and import your statements again. That is why backups and a password written down in a safe place are so important.</p>
+<h3>What is not encrypted</h3>
+<div class="warn">A <b>.kreix</b> file exported without ticking the encryption box, and the file you import while Kreix validates it. Treat them as sensitive data: they contain your financial information.</div>
+<div class="pic-slot"><img alt="" class="deco deco-pic" src="../../assets/perretes/black-candado.webp"/></div>
+</section>
+<!-- ============================ 8 ============================ -->
+<section class="chapter">
+<header class="ch-head"><span class="ch-num">8</span><h2>Moving your data from one place to another</h2></header>
+<h3>The .kreix file</h3>
+<p><b>Data &gt; Export</b> creates a <i>.kreix</i> file (a ZIP with a consistent copy of the database and a card with the version and the totals). It is used to make a backup or to move your data to another computer.</p>
+<ul class="list">
+<li>The <b>Encrypt the file with my master password</b> box is on by default. When you import it, on this or another computer, Kreix asks for the password it was exported with.</li>
+<li><b>If you don't encrypt it, the file is not encrypted.</b> Keep it somewhere safe and do not share it.</li>
+<li>Everything is exported: accounts, transactions, categories, operations, portfolio and settings (also your name and your language), including the duplicate protection.</li>
+</ul>
+<h3>Moving your data to another computer</h3>
+<ol class="steps">
+<li>On the source computer, <b>Data &gt; Export</b> and save the <i>.kreix</i> file.</li>
+<li>On the other computer, install Kreix, go to <b>Import</b> and drag the file in.</li>
+<li>The data ends up identical to the source.</li>
+</ol>
+<div class="warn"><b>Importing a .kreix replaces</b> any data on that device (it asks for confirmation if there was some). A received file is treated as untrusted: only its two entries are accepted, the integrity of the database is checked, and it is rejected if it contains triggers or views, if it comes from a newer version or if it is too large.</div>
+<h3>Sending your data to the phone with a QR code</h3>
+<img alt="" class="float-pic" src="../../assets/perretes/black-qr.webp"/>
+<p>This is how you take your data from the computer to the phone app without cables or a connection. First install the app on the phone (chapter 9). Then:</p>
+<ol class="steps">
+<li>On the computer, open <b>Data &gt; Export &gt; Send to phone</b>. A QR code appears that keeps changing (about six codes per second).</li>
+<li>On the phone, open the app, go to <b>Data</b> and tap <b>Scan the QR code</b>.</li>
+<li>Point the camera at the computer screen, without moving it, until the progress bar reaches 100 %. It does not need to start anywhere in particular: the app pieces the parts together.</li>
+</ol>
+<div class="tip"><b>What is transferred.</b> All the data, in the same format as the <i>.kreix</i> file. What you receive <b>will replace the data on the phone</b>. The first time, the phone will ask for permission to use the camera.</div>
+</section>
+<!-- ============================ 9 ============================ -->
+<section class="chapter">
+<header class="ch-head"><span class="ch-num">9</span><h2>Kreix on your phone</h2></header>
+<p>The phone app is a web application (PWA) that runs the same logic as the Windows program, with the interface adapted to the phone. It installs from the browser, works without a connection and stores everything encrypted on the phone in the same format as the computer. It says exactly the same as the program: same figures, same charts, same explanations.</p>
+<h3>Installing it on Android</h3>
+<ol class="steps">
+<li><b>Open Kreix in Chrome</b> from the phone itself (<i>dasuarezang.github.io/kreix-web/app/</i>). The first time it downloads about 20 MB; after that it works without a connection.</li>
+<li><b>Open the menu:</b> the three dots (⋮), at the top right.</li>
+<li><b>Tap «Install app».</b> If you don't see it, tap «Add to Home screen» and then «Install»: they do the same thing.</li>
+<li><b>Confirm</b> with «Install». No app store and no account.</li>
+<li><b>Open it from the home screen.</b> It opens full screen, like any other app.</li>
+</ol>
+<p class="small">In <b>Samsung Internet</b> the steps are: three-line menu (≡), at the bottom right → «Add page to» → «Home screen» → «Add». In Edge they are almost the same as in Chrome.</p>
+<h3>Installing it on iPhone and iPad</h3>
+<ol class="steps">
+<li><b>Open Kreix in Safari.</b> If the link opens inside another app (WhatsApp, Instagram…), copy it and paste it into Safari.</li>
+<li><b>Tap Share:</b> the square with an arrow pointing up (at the bottom on iPhone, at the top right on iPad).</li>
+<li><b>Scroll down and tap «Add to Home Screen».</b> The list is long: swipe it up until you see the option with a square and a «+».</li>
+<li><b>Leave «Kreix» as the name and tap «Add»,</b> at the top right.</li>
+<li><b>Open it from the icon,</b> not from Safari: that way it displays full screen.</li>
+</ol>
+<h3>First launch on the phone</h3>
+<p>It works just like on the computer: you create a master password (with the same meter), choose language, name and what you want to manage, and you can try it with sample data.</p>
+<div class="phones">
+<figure class="shot"><img alt="" src="img/en/mv-bloqueo.png"/><figcaption>Master password</figcaption></figure>
+<figure class="shot"><img alt="" src="img/en/mv-bienvenida.png"/><figcaption>Welcome</figcaption></figure>
+<figure class="shot"><img alt="" src="img/en/mv-vacio.png"/><figcaption>First screen</figcaption></figure>
+</div>
+<h3>The screens</h3>
+<p>At the bottom there is a bar with five tabs: <b>Home, Accounts, Investments, Data and Settings</b>. At the top, three buttons: <b>Help</b> («?»), <b>privacy mode</b> (the eye) and the <b>light or dark theme</b> switch.</p>
+<div class="phones">
+<figure class="shot"><img alt="" src="img/en/mv-inicio-0.png"/><figcaption>Home</figcaption></figure>
+<figure class="shot"><img alt="" src="img/en/mv-cuentas-1.png"/><figcaption>Accounts</figcaption></figure>
+<figure class="shot"><img alt="" src="img/en/mv-inversiones-0.png"/><figcaption>Investments</figcaption></figure>
+</div>
+<ul class="list">
+<li><b>Home, Accounts and Investments</b> show the same as the Windows program, with the cards stacked. Transactions have their menu to change the category or create rules, and you can set budgets and goals.</li>
+<li><b>Help:</b> the same glossary as on the computer.</li>
+</ul>
+<h3>Data: import, receive and export</h3>
+<p>In the <b>Data</b> tab you can <b>Choose files</b> (CSV or Excel statements, or a <i>.kreix</i> file) from the phone's Downloads or Files folders, with the same «Review before importing» preview as on the computer. Below it, <b>Scan the QR code</b> receives the data from the computer and <b>Export data…</b> saves a <i>.kreix</i> file (encrypted if you leave the box ticked).</p>
+<div class="phones two-up">
+<figure class="shot"><img alt="" src="img/en/mv-datos-0.png"/><figcaption>Importing statements</figcaption></figure>
+<figure class="shot"><img alt="" src="img/en/mv-datos-1.png"/><figcaption>Receiving from the computer and exporting</figcaption></figure>
+</div>
+<h3>Settings and security on the phone</h3>
+<p>Here you find the language, name, what you're interested in, text size, animated sky and the Bizum and transfers options, just like on the computer, and the <b>category rules</b>.</p>
+<ul class="list">
+<li><b>Security:</b> <i>Change master password…</i> and <i>Lock now</i>.</li>
+<li><b>Automatic lock:</b> if you don't use Kreix for a few minutes, it hides your data and asks for the password again. You choose how long.</li>
+<li><b>Lock when leaving the app:</b> when you switch apps or turn off the screen, Kreix asks for the password again before showing your data.</li>
+<li><b>Backups:</b> on the phone they are made by hand from <i>Data &gt; Export</i>: save the <i>.kreix</i> file in your cloud or send it to yourself. Kreix also keeps the previous version of your data, encrypted, in case something goes wrong while saving.</li>
+</ul>
+<div class="phones two-up">
+<figure class="shot"><img alt="" src="img/en/mv-ajustes-1.png"/><figcaption>Appearance and calculations</figcaption></figure>
+<figure class="shot"><img alt="" src="img/en/mv-ajustes-2.png"/><figcaption>Security and backups</figcaption></figure>
+</div>
+<h3>Differences from the Windows program</h3>
+<table>
+<thead><tr><th>Windows program</th><th>Phone app</th></tr></thead>
+<tbody>
+<tr><td>Designed for importing and organizing at leisure, with keyboard shortcuts.</td><td>Designed for checking your finances and for importing statements downloaded on the phone itself.</td></tr>
+<tr><td>Stores the data in <code>%APPDATA%\Kreix</code> and makes automatic backups.</td><td>Stores the data encrypted inside the phone's browser. Backups are made by hand, by exporting a <i>.kreix</i> from time to time.</td></tr>
+<tr><td>Generates the QR code to send the data.</td><td>Reads the QR code with the camera.</td></tr>
+<tr><td>Installs with a Windows installer.</td><td>Installs from the browser, with no app store.</td></tr>
+</tbody>
+</table>
+<div class="warn"><b>Be careful when clearing browser data.</b> The app's data lives in the browser's storage. If you clear the site data or uninstall the browser, it is lost. Save an exported <i>.kreix</i> file from time to time, or send the data again from the computer.</div>
+<p class="small">On a Mac or on Linux you can use this same app from the browser, since the program with an installer is only for Windows.</p>
+</section>
+<!-- ============================ 10 ============================ -->
+<section class="chapter">
+<header class="ch-head"><span class="ch-num">10</span><h2>Shortcuts and little tricks</h2></header>
+<h3>Keyboard shortcuts (Windows program)</h3>
+<table class="keys">
+<tbody>
+<tr><td><kbd>Ctrl</kbd> + <kbd>H</kbd></td><td>Hides or shows the amounts (privacy mode).</td></tr>
+<tr><td><kbd>Ctrl</kbd> + <kbd>1</kbd> … <kbd>7</kbd></td><td>Switch pages, in this order: Home, Accounts, Investments, Import, Export, Settings, Help.</td></tr>
+<tr><td><kbd>Ctrl</kbd> + <kbd>K</kbd></td><td>Search everything: pages, actions, transactions and help explanations.</td></tr>
+<tr><td><kbd>Ctrl</kbd> + <kbd>T</kbd></td><td>Switches between light and dark mode.</td></tr>
+<tr><td><kbd>Ctrl</kbd> + <kbd>F</kbd></td><td>Goes to the transactions search box.</td></tr>
+<tr><td><kbd>Ctrl</kbd> + <kbd>L</kbd></td><td>Locks Kreix instantly.</td></tr>
+<tr><td><kbd>F5</kbd></td><td>Recalculates the page.</td></tr>
+<tr><td><kbd>←</kbd> <kbd>→</kbd></td><td>Move through the month's budgets in Home.</td></tr>
+</tbody>
+</table>
+<h3>Little tricks</h3>
+<ul class="list">
+<li><b>Every «?» has its explanation.</b> Click the «?» next to a figure to see its definition and how Kreix calculates it.</li>
+<li><b>Undo only covers the last change.</b> If you want to revert something, do it right afterwards, while the notice is still on screen.</li>
+<li><b>Re-import without worrying.</b> To add a new month, download the complete statement and drop it in: only what is new is added.</li>
+<li><b>Text size.</b> If you find reading hard, <i>Settings &gt; Text size</i> makes it bigger throughout the application.</li>
+<li><b>Dark or light mode.</b> The sun and moon switch is below the side menu (on the phone, at the top right).</li>
+<li><b>Try without risk.</b> «Try with sample data» lets you explore without importing anything, and it disappears by itself when you import your data.</li>
+<li><b>Up to tens of thousands of rows.</b> Transactions are sorted, filtered and loaded in a fraction of a second, and the window remembers its size and the last page.</li>
+</ul>
+</section>
+<!-- ============================ 11 ============================ -->
+<section class="chapter">
+<header class="ch-head"><span class="ch-num">11</span><h2>Common problems</h2></header>
+<img alt="" class="float-pic float-tall" src="../../assets/perretes/blitzen-lupa.webp"/>
+<dl class="faq">
+<dt>Windows warns me when I open the installer.</dt>
+<dd>That is because the installer is not signed yet. Click <b>More info</b> and then <b>Run anyway</b>.</dd>
+<dt>Kreix doesn't recognize my statement.</dt>
+<dd>Click <b>Assign the columns</b> and tell it which column is the date, the description and the amount. If the file is a PDF, download it as CSV or Excel: Kreix does not import PDFs.</dd>
+<dt>The file can't be read.</dt>
+<dd>Download it again, as CSV or Excel and without opening or editing it first in another application. Kreix explains the reason on the card itself.</dd>
+<dt>The amounts come out with the sign reversed.</dt>
+<dd>In the column wizard, say that expenses come as positive numbers (or correct the amount's sign) and check the preview before saving.</dd>
+<dt>I made a mistake when importing.</dt>
+<dd>Click <b>Undo</b> in the notice that appears right afterwards. If the notice is already gone, <i>Settings &gt; Delete all data</i> leaves the database empty (the settings are kept) so you can start again.</dd>
+<dt>The IRR and the TWR don't appear.</dt>
+<dd>Kreix hides them when the portfolio does not match the operations (one is missing). Import the complete operations history from the beginning.</dd>
+<dt>A transaction is in the wrong category.</dt>
+<dd>With ••• (or right-click) choose <b>Change category</b>, or create a rule so it always happens.</dd>
+<dt>I forgot the password.</dt>
+<dd>It cannot be recovered. On the lock screen, <b>I forgot the password</b> deletes the encrypted file so you can start from scratch with a new one.</dd>
+<dt>The QR code doesn't complete on the phone.</dt>
+<dd>Bring the phone closer without moving it, turn up the brightness of the computer screen, avoid reflections and check that the browser has camera permission in the phone's settings.</dd>
+<dt>The phone app won't install or the option doesn't appear.</dt>
+<dd>Use Chrome (Android) or Safari (iPhone). On iPhone, if the link opened from another app, copy it and open it directly in Safari.</dd>
+<dt>The data on my phone disappeared.</dt>
+<dd>It is stored in the browser: if the site data is cleared, it is lost. Send it again from the computer with the QR code or import your latest <i>.kreix</i>.</dd>
+</dl>
+</section>
+<!-- ============================ 12 ============================ -->
+<section class="chapter">
+<header class="ch-head"><span class="ch-num">12</span><h2>Glossary</h2></header>
+<dl class="glossary">
+<dt>Net worth</dt><dd>Everything you own: the balance of your accounts plus the value of your investment portfolio.</dd>
+<dt>Cash</dt><dd>The money available in your accounts, which you can use right away.</dd>
+<dt>Savings rate</dt><dd>What share of what you earn in the month you don't spend: (income − expenses) ÷ income.</dd>
+<dt>Net asset value</dt><dd>The price of one unit of a fund on a specific day.</dd>
+<dt>Unit</dt><dd>Each «slice» of an investment fund. Your investment is worth units × net asset value.</dd>
+<dt>Capital gain</dt><dd>The profit (or loss) on an investment: what it is worth now minus what you put in.</dd>
+<dt>Return</dt><dd>The capital gain as a percentage of what you invested.</dd>
+<dt>TWR</dt><dd>Return that doesn't depend on when you contribute: it chains the stretches between contributions.</dd>
+<dt>IRR</dt><dd>Annualized return that does take into account when you contributed each amount.</dd>
+<dt>ISIN</dt><dd>The 12-character international code that identifies a fund.</dd>
+<dt>Recurring payment</dt><dd>A charge that repeats every month with a similar amount: subscriptions, bills.</dd>
+<dt>Transfer</dt><dd>Moving money between two of your accounts. It is neither an expense nor income.</dd>
+<dt>Category rule</dt><dd>«If the description contains this word, it goes to this category». Yours take precedence over Kreix's.</dd>
+<dt>Master password</dt><dd>The password your data is encrypted with. It cannot be recovered.</dd>
+<dt>.kreix file</dt><dd>A single file with all your data, for backups and for moving it to another device.</dd>
+<dt>PWA</dt><dd>The phone app: a web application that installs from the browser and works without a connection.</dd>
+</dl>
+<div class="closing">
+<img alt="" class="duda" src="../../assets/perretes/dudas.webp"/>
+<div>
+<p class="closing-title">Is something unclear?</p>
+<p>Kreix's Help explains every figure with examples, and the website has the guide online and the frequently asked questions:<br/><b>dasuarezang.github.io/kreix-web</b></p>
+</div>
+</div>
+</section>
+</body>
+</html>

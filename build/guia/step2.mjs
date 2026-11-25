@@ -1,0 +1,14 @@
+import { connect } from "./cdp.mjs";
+const c = await connect();
+await c.shot("img/mv-bloqueo.png");
+await c.ev(`(()=>{const [p,q]=document.querySelectorAll('input[type=password]');
+ const set=(el,v)=>{el.value=v;el.dispatchEvent(new Event('input',{bubbles:true}));};
+ set(p,'correcto caballo bateria grapa'); set(q,'correcto caballo bateria grapa');})()`);
+await c.sleep(800);
+await c.shot("img/mv-bloqueo.png");
+await c.ev(`document.querySelector('form.panel button[type=submit]').click()`);
+await c.sleep(6000);
+console.log(await c.ev("document.body.innerText.slice(0,500)"));
+await c.shot("img/mv-bienvenida.png");
+console.log(await c.ev("[...document.querySelectorAll('button,input')].map(b=>b.tagName+':'+(b.innerText||b.type||b.getAttribute('aria-label')||'')).join(' | ')"));
+c.close();

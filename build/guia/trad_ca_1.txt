@@ -1,0 +1,140 @@
+[0] Kreix
+[1] Guia d'ús
+[2] Kreix,<br/>pas a pas
+[3] Com fer servir el programa de Windows i l'app del mòbil: importar els teus extractes, entendre cada pantalla i cada xifra, i mantenir les teves dades a salvo.
+[4] Versió 0.6.1 del programa
+[5] Novembre de 2026
+[6] dasuarezang.github.io/kreix-web
+[7] Contingut
+[8] Índex
+[9] Què és Kreix i com es fa servir
+[10] Instal·lar i primera arrencada
+[11] Importar els teus extractes
+[12] Recorregut pel programa
+[13] Els teus moviments, pressupostos i metes
+[14] Entendre les xifres
+[15] Seguretat i còpies
+[16] Portar les teves dades d'un lloc a un altre
+[17] Kreix al mòbil
+[18] Dreceres i petits trucs
+[19] Problemes habituals
+[20] Glossari
+[21] <b>Com llegir aquesta guia.</b> Si és la primera vegada, llegeix els capítols 1 a 3 i torna quan vulguis a la resta. Totes les captures fan servir dades de demostració inventades: cap xifra és real.
+[22] Kreix és un programa de finances personals. Llegeix els extractes que tu descarregues del teu banc i t'ensenya, en un sol lloc, quant tens, quant gastes, quant estalvies i com va la teva inversió. Existeix en dues formes que comparteixen la mateixa lògica i el mateix format de dades:
+[23] Programa de Windows
+[24] El programa principal, per a Windows 10 i 11. És on s'importen els extractes, s'organitza tot i es fan les còpies de seguretat.
+[25] App del mòbil
+[26] La mateixa app adaptada al mòbil (Android i iPhone). S'instal·la des del navegador, sense botiga d'apps, i funciona sense connexió. Les dades se li passen des de l'ordinador amb un codi QR.
+[27] Quatre idees que convé tenir clares
+[28] <b>Kreix no es connecta al teu banc.</b> Mai et demana claus ni accessos. Treballa amb arxius CSV o Excel que descarregues tu des del web o l'app del teu banc.
+[29] <b>Tot es queda al teu equip.</b> No hi ha comptes, servidors ni telemetria. Les dades es desen xifrades amb una contrasenya mestra que només tu coneixes.
+[30] <b>Pots reimportar sense por.</b> Si importes dues vegades el mateix extracte, o dos que se solapen, només s'afegeix el que és nou.
+[31] <b>Gairebé tot es desfà.</b> Després de cada canvi important apareix un avís amb un botó <i>Desfer</i>.
+[32] Què necessites per començar
+[33] Un equip amb Windows 10 o 11 (64 bits), per al programa. El mòbil és opcional.
+[34] Els extractes del teu banc en <b>CSV o Excel</b> (no s'importen PDF). Els bancs reconeguts de sèrie són al capítol 3; per a qualsevol altre, Kreix t'ajuda a indicar quina columna és cada cosa.
+[35] Uns minuts per triar una contrasenya mestra que no oblidis: <b>si la perds, ningú no pot recuperar les dades</b>.
+[36] Instal·lar el programa
+[37] Descarrega l'instal·lador (<i>Kreix-Setup-0.6.1.exe</i>) des del web i obre'l.
+[38] L'instal·lador no demana permisos d'administrador: instal·la Kreix a la teva carpeta d'usuari i crea una drecera al menú Inici i, si vols, a l'escriptori. Pots triar l'idioma de l'instal·lador (castellà, català o anglès).
+[39] Com que l'instal·lador encara no està signat, Windows pot avisar-te la primera vegada. Prem <b>Més informació</b> i després <b>Executa de totes maneres</b>.
+[40] <b>En desinstal·lar</b> no s'esborren les teves dades: continuen a <code>%APPDATA%\Kreix</code> fins que tu les eliminis.
+[41] La contrasenya mestra
+[42] La primera vegada que obres Kreix et demana crear una contrasenya mestra (mínim 8 caràcters). A sota, un mesurador de quatre franges, que s'omplen i passen de vermell a groc i a verd, i una frase et diuen com de difícil seria endevinar-la i com millorar-la. És un avís, no una regla: l'únic mínim són 8 caràcters.
+[43] Crear la contrasenya mestra, amb el mesurador de fortalesa.
+[44] <b>Apunta-la en un lloc segur.</b> Kreix xifra les teves dades amb ella i no existeix cap clau de recanvi. Si l'oblides, l'única sortida és començar de zero.
+[45] La benvinguda
+[46] Després, un quadre et fa tres preguntes ràpides. Tot es pot canviar després a <b>Configuració</b>:
+[47] <b>Idioma.</b> Castellà, català o anglès. Es proposa el del sistema.
+[48] <b>El teu nom.</b> Perquè Inici et saludi segons l'hora. És opcional.
+[49] <b>Què vols gestionar.</b> Els teus comptes bancaris, les teves inversions o totes dues coses (sempre en queda almenys una). Inici s'adapta al que triïs.
+[50] La primera pantalla
+[51] Amb Kreix encara buit, Inici explica en tres passos què descarregar i on deixar-ho anar, i ofereix <b>Provar amb dades d'exemple</b>: dades inventades, amb un avís a dalt i un botó <i>Començar amb les meves dades</i>. Es treuen soles en el moment que importes extractes reals, així que mai no es barregen amb les teves.
+[52] Inici amb Kreix buit: tres passos per començar.
+[53] Tot comença a <b>Dades &gt; Importar</b>. Descarrega l'extracte del teu banc en CSV o Excel, arrossega'l a la finestra (o prem <i>Seleccionar arxius</i>) i tria el compte al qual pertany.
+[54] <b>Deixa anar l'arxiu.</b> Kreix detecta el banc i el tipus d'arxiu per les capçaleres, no pel nom ni per l'extensió. Funcionen arxius sense extensió o amb <i>.csv.txt</i>.
+[55] <b>Revisa el que ha llegit.</b> Apareix una targeta per arxiu amb el seu tipus, el nombre de files, les dates, quants moviments són nous i quants ja hi eren. Encara no s'ha desat res.
+[56] <b>Prem Importar.</b> Es desen només els moviments nous i un avís et deixa <i>Desfer</i> si alguna cosa no és el que esperaves.
+[57] Vista prèvia de la importació: el que Kreix ha llegit, abans de desar res.
+[58] Quins arxius reconeix
+[59] Origen
+[60] Arxiu
+[61] Observacions
+[62] <b>Imagin</b>
+[63] Extracte de moviments
+[64] CSV o Excel
+[65] <b>MyInvestor</b>
+[66] Operacions i cartera
+[67] L'extracte de cartera no porta data: Kreix et pregunta a quin dia correspon.
+[68] <b>CaixaBank</b>
+[69] Ingressos i despeses en columnes diferents. En proves.
+[70] <b>Santander</b>
+[71] En proves.
+[72] <b>Revolut</b>
+[73] Extracte del compte (CSV)
+[74] En anglès o en castellà. Resta la comissió i només llegeix els moviments en euros. En proves.
+[75] <b>Trade Republic</b>
+[76] Transaccions (CSV)
+[77] Llegeix el compte d'efectiu; deixa fora les compres i vendes de borsa. En proves.
+[78] <b>Qualsevol altre banc</b>
+[79] Un assistent et pregunta quina columna és cada cosa.
+[80] <b>Històric de preus</b>
+[81] CSV o Excel d'un fons
+[82] Una columna de data i una altra de preu, i opcionalment l'ISIN.
+[83] Admet CSV amb punt i coma, coma o tabulador, en UTF-8 o Windows-1252, i Excel (<i>.xlsx</i> i l'antic <i>.xls</i>, fins i tot el que alguns bancs desen com a taula web). Els imports en format espanyol (<i>-2,99EUR</i>, <i>1.234,56 €</i>) es netegen sols. Un arxiu <i>.kreix</i> es restaura directament (capítol 8).
+[84] Si el teu banc no és a la llista
+[85] En deixar anar un arxiu que Kreix no reconeix apareix el botó <b>Assigna les columnes</b>. Un assistent t'ensenya les primeres files, proposa les columnes pels seus títols i tu les corregeixes:
+[86] La fila dels títols (se salta les línies de presentació que porten alguns Excel).
+[87] L'import: una columna amb signe, o dues d'ingressos i despeses; i si les despeses vénen com a nombres positius.
+[88] Els decimals (<i>1.234,56</i> o <i>1,234.56</i>) i l'ordre de la data (dia/mes/any o mes/dia/any).
+[89] El saldo, que és opcional; si el dones, Kreix comprova que encadena.
+[90] L'assistent per importar d'un altre banc.
+[91] Abans de desar veus quants moviments es llegeixen i els primers, per comprovar dates, imports i signes. El format queda desat amb el nom que li posis i s'aplica sol als arxius següents; a <i>Importar &gt; Bancs que ja conec</i> es pot oblidar.
+[92] Duplicats i diversos comptes
+[93] <b>Kreix mai no duplica moviments.</b> Pots reimportar el mateix extracte, o diversos que se solapen. Dos pagaments idèntics el mateix dia es distingeixen pel saldo posterior.
+[94] A Importar tries el <b>compte de destinació</b> de cada extracte. El mateix extracte importat en dos comptes diferents no compta com a duplicat. La cartera d'inversió és una de sola.
+[95] Si un arxiu no es pot llegir, Kreix explica el motiu i què fer (per exemple, descarregar-lo un altre cop en CSV o Excel sense editar-lo).
+[96] Històric de preus d'un fons
+[97] Si has descarregat l'històric de preus d'un fons (del teu banc, Morningstar, Yahoo o Investing), deixa'l anar també a Importar. Kreix agafa l'ISIN d'una columna, del nom de l'arxiu o del selector <i>Fons de l'històric</i>. Amb ell, la gràfica de cada fons passa d'un punt al mes a punts de dies reals. El valor d'avui no canvia: continua manant el teu darrer extracte de cartera.
+[98] A dalt a l'esquerra hi ha les tres vistes de les teves dades: <b>Inici</b>, <b>Comptes</b> i <b>Inversions</b>. A baix, amb la seva icona, les eines: <b>Dades</b> (amb <i>Importar</i> i <i>Exportar</i>), <b>Configuració</b> i <b>Ajuda</b>, i a sota el commutador de mode clar i fosc i l'ull del mode privacitat.
+[99] Inici
+[100] La teva situació d'un cop d'ull. Et saluda segons l'hora amb el teu nom, el dia i l'hora, i la data de l'última actualització de dades (l'últim dia que vas importar alguna cosa).
+[101] Inici: patrimoni net, rendiment, taxa d'estalvi, previsió, pròxims pagaments i pressupostos.
+[102] <b>Patrimoni net:</b> tot el que tens, comptes més inversions, amb quant és liquiditat i quant inversió. Una línia en verd o vermell diu quant ha pujat o baixat respecte al tancament del mes anterior.
+[103] <b>Rendiment global i taxa d'estalvi del mes.</b>
+[104] <b>Previsió a final de mes:</b> quants diners tindràs l'últim dia del mes amb els teus pagaments fixos que queden, els teus ingressos fixos que encara falten (la nòmina) i la teva despesa de cada dia. És una estimació i l'Ajuda explica com es fa.
+[105] <b>Pròxims pagaments:</b> els teus pagaments recurrents que toquen les properes setmanes, per data.
+[106] <b>Pressupostos del mes:</b> passen sols d'un en un; els pots passar amb les fletxes, els punts o les tecles ← →.
+[107] <b>Metes d'estalvi</b> i <b>Per classificar:</b> els moviments sense categoria, amb una regla proposada si un comerç es repeteix.
+[108] Amb dades ja carregades, una llista de <b>primers passos</b> (importar el compte, les operacions, la cartera, definir un pressupost) que pots amagar.
+[109] <b>Un Inici viu.</b> Al costat de la salutació hi ha un cel animat que segueix l'hora real (sol de dia, lluna i estrelles de nit), amb Blitzen i Black, els gossos de l'autor. Es desactiva a <i>Configuració &gt; Cel animat i llum segons l'hora</i>.
+[110] Comptes
+[111] Tot el dels teus comptes bancaris: saldo, ingressos, despeses, taxa d'estalvi, despesa mitjana, major despesa i categoria principal; despeses per categoria, evolució del saldo, ingressos i despeses per mes, pressupostos, pagaments recurrents i la taula de moviments.
+[112] Comptes: mètriques, gràfics, pressupostos, recurrents i moviments.
+[113] <b>Per mes o en global.</b> El selector de dalt canvia entre <i>Tot l'historial</i> i cada mes amb dades (les fletxes salten al mes anterior o següent). En un mes, el saldo és el saldo al tancament i la mitjana de despesa passa de mensual a diària.
+[114] <b>Diversos comptes.</b> El selector té una casella per compte: marca els que vulguis combinar i tot es recalcula amb ells. <i>Gestionar comptes</i> permet afegir, canviar el nom i eliminar.
+[115] Inversions
+[116] Tot el de la teva cartera: valor, aportat, plusvàlua, rendibilitat (TWR i TIR), distribució per fons, aportat davant de valor, evolució de cada fons, posicions actuals i operacions.
+[117] Inversions: valor, rendibilitat, repartiment per fons i operacions.
+[118] La targeta <b>Evolució de cada fons</b> dibuixa una línia per fons amb el seu valor al tancament de cada mes (o, si en tries un, el seu valor davant de l'aportat). És una <b>estimació</b>: Kreix reconstrueix les participacions que tenies amb les teves operacions i les multiplica per un preu interpolat entre els valors liquidatius que coneix. Com més extractes de cartera importis, més fidel és la corba. Amb un mes triat veus el valor estimat al tancament, l'aportat durant el mes, la variació sense comptar aportacions i la rendibilitat del mes.
+[119] Dades: Importar i Exportar
+[120] <b>Importar</b> s'explica al capítol 3. <b>Exportar</b> desa totes les teves dades en un únic arxiu <i>.kreix</i> per fer-ne una còpia o portar-les a un altre equip, i des d'allà es passen al mòbil (capítol 8).
+[121] Exportar: l'arxiu .kreix i «Passar al mòbil».
+[122] Configuració
+[123] Organitzats en targetes per tema. Cada interruptor s'aplica a l'instant:
+[124] <b>El teu nom, Idioma i El que t'interessa.</b> L'idioma canvia tota l'aplicació (menús, ajuda, avisos, dates i números) sense perdre el teu lloc. En anglès els números s'escriuen 1,234.56; en castellà i català, 1.234,56. Si desactives comptes o inversions, les seves pestanyes continuen allà i les pots reactivar des de la mateixa pestanya.
+[125] <b>Mida del text</b> (normal, gran o molt gran) per a tota l'aplicació.
+[126] <b>Cel animat i llum segons l'hora.</b>
+[127] <b>Comptar Bizum com a ingressos i despeses</b> i <b>Comptar traspassos entrants com a ingressos</b>: afecten el càlcul de la taxa d'estalvi (capítol 6).
+[128] <b>Regles de categories.</b> Les teves regles manen sobre les que porta Kreix (capítol 5).
+[129] <b>Seguretat</b> (canviar la contrasenya, bloqueig automàtic, bloquejar ara) i <b>Còpies de seguretat</b> (carpeta, quantes conservar, restaurar): capítol 7.
+[130] <b>Les teves dades:</b> on es desen i <i>Esborrar totes les dades</i> (deixa la base buida i conserva la configuració). <b>Quant a:</b> la versió i les novetats.
+[131] Configuració: el teu nom, idioma, el que t'interessa, aspecte, regles i les teves dades.
+[132] Ajuda
+[133] Un glossari per a qui no sap de finances, en sis temes: <i>Els teus diners d'un cop d'ull, Els teus comptes bancaris, Les teves inversions, Rendibilitat, Avisos</i> i <i>Usar Kreix</i>. Cada terme es desplega en prémer-lo, amb com el calcula Kreix, un exemple, un avís (<i>Atenció</i>) i un consell (<i>Què fer</i>). Al costat de les xifres principals hi ha un «?» que obre la seva explicació ja desplegada. El cercador <b>Ctrl+K</b> també troba pàgines, accions, moviments i termes de l'ajuda.
+[134] La taula de moviments
+[135] A Comptes, els moviments van del més recent al més antic i, dins d'un mateix dia, en el seu ordre real (es reconstrueix amb la cadena de saldos). Pots cercar per concepte, filtrar per categoria i ordenar prement qualsevol capçalera. Amb diversos comptes apareix una columna <i>Compte</i>. Prémer una categoria al gràfic de despeses, o un pressupost, filtra la taula amb aquests moviments.
+[136] Cada moviment té un botó <b>•••</b> (també doble clic o clic dret) per canviar-ne la categoria, crear una regla o copiar el concepte. El botó <b>Exportar</b> de la taula desa en CSV (UTF-8, separat per punt i coma, coma decimal) o Excel les files que es veuen, amb el filtre i l'ordre actuals. No exporta a PDF.
+[137] Categories al teu gust
+[138] Kreix categoritza les teves despeses amb regles per paraules clau (sou, supermercat, subscripcions, oci, restaurants, transport, habitatge, salut, Bizum…), amb un diccionari ampli de comerços i rebuts habituals. <b>Tu mans:</b>
+[139] <b>Canviar categoria</b> d'un moviment: la teva elecció no la trepitja cap regla. <b>Tornar a la categoria automàtica</b> la torna a Kreix.
