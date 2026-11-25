@@ -9,22 +9,29 @@ para imprimir, mismo diseño que la web, un PDF por idioma. Es una guía de uso,
 no de venta.
 
 ## Estado (2026-11-25)
-Borrador en castellano (26 páginas, 12 capítulos): `Kreix-Guia-es.pdf`.
-Pendiente de revisión.
+Diseño cerrado por ahora, en castellano (26 páginas, 12 capítulos): `Kreix-Guia-es.pdf`.
+Falta revisar el contenido (verificar afirmaciones contra el código) antes de traducir.
 
 ## Pendiente
-1. Cambios de contenido y diseño tras la revisión.
+1. Verificar el contenido contra el código de `kreix` y quitar repeticiones.
 2. Traducir a català y English.
-3. Botón de descarga en el pie de la web, con el PDF del idioma de cada página.
-4. Script en `build/` para regenerar los PDF.
+3. Botón de descarga en el pie de la web, con el PDF del idioma de cada página
+   (la tarjeta de descarga está en la rama `guia-tarjeta`).
 
 ## Cómo se genera
-1. En la raíz de `kreix-web`: `python -m http.server 8765`
-2. Edge headless con `--print-to-pdf --no-pdf-header-footer` sobre
-   `http://localhost:8765/build/guia/guia.html`
+`python build/guia/generar.py` (necesita `pymupdf`): imprime `guia.html` con Edge o Chrome
+sin cabeza, mira en qué página empieza cada capítulo, escribe esos números en el índice y
+vuelve a imprimir hasta que no se muevan. Deja `Kreix-Guia-es.pdf` junto a `guia.html`.
+Abrir el PDF siempre en Chrome: el visor de Edge dibuja rayas finas (juntas de teselas) en la portada.
 
 Capturas del programa: `capturas.py`, con el Python del venv del repo `kreix`.
 Capturas del móvil: `cdp.mjs` y `step*.mjs` contra Edge por CDP (puerto 9333).
+
+## Dibujos (en `assets/perretes/`)
+Portada: `blitzen-leyendo`. Índice: `img/asoma-*.png` (cabezas ya giradas). Cap. 1: `senalando` con el logo.
+Cap. 5: `black-calculadora`. Cap. 7: `black-candado`. Cap. 8: `black-qr`. Cap. 11: `blitzen-lupa`.
+Cierre: `dudas`. Ninguno lleva texto, para que valgan en todos los idiomas.
+Para un dibujo centrado al pie de la página, la sección lleva `fill` (`fill-2` si ocupa dos páginas).
 
 ## Al cambiar de ordenador
 - `capturas.py` (ruta del repo `kreix`) y `step*.mjs` (carpeta de salida) tienen

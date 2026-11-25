@@ -65,7 +65,7 @@ h3 { font-size: 12.8pt; margin: 7mm 0 2.6mm; }
 .peek-b { top: 98mm; width: 13.6mm; }
 h2.big { font-size: 30pt; margin-bottom: 9mm; }
 .toc-list { list-style: none; padding: 0; margin: 0 0 9mm; border-top: 1px solid var(--border); }
-.toc-list li { display: grid; grid-template-columns: 14mm 1fr; align-items: center; padding: 3.4mm 0; border-bottom: 1px solid var(--border); }
+.toc-list li { display: grid; grid-template-columns: 14mm 1fr auto; align-items: center; padding: 3.4mm 0; border-bottom: 1px solid var(--border); }
 .toc-list b { display: grid; place-items: center; width: 9mm; height: 9mm; border: 1.5px solid var(--accent); border-radius: 2mm; font: 800 10.5pt var(--display); color: var(--accent-text); }
 .toc-list span { font: 700 12.5pt var(--display); letter-spacing: -.01em; }
 .note-box { border: 1px solid var(--border); background: var(--surface-alt); border-radius: 6px; padding: 4mm 5mm; }
@@ -141,3 +141,8 @@ kbd { font: 700 8.3pt var(--body); border: 1px solid var(--edge); border-bottom-
 .point-logo span { font: 800 23pt var(--display); letter-spacing: -.01em; }
 .point-dogs { width: 54mm; height: auto; }
 .deco-calc { width: 62mm; margin: auto auto 0; padding-top: 6mm; }
+
+.toc-list .pg { font: 700 11pt var(--display); font-style: normal; color: var(--muted); padding-right: 2mm; }
+.deco-pic { width: 50mm; margin: auto auto 0; padding-top: 6mm; }
+.float-pic { float: right; width: 38mm; height: auto; margin: 1mm 0 3mm 7mm; }
+.float-tall { width: 33mm; margin-top: -1mm; }
