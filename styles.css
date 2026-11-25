@@ -1185,7 +1185,7 @@ footer { background: var(--chrome); border-top: 1px solid var(--edge); padding: 
 }
 
 /* el código QR: esquinas de visor en amarillo, como al apuntar con la cámara, y las cuatro barras de la marca en el pie */
-.qr { position: relative; }
+.qr { position: relative; top: auto; }      /* sin el top heredado del sticky, que con relative lo empujaba 100 px fuera de su apartado */
 .qr::before {
   content: ""; position: absolute; inset: -12px -12px auto; aspect-ratio: 1; pointer-events: none; z-index: 1;
   --c: var(--accent);
@@ -1225,10 +1225,12 @@ footer { background: var(--chrome); border-top: 1px solid var(--edge); padding: 
 }
 /* el QR solo tiene sentido en un ordenador: en un móvil o tableta (puntero táctil, sin cursor) no hay nada que escanear.
    En un ordenador con la ventana estrecha o en vertical sigue visible, apilado bajo el texto y centrado */
-@media (max-width: 900px) {
+@media (max-width: 1020px) {      /* ventana estrecha o monitor en vertical: texto arriba y QR centrado debajo, con sitio para los perretes */
+  .phone { grid-template-columns: minmax(0, 1fr); }
   .bring { padding-left: 0; }
-  .qr { justify-self: center; width: min(100%, 290px); margin-top: calc(min(100vw - 2 * var(--gutter), 290px) * .36); }
+  .qr { justify-self: center; width: min(100%, 290px); margin-top: calc(min(100vw - 2 * var(--gutter), 290px) * .36 + 12px); }
 }
+@media (min-width: 1021px) { .qr { margin-right: 14px; } }      /* las esquinas amarillas sobresalen 12 px del QR: que no se peguen al borde */
 @media (max-width: 900px) and (pointer: coarse), (max-width: 900px) and (hover: none) { .qr { display: none; } }
 .install .steps-art h3 { font-size: 20px; }      /* los pasos del movil: titulos de tarjeta algo menores */
 
