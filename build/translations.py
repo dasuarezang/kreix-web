@@ -443,9 +443,12 @@ T = {
     '>Código en GitHub</a>': (
         '>Codi a GitHub</a>',
         '>Code on GitHub</a>'),
-    '<span>Cambiar tema</span>': (
-        '<span>Canviar tema</span>',
-        '<span>Change theme</span>'),
+    '<span>Claro</span>': (
+        '<span>Clar</span>',
+        '<span>Light</span>'),
+    '<span>Oscuro</span>': (
+        '<span>Fosc</span>',
+        '<span>Dark</span>'),
     'Y el código está a la vista: <a href="https://github.com/dasuarezang/kreix">léelo en GitHub</a>.': (
         'I el codi és a la vista: <a href="https://github.com/dasuarezang/kreix">llegeix-lo a GitHub</a>.',
         'And the code is in plain sight: <a href="https://github.com/dasuarezang/kreix">read it on GitHub</a>.'),
