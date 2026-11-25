@@ -1,0 +1,127 @@
+/* Guía de uso de Kreix en PDF. Mismos colores, tipografías y reglas que la web (tema claro, para imprimir):
+   fondos planos, esquinas de 6 px como mucho, bordes finos, sin sombras. */
+
+@font-face { font-family: "DM Sans"; src: url("../../assets/fonts/DMSans.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "DM Sans"; src: url("../../assets/fonts/DMSansMedium.woff2") format("woff2"); font-weight: 500; }
+@font-face { font-family: "DM Sans"; src: url("../../assets/fonts/DMSansBold.woff2") format("woff2"); font-weight: 700; }
+@font-face { font-family: "Montserrat"; src: url("../../assets/fonts/MontserratBold.woff2") format("woff2"); font-weight: 700; }
+@font-face { font-family: "Montserrat"; src: url("../../assets/fonts/MontserratExtraBold.woff2") format("woff2"); font-weight: 800; }
+
+:root {
+  --bg: #fcfaf6; --side: #efe9dc; --chrome: #d0c4a6; --surface: #ffffff; --surface-alt: #f3eee3; --border: #e4ddcd; --edge: #b9b1a0;
+  --text: #22262b; --muted: #626872; --accent: #edb00c; --accent-text: #80590a; --on-accent: #2a2000; --red: #c42329; --green-text: #2a7556;
+  --display: "Montserrat", "Segoe UI", system-ui, sans-serif; --body: "DM Sans", "Segoe UI", system-ui, sans-serif;
+}
+
+@page { size: A4; margin: 17mm 17mm 19mm; @bottom-left { content: "Kreix · Guía de uso"; font: 500 8pt "DM Sans"; color: #626872; }
+  @bottom-right { content: counter(page); font: 700 8.5pt "Montserrat"; color: #22262b; } }
+@page cover { margin: 0; @bottom-left { content: none; } @bottom-right { content: none; } }
+
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin: 0; background: #fff; color: var(--text); font: 400 10.2pt/1.52 var(--body); -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; }
+p { margin: 0 0 3.2mm; }
+b, strong { font-weight: 700; }
+i { font-style: italic; }
+code { font: 500 .92em ui-monospace, "Cascadia Mono", Consolas, monospace; background: var(--surface-alt); border: 1px solid var(--border); border-radius: 3px; padding: .05em .35em; }
+.small { font-size: 9pt; color: var(--muted); }
+
+/* ---------- titulares ---------- */
+h2, h3 { font-family: var(--display); font-weight: 800; line-height: 1.15; margin: 0; letter-spacing: -.012em; break-after: avoid; }
+h3 { font-size: 12.8pt; margin: 7mm 0 2.6mm; }
+.eyebrow { margin: 0 0 2mm; font: 700 8.5pt var(--body); letter-spacing: .12em; text-transform: uppercase; color: var(--accent-text); }
+
+.stripes { display: inline-flex; gap: 1.4mm; height: 6mm; transform: skewX(-24deg); }
+.stripes i { width: 1.5mm; border-radius: .3mm; background: var(--accent); }
+.stripes i:nth-child(2) { background: color-mix(in srgb, var(--accent) 62%, var(--red)); }
+.stripes i:nth-child(3) { background: color-mix(in srgb, var(--accent) 30%, var(--red)); }
+.stripes i:nth-child(4) { background: var(--red); }
+
+/* ---------- portada ---------- */
+.cover { page: cover; position: relative; width: 210mm; height: 297mm; padding: 22mm 20mm 18mm; background: var(--side); overflow: hidden; break-after: page; display: flex; flex-direction: column; }
+.cover-bars { position: absolute; left: 0; top: 0; width: 210mm; height: 270mm; overflow: hidden; }
+.cover-bars .b1 { fill: var(--accent); }
+.cover-bars .b2 { fill: color-mix(in srgb, var(--accent) 62%, var(--red)); }
+.cover-bars .b3 { fill: color-mix(in srgb, var(--accent) 30%, var(--red)); }
+.cover-bars .b4 { fill: var(--red); }
+.cover-top { position: relative; display: flex; align-items: center; gap: 4mm; }
+.cover-logo { width: 13mm; height: 13mm; border-radius: 3mm; }
+.cover-word { font: 800 19pt var(--display); letter-spacing: -.01em; }
+.cover-top .stripes { display: none; }
+.cover-main { position: relative; margin-top: 52mm; max-width: 118mm; }
+.cover-main .eyebrow { font-size: 10pt; }
+.cover h1 { font: 800 44pt/1.02 var(--display); letter-spacing: -.025em; margin: 0 0 8mm; }
+.cover-lede { font-size: 12.5pt; line-height: 1.5; color: #3a3f46; max-width: 105mm; }
+.cover-dogs { position: absolute; left: 14mm; bottom: 34mm; width: 108mm; }
+.cover-foot { position: absolute; left: 20mm; right: 20mm; bottom: 15mm; display: flex; justify-content: space-between; font: 500 8.5pt var(--body); color: #3a3f46; border-top: 1px solid var(--edge); padding-top: 4mm; }
+
+/* ---------- indice ---------- */
+.page { break-after: page; }
+h2.big { font-size: 30pt; margin-bottom: 9mm; }
+.toc-list { list-style: none; padding: 0; margin: 0 0 9mm; border-top: 1px solid var(--border); }
+.toc-list li { display: grid; grid-template-columns: 14mm 1fr; align-items: center; padding: 3.4mm 0; border-bottom: 1px solid var(--border); }
+.toc-list b { display: grid; place-items: center; width: 9mm; height: 9mm; border: 1.5px solid var(--accent); border-radius: 2mm; font: 800 10.5pt var(--display); color: var(--accent-text); }
+.toc-list span { font: 700 12.5pt var(--display); letter-spacing: -.01em; }
+.note-box { border: 1px solid var(--border); background: var(--surface-alt); border-radius: 6px; padding: 4mm 5mm; }
+.note-box p { margin: 0; }
+
+/* ---------- capitulos ---------- */
+.chapter { break-before: page; }
+.ch-head { display: flex; align-items: center; gap: 5mm; padding-bottom: 5mm; margin-bottom: 6mm; border-bottom: 2px solid var(--text); position: relative; }
+.ch-head::after { content: ""; position: absolute; right: 0; bottom: -2px; width: 22mm; height: 2px; background: var(--accent); }
+.ch-num { flex: none; display: grid; place-items: center; width: 15mm; height: 15mm; border-radius: 3mm; background: var(--accent); color: var(--on-accent); font: 800 20pt var(--display); }
+.ch-head h2 { font-size: 23pt; }
+.chapter > h3:first-of-type { margin-top: 5mm; }
+
+/* ---------- listas ---------- */
+.list { list-style: none; margin: 0 0 3.5mm; padding: 0; }
+.list li { position: relative; padding-left: 6mm; margin-bottom: 1.9mm; break-inside: avoid; }
+.list li::before { content: ""; position: absolute; left: 1mm; top: 1.9mm; width: 1.5mm; height: 2.6mm; background: var(--accent); transform: skewX(-24deg); }
+.steps { list-style: none; counter-reset: paso; margin: 0 0 3.5mm; padding: 0; }
+.steps li { counter-increment: paso; position: relative; padding: 0 0 0 11mm; margin-bottom: 3.2mm; min-height: 7.5mm; break-inside: avoid; }
+.steps li::before { content: counter(paso); position: absolute; left: 0; top: -.4mm; display: grid; place-items: center; width: 7.5mm; height: 7.5mm; border: 1.5px solid var(--accent); border-radius: 1.8mm; font: 800 9.5pt var(--display); color: var(--accent-text); background: #fff; }
+
+/* ---------- tablas ---------- */
+table { width: 100%; border-collapse: collapse; margin: 1mm 0 4mm; font-size: 9.4pt; }
+thead th { text-align: left; font: 700 7.8pt var(--body); letter-spacing: .09em; text-transform: uppercase; color: var(--muted); padding: 2mm 3mm; border-bottom: 1.5px solid var(--text); }
+tbody td { padding: 2.6mm 3mm; border-bottom: 1px solid var(--border); vertical-align: top; }
+tbody td:first-child { white-space: nowrap; width: 1%; }
+table.keys td:first-child { white-space: nowrap; }
+tr { break-inside: avoid; }
+kbd { font: 700 8.3pt var(--body); border: 1px solid var(--edge); border-bottom-width: 2px; border-radius: 3px; background: #fff; padding: .15mm 1.6mm; }
+
+/* ---------- avisos ---------- */
+.tip, .warn { margin: 3.5mm 0 4.5mm; padding: 3.4mm 4.5mm; border-radius: 0 6px 6px 0; border-left: 3px solid var(--accent); background: #fbf3dc; break-inside: avoid; }
+.warn { border-left-color: var(--red); background: #fbecec; }
+.tip b:first-child, .warn b:first-child { font-family: var(--display); font-weight: 800; }
+
+/* ---------- tarjetas ---------- */
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; margin: 4mm 0 2mm; }
+.card { border: 1px solid var(--border); background: var(--surface-alt); border-radius: 6px; padding: 4.5mm 5mm; break-inside: avoid; }
+.card h3 { margin: 0 0 1.6mm; font-size: 11.5pt; }
+.card p { margin: 0; font-size: 9.6pt; }
+
+/* ---------- capturas ---------- */
+.figs { margin: 3.5mm 0 4.5mm; }
+.shot { margin: 0 auto; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; background: #fff; break-inside: avoid; }
+.shot img { width: 100%; height: auto; }
+.shot figcaption { padding: 2mm 3.5mm; border-top: 1px solid var(--border); background: var(--surface-alt); font-size: 8.2pt; color: var(--muted); }
+.w40 { width: 40%; } .w50 { width: 50%; } .w52 { width: 52%; } .w62 { width: 62%; } .w64 { width: 64%; } .w66 { width: 66%; } .w72 { width: 72%; } .w86 { width: 86%; }
+.phones { display: flex; justify-content: center; gap: 5mm; margin: 4mm 0 5mm; break-inside: avoid; }
+.phones .shot { flex: 1 1 0; max-width: 45mm; margin: 0; }
+.phones.two-up .shot { max-width: 52mm; }
+
+/* ---------- preguntas y glosario ---------- */
+.faq dt { font: 800 10.8pt var(--display); margin: 5mm 0 1.2mm; break-after: avoid; }
+.faq dd { margin: 0; break-inside: avoid; }
+.glossary { display: grid; grid-template-columns: 41mm 1fr; border-top: 1px solid var(--border); margin: 0 0 8mm; }
+.glossary dt, .glossary dd { margin: 0; padding: 1.9mm 0; border-bottom: 1px solid var(--border); break-inside: avoid; }
+.glossary dt { font: 700 9.8pt var(--display); }
+
+.closing { display: flex; align-items: center; gap: 4mm; padding: 5mm 6mm; border: 1px solid var(--border); border-radius: 6px; background: var(--side); break-inside: avoid; }
+.closing img { width: 20mm; height: auto; flex: none; }
+.closing img + img { margin-left: 0; width: 16mm; }
+.closing div { margin-left: 3mm; }
+.closing p { margin: 0 0 1mm; }
+.closing-title { font: 800 11.5pt var(--display); }

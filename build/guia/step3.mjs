@@ -1,0 +1,11 @@
+import { connect } from "./cdp.mjs";
+const c = await connect();
+await c.ev(`(()=>{const i=document.querySelector('input[type=text]'); i.value='Blitzen'; i.dispatchEvent(new Event('input',{bubbles:true}));})()`);
+await c.sleep(400);
+await c.shot("img/mv-bienvenida.png");
+await c.ev(`[...document.querySelectorAll('button')].find(b=>b.innerText.trim()==='Empezar').click()`);
+await c.sleep(4000);
+console.log(await c.ev("document.body.innerText.slice(0,700)"));
+await c.shot("img/mv-vacio.png");
+console.log(await c.ev("[...document.querySelectorAll('button')].map(b=>b.innerText.trim()).join(' | ')"));
+c.close();

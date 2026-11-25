@@ -1,0 +1,11 @@
+import { connect } from "./cdp.mjs";
+const c = await connect();
+await c.send("Page.enable");
+await c.send("Emulation.setDeviceMetricsOverride", { width: 390, height: 844, deviceScaleFactor: 2, mobile: true });
+await c.send("Emulation.setTouchEmulationEnabled", { enabled: true });
+await c.send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-color-scheme", value: "light" }] });
+await c.send("Page.navigate", { url: "http://localhost:8765/app/" });
+await c.sleep(9000);
+console.log(await c.ev("document.body.innerText.slice(0,300)"));
+await c.shot("/c/Users/dssua/AppData/Local/Temp/claude/d8aea8252ca1fb3a/9992746b-5daf-43f3-8fc8-135596277b5e/scratchpad/pwa1.png");
+c.close();
