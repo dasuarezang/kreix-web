@@ -410,9 +410,6 @@ T = {
     'Descargas': (
         'Descàrregues',
         'Downloads'),
-    'Guía de uso (PDF)': (
-        "Guia d'ús (PDF)",
-        'User guide (PDF)'),
     'Guía de uso en PDF': (
         "Guia d'ús en PDF",
         'User guide (PDF)'),
